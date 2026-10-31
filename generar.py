@@ -101,7 +101,27 @@ def filtrar_entradas(sitio, entradas, decisiones_del_sitio, cliente, presupuesto
     return [entrada for entrada in entradas if por_enlace.get(entrada["enlace"]) != "descartar"]
 
 
-def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto):
+def completar_con_texto(entradas, articulos, descargas):
+    """Añade a cada entrada el cuerpo del artículo, descargando solo los que no están en caché.
+
+    `descargas` es un dict {"hechas": n, "tope": m} compartido por todas las webs de la ejecución.
+    Si un artículo no se puede descargar o no se reconoce su cuerpo, la entrada sale solo con el extracto.
+    """
+    for entrada in entradas:
+        enlace = entrada["enlace"]
+        if enlace not in articulos and descargas["hechas"] < descargas["tope"]:
+            descargas["hechas"] += 1
+            cuerpo = ""
+            if extractor.permitido_por_robots(enlace):
+                respuesta = extractor.peticion(enlace)
+                if 200 <= respuesta.estado < 300:
+                    cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
+            articulos[enlace] = {"cuerpo": cuerpo}
+        entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
+    return sum(1 for entrada in entradas if entrada["cuerpo"])
+
+
+def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": sitio["id"], "nombre": sitio["nombre"], "url": sitio["url"], "estado": "error",
@@ -156,10 +176,15 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto):
             estado["detalle"] = "tras filtrar no queda ninguna entrada"
             return estado
 
+        con_texto = 0
+        if sitio.get("texto_completo"):
+            con_texto = completar_con_texto(entradas, articulos, descargas)
+
         ruta_feed = os.path.join(raiz, "docs", "feeds", sitio["id"] + ".xml")
         escribir_texto(ruta_feed, extractor.construir_rss(sitio["nombre"], respuesta.url_final, entradas))
         estado["estado"] = "ok"
         estado["entradas"] = len(entradas)
+        estado["con_texto_completo"] = con_texto
         estado["detalle"] = "con IA" if cliente is not None else "sin IA (no hay clave de API)"
         return estado
     except Exception as error:
@@ -177,6 +202,9 @@ def main():
     ruta_decisiones = os.path.join(raiz, "datos", "decisiones.json")
     ruta_estado = os.path.join(raiz, "docs", "estado.json")
     decisiones = leer_json(ruta_decisiones, {})
+    ruta_articulos = os.path.join(raiz, "datos", "articulos.json")
+    articulos = leer_json(ruta_articulos, {})
+    descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "15"))}
     estado_anterior = {entrada["id"]: entrada for entrada in leer_json(ruta_estado, {}).get("sitios", [])}
 
     cliente = ia.crear_cliente()
@@ -185,7 +213,7 @@ def main():
 
     resultados = []
     for sitio in sitios:
-        estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto)
+        estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas)
         anterior = estado_anterior.get(sitio["id"])
         if estado["estado"] == "error" and anterior and anterior["estado"] == "ok":
             # El feed anterior sigue publicado: se conserva su número de entradas y se anota el fallo.
@@ -195,6 +223,8 @@ def main():
         print(f"- {sitio['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
     escribir_json(ruta_decisiones, decisiones)
+    if articulos:
+        escribir_json(ruta_articulos, articulos)
     escribir_json(ruta_estado, {
         "generado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "llamadas_ia": presupuesto.llamadas,

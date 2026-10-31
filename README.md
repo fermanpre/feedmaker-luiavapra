@@ -41,6 +41,10 @@ repositorio público, y cada alta consume llamadas a la API de pago.
 |---|---|
 | `user_agent` | `"auto"` (por defecto): se identifica como `feedmaker` y, solo si la web responde 403 o 406, repite la petición presentándose como un navegador. `"honesto"`: nunca se presenta como navegador. `"navegador"`: siempre lo hace. `estado.json` anota cuál se usó en cada web. |
 | `forzar_tarjetas: true` | Genera el feed aunque la web ya tenga uno propio. |
+| `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 15 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
+
+**Aviso:** con `texto_completo`, el repositorio y los feeds, que son públicos, contienen copias del texto de
+webs ajenas. Úsalo solo en las pocas webs que realmente lees.
 
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
 

@@ -616,11 +616,110 @@ def analizar(url):
 
 # --------------------------------------------------------------------------- salida RSS
 
+# --------------------------------------------------------------------------- texto completo del artículo
+
+ETIQUETAS_DEL_CUERPO = {
+    "p", "h2", "h3", "h4", "ul", "ol", "li", "blockquote", "strong", "b", "em", "i", "br", "a", "img", "pre", "code",
+}
+ETIQUETAS_OMITIDAS = {"nav", "header", "footer", "aside", "form", "button", "select", "iframe", "figcaption"}
+PATRON_RUIDO = re.compile(
+    r"(^|[\s_-])(share|sharing|social|related|comments?|newsletter|subscribe|subscription|promo|advert|ad|ads|"
+    r"sidebar|breadcrumb|cookie|cookies|menu|nav|navbar|footer|toolbar|tags?)($|[\s_-])",
+    re.IGNORECASE,
+)
+MINIMO_CARACTERES_CUERPO = 400
+MINIMO_CARACTERES_PARRAFO = 40
+NODOS_DE_PAGINA = {"#raiz", "html", "body"}
+
+
+def _es_ruido(nodo, usar_clases):
+    if nodo.etiqueta in ETIQUETAS_OMITIDAS:
+        return True
+    if usar_clases and nodo.etiqueta not in NODOS_DE_PAGINA:
+        texto = " ".join(nodo.clases) + " " + (nodo.atributos.get("id") or "")
+        return bool(PATRON_RUIDO.search(texto))
+    return False
+
+
+def _en_zona_de_ruido(nodo, usar_clases):
+    actual = nodo
+    while actual is not None:
+        if _es_ruido(actual, usar_clases):
+            return True
+        actual = actual.padre
+    return False
+
+
+def _longitud_de_enlaces(nodo):
+    return sum(len(texto_de(a)) for a in descendientes(nodo) if a.etiqueta == "a")
+
+
+def _elegir_contenedor(raiz, usar_clases):
+    """El contenedor cuyos párrafos suman más texto (el padre cuenta entero y el abuelo, la mitad)."""
+    puntos = {}
+    for nodo in descendientes(raiz):
+        if nodo.etiqueta != "p" or _en_zona_de_ruido(nodo, usar_clases):
+            continue
+        texto = texto_de(nodo)
+        if len(texto) < MINIMO_CARACTERES_PARRAFO or _longitud_de_enlaces(nodo) > 0.5 * len(texto):
+            continue
+        padre = nodo.padre
+        abuelo = padre.padre if padre is not None else None
+        for contenedor, factor in ((padre, 1.0), (abuelo, 0.5)):
+            if contenedor is None:
+                continue
+            registro = puntos.setdefault(id(contenedor), [contenedor, 0.0])
+            registro[1] += len(texto) * factor
+    if not puntos:
+        return None
+    mejor = max(puntos.values(), key=lambda registro: registro[1])[0]
+    for antepasado in [mejor] + list(antepasados(mejor)):
+        if antepasado.etiqueta == "article":
+            return antepasado
+    return mejor
+
+
+def _a_html_simple(nodo, url_base, usar_clases):
+    if nodo.es_texto():
+        return escape(nodo.contenido)
+    if _es_ruido(nodo, usar_clases):
+        return ""
+    hijos = "".join(_a_html_simple(hijo, url_base, usar_clases) for hijo in nodo.hijos)
+    if nodo.etiqueta == "br":
+        return "<br/>"
+    if nodo.etiqueta == "img":
+        origen = urllib.parse.urljoin(url_base, nodo.atributos.get("src", ""))
+        if origen.startswith(("http://", "https://")):
+            return f'<img src="{escape(origen, {chr(34): "&quot;"})}" alt="{escape(nodo.atributos.get("alt", ""), {chr(34): "&quot;"})}"/>'
+        return ""
+    if nodo.etiqueta == "a":
+        destino = urllib.parse.urljoin(url_base, nodo.atributos.get("href", ""))
+        if destino.startswith(("http://", "https://")):
+            return f'<a href="{escape(destino, {chr(34): "&quot;"})}">{hijos}</a>'
+        return hijos
+    if nodo.etiqueta in ETIQUETAS_DEL_CUERPO:
+        return f"<{nodo.etiqueta}>{hijos}</{nodo.etiqueta}>"
+    return hijos
+
+
+def extraer_cuerpo_articulo(html, url_base):
+    """Devuelve el cuerpo del artículo como HTML simple, o '' si no se reconoce uno razonable."""
+    raiz = construir_arbol(html)
+    for usar_clases in (True, False):
+        contenedor = _elegir_contenedor(raiz, usar_clases)
+        if contenedor is None:
+            continue
+        cuerpo = re.sub(r"\s+", " ", _a_html_simple(contenedor, url_base, usar_clases)).strip()
+        if len(re.sub(r"<[^>]+>", "", cuerpo)) >= MINIMO_CARACTERES_CUERPO:
+            return cuerpo
+    return ""
+
+
 def construir_rss(titulo, url_pagina, entradas):
     ahora = format_datetime(datetime.now(timezone.utc))
     lineas = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<rss version="2.0">',
+        '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">',
         "<channel>",
         f"<title>{escape(titulo)}</title>",
         f"<link>{escape(url_pagina)}</link>",
@@ -638,6 +737,9 @@ def construir_rss(titulo, url_pagina, entradas):
             lineas.append(f"<pubDate>{format_datetime(entrada['fecha'])}</pubDate>")
         if entrada["extracto"]:
             lineas.append(f"<description>{escape(entrada['extracto'][:400])}</description>")
+        if entrada.get("cuerpo"):
+            cuerpo_seguro = entrada["cuerpo"].replace("]]>", "]]&gt;")
+            lineas.append(f"<content:encoded><![CDATA[{cuerpo_seguro}]]></content:encoded>")
         lineas.append("</item>")
     lineas += ["</channel>", "</rss>"]
     return "\n".join(lineas) + "\n"
