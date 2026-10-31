@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-31T22:36:04+00:00",
- "llamadas_ia": 2,
+ "generado": "2026-10-31T22:38:59+00:00",
+ "llamadas_ia": 0,
  "sitios": [
   {
-   "actualizado": "2026-10-31T22:34:59+00:00",
+   "actualizado": "2026-10-31T22:38:09+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-10-31T22:35:13+00:00",
+   "actualizado": "2026-10-31T22:38:23+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:35:21+00:00",
+   "actualizado": "2026-10-31T22:38:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:35:30+00:00",
+   "actualizado": "2026-10-31T22:38:41+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,26 +51,14 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:35:40+00:00",
-   "con_texto_completo": 0,
+   "actualizado": "2026-10-31T22:38:50+00:00",
+   "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
    "estado": "ok",
    "feed_propio": "",
    "id": "worldbank-org-en-news",
    "nombre": "www.worldbank.org/en/news",
-   "url": "https://www.worldbank.org/en/news",
-   "user_agent": "feedmaker"
-  },
-  {
-   "actualizado": "2026-10-31T22:35:49+00:00",
-   "con_texto_completo": 5,
-   "detalle": "con IA",
-   "entradas": 5,
-   "estado": "ok",
-   "feed_propio": "",
-   "id": "banco-mundial",
-   "nombre": "Banco Mundial: noticias",
    "url": "https://www.worldbank.org/en/news",
    "user_agent": "feedmaker"
   }
