@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-31T22:38:59+00:00",
+ "generado": "2026-10-31T23:03:39+00:00",
  "llamadas_ia": 0,
  "sitios": [
   {
-   "actualizado": "2026-10-31T22:38:09+00:00",
+   "actualizado": "2026-10-31T23:02:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-10-31T22:38:23+00:00",
+   "actualizado": "2026-10-31T23:02:58+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:38:31+00:00",
+   "actualizado": "2026-10-31T23:03:06+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:38:41+00:00",
+   "actualizado": "2026-10-31T23:03:16+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:38:50+00:00",
+   "actualizado": "2026-10-31T23:03:25+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
