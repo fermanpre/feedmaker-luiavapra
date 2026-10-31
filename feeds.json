@@ -22,11 +22,6 @@
   {
     "id": "worldbank-org-en-news",
     "nombre": "www.worldbank.org/en/news",
-    "url": "https://www.worldbank.org/en/news"
-  },
-  {
-    "id": "banco-mundial",
-    "nombre": "Banco Mundial: noticias",
     "url": "https://www.worldbank.org/en/news",
     "texto_completo": true
   }
