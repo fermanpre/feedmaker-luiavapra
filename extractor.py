@@ -702,6 +702,31 @@ def _a_html_simple(nodo, url_base, usar_clases):
     return hijos
 
 
+def fecha_del_articulo(html, cuerpo=""):
+    """Fecha de publicación (aaaa-mm-dd) del artículo, o ''.
+
+    Primero los metadatos de la página; si no hay, la primera fecha de los 300 primeros caracteres del cuerpo
+    (las notas de prensa suelen empezar con «CIUDAD, 26 de octubre de 2026»)."""
+    patrones = (
+        r'property=["\']article:published_time["\'][^>]*content=["\']([^"\']+)',
+        r'content=["\']([^"\']+)["\'][^>]*property=["\']article:published_time',
+        r'"datePublished"\s*:\s*"([^"]+)"',
+        r'<time[^>]+datetime=["\']([^"\']+)',
+    )
+    for patron in patrones:
+        coincidencia = re.search(patron, html, re.IGNORECASE)
+        if coincidencia:
+            fecha = interpretar_fecha(coincidencia.group(1))
+            if fecha:
+                return fecha.strftime("%Y-%m-%d")
+    if cuerpo:
+        principio = " ".join(re.sub(r"<[^>]+>", " ", cuerpo).split())[:300]
+        fecha = interpretar_fecha(principio)
+        if fecha:
+            return fecha.strftime("%Y-%m-%d")
+    return ""
+
+
 def extraer_cuerpo_articulo(html, url_base):
     """Devuelve el cuerpo del artículo como HTML simple, o '' si no se reconoce uno razonable."""
     raiz = construir_arbol(html)
@@ -735,8 +760,12 @@ def construir_rss(titulo, url_pagina, entradas):
         ]
         if entrada["fecha"]:
             lineas.append(f"<pubDate>{format_datetime(entrada['fecha'])}</pubDate>")
-        if entrada["extracto"]:
-            lineas.append(f"<description>{escape(entrada['extracto'][:400])}</description>")
+        resumen = entrada["extracto"]
+        if not resumen and entrada.get("cuerpo"):
+            # Algunos lectores solo muestran <description>: sin extracto, se usa el principio del cuerpo.
+            resumen = " ".join(re.sub(r"<[^>]+>", " ", entrada["cuerpo"]).split())
+        if resumen:
+            lineas.append(f"<description>{escape(resumen[:400])}</description>")
         if entrada.get("cuerpo"):
             cuerpo_seguro = entrada["cuerpo"].replace("]]>", "]]&gt;")
             lineas.append(f"<content:encoded><![CDATA[{cuerpo_seguro}]]></content:encoded>")

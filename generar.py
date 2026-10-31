@@ -109,15 +109,20 @@ def completar_con_texto(entradas, articulos, descargas):
     """
     for entrada in entradas:
         enlace = entrada["enlace"]
-        if enlace not in articulos and descargas["hechas"] < descargas["tope"]:
+        # Las entradas de la caché antigua no tienen «fecha»: se vuelven a descargar una vez.
+        if ("fecha" not in articulos.get(enlace, {})) and descargas["hechas"] < descargas["tope"]:
             descargas["hechas"] += 1
             cuerpo = ""
+            fecha = ""
             if extractor.permitido_por_robots(enlace):
                 respuesta = extractor.peticion(enlace)
                 if 200 <= respuesta.estado < 300:
                     cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
-            articulos[enlace] = {"cuerpo": cuerpo}
+                    fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo)
+            articulos[enlace] = {"cuerpo": cuerpo, "fecha": fecha}
         entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
+        if not entrada["fecha"] and articulos.get(enlace, {}).get("fecha"):
+            entrada["fecha"] = extractor.interpretar_fecha(articulos[enlace]["fecha"])
     return sum(1 for entrada in entradas if entrada["cuerpo"])
 
 
