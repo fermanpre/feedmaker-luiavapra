@@ -53,5 +53,19 @@
    "https://www.esade.edu/ecpol/es/webinars-eventos/esta-la-sociedad-espanola-polarizada-en-torno-a-la-transicion-verde/": "ok"
   },
   "firma": "div.mt-4.pt-5 > div.animate__animated.animate__zoomIn"
+ },
+ "martinfowler-com": {
+  "enlaces": {
+   "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html": "ok",
+   "https://martinfowler.com/articles/never-send-slides/build-your-slide-template.html": "ok",
+   "https://martinfowler.com/articles/never-send-slides/slide-principles.html": "ok",
+   "https://martinfowler.com/articles/practitioner-voice.html#TheCraftOfPractitionerVoice": "ok",
+   "https://martinfowler.com/articles/software-meets-hardware.html": "ok",
+   "https://martinfowler.com/bliki/LLM-Voice.html": "ok",
+   "https://martinfowler.com/fragments/2026-10-21.html": "ok",
+   "https://martinfowler.com/fragments/2026-10-28.html": "ok",
+   "https://martinfowler.com/rachels-ramblings/good-devs-wary.html": "ok"
+  },
+  "firma": "section.entries > article.feed-entry"
  }
 }

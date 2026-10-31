@@ -3,5 +3,10 @@
     "id": "esade-galindo",
     "nombre": "EsadeEcPol: publicaciones de Jorge Galindo",
     "url": "https://www.esade.edu/ecpol/es/perfil/jorge-galindo/"
+  },
+  {
+    "id": "martinfowler-com",
+    "nombre": "martinfowler.com",
+    "url": "https://martinfowler.com/"
   }
 ]

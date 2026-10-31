@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>martinfowler.com</title>
+<link>https://martinfowler.com/</link>
+<description>Feed no oficial generado por Feedmaker a partir de https://martinfowler.com/</description>
+<lastBuildDate>Sat, 31 Oct 2026 21:31:37 +0000</lastBuildDate>
+<item>
+<title>Bliki: LLM Voice</title>
+<link>https://martinfowler.com/bliki/LLM-Voice.html</link>
+<guid isPermaLink="true">https://martinfowler.com/bliki/LLM-Voice.html</guid>
+<pubDate>Thu, 29 Oct 2026 12:00:00 +0000</pubDate>
+<description>Sometimes when I read a post, I get the growing feeling that I'm reading the output of an LLM. I can't necessarily define why, although there are the common tells (it's not the em-dashes, it's the load-bearing tapestries). As I do this my desire to read on atrophies, sometimes to the point of revulsion</description>
+</item>
+<item>
+<title>Why are good developers so wary of agentic development?</title>
+<link>https://martinfowler.com/rachels-ramblings/good-devs-wary.html</link>
+<guid isPermaLink="true">https://martinfowler.com/rachels-ramblings/good-devs-wary.html</guid>
+<pubDate>Thu, 29 Oct 2026 12:00:00 +0000</pubDate>
+<description>Good developers’ caution about agentic development comes from knowing that built isn’t the same as working in production.</description>
+</item>
+<item>
+<title>Fragments: October 28</title>
+<link>https://martinfowler.com/fragments/2026-10-28.html</link>
+<guid isPermaLink="true">https://martinfowler.com/fragments/2026-10-28.html</guid>
+<pubDate>Wed, 28 Oct 2026 12:00:00 +0000</pubDate>
+<description>widening perception gap of LLMs, notes from Foocamp, today is 1997, a shift to supervisory control, Eric Evans keynote, Thoughtworks's token sourcing strategy</description>
+</item>
+<item>
+<title>Fragments: October 21</title>
+<link>https://martinfowler.com/fragments/2026-10-21.html</link>
+<guid isPermaLink="true">https://martinfowler.com/fragments/2026-10-21.html</guid>
+<pubDate>Wed, 21 Oct 2026 12:00:00 +0000</pubDate>
+<description>LLM generated prose generates rejection, cancellation of Grade Hopper celebration, using AI to assist debugging unfamiliar code</description>
+</item>
+<item>
+<title>When Software Meets Hardware</title>
+<link>https://martinfowler.com/articles/software-meets-hardware.html</link>
+<guid isPermaLink="true">https://martinfowler.com/articles/software-meets-hardware.html</guid>
+<pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+<description>When software meets hardware, engineering principles remain largely the same, but the sensible defaults often change. Kuldeep Singh describes our experience modernizing a large IoT fleet of battery-powered sensors. Our familiar principles remained important; what changed was how we applied them. These practices emerged through experiments, failures, and operational experience—each challenge helpin</description>
+</item>
+<item>
+<title>Build your slide template</title>
+<link>https://martinfowler.com/articles/never-send-slides/build-your-slide-template.html</link>
+<guid isPermaLink="true">https://martinfowler.com/articles/never-send-slides/build-your-slide-template.html</guid>
+<pubDate>Wed, 14 Oct 2026 12:00:00 +0000</pubDate>
+<description>Building a slide template starts with three foundational choices — colours, fonts and layouts. Sumeet Gayathri Moghe covers the basics of color theory and how to build a reusable palette, the essentials of typography, including serif, sans-serif, handwritten and monospace fonts, plus the finer points of kerning and leading, and why a near-blank layout might serve you better than the prescribed lay</description>
+</item>
+<item>
+<title>The Craft of Practitioner Voice</title>
+<link>https://martinfowler.com/articles/practitioner-voice.html#TheCraftOfPractitionerVoice</link>
+<guid isPermaLink="true">https://martinfowler.com/articles/practitioner-voice.html#TheCraftOfPractitionerVoice</guid>
+<pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
+<description>A couple of months ago Jim Highsmith explained how practitioners writing for each other forms a distinct style of writing. He now adds a section to the article with more detail on the craft of how we write in this style. How the writer shows up in the prose, its four principles, the role of story, how to sensibly use AI, three levels of editing, and clarity of the audience.</description>
+</item>
+<item>
+<title>Are Harnesses Worth the Cost?</title>
+<link>https://martinfowler.com/articles/are-harnesses-worth-the-cost.html</link>
+<guid isPermaLink="true">https://martinfowler.com/articles/are-harnesses-worth-the-cost.html</guid>
+<pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
+<description>Naresh Jain compares coding agents building the same API service with and without a behavioral harness. A frontier model, GPT-6 Sol, passed every external evaluation either way. But a cost-optimized model, GPT-6 Luna, succeeded in only 3 of 10 unharnessed runs and all 10 with the harness. While adding the harness increased token usage and runtime for Luna, the harnessed Luna runs achieved the same</description>
+</item>
+<item>
+<title>Principles for effective slides</title>
+<link>https://martinfowler.com/articles/never-send-slides/slide-principles.html</link>
+<guid isPermaLink="true">https://martinfowler.com/articles/never-send-slides/slide-principles.html</guid>
+<pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+<description>Not every presentation needs slides, but when they earn their place, they work as a visual channel that complements the speaker rather than replacing them. Sumeet Gayathri Moghe sets out the principles that follow from that idea — control over the rate of knowledge exposition, tight coupling between slides and speaker, minimalism by default, visuals that say more than words can, and never sending </description>
+</item>
+</channel>
+</rss>
