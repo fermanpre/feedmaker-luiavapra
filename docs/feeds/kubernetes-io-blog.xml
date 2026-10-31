@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>kubernetes.io/blog</title>
+<link>https://kubernetes.io/blog/</link>
+<description>Feed no oficial generado por Feedmaker a partir de https://kubernetes.io/blog/</description>
+<lastBuildDate>Sat, 31 Oct 2026 22:04:43 +0000</lastBuildDate>
+<item>
+<title>From Working Group to SIG Architecture: spotlight on AI Conformance</title>
+<link>https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/</guid>
+<pubDate>Thu, 29 Oct 2026 12:00:00 +0000</pubDate>
+<description>By Frederico Muñoz (SAS Institute), Kirti Goyal (independent) | Thursday, October 29, 2026 in Blog</description>
+</item>
+<item>
+<title>Announcing the Workload Conformance Working Group</title>
+<link>https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/</guid>
+<pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
+<description>By Nabarun Pal (Broadcom) on behalf of WG Workload Conformance | Tuesday, October 27, 2026 in Blog</description>
+</item>
+<item>
+<title>Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</title>
+<link>https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/</guid>
+<pubDate>Wed, 14 Oct 2026 12:00:00 +0000</pubDate>
+<description>By Utkarsh Raj (LFX Mentee, CNCF), René Dudfield (Microsoft), Kevin Hannon (Red Hat) | Wednesday, October 14, 2026 in Blog</description>
+</item>
+<item>
+<title>The Shift to cgroup v2 in Kubernetes: What You Need to Know</title>
+<link>https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/</guid>
+<pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+<description>By Paco Xu (DaoCloud) | Tuesday, October 06, 2026 in Blog</description>
+</item>
+<item>
+<title>Scaling Kubernetes Workloads with Node Swap</title>
+<link>https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/</guid>
+<pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+<description>By Ocean Xie , Yuan Wang | Monday, October 05, 2026 in Blog</description>
+</item>
+<item>
+<title>Spotlight on SIG Apps</title>
+<link>https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/</guid>
+<pubDate>Tue, 22 Sep 2026 12:00:00 +0000</pubDate>
+<description>By Natalie Fisher (VMware by Broadcom) | Tuesday, September 22, 2026 in Blog</description>
+</item>
+<item>
+<title>Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</title>
+<link>https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/</guid>
+<pubDate>Mon, 21 Sep 2026 12:00:00 +0000</pubDate>
+<description>By Roman Bednář (Red Hat) | Monday, September 21, 2026 in Blog</description>
+</item>
+<item>
+<title>Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions</title>
+<link>https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/</guid>
+<pubDate>Wed, 16 Sep 2026 12:00:00 +0000</pubDate>
+<description>By Nispriha Jagan (Red Hat), Neeraj Krishna Gopalakrishna (Red Hat) | Wednesday, September 16, 2026 in Blog</description>
+</item>
+<item>
+<title>Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta</title>
+<link>https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/</guid>
+<pubDate>Tue, 15 Sep 2026 12:00:00 +0000</pubDate>
+<description>By Kevin Torres Martinez (Google) | Tuesday, September 15, 2026 in Blog</description>
+</item>
+<item>
+<title>Kubernetes v1.37: Memory QoS Graduates to Beta</title>
+<link>https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/</link>
+<guid isPermaLink="true">https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/</guid>
+<pubDate>Mon, 14 Sep 2026 12:00:00 +0000</pubDate>
+<description>By Qi Wang (Red Hat), Sohan Kunkerkar (Red Hat) | Monday, September 14, 2026 in Blog</description>
+</item>
+</channel>
+</rss>

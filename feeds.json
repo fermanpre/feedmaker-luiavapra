@@ -8,5 +8,10 @@
     "id": "martinfowler-com",
     "nombre": "martinfowler.com",
     "url": "https://martinfowler.com/"
+  },
+  {
+    "id": "kubernetes-io-blog",
+    "nombre": "kubernetes.io/blog",
+    "url": "https://kubernetes.io/blog/"
   }
 ]

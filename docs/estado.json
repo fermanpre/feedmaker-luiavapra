@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-31T21:31:37+00:00",
+ "generado": "2026-10-31T22:04:43+00:00",
  "llamadas_ia": 2,
  "sitios": [
   {
-   "actualizado": "2026-10-31T21:31:15+00:00",
+   "actualizado": "2026-10-31T22:04:11+00:00",
    "detalle": "con IA",
    "entradas": 50,
    "estado": "ok",
@@ -14,7 +14,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-10-31T21:31:27+00:00",
+   "actualizado": "2026-10-31T22:04:25+00:00",
    "detalle": "con IA",
    "entradas": 9,
    "estado": "ok",
@@ -22,6 +22,17 @@
    "id": "martinfowler-com",
    "nombre": "martinfowler.com",
    "url": "https://martinfowler.com/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-10-31T22:04:33+00:00",
+   "detalle": "con IA",
+   "entradas": 10,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "kubernetes-io-blog",
+   "nombre": "kubernetes.io/blog",
+   "url": "https://kubernetes.io/blog/",
    "user_agent": "feedmaker"
   }
  ]
