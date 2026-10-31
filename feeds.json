@@ -18,5 +18,10 @@
     "id": "anthropic-com-news",
     "nombre": "www.anthropic.com/news",
     "url": "https://www.anthropic.com/news"
+  },
+  {
+    "id": "worldbank-org-en-news",
+    "nombre": "www.worldbank.org/en/news",
+    "url": "https://www.worldbank.org/en/news"
   }
 ]

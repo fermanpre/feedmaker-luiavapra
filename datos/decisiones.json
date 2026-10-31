@@ -111,5 +111,17 @@
    "https://martinfowler.com/rachels-ramblings/good-devs-wary.html": "ok"
   },
   "firma": "section.entries > article.feed-entry"
+ },
+ "worldbank-org-en-news": {
+  "enlaces": {
+   "https://www.worldbank.org/en/news/all?displayconttype_exact=Press+Release&lang_exact=English&qterm=": "descartar",
+   "https://www.worldbank.org/en/news/press-release/2026/10/12/world-bank-group-launches-philanthropy-hub-to-unlock-capital-knowledge-and-network": "ok",
+   "https://www.worldbank.org/en/news/press-release/2026/10/18/uae-signs-agreement-to-host-2029-world-bank-group-annual-meetings": "ok",
+   "https://www.worldbank.org/en/news/press-release/2026/10/20/world-bank-group-launches-first-digital-strategy-to-expand-access-and-create-jobs": "ok",
+   "https://www.worldbank.org/en/news/press-release/2026/10/26/more-and-better-jobs-key-to-putting-poverty-reduction-back-on-track": "ok",
+   "https://www.worldbank.org/en/news/speech/2026/10/16/remarks-by-world-bank-group-president-ajay-banga-at-the-2026-annual-meetings-plena": "ok",
+   "https://www.worldbank.org/ext/en/what-we-do/regional-economic-updates": "descartar"
+  },
+  "firma": "div.carousel.carousel-with-button > div"
  }
 }
