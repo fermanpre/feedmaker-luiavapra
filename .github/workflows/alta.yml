@@ -1,6 +1,14 @@
 name: Alta de una web
 
 on:
+  # Desde la página, con un token: lanza el workflow indicando la URL.
+  workflow_dispatch:
+    inputs:
+      url:
+        description: URL de la web que se quiere dar de alta
+        required: true
+        type: string
+  # Alternativa sin token: una incidencia con el título «alta: <url>».
   issues:
     types: [opened]
 
@@ -15,14 +23,17 @@ concurrency:
 
 jobs:
   alta:
-    # Solo el propietario del repositorio puede dar de alta webs: cualquiera puede abrir incidencias
-    # en un repositorio público, y el alta consume llamadas a la API de pago.
+    # Lanzar el workflow a mano exige permisos de escritura en el repositorio, así que ya está restringido.
+    # Con incidencias, cualquiera puede abrirlas en un repositorio público: solo cuentan las del propietario,
+    # porque cada alta consume llamadas a la API de pago.
     if: >-
-      github.event.issue.user.login == github.repository_owner &&
-      startsWith(github.event.issue.title, 'alta:')
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.user.login == github.repository_owner &&
+       startsWith(github.event.issue.title, 'alta:'))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      URL_ALTA: ${{ inputs.url }}
       ISSUE_TITLE: ${{ github.event.issue.title }}
       ISSUE_NUMBER: ${{ github.event.issue.number }}
     steps:
@@ -37,6 +48,14 @@ jobs:
       - name: Registrar la web
         id: registro
         run: python alta.py registrar feeds.json
+
+      - name: Fallar si la URL no es válida
+        if: steps.registro.outputs.valida != 'true' && github.event_name == 'workflow_dispatch'
+        env:
+          MOTIVO: ${{ steps.registro.outputs.motivo }}
+        run: |
+          echo "No se ha dado de alta: $MOTIVO"
+          exit 1
 
       - name: Generar feeds
         if: steps.registro.outputs.valida == 'true'
@@ -56,6 +75,7 @@ jobs:
           git push
 
       - name: Responder en la incidencia
+        if: github.event_name == 'issues'
         env:
           WEB_ID: ${{ steps.registro.outputs.id }}
           MOTIVO: ${{ steps.registro.outputs.motivo }}

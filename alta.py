@@ -47,8 +47,9 @@ def escribir_salida(**valores):
 
 
 def registrar(ruta_feeds):
-    url = extraer_url(os.environ.get("ISSUE_TITLE", ""))
-    motivo = "el título debe ser «alta: <url>»" if not url else extractor.validar_url(url)
+    # La URL llega por el parámetro del workflow (URL_ALTA) o por el título de una incidencia.
+    url = os.environ.get("URL_ALTA", "").strip() or extraer_url(os.environ.get("ISSUE_TITLE", ""))
+    motivo = "no se ha recibido ninguna URL (el título debe ser «alta: <url>»)" if not url else extractor.validar_url(url)
     if motivo:
         escribir_salida(valida="false", motivo=motivo.replace("\n", " "), id="")
         return

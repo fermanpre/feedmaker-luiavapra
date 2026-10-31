@@ -42,6 +42,8 @@
   ul.lista li { padding: 12px 0; border-top: 1px solid var(--borde); }
   ul.lista li:first-child { border-top: 0; }
   .meta { color: var(--suave); font-size: .85rem; }
+  details.tarjeta summary { cursor: pointer; font-weight: 600; }
+  #formulario-token { margin-top: 8px; }
   #mensaje { min-height: 1.5em; margin-top: 12px; color: var(--suave); }
   footer { margin-top: 32px; color: var(--suave); font-size: .85rem; }
 </style>
@@ -57,6 +59,19 @@
   </form>
   <div id="mensaje" role="status" aria-live="polite"></div>
   <div id="resultado"></div>
+
+  <details class="tarjeta" id="conexion">
+    <summary>Conexión con GitHub (opcional)</summary>
+    <p class="meta">Con un token, el botón lanza el workflow directamente. Sin token, se abre una incidencia en GitHub
+      y hay que enviarla. El token se guarda solo en este navegador. Crea uno de acceso limitado a este repositorio,
+      con permiso de Actions: lectura y escritura.</p>
+    <form id="formulario-token">
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
+      <button type="submit" class="secundario">Guardar token</button>
+      <button type="button" id="quitar-token" class="secundario">Quitar token</button>
+    </form>
+    <div id="estado-token" class="meta"></div>
+  </details>
 
   <div class="tarjeta">
     <h2>Mis feeds</h2>
@@ -183,11 +198,93 @@
     }, 10000);
   }
 
+  // --- Token de GitHub: solo en el almacenamiento local de este navegador.
+  var CLAVE_TOKEN = "feedmaker_token";
+  var campoToken = document.getElementById("token");
+  var estadoToken = document.getElementById("estado-token");
+
+  function leerToken() {
+    try { return localStorage.getItem(CLAVE_TOKEN) || ""; } catch (error) { return ""; }
+  }
+
+  function pintarEstadoToken() {
+    estadoToken.textContent = leerToken() ? "Token guardado en este navegador." : "Sin token: se usará la incidencia.";
+  }
+
+  document.getElementById("formulario-token").addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    var token = campoToken.value.trim();
+    if (!token) { return; }
+    try { localStorage.setItem(CLAVE_TOKEN, token); } catch (error) {
+      estadoToken.textContent = "Este navegador no permite guardar el token.";
+      return;
+    }
+    campoToken.value = "";
+    pintarEstadoToken();
+  });
+
+  document.getElementById("quitar-token").addEventListener("click", function () {
+    try { localStorage.removeItem(CLAVE_TOKEN); } catch (error) { /* sin almacenamiento: nada que quitar */ }
+    pintarEstadoToken();
+  });
+
+  // --- Lanzamiento del alta: una sola función, para poder cambiar el mecanismo sin tocar el resto.
+  // Devuelve una promesa con { ok: boolean, mensaje: string }.
+  function lanzarAlta(url) {
+    var token = leerToken();
+    if (!token) { return lanzarAltaPorIncidencia(url); }
+    return fetch("https://api.github.com/repos/" + propietario + "/" + repositorio +
+                 "/actions/workflows/alta.yml/dispatches", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + token,
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ ref: "main", inputs: { url: url } })
+    }).then(function (respuesta) {
+      if (respuesta.status === 204) {
+        return { ok: true, mensaje: "Workflow lanzado. El enlace de Feedly aparecerá aquí en uno o dos minutos." };
+      }
+      var causas = {
+        401: "GitHub no acepta el token (¿caducado o mal copiado?).",
+        403: "El token no tiene permiso para lanzar workflows (necesita Actions: lectura y escritura).",
+        404: "GitHub no encuentra el repositorio o el workflow (¿el token es de este repositorio?).",
+        422: "GitHub rechaza la petición (¿existe alta.yml en la rama main?)."
+      };
+      return { ok: false, mensaje: causas[respuesta.status] || ("GitHub respondió con el código " + respuesta.status + ".") };
+    }).catch(function () {
+      return { ok: false, mensaje: "No se ha podido contactar con GitHub." };
+    });
+  }
+
+  function lanzarAltaPorIncidencia(url) {
+    var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
+      "?title=" + encodeURIComponent("alta: " + url) +
+      "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título.");
+    window.open(enlaceIncidencia, "_blank", "noopener");
+    return Promise.resolve({
+      ok: true,
+      mensaje: "Se ha abierto GitHub en otra pestaña: pulsa «Submit new issue». " +
+               "El enlace de Feedly aparecerá aquí en uno o dos minutos."
+    });
+  }
+
+  // Misma comprobación básica que el servidor: https, nombre de host con punto, sin IP ni puerto.
+  function urlValida(texto) {
+    var direccion;
+    try { direccion = new URL(texto); } catch (error) { return false; }
+    return direccion.protocol === "https:" && direccion.hostname.indexOf(".") > 0 &&
+           !/^[\d.]+$/.test(direccion.hostname) && direccion.hostname.indexOf(":") < 0 &&
+           direccion.port === "" && !direccion.username && !direccion.password;
+  }
+
   document.getElementById("formulario").addEventListener("submit", function (evento) {
     evento.preventDefault();
     var url = campoUrl.value.trim();
-    if (url.indexOf("https://") !== 0) {
-      mensaje.textContent = "La URL debe empezar por https://";
+    if (!urlValida(url)) {
+      mensaje.textContent = "La URL debe empezar por https:// y ser una dirección web normal (sin IP ni puerto).";
       return;
     }
     resultado.textContent = "";
@@ -198,15 +295,14 @@
         mostrarResultado(existente);
         return;
       }
-      var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
-        "?title=" + encodeURIComponent("alta: " + url) +
-        "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título.");
-      window.open(enlaceIncidencia, "_blank", "noopener");
-      mensaje.textContent = "Se ha abierto GitHub en otra pestaña: pulsa «Submit new issue». " +
-                            "El enlace de Feedly aparecerá aquí en uno o dos minutos.";
-      esperarResultado(url);
+      lanzarAlta(url).then(function (resultadoDelAlta) {
+        mensaje.textContent = resultadoDelAlta.mensaje;
+        if (resultadoDelAlta.ok) { esperarResultado(url); }
+      });
     });
   });
+
+  pintarEstadoToken();
 
   cargarEstado().then(pintarLista);
 })();
