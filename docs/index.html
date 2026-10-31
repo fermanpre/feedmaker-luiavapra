@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedmaker</title>
+<style>
+  :root {
+    --fondo: #f7f7f5; --tarjeta: #ffffff; --texto: #1c1c1a; --suave: #6b6b66; --borde: #dcdcd6;
+    --acento: #1f6feb; --acento-texto: #ffffff; --ok: #1a7f37; --aviso: #9a6700; --error: #cf222e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fondo: #161614; --tarjeta: #1f1f1c; --texto: #ecece8; --suave: #a1a19a; --borde: #3a3a35;
+      --acento: #4c8dff; --acento-texto: #0b0b0a; --ok: #3fb950; --aviso: #d29922; --error: #ff7b72;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fondo: #161614; --tarjeta: #1f1f1c; --texto: #ecece8; --suave: #a1a19a; --borde: #3a3a35;
+    --acento: #4c8dff; --acento-texto: #0b0b0a; --ok: #3fb950; --aviso: #d29922; --error: #ff7b72;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--texto);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  p.sub { margin: 0 0 24px; color: var(--suave); }
+  form { display: flex; gap: 8px; flex-wrap: wrap; }
+  input[type=url] { flex: 1 1 280px; min-width: 0; padding: 12px; font: inherit; color: var(--texto);
+                    background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 8px; }
+  button, a.boton { padding: 12px 16px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
+                    background: var(--acento); color: var(--acento-texto); border: 0; border-radius: 8px;
+                    display: inline-block; }
+  button.secundario { background: transparent; color: var(--texto); border: 1px solid var(--borde); font-weight: 500; }
+  .tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px;
+             padding: 16px; margin-top: 16px; }
+  .tarjeta h2 { font-size: 1rem; margin: 0 0 8px; }
+  .estado-ok { color: var(--ok); } .estado-aviso { color: var(--aviso); } .estado-error { color: var(--error); }
+  code { word-break: break-all; font-size: .9rem; }
+  .acciones { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  ul.lista { list-style: none; padding: 0; margin: 0; }
+  ul.lista li { padding: 12px 0; border-top: 1px solid var(--borde); }
+  ul.lista li:first-child { border-top: 0; }
+  .meta { color: var(--suave); font-size: .85rem; }
+  #mensaje { min-height: 1.5em; margin-top: 12px; color: var(--suave); }
+  footer { margin-top: 32px; color: var(--suave); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Feedmaker</h1>
+  <p class="sub">Pega la URL de una web y consigue el enlace para añadirla a Feedly.</p>
+
+  <form id="formulario">
+    <input id="url" type="url" required placeholder="https://ejemplo.com/blog/" autocomplete="off">
+    <button type="submit">Obtener enlace</button>
+  </form>
+  <div id="mensaje" role="status" aria-live="polite"></div>
+  <div id="resultado"></div>
+
+  <div class="tarjeta">
+    <h2>Mis feeds</h2>
+    <ul class="lista" id="lista"><li class="meta">Cargando…</li></ul>
+  </div>
+
+  <footer>
+    Feed no oficial, solo para uso personal. Los contenidos son de sus autores.
+    El enlace de Feedly usa el formato habitual de suscripción por URL; si Feedly no lo reconoce,
+    copia la URL del feed y pégala en «Add content».
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var propietario = location.hostname.split(".")[0];
+  var repositorio = location.pathname.split("/")[1] || "feedmaker";
+  var base = location.origin + "/" + repositorio + "/";
+  var reintentos = null;
+
+  var campoUrl = document.getElementById("url");
+  var mensaje = document.getElementById("mensaje");
+  var resultado = document.getElementById("resultado");
+  var lista = document.getElementById("lista");
+
+  function enlaceFeedly(urlDelFeed) {
+    return "https://feedly.com/i/subscription/feed/" + encodeURIComponent(urlDelFeed);
+  }
+
+  function crearElemento(etiqueta, texto, clase) {
+    var elemento = document.createElement(etiqueta);
+    if (texto) { elemento.textContent = texto; }
+    if (clase) { elemento.className = clase; }
+    return elemento;
+  }
+
+  function urlDelFeedDe(sitio) {
+    if (sitio.estado === "ok") { return base + "feeds/" + sitio.id + ".xml"; }
+    if (sitio.estado === "feed_propio") { return sitio.feed_propio; }
+    return "";
+  }
+
+  function botonCopiar(texto) {
+    var boton = crearElemento("button", "Copiar URL del feed", "secundario");
+    boton.type = "button";
+    boton.addEventListener("click", function () {
+      navigator.clipboard.writeText(texto).then(function () { boton.textContent = "Copiada"; },
+                                                function () { boton.textContent = "No se pudo copiar"; });
+    });
+    return boton;
+  }
+
+  function pintarSitio(sitio, contenedor) {
+    var urlFeed = urlDelFeedDe(sitio);
+    var titulo = crearElemento("div", sitio.nombre);
+    titulo.style.fontWeight = "600";
+    contenedor.appendChild(titulo);
+    var texto = { ok: "Feed generado (" + sitio.entradas + " entradas)",
+                  feed_propio: "La web ya tiene feed propio" }[sitio.estado] || ("No se ha podido: " + sitio.detalle);
+    var clase = sitio.estado === "ok" ? "estado-ok" : (sitio.estado === "feed_propio" ? "estado-aviso" : "estado-error");
+    contenedor.appendChild(crearElemento("div", texto, "meta " + clase));
+    if (urlFeed) {
+      contenedor.appendChild(crearElemento("code", urlFeed));
+      var acciones = crearElemento("div", "", "acciones");
+      var enlace = crearElemento("a", "Añadir a Feedly", "boton");
+      enlace.href = enlaceFeedly(urlFeed);
+      enlace.target = "_blank";
+      enlace.rel = "noopener";
+      acciones.appendChild(enlace);
+      acciones.appendChild(botonCopiar(urlFeed));
+      contenedor.appendChild(acciones);
+    }
+  }
+
+  function cargarEstado() {
+    return fetch("estado.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (respuesta) { return respuesta.ok ? respuesta.json() : { sitios: [] }; })
+      .catch(function () { return { sitios: [] }; });
+  }
+
+  function pintarLista(estado) {
+    lista.textContent = "";
+    if (!estado.sitios.length) {
+      lista.appendChild(crearElemento("li", "Todavía no hay ninguna web.", "meta"));
+      return;
+    }
+    estado.sitios.forEach(function (sitio) {
+      var fila = document.createElement("li");
+      pintarSitio(sitio, fila);
+      lista.appendChild(fila);
+    });
+  }
+
+  function mostrarResultado(sitio) {
+    resultado.textContent = "";
+    var tarjeta = crearElemento("div", "", "tarjeta");
+    pintarSitio(sitio, tarjeta);
+    resultado.appendChild(tarjeta);
+  }
+
+  function buscarPorUrl(estado, url) {
+    return estado.sitios.filter(function (sitio) { return sitio.url === url; })[0];
+  }
+
+  function esperarResultado(url) {
+    var intentos = 0;
+    clearInterval(reintentos);
+    reintentos = setInterval(function () {
+      intentos += 1;
+      cargarEstado().then(function (estado) {
+        var sitio = buscarPorUrl(estado, url);
+        if (sitio) {
+          clearInterval(reintentos);
+          mensaje.textContent = "";
+          mostrarResultado(sitio);
+          pintarLista(estado);
+        } else if (intentos >= 30) {
+          clearInterval(reintentos);
+          mensaje.textContent = "No ha aparecido en 5 minutos. Comprueba que enviaste la incidencia en GitHub " +
+                                "y mira la pestaña Actions del repositorio.";
+        }
+      });
+    }, 10000);
+  }
+
+  document.getElementById("formulario").addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    var url = campoUrl.value.trim();
+    if (url.indexOf("https://") !== 0) {
+      mensaje.textContent = "La URL debe empezar por https://";
+      return;
+    }
+    resultado.textContent = "";
+    cargarEstado().then(function (estado) {
+      var existente = buscarPorUrl(estado, url);
+      if (existente) {
+        mensaje.textContent = "Esta web ya estaba dada de alta.";
+        mostrarResultado(existente);
+        return;
+      }
+      var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
+        "?title=" + encodeURIComponent("alta: " + url) +
+        "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título.");
+      window.open(enlaceIncidencia, "_blank", "noopener");
+      mensaje.textContent = "Se ha abierto GitHub en otra pestaña: pulsa «Submit new issue». " +
+                            "El enlace de Feedly aparecerá aquí en uno o dos minutos.";
+      esperarResultado(url);
+    });
+  });
+
+  cargarEstado().then(pintarLista);
+})();
+</script>
+</body>
+</html>
