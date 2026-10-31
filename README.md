@@ -22,6 +22,19 @@ Genera feeds RSS de webs que no los tienen, para leerlas en Feedly. Uso personal
 4. Settings → Pages → Deploy from a branch → rama `main`, carpeta `/docs`.
 5. Lanzar el workflow a mano desde la pestaña Actions y mirar `docs/estado.json`.
 
+## Página web: pegar una URL y obtener el enlace de Feedly
+
+La página `https://<usuario>.github.io/<repositorio>/` tiene un campo para la URL.
+Una página de GitHub Pages no puede escribir en el repositorio, así que el alta pasa por una incidencia:
+
+1. Pegas la URL y pulsas «Obtener enlace». Se abre GitHub con una incidencia ya rellenada (`alta: <url>`).
+2. Pulsas «Submit new issue».
+3. El workflow `alta.yml` añade la web a `feeds.json`, genera el feed, responde en la incidencia y la cierra.
+4. La página, que consulta `estado.json` cada 10 segundos, muestra el enlace para Feedly.
+
+Solo el propietario del repositorio puede dar de alta webs: cualquiera puede abrir incidencias en un
+repositorio público, y cada alta consume llamadas a la API de pago.
+
 ## Opciones por web en `feeds.json`
 
 | Campo | Efecto |

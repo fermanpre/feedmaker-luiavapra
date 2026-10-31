@@ -1,0 +1,69 @@
+name: Alta de una web
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+# Comparte grupo con «Actualizar feeds»: los dos escriben feeds.json y docs/.
+concurrency:
+  group: actualizar-feeds
+  cancel-in-progress: false
+
+jobs:
+  alta:
+    # Solo el propietario del repositorio puede dar de alta webs: cualquiera puede abrir incidencias
+    # en un repositorio público, y el alta consume llamadas a la API de pago.
+    if: >-
+      github.event.issue.user.login == github.repository_owner &&
+      startsWith(github.event.issue.title, 'alta:')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE_TITLE: ${{ github.event.issue.title }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Registrar la web
+        id: registro
+        run: python alta.py registrar feeds.json
+
+      - name: Generar feeds
+        if: steps.registro.outputs.valida == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FEEDMAKER_MAX_LLAMADAS: "60"
+        run: python generar.py feeds.json
+
+      - name: Publicar cambios
+        if: steps.registro.outputs.valida == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feeds.json docs datos
+          git commit -m "Alta de una web" || echo "Sin cambios"
+          git pull --rebase origin main
+          git push
+
+      - name: Responder en la incidencia
+        env:
+          WEB_ID: ${{ steps.registro.outputs.id }}
+          MOTIVO: ${{ steps.registro.outputs.motivo }}
+        run: |
+          if [ "${{ steps.registro.outputs.valida }}" = "true" ]; then
+            python alta.py comentario "$WEB_ID" docs/estado.json > comentario.md
+          else
+            printf 'No se ha dado de alta: %s\n' "$MOTIVO" > comentario.md
+          fi
+          gh issue comment "$ISSUE_NUMBER" --body-file comentario.md
+          gh issue close "$ISSUE_NUMBER"
