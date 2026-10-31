@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>www.anthropic.com/news</title>
+<link>https://www.anthropic.com/news</link>
+<description>Feed no oficial generado por Feedmaker a partir de https://www.anthropic.com/news</description>
+<lastBuildDate>Sat, 31 Oct 2026 22:14:06 +0000</lastBuildDate>
+<item>
+<title>AI for Science expands to foundations and research institutions</title>
+<link>https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions</guid>
+<pubDate>Wed, 28 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re highlighting 20 scientific foundations, institutions, and research groups around the world that we’ve partnered with in an expansion of our AI for Science program.</description>
+</item>
+<item>
+<title>Early progress on accelerating drug development with Claude</title>
+<link>https://www.anthropic.com/research/early-progress-drug-development</link>
+<guid isPermaLink="true">https://www.anthropic.com/research/early-progress-drug-development</guid>
+<pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
+<description>We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines.</description>
+</item>
+<item>
+<title>Expanding our partnership with GSA to bring Claude to all levels of government</title>
+<link>https://www.anthropic.com/news/expanding-partnership-gsa</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/expanding-partnership-gsa</guid>
+<pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
+<description>We are expanding our partnership with the General Services Administration (GSA) through a new agreement that gives government partners a 40% discount on Claude Enterprise, Claude for Government, and the Claude API.</description>
+</item>
+<item>
+<title>Anthropic files S-1 with the SEC for proposed initial public offering</title>
+<link>https://www.anthropic.com/news/s1-sec</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/s1-sec</guid>
+<pubDate>Mon, 26 Oct 2026 12:00:00 +0000</pubDate>
+<description>Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.</description>
+</item>
+<item>
+<title>Donating Agent Skills to the Agentic AI Foundation</title>
+<link>https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation</guid>
+<pubDate>Thu, 22 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re donating Agent Skills, the open standard that gives AI agents specialized knowledge and workflows, to the Agentic AI Foundation. More than 70 agent platforms, including ChatGPT, Cursor, GitHub Copilot, and VS Code, have integrated Agent Skills since we published the standard in December 2025.</description>
+</item>
+<item>
+<title>Open call for guest investigators in the life sciences</title>
+<link>https://www.anthropic.com/news/open-call-guest-investigators-life-sciences</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/open-call-guest-investigators-life-sciences</guid>
+<pubDate>Thu, 22 Oct 2026 12:00:00 +0000</pubDate>
+<description>Today, we’re inviting members of the life sciences community to apply to work with us on special projects.</description>
+</item>
+<item>
+<title>Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust</title>
+<link>https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust</guid>
+<pubDate>Wed, 21 Oct 2026 12:00:00 +0000</pubDate>
+<description>Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic’s Long-Term Benefit Trust. He brings to the Trust decades of scientific expertise across observational cosmology and precision measurement.</description>
+</item>
+<item>
+<title>Investing in the public benefit</title>
+<link>https://www.anthropic.com/news/public-benefit-fund</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/public-benefit-fund</guid>
+<pubDate>Sun, 18 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.</description>
+</item>
+<item>
+<title>An update on independent evaluators</title>
+<link>https://www.anthropic.com/news/an-update-on-independent-evaluators</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/an-update-on-independent-evaluators</guid>
+<pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+<description>To evaluate the safety of our systems, Anthropic is giving employee-like access to a team from METR, a nonprofit that evaluates frontier AI models, and we're in early discussions with several other organizations, including Hugging Face.</description>
+</item>
+<item>
+<title>Preparing for the 2026 US midterms</title>
+<link>https://www.anthropic.com/news/2026-us-midterms</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/2026-us-midterms</guid>
+<pubDate>Wed, 14 Oct 2026 12:00:00 +0000</pubDate>
+<description>Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.</description>
+</item>
+<item>
+<title>Anthropic opens Singapore office and signs MOU with the Government of Singapore</title>
+<link>https://www.anthropic.com/news/singapore-office-opening</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/singapore-office-opening</guid>
+<pubDate>Wed, 14 Oct 2026 12:00:00 +0000</pubDate>
+<description>Anthropic has opened an office in Singapore and signed an MOU with the country’s government to advance safe, responsible AI adoption.</description>
+</item>
+<item>
+<title>Strengthening our defenses against distillation attacks</title>
+<link>https://www.anthropic.com/news/distillation-defenses</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/distillation-defenses</guid>
+<pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+<description>Illicit distillation allows model developers to copy frontier AI capabilities without creating proportionally robust safeguards. Here, we describe how we’ve reduced the rate of distillation by more than 90%.</description>
+</item>
+<item>
+<title>Introducing the Anthropic Cyber Mission</title>
+<link>https://www.anthropic.com/news/anthropic-cyber-mission</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/anthropic-cyber-mission</guid>
+<pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.</description>
+</item>
+<item>
+<title>2026 Usage Policy update</title>
+<link>https://www.anthropic.com/news/2026-usage-policy-update</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/2026-usage-policy-update</guid>
+<pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.</description>
+</item>
+<item>
+<title>Building on our commitment to American scientific discovery</title>
+<link>https://www.anthropic.com/news/genesis-mission-commitment</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/genesis-mission-commitment</guid>
+<pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
+<description>Anthropic is committing $150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.</description>
+</item>
+<item>
+<title>Introducing Claude Haiku 5.5</title>
+<link>https://www.anthropic.com/claude-haiku-5-5</link>
+<guid isPermaLink="true">https://www.anthropic.com/claude-haiku-5-5</guid>
+<pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+<description>Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use.</description>
+</item>
+<item>
+<title>Expanding the Cyber Verification Program</title>
+<link>https://www.anthropic.com/news/cyber-verification-program</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/cyber-verification-program</guid>
+<pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re launching a new, expanded version of our Cyber Verification Program, which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.</description>
+</item>
+<item>
+<title>Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap</title>
+<link>https://www.anthropic.com/news/claude-frontier-academy</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/claude-frontier-academy</guid>
+<pubDate>Fri, 02 Oct 2026 12:00:00 +0000</pubDate>
+<description>Anthropic is investing $100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027, with cohorts from Accenture, Bain, CBA, Deloitte, McKinsey, Morgan Stanley and Novo Nordisk already underway.</description>
+</item>
+<item>
+<title>Barclays scales Claude to upgrade operations and improve client experience</title>
+<link>https://www.anthropic.com/news/barclays-scales-claude</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/barclays-scales-claude</guid>
+<pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
+<description>Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.</description>
+</item>
+<item>
+<title>Introducing Claude Sonnet 5.5</title>
+<link>https://www.anthropic.com/claude-sonnet-5-5</link>
+<guid isPermaLink="true">https://www.anthropic.com/claude-sonnet-5-5</guid>
+<pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+<description>Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work.</description>
+</item>
+<item>
+<title>Introducing Claude Opus 5.5</title>
+<link>https://www.anthropic.com/claude-opus-5-5</link>
+<guid isPermaLink="true">https://www.anthropic.com/claude-opus-5-5</guid>
+<pubDate>Tue, 22 Sep 2026 12:00:00 +0000</pubDate>
+<description>Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads.</description>
+</item>
+<item>
+<title>The Situation Report</title>
+<link>https://www.anthropic.com/features/ebola-response</link>
+<guid isPermaLink="true">https://www.anthropic.com/features/ebola-response</guid>
+<pubDate>Mon, 21 Sep 2026 12:00:00 +0000</pubDate>
+<description>A rare Ebola strain is spreading in the DRC, with no confirmed vaccine. Global health organizations are using Claude to respond as fast as possible.</description>
+</item>
+<item>
+<title>Partnering with Accenture on embedded evaluation</title>
+<link>https://www.anthropic.com/news/accenture-embedded-evaluation</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/accenture-embedded-evaluation</guid>
+<pubDate>Fri, 18 Sep 2026 12:00:00 +0000</pubDate>
+<description>We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in this area over the next five years.</description>
+</item>
+<item>
+<title>Introducing the Life Sciences Verification Program</title>
+<link>https://www.anthropic.com/news/life-sciences-verification-program</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/life-sciences-verification-program</guid>
+<pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
+<description>The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work.</description>
+</item>
+</channel>
+</rss>

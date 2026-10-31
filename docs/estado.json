@@ -1,9 +1,9 @@
 {
- "generado": "2026-10-31T22:04:43+00:00",
+ "generado": "2026-10-31T22:14:06+00:00",
  "llamadas_ia": 2,
  "sitios": [
   {
-   "actualizado": "2026-10-31T22:04:11+00:00",
+   "actualizado": "2026-10-31T22:13:25+00:00",
    "detalle": "con IA",
    "entradas": 50,
    "estado": "ok",
@@ -14,7 +14,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-10-31T22:04:25+00:00",
+   "actualizado": "2026-10-31T22:13:38+00:00",
    "detalle": "con IA",
    "entradas": 9,
    "estado": "ok",
@@ -25,7 +25,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-10-31T22:04:33+00:00",
+   "actualizado": "2026-10-31T22:13:46+00:00",
    "detalle": "con IA",
    "entradas": 10,
    "estado": "ok",
@@ -33,6 +33,17 @@
    "id": "kubernetes-io-blog",
    "nombre": "kubernetes.io/blog",
    "url": "https://kubernetes.io/blog/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-10-31T22:13:55+00:00",
+   "detalle": "con IA",
+   "entradas": 24,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "anthropic-com-news",
+   "nombre": "www.anthropic.com/news",
+   "url": "https://www.anthropic.com/news",
    "user_agent": "feedmaker"
   }
  ]

@@ -13,5 +13,10 @@
     "id": "kubernetes-io-blog",
     "nombre": "kubernetes.io/blog",
     "url": "https://kubernetes.io/blog/"
+  },
+  {
+    "id": "anthropic-com-news",
+    "nombre": "www.anthropic.com/news",
+    "url": "https://www.anthropic.com/news"
   }
 ]
