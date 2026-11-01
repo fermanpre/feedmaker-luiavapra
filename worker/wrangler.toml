@@ -8,9 +8,8 @@ ORIGEN_PERMITIDO = "https://fermanpre.github.io"
 MAX_ALTAS_DIA = "30"
 MAX_FALLOS_HORA = "5"
 
-# Opcional, para limitar intentos fallidos y altas por día. Crea el espacio con:
+# Espacio KV para limitar intentos fallidos y altas por día. Creado con:
 #   npx wrangler kv namespace create LIMITES
-# y pega aquí el id que devuelva, quitando las almohadillas:
-# [[kv_namespaces]]
-# binding = "LIMITES"
-# id = "PEGA_AQUI_EL_ID"
+[[kv_namespaces]]
+binding = "LIMITES"
+id = "2cdf5812e63e4be2ab11fb752c6b3569"
