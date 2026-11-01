@@ -143,6 +143,17 @@
   },
   "firma": "section.entries > article.feed-entry"
  },
+ "stripe-com-blog": {
+  "enlaces": {
+   "https://stripe.com/blog/economics-of-ai-monetization": "ok",
+   "https://stripe.com/blog/helping-personal-agents-shop-more-intelligently-and-reliably-with-link": "ok",
+   "https://stripe.com/blog/new-ways-for-fintechs-to-move-money-and-expand-globally": "ok",
+   "https://stripe.com/blog/ousd-now-live-on-stripe": "ok",
+   "https://stripe.com/blog/real-time-stripe-data-postgres": "ok",
+   "https://stripe.com/blog/where-pricing-is-headed": "ok"
+  },
+  "firma": "div.BlogIndexGridSection__layout > article.BlogIndexPost.BlogIndexPost--hasFigure"
+ },
  "worldbank-org-en-news": {
   "enlaces": {
    "https://www.worldbank.org/en/news/all?displayconttype_exact=Press+Release&lang_exact=English&qterm=": "descartar",

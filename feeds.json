@@ -30,5 +30,11 @@
     "nombre": "www.ine.es",
     "url": "https://www.ine.es/",
     "texto_completo": true
+  },
+  {
+    "id": "stripe-com-blog",
+    "nombre": "stripe.com/blog",
+    "url": "https://stripe.com/blog",
+    "texto_completo": true
   }
 ]
