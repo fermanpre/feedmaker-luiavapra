@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-01T00:17:48+00:00",
- "llamadas_ia": 0,
+ "generado": "2026-11-01T09:02:12+00:00",
+ "llamadas_ia": 2,
  "sitios": [
   {
-   "actualizado": "2026-11-01T00:16:53+00:00",
+   "actualizado": "2026-11-01T09:01:09+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-01T00:17:07+00:00",
+   "actualizado": "2026-11-01T09:01:23+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T00:17:15+00:00",
+   "actualizado": "2026-11-01T09:01:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T00:17:24+00:00",
+   "actualizado": "2026-11-01T09:01:40+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T00:17:34+00:00",
+   "actualizado": "2026-11-01T09:01:49+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -60,6 +60,18 @@
    "id": "worldbank-org-en-news",
    "nombre": "www.worldbank.org/en/news",
    "url": "https://www.worldbank.org/en/news",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-01T09:01:58+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 14,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "ine-es",
+   "nombre": "www.ine.es",
+   "url": "https://www.ine.es/",
    "user_agent": "feedmaker"
   }
  ]

@@ -95,6 +95,25 @@
   },
   "firma": "div.mt-4.pt-5 > div.animate__animated.animate__zoomIn"
  },
+ "ine-es": {
+  "enlaces": {
+   "https://www.ine.es/dyngs/CEL/index.htm?cid=1699": "ok",
+   "https://www.ine.es/dyngs/FYE/index.htm?cid=138": "ok",
+   "https://www.ine.es/dyngs/INE/index.htm?cid=1319": "ok",
+   "https://www.ine.es/dyngs/Podcast/episodio1.htm": "ok",
+   "https://www.ine.es/dyngs/Podcast/episodio2.htm": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=1": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=1259954904138": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=2": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=3": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=4": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=5": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=6": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=8": "ok",
+   "https://www.revistaindice.com/": "ok"
+  },
+  "firma": "div.carrouselComponent.d104c > article.contenEnlace"
+ },
  "kubernetes-io-blog": {
   "enlaces": {
    "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/": "ok",

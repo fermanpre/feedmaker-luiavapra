@@ -24,5 +24,10 @@
     "nombre": "www.worldbank.org/en/news",
     "url": "https://www.worldbank.org/en/news",
     "texto_completo": true
+  },
+  {
+    "id": "ine-es",
+    "nombre": "www.ine.es",
+    "url": "https://www.ine.es/"
   }
 ]
