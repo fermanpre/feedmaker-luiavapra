@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-01T20:13:35+00:00",
+ "generado": "2026-11-01T20:49:00+00:00",
  "llamadas_ia": 0,
  "sitios": [
   {
-   "actualizado": "2026-11-01T20:12:25+00:00",
+   "actualizado": "2026-11-01T20:47:49+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-01T20:12:38+00:00",
+   "actualizado": "2026-11-01T20:48:02+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:12:46+00:00",
+   "actualizado": "2026-11-01T20:48:10+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:12:55+00:00",
+   "actualizado": "2026-11-01T20:48:19+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:13:05+00:00",
+   "actualizado": "2026-11-01T20:48:29+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:13:14+00:00",
+   "actualizado": "2026-11-01T20:48:38+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:13:22+00:00",
+   "actualizado": "2026-11-01T20:48:46+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T20:13:32+00:00",
+   "actualizado": "2026-11-01T20:48:56+00:00",
    "detalle": "la web ya tiene feed: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -95,6 +95,17 @@
    "id": "share-google-j8rjlbcek9e8zppdm",
    "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
    "url": "https://share.google/j8rjlbcEk9E8ZpPdM",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-01T20:48:58+00:00",
+   "detalle": "la web ya tiene feed: suscríbete a ese",
+   "entradas": 0,
+   "estado": "feed_propio",
+   "feed_propio": "https://www.muchodeporte.com/feed",
+   "id": "share-google-uroemjvtz4ce2cv75",
+   "nombre": "share.google/uRoeMJVtZ4Ce2CV75",
+   "url": "https://share.google/uRoeMJVtZ4Ce2CV75",
    "user_agent": "feedmaker"
   }
  ]
