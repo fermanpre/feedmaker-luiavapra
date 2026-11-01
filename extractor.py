@@ -553,6 +553,75 @@ def descubrir_feed(html, url_pagina):
     return None, 0
 
 
+ENTRADAS_RECIENTES_A_COMPARAR = 10
+UMBRAL_FEED_DE_LA_PAGINA = 0.4
+
+
+def _enlace_comparable(url):
+    """Forma de una URL para compararla: sin esquema, sin «www.», sin barra final ni fragmento."""
+    partes = urllib.parse.urlsplit(url.strip())
+    host = partes.netloc.lower()
+    if host.startswith("www."):
+        host = host[4:]
+    return host + partes.path.rstrip("/")
+
+
+def _enlaces_de_las_entradas_del_feed(texto_del_feed):
+    """Enlaces de las entradas, en el orden del feed. Solo se miran los de dentro de cada <item> o <entry>:
+    el enlace del canal (la portada de la web) no es una noticia."""
+    bloques = re.findall(r"<(?:item|entry)[\s>].*?</(?:item|entry)>", texto_del_feed, re.IGNORECASE | re.DOTALL)
+    enlaces = []
+    for bloque in bloques:
+        coincidencia = (re.search(r"<link>\s*(https?://[^<\s]+)\s*</link>", bloque)
+                        or re.search(r"<link[^>]+href=[\"'](https?://[^\"']+)[\"']", bloque))
+        if coincidencia:
+            enlaces.append(_enlace_comparable(coincidencia.group(1)))
+    return list(dict.fromkeys(enlaces))
+
+
+def proporcion_del_feed_en_la_pagina(html, url_pagina, url_del_feed):
+    """Qué parte de las entradas más recientes del feed está enlazada en la página, de 0 a 1; None si no se sabe.
+
+    Un feed que corresponde a la página (portada con su feed, sección con el feed de la sección) da valores altos.
+    Un feed genérico del sitio enlazado desde una página más específica (p. ej. el feed de todo Deportes en la
+    página de un solo equipo) da valores bajos."""
+    if not permitido_por_robots(url_del_feed):
+        return None
+    respuesta = peticion(url_del_feed)
+    if not _parece_feed(respuesta):
+        return None
+    recientes = _enlaces_de_las_entradas_del_feed(respuesta.texto)[:ENTRADAS_RECIENTES_A_COMPARAR]
+    if not recientes:
+        return None
+    en_la_pagina = {
+        _enlace_comparable(urllib.parse.urljoin(url_pagina, enlace))
+        for enlace in re.findall(r"href=[\"']([^\"'#]+)", html)
+    }
+    return sum(1 for enlace in recientes if enlace in en_la_pagina) / len(recientes)
+
+
+def _ambito_de_la_pagina_aparece_en_el_feed(url_pagina, url_del_feed):
+    """True si la página es una portada (sin ruta) o el último tramo de su ruta aparece en la URL del feed.
+
+    /espana/ y /rss/2.0/espana/ comparten ámbito; /deportes/alfinaldelapalmera/ y /rss/2.0/deportes/ no."""
+    segmentos = [segmento for segmento in urllib.parse.urlsplit(url_pagina).path.split("/") if segmento]
+    if not segmentos:
+        return True
+    ultimo = re.sub(r"\.[a-z0-9]{2,5}$", "", segmentos[-1].lower())
+    return len(ultimo) >= 3 and ultimo in url_del_feed.lower()
+
+
+def feed_corresponde_a_la_pagina(html, url_pagina, url_del_feed):
+    """True si el feed descubierto sirve para esta página. Ante la duda (no se puede medir), True: se respeta el feed.
+
+    Sirve si comparte ámbito con la página (ruta) o si sus entradas recientes están enlazadas en ella. Un feed
+    genérico del sitio, enlazado desde la página de un solo tema, no cumple ninguna de las dos cosas."""
+    if _ambito_de_la_pagina_aparece_en_el_feed(url_pagina, url_del_feed):
+        return True
+    proporcion = proporcion_del_feed_en_la_pagina(html, url_pagina, url_del_feed)
+    return proporcion is None or proporcion >= UMBRAL_FEED_DE_LA_PAGINA
+
+
 # --------------------------------------------------------------------------- análisis completo
 
 def validar_url(url):

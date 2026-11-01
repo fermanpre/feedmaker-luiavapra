@@ -127,6 +127,17 @@ def completar_con_texto(entradas, articulos, descargas):
     return sum(1 for entrada in entradas if entrada["cuerpo"])
 
 
+FEED_GENERICO_SIN_ALTERNATIVA = ("el feed de la web es más general que esta página y no se ha podido generar uno "
+                                 "propio de la página: suscríbete a ese")
+
+
+def estado_con_feed_propio(estado, feed_propio, detalle):
+    estado["estado"] = "feed_propio"
+    estado["feed_propio"] = feed_propio
+    estado["detalle"] = detalle
+    return estado
+
+
 def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -157,20 +168,26 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
             return estado
 
         feed_propio, _ = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
-        if feed_propio and not sitio.get("forzar_tarjetas"):
-            estado["estado"] = "feed_propio"
-            estado["feed_propio"] = feed_propio
-            estado["detalle"] = "la web ya tiene feed: suscríbete a ese"
-            return estado
+        # Un feed enlazado desde la página no siempre es el de la página: el de toda la sección Deportes
+        # no sirve para la página de un solo equipo. En ese caso se intenta generar el feed de la página
+        # y, si no sale, se conserva el feed propio.
+        feed_generico = bool(feed_propio) and not extractor.feed_corresponde_a_la_pagina(
+            respuesta.texto, respuesta.url_final, feed_propio)
+        if feed_propio and not feed_generico and not sitio.get("forzar_tarjetas"):
+            return estado_con_feed_propio(estado, feed_propio, "la web ya tiene feed: suscríbete a ese")
 
         candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)
         if not candidatos:
+            if feed_generico:
+                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
             estado["detalle"] = "sin listado de artículos reconocible (¿página con JavaScript?)"
             return estado
 
         decisiones_del_sitio = decisiones.setdefault(sitio["id"], {})
         elegido, motivo = elegir_grupo(sitio, candidatos, decisiones_del_sitio, cliente, presupuesto)
         if elegido is None:
+            if feed_generico:
+                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
             estado["detalle"] = motivo
             return estado
         if cliente is not None:
@@ -179,6 +196,8 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         entradas = filtrar_entradas(sitio, elegido["entradas"][:MAXIMO_ENTRADAS], decisiones_del_sitio,
                                     cliente, presupuesto)
         if not entradas:
+            if feed_generico:
+                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
             estado["detalle"] = "tras filtrar no queda ninguna entrada"
             return estado
 

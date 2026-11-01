@@ -62,6 +62,13 @@ webs ajenas. Úsalo solo en las pocas webs que realmente lees.
 
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
 
+## Feed genérico enlazado desde una página específica
+
+Si la página enlaza un feed, se usa ese salvo que sea más general que la página (el feed de toda la sección
+Deportes enlazado desde la página de un solo equipo). Se considera general si la ruta de la página no aparece
+en la URL del feed y menos del 40 % de las 10 entradas más recientes del feed están enlazadas en la página.
+En ese caso se genera el feed de la página, y si no sale ninguno se conserva el feed propio.
+
 ## Límites conocidos
 
 - No funciona con páginas que construyen el listado con JavaScript.
