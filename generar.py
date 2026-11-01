@@ -167,12 +167,13 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
             estado["detalle"] = respuesta.error or f"HTTP {respuesta.estado}"
             return estado
 
-        feed_propio, _ = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
-        # Un feed enlazado desde la página no siempre es el de la página: el de toda la sección Deportes
-        # no sirve para la página de un solo equipo. En ese caso se intenta generar el feed de la página
-        # y, si no sale, se conserva el feed propio.
-        feed_generico = bool(feed_propio) and not extractor.feed_corresponde_a_la_pagina(
-            respuesta.texto, respuesta.url_final, feed_propio)
+        feed_propio, entradas_del_feed = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
+        # Un feed enlazado desde la página no siempre sirve: el de toda la sección Deportes no es el de la
+        # página de un solo equipo, y un feed sin entradas no sirve para nada. En esos casos se intenta
+        # generar el feed de la página y, si no sale, se conserva el feed propio.
+        feed_generico = bool(feed_propio) and (
+            entradas_del_feed == 0
+            or not extractor.feed_corresponde_a_la_pagina(respuesta.texto, respuesta.url_final, feed_propio))
         if feed_propio and not feed_generico and not sitio.get("forzar_tarjetas"):
             return estado_con_feed_propio(estado, feed_propio, "la web ya tiene feed: suscríbete a ese")
 
