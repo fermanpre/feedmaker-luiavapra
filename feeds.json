@@ -36,5 +36,11 @@
     "nombre": "stripe.com/blog",
     "url": "https://stripe.com/blog",
     "texto_completo": true
+  },
+  {
+    "id": "share-google-j8rjlbcek9e8zppdm",
+    "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
+    "url": "https://share.google/j8rjlbcEk9E8ZpPdM",
+    "texto_completo": true
   }
 ]
