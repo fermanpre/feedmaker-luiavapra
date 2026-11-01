@@ -44,6 +44,8 @@
   .meta { color: var(--suave); font-size: .85rem; }
   details.tarjeta summary { cursor: pointer; font-weight: 600; }
   #formulario-token { margin-top: 8px; }
+  label.opcion { display: block; margin-top: 12px; cursor: pointer; }
+  .opcion-nota { margin: 4px 0 0; }
   #mensaje { min-height: 1.5em; margin-top: 12px; color: var(--suave); }
   footer { margin-top: 32px; color: var(--suave); font-size: .85rem; }
 </style>
@@ -57,6 +59,12 @@
     <input id="url" type="url" required placeholder="https://ejemplo.com/blog/" autocomplete="off">
     <button type="submit">Obtener enlace</button>
   </form>
+  <label class="opcion">
+    <input id="texto-completo" type="checkbox">
+    Incluir el texto completo de los artículos
+  </label>
+  <p class="meta opcion-nota">Sin marcar, el feed lleva solo título, enlace y extracto. Marcada, el repositorio
+    público guarda una copia del texto de esa web: úsalo solo con las webs que realmente lees.</p>
   <div id="mensaje" role="status" aria-live="polite"></div>
   <div id="resultado"></div>
 
@@ -263,10 +271,10 @@
   // --- Lanzamiento del alta: una sola función, para poder cambiar el mecanismo sin tocar el resto.
   // Devuelve una promesa con { ok: boolean, mensaje: string }.
   // Orden de preferencia: servicio intermedio con contraseña, token de GitHub, incidencia.
-  function lanzarAlta(url) {
-    if (URL_SERVICIO && leerClave()) { return lanzarAltaPorServicio(url); }
+  function lanzarAlta(url, textoCompleto) {
+    if (URL_SERVICIO && leerClave()) { return lanzarAltaPorServicio(url, textoCompleto); }
     var token = leerToken();
-    if (!token) { return lanzarAltaPorIncidencia(url); }
+    if (!token) { return lanzarAltaPorIncidencia(url, textoCompleto); }
     return fetch("https://api.github.com/repos/" + propietario + "/" + repositorio +
                  "/actions/workflows/alta.yml/dispatches", {
       method: "POST",
@@ -276,7 +284,7 @@
         "X-GitHub-Api-Version": "2022-11-28",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ ref: "main", inputs: { url: url } })
+      body: JSON.stringify({ ref: "main", inputs: { url: url, texto_completo: textoCompleto ? "true" : "false" } })
     }).then(function (respuesta) {
       if (respuesta.status === 204) {
         return { ok: true, mensaje: "Workflow lanzado. El enlace de Feedly aparecerá aquí en uno o dos minutos." };
@@ -293,10 +301,11 @@
     });
   }
 
-  function lanzarAltaPorIncidencia(url) {
+  function lanzarAltaPorIncidencia(url, textoCompleto) {
     var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
       "?title=" + encodeURIComponent("alta: " + url) +
-      "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título.");
+      "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título." +
+        (textoCompleto ? "\n\ntexto_completo: true" : ""));
     window.open(enlaceIncidencia, "_blank", "noopener");
     return Promise.resolve({
       ok: true,
@@ -329,7 +338,7 @@
         mostrarResultado(existente);
         return;
       }
-      lanzarAlta(url).then(function (resultadoDelAlta) {
+      lanzarAlta(url, document.getElementById("texto-completo").checked).then(function (resultadoDelAlta) {
         mensaje.textContent = resultadoDelAlta.mensaje;
         if (resultadoDelAlta.ok) { esperarResultado(url); }
       });
@@ -373,11 +382,11 @@
     pintarEstadoClave();
   });
 
-  function lanzarAltaPorServicio(url) {
+  function lanzarAltaPorServicio(url, textoCompleto) {
     return fetch(URL_SERVICIO, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url, clave: leerClave() })
+      body: JSON.stringify({ url: url, clave: leerClave(), texto_completo: textoCompleto })
     }).then(function (respuesta) {
       return respuesta.json().then(function (datos) {
         if (respuesta.ok && datos.ok) {

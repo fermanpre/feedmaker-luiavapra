@@ -24,6 +24,15 @@ def extraer_url(titulo):
     return coincidencia.group(1) if coincidencia else ""
 
 
+def pide_texto_completo():
+    """True si el alta pide el texto completo: parámetro TEXTO_COMPLETO del workflow o línea «texto_completo: true»
+    en el cuerpo de la incidencia. Solo se acepta ese valor exacto; el resto de la entrada no se interpreta."""
+    if os.environ.get("TEXTO_COMPLETO", "").strip().lower() == "true":
+        return True
+    cuerpo = os.environ.get("ISSUE_BODY", "")
+    return re.search(r"^\s*texto_completo:\s*true\s*$", cuerpo, re.IGNORECASE | re.MULTILINE) is not None
+
+
 def normalizar_url(url):
     """Forma canónica para detectar duplicados: sin «www.», sin barra final, sin fragmento ni parámetros de seguimiento.
 
@@ -77,7 +86,10 @@ def registrar(ruta_feeds):
     if existente is None:
         identificador = crear_identificador(url, {sitio["id"] for sitio in sitios})
         partes = urllib.parse.urlsplit(url)
-        sitios.append({"id": identificador, "nombre": partes.netloc + partes.path.rstrip("/"), "url": url})
+        sitio_nuevo = {"id": identificador, "nombre": partes.netloc + partes.path.rstrip("/"), "url": url}
+        if pide_texto_completo():
+            sitio_nuevo["texto_completo"] = True
+        sitios.append(sitio_nuevo)
         with open(ruta_feeds, "w", encoding="utf-8", newline="\n") as fichero:
             json.dump(sitios, fichero, ensure_ascii=False, indent=2)
             fichero.write("\n")

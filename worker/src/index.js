@@ -73,7 +73,7 @@ async function sumarContador(env, clave, segundosDeVida) {
   await env.LIMITES.put(clave, String(actual + 1), { expirationTtl: segundosDeVida });
 }
 
-async function lanzarWorkflow(env, url) {
+async function lanzarWorkflow(env, url, textoCompleto) {
   const respuesta = await fetch(
     `https://api.github.com/repos/${env.REPO}/actions/workflows/alta.yml/dispatches`,
     {
@@ -85,7 +85,7 @@ async function lanzarWorkflow(env, url) {
         "User-Agent": "feedmaker-worker",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ref: "main", inputs: { url } }),
+      body: JSON.stringify({ ref: "main", inputs: { url, texto_completo: textoCompleto ? "true" : "false" } }),
     }
   );
   return respuesta.status;
@@ -132,7 +132,8 @@ export async function manejar(peticion, env) {
     return responder(env, 429, { ok: false, mensaje: "Se ha alcanzado el máximo de altas de hoy." });
   }
 
-  const estado = await lanzarWorkflow(env, datos.url);
+  // Solo el booleano true activa el texto completo; cualquier otro valor se trata como «no».
+  const estado = await lanzarWorkflow(env, datos.url, datos.texto_completo === true);
   if (estado !== 204) {
     // El detalle del error de GitHub no se devuelve a la página: podría revelar información del repositorio.
     return responder(env, 502, { ok: false, mensaje: `GitHub no ha aceptado el lanzamiento (código ${estado}).` });

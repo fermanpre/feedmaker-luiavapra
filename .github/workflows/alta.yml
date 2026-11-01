@@ -8,6 +8,11 @@ on:
         description: URL de la web que se quiere dar de alta
         required: true
         type: string
+      texto_completo:
+        description: «true» para incluir el texto completo de los artículos en el feed
+        required: false
+        default: "false"
+        type: string
   # Alternativa sin token: una incidencia con el título «alta: <url>».
   issues:
     types: [opened]
@@ -34,6 +39,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       URL_ALTA: ${{ inputs.url }}
+      TEXTO_COMPLETO: ${{ inputs.texto_completo }}
+      ISSUE_BODY: ${{ github.event.issue.body }}
       ISSUE_TITLE: ${{ github.event.issue.title }}
       ISSUE_NUMBER: ${{ github.event.issue.number }}
     steps:

@@ -42,6 +42,10 @@ Dos alternativas sin incidencia, con más comodidad:
 - **Servicio intermedio con contraseña** (para compartirlo): un Cloudflare Worker guarda el token y la página
   solo envía una contraseña. Ver `worker/README.md`.
 
+La casilla «Incluir el texto completo de los artículos» da de alta la web con `texto_completo: true`. Solo se aplica
+a webs nuevas: si la web ya existe, se cambia a mano en `feeds.json`. Con el servicio intermedio hay que desplegar
+de nuevo el Worker (`npx wrangler deploy`) para que reenvíe la opción.
+
 La página detecta una web ya dada de alta aunque la escribas con o sin `www`, con o sin barra final o con
 parámetros de seguimiento (`utm_…`).
 

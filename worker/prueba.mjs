@@ -60,6 +60,15 @@ comprobar("envía el token como Bearer", llamada.opciones.headers.Authorization 
 comprobar("envía la URL como input", JSON.parse(llamada.opciones.body).inputs.url === "https://www.ejemplo.com/blog/");
 comprobar("envía User-Agent (GitHub lo exige)", Boolean(llamada.opciones.headers["User-Agent"]));
 
+// Texto completo: solo el booleano true lo activa
+comprobar("por defecto envía texto_completo=false", JSON.parse(llamada.opciones.body).inputs.texto_completo === "false");
+llamadasGithub = [];
+await llamar(entorno(), { url: "https://www.ejemplo.com/", clave: "secreta", texto_completo: true });
+comprobar("texto_completo true se reenvía como «true»", JSON.parse(llamadasGithub[0].opciones.body).inputs.texto_completo === "true");
+llamadasGithub = [];
+await llamar(entorno(), { url: "https://www.ejemplo.com/", clave: "secreta", texto_completo: "true" });
+comprobar("la cadena «true» no cuenta: solo el booleano", JSON.parse(llamadasGithub[0].opciones.body).inputs.texto_completo === "false");
+
 // Seguridad
 llamadasGithub = [];
 r = await llamar(env, { url: "https://www.ejemplo.com/", clave: "mala" });
