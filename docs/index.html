@@ -61,16 +61,18 @@
   <div id="resultado"></div>
 
   <details class="tarjeta" id="conexion">
-    <summary>Conexión con GitHub (opcional)</summary>
-    <p class="meta">Con un token, el botón lanza el workflow directamente. Sin token, se abre una incidencia en GitHub
-      y hay que enviarla. El token se guarda solo en este navegador. Crea uno de acceso limitado a este repositorio,
-      con permiso de Actions: lectura y escritura.</p>
-    <form id="formulario-token">
-      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
-      <button type="submit" class="secundario">Guardar token</button>
-      <button type="button" id="quitar-token" class="secundario">Quitar token</button>
-    </form>
-    <div id="estado-token" class="meta"></div>
+    <summary id="titulo-conexion">Conexión con GitHub (opcional)</summary>
+    <div id="bloque-token">
+      <p class="meta">Con un token, el botón lanza el workflow directamente. Sin token, se abre una incidencia en GitHub
+        y hay que enviarla. El token se guarda solo en este navegador. Crea uno de acceso limitado a este repositorio,
+        con permiso de Actions: lectura y escritura.</p>
+      <form id="formulario-token">
+        <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
+        <button type="submit" class="secundario">Guardar token</button>
+        <button type="button" id="quitar-token" class="secundario">Quitar token</button>
+      </form>
+      <div id="estado-token" class="meta"></div>
+    </div>
     <p class="meta" id="bloque-clave-texto" hidden>Si el propietario te ha dado una contraseña del servicio,
       pégala aquí: no necesitas token ni cuenta de GitHub.</p>
     <form id="formulario-clave" hidden>
@@ -347,6 +349,9 @@
     var hayServicio = Boolean(URL_SERVICIO);
     document.getElementById("formulario-clave").hidden = !hayServicio;
     document.getElementById("bloque-clave-texto").hidden = !hayServicio;
+    // Con servicio, la contraseña basta: el bloque del token sería ruido.
+    document.getElementById("bloque-token").hidden = hayServicio;
+    document.getElementById("titulo-conexion").textContent = hayServicio ? "Contraseña del servicio" : "Conexión con GitHub (opcional)";
     estadoClave.textContent = hayServicio ? (leerClave() ? "Contraseña guardada en este navegador." : "") : "";
   }
 
