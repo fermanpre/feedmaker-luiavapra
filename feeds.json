@@ -28,6 +28,7 @@
   {
     "id": "ine-es",
     "nombre": "www.ine.es",
-    "url": "https://www.ine.es/"
+    "url": "https://www.ine.es/",
+    "texto_completo": true
   }
 ]
