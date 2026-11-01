@@ -35,6 +35,16 @@ Una página de GitHub Pages no puede escribir en el repositorio, así que el alt
 Solo el propietario del repositorio puede dar de alta webs: cualquiera puede abrir incidencias en un
 repositorio público, y cada alta consume llamadas a la API de pago.
 
+Dos alternativas sin incidencia, con más comodidad:
+
+- **Token de GitHub** (solo para ti): en «Conexión con GitHub» de la página, pegas un token con permiso de
+  Actions y el botón lanza el workflow directamente.
+- **Servicio intermedio con contraseña** (para compartirlo): un Cloudflare Worker guarda el token y la página
+  solo envía una contraseña. Ver `worker/README.md`.
+
+La página detecta una web ya dada de alta aunque la escribas con o sin `www`, con o sin barra final o con
+parámetros de seguimiento (`utm_…`).
+
 ## Opciones por web en `feeds.json`
 
 | Campo | Efecto |

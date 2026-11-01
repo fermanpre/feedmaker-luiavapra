@@ -71,6 +71,14 @@
       <button type="button" id="quitar-token" class="secundario">Quitar token</button>
     </form>
     <div id="estado-token" class="meta"></div>
+    <p class="meta" id="bloque-clave-texto" hidden>Si el propietario te ha dado una contraseña del servicio,
+      pégala aquí: no necesitas token ni cuenta de GitHub.</p>
+    <form id="formulario-clave" hidden>
+      <input id="clave" type="password" autocomplete="off" placeholder="Contraseña del servicio">
+      <button type="submit" class="secundario">Guardar contraseña</button>
+      <button type="button" id="quitar-clave" class="secundario">Quitar contraseña</button>
+    </form>
+    <div id="estado-clave" class="meta"></div>
   </details>
 
   <div class="tarjeta">
@@ -92,6 +100,9 @@
   var repositorio = location.pathname.split("/")[1] || "feedmaker";
   var base = location.origin + "/" + repositorio + "/";
   var reintentos = null;
+  // Dirección del servicio intermedio (Cloudflare Worker), p. ej. "https://feedmaker.usuario.workers.dev/".
+  // Vacía = no hay servicio: la página usa el token o, si no, la incidencia de GitHub.
+  var URL_SERVICIO = "";
 
   var campoUrl = document.getElementById("url");
   var mensaje = document.getElementById("mensaje");
@@ -249,7 +260,9 @@
 
   // --- Lanzamiento del alta: una sola función, para poder cambiar el mecanismo sin tocar el resto.
   // Devuelve una promesa con { ok: boolean, mensaje: string }.
+  // Orden de preferencia: servicio intermedio con contraseña, token de GitHub, incidencia.
   function lanzarAlta(url) {
+    if (URL_SERVICIO && leerClave()) { return lanzarAltaPorServicio(url); }
     var token = leerToken();
     if (!token) { return lanzarAltaPorIncidencia(url); }
     return fetch("https://api.github.com/repos/" + propietario + "/" + repositorio +
@@ -321,7 +334,58 @@
     });
   });
 
+  // --- Contraseña del servicio intermedio: también solo en el almacenamiento local de este navegador.
+  var CLAVE_CONTRASENA = "feedmaker_clave";
+  var campoClave = document.getElementById("clave");
+  var estadoClave = document.getElementById("estado-clave");
+
+  function leerClave() {
+    try { return localStorage.getItem(CLAVE_CONTRASENA) || ""; } catch (error) { return ""; }
+  }
+
+  function pintarEstadoClave() {
+    var hayServicio = Boolean(URL_SERVICIO);
+    document.getElementById("formulario-clave").hidden = !hayServicio;
+    document.getElementById("bloque-clave-texto").hidden = !hayServicio;
+    estadoClave.textContent = hayServicio ? (leerClave() ? "Contraseña guardada en este navegador." : "") : "";
+  }
+
+  document.getElementById("formulario-clave").addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    var clave = campoClave.value;
+    if (!clave) { return; }
+    try { localStorage.setItem(CLAVE_CONTRASENA, clave); } catch (error) {
+      estadoClave.textContent = "Este navegador no permite guardar la contraseña.";
+      return;
+    }
+    campoClave.value = "";
+    pintarEstadoClave();
+  });
+
+  document.getElementById("quitar-clave").addEventListener("click", function () {
+    try { localStorage.removeItem(CLAVE_CONTRASENA); } catch (error) { /* nada que quitar */ }
+    pintarEstadoClave();
+  });
+
+  function lanzarAltaPorServicio(url) {
+    return fetch(URL_SERVICIO, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: url, clave: leerClave() })
+    }).then(function (respuesta) {
+      return respuesta.json().then(function (datos) {
+        if (respuesta.ok && datos.ok) {
+          return { ok: true, mensaje: "Alta enviada. El enlace de Feedly aparecerá aquí en uno o dos minutos." };
+        }
+        return { ok: false, mensaje: datos.mensaje || ("El servicio respondió con el código " + respuesta.status + ".") };
+      });
+    }).catch(function () {
+      return { ok: false, mensaje: "No se ha podido contactar con el servicio." };
+    });
+  }
+
   pintarEstadoToken();
+  pintarEstadoClave();
 
   cargarEstado().then(pintarLista);
 })();
