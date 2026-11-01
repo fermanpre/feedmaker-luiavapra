@@ -351,6 +351,7 @@
     document.getElementById("bloque-clave-texto").hidden = !hayServicio;
     // Con servicio, la contraseña basta: el bloque del token sería ruido.
     document.getElementById("bloque-token").hidden = hayServicio;
+    document.getElementById("conexion").open = hayServicio;
     document.getElementById("titulo-conexion").textContent = hayServicio ? "Contraseña del servicio" : "Conexión con GitHub (opcional)";
     estadoClave.textContent = hayServicio ? (leerClave() ? "Contraseña guardada en este navegador." : "") : "";
   }
