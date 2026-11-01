@@ -173,8 +173,27 @@
     resultado.appendChild(tarjeta);
   }
 
+  // Misma normalización que alta.py: sin «www.», sin barra final, sin fragmento ni parámetros de seguimiento.
+  function normalizarUrl(texto) {
+    var direccion;
+    try { direccion = new URL(texto); } catch (error) { return texto; }
+    var host = direccion.hostname.toLowerCase().replace(/^www\./, "");
+    var ruta = direccion.pathname.replace(/\/+$/, "");
+    var parametros = [];
+    direccion.searchParams.forEach(function (valor, clave) {
+      var minuscula = clave.toLowerCase();
+      if (minuscula.indexOf("utm_") !== 0 && ["fbclid", "gclid", "mc_cid", "mc_eid"].indexOf(minuscula) < 0) {
+        parametros.push([clave, valor]);
+      }
+    });
+    parametros.sort();
+    var consulta = parametros.map(function (par) { return encodeURIComponent(par[0]) + "=" + encodeURIComponent(par[1]); }).join("&");
+    return host + ruta + (consulta ? "?" + consulta : "");
+  }
+
   function buscarPorUrl(estado, url) {
-    return estado.sitios.filter(function (sitio) { return sitio.url === url; })[0];
+    var buscada = normalizarUrl(url);
+    return estado.sitios.filter(function (sitio) { return normalizarUrl(sitio.url) === buscada; })[0];
   }
 
   function esperarResultado(url) {

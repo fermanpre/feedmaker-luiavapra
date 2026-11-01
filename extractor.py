@@ -62,7 +62,7 @@ MESES = {
     "dic": 12, "diciembre": 12, "dec": 12, "december": 12,
 }
 NOMBRES_DE_MES = "|".join(sorted(MESES, key=len, reverse=True))
-PATRON_FECHA_ISO = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b")
+PATRON_FECHA_ISO = re.compile(r"(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)")  # admite «2026-10-16T23:06…»
 PATRON_FECHA_NUMERICA = re.compile(r"\b(\d{1,2})[/.](\d{1,2})[/.](\d{4})\b")
 PATRON_DIA_MES_ANIO = re.compile(
     rf"\b(\d{{1,2}})\s*(?:de\s+)?({NOMBRES_DE_MES})\.?,?\s*(?:de\s+)?(\d{{4}})\b", re.IGNORECASE

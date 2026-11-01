@@ -24,6 +24,23 @@ def extraer_url(titulo):
     return coincidencia.group(1) if coincidencia else ""
 
 
+def normalizar_url(url):
+    """Forma canónica para detectar duplicados: sin «www.», sin barra final, sin fragmento ni parámetros de seguimiento.
+
+    No sirve para descargar: la URL guardada en feeds.json es la que escribió el usuario."""
+    partes = urllib.parse.urlsplit(url.strip())
+    host = (partes.hostname or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    ruta = re.sub(r"/+$", "", partes.path) or ""
+    parametros = [
+        (clave, valor) for clave, valor in urllib.parse.parse_qsl(partes.query, keep_blank_values=True)
+        if not clave.lower().startswith("utm_") and clave.lower() not in {"fbclid", "gclid", "mc_cid", "mc_eid"}
+    ]
+    consulta = urllib.parse.urlencode(sorted(parametros))
+    return f"{host}{ruta}" + (f"?{consulta}" if consulta else "")
+
+
 def crear_identificador(url, identificadores_en_uso):
     partes = urllib.parse.urlsplit(url)
     texto = (partes.netloc + partes.path).lower()
@@ -56,7 +73,7 @@ def registrar(ruta_feeds):
 
     with open(ruta_feeds, encoding="utf-8") as fichero:
         sitios = json.load(fichero)
-    existente = next((sitio for sitio in sitios if sitio["url"] == url), None)
+    existente = next((sitio for sitio in sitios if normalizar_url(sitio["url"]) == normalizar_url(url)), None)
     if existente is None:
         identificador = crear_identificador(url, {sitio["id"] for sitio in sitios})
         partes = urllib.parse.urlsplit(url)

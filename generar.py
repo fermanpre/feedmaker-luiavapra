@@ -21,6 +21,7 @@ USER_AGENT_NAVEGADOR = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 CODIGOS_DE_BLOQUEO = (403, 406)
+VERSION_CACHE_ARTICULOS = 2  # súbela cuando cambie la extracción del cuerpo o de la fecha
 MAXIMO_ENTRADAS = 50
 MAXIMO_CANDIDATOS = 5
 TOPE_LLAMADAS_IA = int(os.environ.get("FEEDMAKER_MAX_LLAMADAS", "60"))
@@ -109,8 +110,8 @@ def completar_con_texto(entradas, articulos, descargas):
     """
     for entrada in entradas:
         enlace = entrada["enlace"]
-        # Las entradas de la caché antigua no tienen «fecha»: se vuelven a descargar una vez.
-        if ("fecha" not in articulos.get(enlace, {})) and descargas["hechas"] < descargas["tope"]:
+        # Las entradas de una versión anterior de la caché se vuelven a descargar una vez (VERSION_CACHE_ARTICULOS).
+        if articulos.get(enlace, {}).get("v") != VERSION_CACHE_ARTICULOS and descargas["hechas"] < descargas["tope"]:
             descargas["hechas"] += 1
             cuerpo = ""
             fecha = ""
@@ -119,7 +120,7 @@ def completar_con_texto(entradas, articulos, descargas):
                 if 200 <= respuesta.estado < 300:
                     cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
                     fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo)
-            articulos[enlace] = {"cuerpo": cuerpo, "fecha": fecha}
+            articulos[enlace] = {"cuerpo": cuerpo, "fecha": fecha, "v": VERSION_CACHE_ARTICULOS}
         entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
         if not entrada["fecha"] and articulos.get(enlace, {}).get("fecha"):
             entrada["fecha"] = extractor.interpretar_fecha(articulos[enlace]["fecha"])
