@@ -933,6 +933,10 @@ def fecha_del_articulo(html, cuerpo=""):
 
 
 MINIMO_CARACTERES_EXTRACTO = 30
+PATRON_CONTENEDOR_DE_ARTICULO = (
+    r'<(?:div|section|article)[^>]+class="[^"]*(?:long-text|entry-content|post-content|article-body|article__body|'
+    r'story-body|news-body|noticia-texto|texto-noticia|cuerpo-noticia|content-text)[^"]*"[^>]*>(.*?)</(?:div|section|article)>'
+)
 MAXIMO_CARACTERES_EXTRACTO = 400
 
 
@@ -950,6 +954,11 @@ def extracto_del_articulo(html_del_articulo, cuerpo=""):
                 return candidato[:MAXIMO_CARACTERES_EXTRACTO]
     for parrafo in re.findall(r"<p[^>]*>(.*?)</p>", cuerpo or "", re.IGNORECASE | re.DOTALL):
         candidato = _texto_sin_html(parrafo)
+        if len(candidato) >= 2 * MINIMO_CARACTERES_EXTRACTO:
+            return candidato[:MAXIMO_CARACTERES_EXTRACTO]
+    # Webs que escriben el artículo con <div> en vez de <p>: el primer bloque de un contenedor con nombre de contenido.
+    for coincidencia in re.finditer(PATRON_CONTENEDOR_DE_ARTICULO, html_del_articulo, re.IGNORECASE | re.DOTALL):
+        candidato = _texto_sin_html(coincidencia.group(1))
         if len(candidato) >= 2 * MINIMO_CARACTERES_EXTRACTO:
             return candidato[:MAXIMO_CARACTERES_EXTRACTO]
     return ""
