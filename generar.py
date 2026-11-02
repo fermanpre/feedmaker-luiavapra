@@ -112,6 +112,12 @@ def _fecha_de_registro(texto_iso):
     return fecha if fecha.tzinfo else fecha.replace(tzinfo=timezone.utc)
 
 
+def quiere_texto_completo(sitio):
+    """El texto completo es lo normal; se desactiva con `texto_completo: false`. Las webs `oculto` (ingredientes de un
+    combinado) no lo descargan por su cuenta: el combinado lo descarga solo de las entradas que pasan su filtro."""
+    return sitio.get("texto_completo", not sitio.get("oculto"))
+
+
 def entrada_desde_registro(enlace, registro, articulos, con_texto_completo):
     entrada = {"titulo": registro["titulo"], "enlace": enlace, "fecha": _fecha_de_registro(registro["fecha"]),
                "extracto": registro["extracto"]}
@@ -339,7 +345,10 @@ def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, des
               "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora}
     try:
         entradas, avisos = construir_combinado(combinado, sitios_por_id, historial, articulos)
-        completar_extractos(entradas, articulos, descargas)
+        if combinado.get("texto_completo", True):
+            completar_con_texto(entradas, articulos, descargas)
+        else:
+            completar_extractos(entradas, articulos, descargas)
         if len(avisos) == len(combinado["combina"]):
             estado["detalle"] = "ninguna de las webs tiene entradas: " + "; ".join(avisos)
             return estado
@@ -456,7 +465,7 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
                     return estado
 
         con_texto = 0
-        if sitio.get("texto_completo"):
+        if quiere_texto_completo(sitio):
             con_texto = completar_con_texto(entradas, articulos, descargas)
         else:
             completar_fechas(entradas, articulos, descargas, decisiones.setdefault(sitio["id"], {}))
@@ -474,7 +483,7 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
 
         entradas_del_feed = fusionar_con_historial(
             historial.setdefault(sitio["id"], {}), entradas, sitio.get("conservar_dias", CONSERVAR_DIAS_POR_DEFECTO),
-            datetime.now(timezone.utc), articulos, bool(sitio.get("texto_completo")))
+            datetime.now(timezone.utc), articulos, quiere_texto_completo(sitio))
         con_texto = sum(1 for entrada in entradas_del_feed if entrada.get("cuerpo"))
 
         ruta_feed = os.path.join(raiz, "docs", "feeds", sitio["id"] + ".xml")
@@ -505,7 +514,7 @@ def main():
     articulos = leer_json(ruta_articulos, {})
     ruta_historial = os.path.join(raiz, "datos", "historial.json")
     historial = leer_json(ruta_historial, {})
-    descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "30"))}
+    descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "60"))}
     estado_anterior = {entrada["id"]: entrada for entrada in leer_json(ruta_estado, {}).get("sitios", [])}
 
     cliente = ia.crear_cliente()

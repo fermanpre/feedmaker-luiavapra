@@ -60,11 +60,11 @@
     <button type="submit">Obtener enlace</button>
   </form>
   <label class="opcion">
-    <input id="texto-completo" type="checkbox">
+    <input id="texto-completo" type="checkbox" checked>
     Incluir el texto completo de los artículos
   </label>
-  <p class="meta opcion-nota">Sin marcar, el feed lleva solo título, enlace y extracto. Marcada, el repositorio
-    público guarda una copia del texto de esa web: úsalo solo con las webs que realmente lees.</p>
+  <p class="meta opcion-nota">Marcada, el feed lleva el texto de cada artículo, y el repositorio público guarda una
+    copia del texto de esa web. Sin marcar, solo título, enlace y extracto.</p>
   <div id="mensaje" role="status" aria-live="polite"></div>
   <div id="resultado"></div>
 
@@ -307,7 +307,7 @@
     var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
       "?title=" + encodeURIComponent("alta: " + url) +
       "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título." +
-        (textoCompleto ? "\n\ntexto_completo: true" : ""));
+        "\n\ntexto_completo: " + (textoCompleto ? "true" : "false"));
     window.open(enlaceIncidencia, "_blank", "noopener");
     return Promise.resolve({
       ok: true,

@@ -42,8 +42,8 @@ Dos alternativas sin incidencia, con más comodidad:
 - **Servicio intermedio con contraseña** (para compartirlo): un Cloudflare Worker guarda el token y la página
   solo envía una contraseña. Ver `worker/README.md`.
 
-La casilla «Incluir el texto completo de los artículos» da de alta la web con `texto_completo: true`. Solo se aplica
-a webs nuevas: si la web ya existe, se cambia a mano en `feeds.json`. Con el servicio intermedio hay que desplegar
+La casilla «Incluir el texto completo de los artículos» viene marcada; si se desmarca, la web se da de alta con
+`texto_completo: false`. Solo se aplica a webs nuevas: si la web ya existe, se cambia a mano en `feeds.json`. Con el servicio intermedio hay que desplegar
 de nuevo el Worker (`npx wrangler deploy`) para que reenvíe la opción.
 
 La página detecta una web ya dada de alta aunque la escribas con o sin `www`, con o sin barra final o con
@@ -55,7 +55,7 @@ parámetros de seguimiento (`utm_…`).
 |---|---|
 | `user_agent` | `"auto"` (por defecto): se identifica como `feedmaker` y, solo si la web responde 403 o 406, repite la petición presentándose como un navegador. `"honesto"`: nunca se presenta como navegador. `"navegador"`: siempre lo hace. `estado.json` anota cuál se usó en cada web. |
 | `forzar_tarjetas: true` | Genera el feed aunque la web ya tenga uno propio. |
-| `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 30 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
+| `texto_completo` | Por defecto `true`: descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto; `false` lo desactiva. En las webs `oculto` no se descarga por su cuenta: el combinado lo descarga de las entradas que pasan su filtro. Sin IA: es extracción por reglas. Se descargan como máximo 30 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
 | `conservar_dias` | Días que se conserva en el feed una entrada que la web ya no enseña (por defecto 180). Cuenta desde la última vez que se vio, no desde su fecha: lo que sigue listado no caduca. `0` = solo lo que enseña hoy la web. |
 | `leer_feed_propio: true` | Si la web tiene un feed que corresponde a la página, en vez de responder «ya tiene feed» se leen sus entradas, que traen fechas reales, y se guardan en el historial. Sirve para alimentar un combinado. |
 | `etiqueta` | Nombre corto que antepone a los títulos cuando la web forma parte de un combinado: «[ABC] …». Por defecto, el nombre de la web. |
@@ -63,8 +63,8 @@ parámetros de seguimiento (`utm_…`).
 | `modo_enlaces: true` | En vez de buscar un bloque de tarjetas, recoge todos los enlaces de la página que parecen artículos (de la misma web y con una dirección larga de 5 palabras o más). Saca la fecha de la propia dirección si lleva marca de tiempo. Para páginas con el listado repartido en bloques distintos, como la sección de ABC. Sin IA. Con `zona_horaria_de_las_urls` (p. ej. `Europe/Madrid`) esa marca se interpreta en la hora local de la web, no en UTC. |
 | `filtro_en_combinado` | Lista de palabras que sustituye, solo para esta web, al filtro del combinado. |
 
-**Aviso:** con `texto_completo`, el repositorio y los feeds, que son públicos, contienen copias del texto de
-webs ajenas. Úsalo solo en las pocas webs que realmente lees.
+**Aviso:** como el texto completo es lo normal, el repositorio y los feeds, que son públicos, contienen copias del
+texto de webs ajenas durante `conservar_dias` días. Para una web concreta, `texto_completo: false` lo evita.
 
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
 

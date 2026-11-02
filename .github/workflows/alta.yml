@@ -9,9 +9,9 @@ on:
         required: true
         type: string
       texto_completo:
-        description: «true» para incluir el texto completo de los artículos en el feed
+        description: «false» para que el feed lleve solo título, enlace y extracto (por defecto, texto completo)
         required: false
-        default: "false"
+        default: "true"
         type: string
   # Alternativa sin token: una incidencia con el título «alta: <url>».
   issues:

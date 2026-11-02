@@ -24,13 +24,16 @@ def extraer_url(titulo):
     return coincidencia.group(1) if coincidencia else ""
 
 
-def pide_texto_completo():
-    """True si el alta pide el texto completo: parámetro TEXTO_COMPLETO del workflow o línea «texto_completo: true»
-    en el cuerpo de la incidencia. Solo se acepta ese valor exacto; el resto de la entrada no se interpreta."""
-    if os.environ.get("TEXTO_COMPLETO", "").strip().lower() == "true":
-        return True
+def texto_completo_pedido():
+    """True o False si el alta lo dice expresamente (parámetro TEXTO_COMPLETO del workflow o línea «texto_completo: true»
+    / «texto_completo: false» en el cuerpo de la incidencia); None si no dice nada: entonces vale el valor por defecto
+    de generar.py (texto completo). Solo se aceptan esos valores exactos; el resto de la entrada no se interpreta."""
+    parametro = os.environ.get("TEXTO_COMPLETO", "").strip().lower()
+    if parametro in ("true", "false"):
+        return parametro == "true"
     cuerpo = os.environ.get("ISSUE_BODY", "")
-    return re.search(r"^\s*texto_completo:\s*true\s*$", cuerpo, re.IGNORECASE | re.MULTILINE) is not None
+    coincidencia = re.search(r"^\s*texto_completo:\s*(true|false)\s*$", cuerpo, re.IGNORECASE | re.MULTILINE)
+    return coincidencia.group(1).lower() == "true" if coincidencia else None
 
 
 def normalizar_url(url):
@@ -87,8 +90,9 @@ def registrar(ruta_feeds):
         identificador = crear_identificador(url, {sitio["id"] for sitio in sitios})
         partes = urllib.parse.urlsplit(url)
         sitio_nuevo = {"id": identificador, "nombre": partes.netloc + partes.path.rstrip("/"), "url": url}
-        if pide_texto_completo():
-            sitio_nuevo["texto_completo"] = True
+        pedido = texto_completo_pedido()
+        if pedido is not None:
+            sitio_nuevo["texto_completo"] = pedido
         sitios.append(sitio_nuevo)
         with open(ruta_feeds, "w", encoding="utf-8", newline="\n") as fichero:
             json.dump(sitios, fichero, ensure_ascii=False, indent=2)
