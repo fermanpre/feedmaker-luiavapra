@@ -151,5 +151,11 @@
       "caja87",
       "caja-87"
     ]
+  },
+  {
+    "id": "realbetisbalompie-es-noticias-actualidad",
+    "nombre": "www.realbetisbalompie.es/noticias/actualidad",
+    "url": "https://www.realbetisbalompie.es/noticias/actualidad/",
+    "texto_completo": true
   }
 ]
