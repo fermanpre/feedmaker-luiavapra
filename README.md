@@ -56,11 +56,20 @@ parámetros de seguimiento (`utm_…`).
 | `user_agent` | `"auto"` (por defecto): se identifica como `feedmaker` y, solo si la web responde 403 o 406, repite la petición presentándose como un navegador. `"honesto"`: nunca se presenta como navegador. `"navegador"`: siempre lo hace. `estado.json` anota cuál se usó en cada web. |
 | `forzar_tarjetas: true` | Genera el feed aunque la web ya tenga uno propio. |
 | `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 15 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
+| `conservar_dias` | Días que se conserva en el feed una entrada que la web ya no enseña (por defecto 180). Cuenta desde la última vez que se vio, no desde su fecha: lo que sigue listado no caduca. `0` = solo lo que enseña hoy la web. |
 
 **Aviso:** con `texto_completo`, el repositorio y los feeds, que son públicos, contienen copias del texto de
 webs ajenas. Úsalo solo en las pocas webs que realmente lees.
 
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
+
+## Historial de entradas
+
+Las webs solo enseñan sus últimas entradas, y las antiguas desaparecen de la página. Para que no desaparezcan del feed,
+`datos/historial.json` guarda por web el título, el enlace, la fecha y el extracto de cada entrada vista. El feed se construye
+con todas las del historial (máximo 300, las más recientes primero). Una entrada se borra cuando lleva más de
+`conservar_dias` días sin aparecer en la web. El historial empieza el día en que se activa: no recupera entradas anteriores.
+Con `texto_completo`, el texto de esas entradas sale de `datos/articulos.json`, que caduca con el historial.
 
 ## Feed genérico enlazado desde una página específica
 

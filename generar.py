@@ -12,7 +12,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, time, timezone
 
 import extractor
 import ia
@@ -23,6 +23,8 @@ USER_AGENT_NAVEGADOR = (
 CODIGOS_DE_BLOQUEO = (403, 406)
 VERSION_CACHE_ARTICULOS = 2  # súbela cuando cambie la extracción del cuerpo o de la fecha
 MAXIMO_ENTRADAS = 50
+CONSERVAR_DIAS_POR_DEFECTO = 180  # campo «conservar_dias» de cada web; 0 = solo lo que enseña hoy la web
+MAXIMO_ENTRADAS_EN_FEED = 300
 MAXIMO_CANDIDATOS = 5
 TOPE_LLAMADAS_IA = int(os.environ.get("FEEDMAKER_MAX_LLAMADAS", "60"))
 
@@ -102,6 +104,58 @@ def filtrar_entradas(sitio, entradas, decisiones_del_sitio, cliente, presupuesto
     return [entrada for entrada in entradas if por_enlace.get(entrada["enlace"]) != "descartar"]
 
 
+def _fecha_de_registro(texto_iso):
+    if not texto_iso:
+        return None
+    fecha = datetime.fromisoformat(texto_iso)
+    return fecha if fecha.tzinfo else fecha.replace(tzinfo=timezone.utc)
+
+
+def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, articulos, con_texto_completo):
+    """Mezcla lo que enseña hoy la web con lo que se vio en días anteriores y devuelve las entradas del feed.
+
+    `historial_del_sitio` es {enlace: {titulo, fecha, extracto, visto}} y se modifica en el sitio. Una entrada se
+    conserva mientras no lleve más de `dias` días sin aparecer en la web: lo que sigue listado no caduca nunca,
+    sea cual sea su fecha de publicación. El cuerpo de las entradas que ya no están en la web sale de la caché de
+    artículos, sin descargar nada; las que no están en la caché salen solo con el extracto.
+    """
+    hoy_dia = hoy.date()
+    actuales_por_enlace = {entrada["enlace"]: entrada for entrada in entradas_actuales}
+    for enlace, entrada in actuales_por_enlace.items():
+        historial_del_sitio[enlace] = {
+            "titulo": entrada["titulo"],
+            "fecha": entrada["fecha"].isoformat() if entrada["fecha"] else "",
+            "extracto": entrada["extracto"],
+            "visto": hoy_dia.isoformat(),
+        }
+    for enlace in list(historial_del_sitio):
+        dias_sin_verse = (hoy_dia - date.fromisoformat(historial_del_sitio[enlace]["visto"])).days
+        if dias_sin_verse > dias:
+            del historial_del_sitio[enlace]
+
+    fusionadas = []
+    for enlace, registro in historial_del_sitio.items():
+        if enlace in actuales_por_enlace:
+            entrada = actuales_por_enlace[enlace]
+        else:
+            entrada = {"titulo": registro["titulo"], "enlace": enlace, "fecha": _fecha_de_registro(registro["fecha"]),
+                       "extracto": registro["extracto"]}
+            if con_texto_completo:
+                entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
+        fusionadas.append(entrada)
+
+    def momento_de_orden(entrada):
+        if entrada["fecha"]:
+            return entrada["fecha"]
+        visto = date.fromisoformat(historial_del_sitio[entrada["enlace"]]["visto"])
+        return datetime.combine(visto, time.min, tzinfo=timezone.utc)
+
+    fusionadas.sort(key=momento_de_orden, reverse=True)
+    for sobrante in fusionadas[MAXIMO_ENTRADAS_EN_FEED:]:
+        del historial_del_sitio[sobrante["enlace"]]
+    return fusionadas[:MAXIMO_ENTRADAS_EN_FEED]
+
+
 def completar_con_texto(entradas, articulos, descargas):
     """Añade a cada entrada el cuerpo del artículo, descargando solo los que no están en caché.
 
@@ -138,7 +192,7 @@ def estado_con_feed_propio(estado, feed_propio, detalle):
     return estado
 
 
-def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas):
+def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": sitio["id"], "nombre": sitio["nombre"], "url": sitio["url"], "estado": "error",
@@ -206,10 +260,15 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         if sitio.get("texto_completo"):
             con_texto = completar_con_texto(entradas, articulos, descargas)
 
+        entradas_del_feed = fusionar_con_historial(
+            historial.setdefault(sitio["id"], {}), entradas, sitio.get("conservar_dias", CONSERVAR_DIAS_POR_DEFECTO),
+            datetime.now(timezone.utc), articulos, bool(sitio.get("texto_completo")))
+        con_texto = sum(1 for entrada in entradas_del_feed if entrada.get("cuerpo"))
+
         ruta_feed = os.path.join(raiz, "docs", "feeds", sitio["id"] + ".xml")
-        escribir_texto(ruta_feed, extractor.construir_rss(sitio["nombre"], respuesta.url_final, entradas))
+        escribir_texto(ruta_feed, extractor.construir_rss(sitio["nombre"], respuesta.url_final, entradas_del_feed))
         estado["estado"] = "ok"
-        estado["entradas"] = len(entradas)
+        estado["entradas"] = len(entradas_del_feed)
         estado["con_texto_completo"] = con_texto
         estado["detalle"] = "con IA" if cliente is not None else "sin IA (no hay clave de API)"
         return estado
@@ -230,6 +289,8 @@ def main():
     decisiones = leer_json(ruta_decisiones, {})
     ruta_articulos = os.path.join(raiz, "datos", "articulos.json")
     articulos = leer_json(ruta_articulos, {})
+    ruta_historial = os.path.join(raiz, "datos", "historial.json")
+    historial = leer_json(ruta_historial, {})
     descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "15"))}
     estado_anterior = {entrada["id"]: entrada for entrada in leer_json(ruta_estado, {}).get("sitios", [])}
 
@@ -239,7 +300,7 @@ def main():
 
     resultados = []
     for sitio in sitios:
-        estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas)
+        estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial)
         anterior = estado_anterior.get(sitio["id"])
         if estado["estado"] == "error" and anterior and anterior["estado"] == "ok":
             # El feed anterior sigue publicado: se conserva su número de entradas y se anota el fallo.
@@ -249,8 +310,11 @@ def main():
         print(f"- {sitio['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
     escribir_json(ruta_decisiones, decisiones)
+    escribir_json(ruta_historial, historial)
     if articulos:
-        escribir_json(ruta_articulos, articulos)
+        # La caché de artículos solo guarda lo que sigue en algún historial: así caduca junto con él.
+        enlaces_en_historial = {enlace for del_sitio in historial.values() for enlace in del_sitio}
+        escribir_json(ruta_articulos, {enlace: dato for enlace, dato in articulos.items() if enlace in enlaces_en_historial})
     escribir_json(ruta_estado, {
         "generado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "llamadas_ia": presupuesto.llamadas,
