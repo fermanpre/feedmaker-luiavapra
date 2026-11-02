@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-02T15:31:54+00:00",
- "llamadas_ia": 2,
+ "generado": "2026-11-02T15:35:14+00:00",
+ "llamadas_ia": 3,
  "sitios": [
   {
-   "actualizado": "2026-11-02T15:29:37+00:00",
+   "actualizado": "2026-11-02T15:32:56+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-02T15:29:50+00:00",
+   "actualizado": "2026-11-02T15:33:10+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:29:59+00:00",
+   "actualizado": "2026-11-02T15:33:18+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:30:08+00:00",
+   "actualizado": "2026-11-02T15:33:27+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:30:17+00:00",
+   "actualizado": "2026-11-02T15:33:37+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:30:31+00:00",
+   "actualizado": "2026-11-02T15:33:46+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:30:54+00:00",
+   "actualizado": "2026-11-02T15:33:55+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,21 +87,22 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:09+00:00",
-   "detalle": "la web ya tiene feed: suscríbete a ese",
-   "entradas": 0,
-   "estado": "feed_propio",
-   "feed_propio": "https://www.abc.es/rss/2.0/deportes/",
+   "actualizado": "2026-11-02T15:34:05+00:00",
+   "con_texto_completo": 10,
+   "detalle": "con IA",
+   "entradas": 10,
+   "estado": "ok",
+   "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
    "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
    "url": "https://share.google/j8rjlbcEk9E8ZpPdM",
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:12+00:00",
-   "con_texto_completo": 20,
+   "actualizado": "2026-11-02T15:34:16+00:00",
+   "con_texto_completo": 21,
    "detalle": "con IA",
-   "entradas": 20,
+   "entradas": 21,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -110,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:20+00:00",
+   "actualizado": "2026-11-02T15:34:34+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -121,7 +122,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:21+00:00",
+   "actualizado": "2026-11-02T15:34:35+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 34,
@@ -134,7 +135,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:23+00:00",
+   "actualizado": "2026-11-02T15:34:37+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 33,
@@ -147,7 +148,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:26+00:00",
+   "actualizado": "2026-11-02T15:34:40+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 34,
@@ -160,7 +161,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:29+00:00",
+   "actualizado": "2026-11-02T15:34:43+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 34,
@@ -173,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:32+00:00",
+   "actualizado": "2026-11-02T15:34:46+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -186,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:37+00:00",
+   "actualizado": "2026-11-02T15:34:51+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 18,
@@ -199,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:38+00:00",
+   "actualizado": "2026-11-02T15:34:52+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -212,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:40+00:00",
+   "actualizado": "2026-11-02T15:34:54+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -225,10 +226,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:43+00:00",
-   "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-02T15:34:57+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
+   "entradas": 6,
+   "estado": "ok",
    "feed_propio": "",
    "id": "realbetisbalompie-es-noticias-actualidad",
    "nombre": "www.realbetisbalompie.es/noticias/actualidad",
@@ -236,7 +238,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T15:31:54+00:00",
+   "actualizado": "2026-11-02T15:35:14+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
