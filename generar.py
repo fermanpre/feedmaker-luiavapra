@@ -25,6 +25,7 @@ VERSION_CACHE_ARTICULOS = 2  # súbela cuando cambie la extracción del cuerpo o
 MAXIMO_ENTRADAS = 50
 CONSERVAR_DIAS_POR_DEFECTO = 180  # campo «conservar_dias» de cada web; 0 = solo lo que enseña hoy la web
 MAXIMO_ENTRADAS_EN_FEED = 300
+MAXIMO_ENTRADAS_POR_ENLACES = 100
 MAXIMO_CANDIDATOS = 5
 TOPE_LLAMADAS_IA = int(os.environ.get("FEEDMAKER_MAX_LLAMADAS", "60"))
 
@@ -313,6 +314,13 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
                     entradas = extractor.entradas_de_feed(respuesta_feed.texto)[:MAXIMO_ENTRADAS] or None
             if entradas is None:
                 return estado_con_feed_propio(estado, feed_propio, "la web ya tiene feed: suscríbete a ese")
+
+        if entradas is None and sitio.get("modo_enlaces"):
+            # Sin IA: los enlaces de una página repartida en bloques distintos no forman un grupo de tarjetas.
+            entradas = extractor.entradas_por_enlaces(respuesta.texto, respuesta.url_final)[:MAXIMO_ENTRADAS_POR_ENLACES]
+            if not entradas:
+                estado["detalle"] = "no se han encontrado enlaces que parezcan artículos"
+                return estado
 
         if entradas is None:
             candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)

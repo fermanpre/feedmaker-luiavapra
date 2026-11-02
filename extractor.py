@@ -682,6 +682,66 @@ def entradas_de_feed(texto_del_feed):
     return entradas
 
 
+MINIMO_PALABRAS_DEL_SLUG = 5
+MINIMO_LONGITUD_DEL_SLUG = 30
+PATRON_MARCA_DE_TIEMPO_EN_URL = re.compile(r"(?<!\d)(20\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})?(?!\d)")
+PATRON_SUFIJO_DE_SLUG = re.compile(r"-?(?:20\d{12}|20\d{10}|20\d{6})(?:-[a-z]{1,4})?$|_0_\d+$")
+
+
+def _slug_de_articulo(url):
+    """Último tramo de la ruta sin extensión ni identificadores finales, o '' si no parece el de un artículo."""
+    ruta = urllib.parse.urlsplit(url).path.rstrip("/")
+    ultimo = re.sub(r"\.(?:html?|php|aspx?)$", "", ruta.rsplit("/", 1)[-1].lower())
+    ultimo = PATRON_SUFIJO_DE_SLUG.sub("", ultimo)
+    palabras = [palabra for palabra in ultimo.split("-") if palabra]
+    if len(palabras) < MINIMO_PALABRAS_DEL_SLUG or len(ultimo) < MINIMO_LONGITUD_DEL_SLUG:
+        return ""
+    return ultimo
+
+
+def _fecha_de_la_url(url):
+    coincidencia = PATRON_MARCA_DE_TIEMPO_EN_URL.search(urllib.parse.urlsplit(url).path)
+    if not coincidencia:
+        return None
+    anio, mes, dia, hora, minuto, segundo = (int(valor or 0) for valor in coincidencia.groups())
+    try:
+        return datetime(anio, mes, dia, hora, minuto, segundo, tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def entradas_por_enlaces(html, url_base):
+    """Alternativa a las tarjetas: todos los enlaces de la página que parecen artículos.
+
+    Un enlace cuenta si es de la misma web y su último tramo es un «slug» largo (5 palabras o más separadas por guiones).
+    El título es el mejor texto de enlace visto; si no hay, se saca de la propia dirección. La fecha, si la dirección
+    lleva una marca de tiempo (20261031234026). Útil cuando el listado está repartido en bloques de estructuras distintas."""
+    anfitrion = _host_sin_www(url_base)
+    por_enlace = {}
+    for nodo in descendientes(construir_arbol(html)):
+        if not _es_enlace_util(nodo):
+            continue
+        enlace = urllib.parse.urljoin(url_base, nodo.atributos["href"].strip()).split("#")[0]
+        if not enlace.startswith(("http://", "https://")) or _host_sin_www(enlace) != anfitrion:
+            continue
+        slug = _slug_de_articulo(enlace)
+        if not slug:
+            continue
+        texto_del_enlace = texto_de(nodo)
+        entrada = por_enlace.setdefault(enlace, {"titulo": "", "enlace": enlace, "fecha": _fecha_de_la_url(enlace),
+                                                  "extracto": "", "slug": slug})
+        if len(texto_del_enlace) > len(entrada["titulo"]) and len(texto_del_enlace.split()) >= 3:
+            entrada["titulo"] = texto_del_enlace[:200]
+    entradas = []
+    for entrada in por_enlace.values():
+        if not entrada["titulo"]:
+            entrada["titulo"] = entrada["slug"].replace("-", " ").capitalize()
+        del entrada["slug"]
+        entradas.append(entrada)
+    entradas.sort(key=lambda e: e["fecha"] or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+    return entradas
+
+
 # --------------------------------------------------------------------------- análisis completo
 
 def validar_url(url):

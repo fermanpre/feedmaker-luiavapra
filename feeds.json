@@ -63,6 +63,40 @@
     "oculto": true,
     "filtro_en_combinado": [
       "caja"
+    ],
+    "modo_enlaces": true
+  },
+  {
+    "id": "abc-deportes-sevilla-pagina-1",
+    "nombre": "ABC Deportes Sevilla (página 1)",
+    "etiqueta": "ABC",
+    "url": "https://www.abc.es/deportes/sevilla/pagina-1.html",
+    "oculto": true,
+    "modo_enlaces": true,
+    "filtro_en_combinado": [
+      "caja"
+    ]
+  },
+  {
+    "id": "abc-deportes-sevilla-pagina-2",
+    "nombre": "ABC Deportes Sevilla (página 2)",
+    "etiqueta": "ABC",
+    "url": "https://www.abc.es/deportes/sevilla/pagina-2.html",
+    "oculto": true,
+    "modo_enlaces": true,
+    "filtro_en_combinado": [
+      "caja"
+    ]
+  },
+  {
+    "id": "abc-deportes-sevilla-pagina-3",
+    "nombre": "ABC Deportes Sevilla (página 3)",
+    "etiqueta": "ABC",
+    "url": "https://www.abc.es/deportes/sevilla/pagina-3.html",
+    "oculto": true,
+    "modo_enlaces": true,
+    "filtro_en_combinado": [
+      "caja"
     ]
   },
   {
@@ -100,6 +134,9 @@
     "nombre": "Caja87 (ABC, Diario de Sevilla y Muchodeporte)",
     "combina": [
       "abc-deportes-sevilla",
+      "abc-deportes-sevilla-pagina-1",
+      "abc-deportes-sevilla-pagina-2",
+      "abc-deportes-sevilla-pagina-3",
       "diariodesevilla-betis-baloncesto",
       "diariodesevilla-tag-baloncesto",
       "muchodeporte-baloncesto",
