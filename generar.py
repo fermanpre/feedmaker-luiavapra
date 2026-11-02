@@ -21,7 +21,7 @@ USER_AGENT_NAVEGADOR = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 CODIGOS_DE_BLOQUEO = (403, 406)
-VERSION_CACHE_ARTICULOS = 2  # súbela cuando cambie la extracción del cuerpo o de la fecha
+VERSION_CACHE_ARTICULOS = 3  # súbela cuando cambie la extracción del cuerpo o de la fecha
 MAXIMO_ENTRADAS = 50
 CONSERVAR_DIAS_POR_DEFECTO = 180  # campo «conservar_dias» de cada web; 0 = solo lo que enseña hoy la web
 MAXIMO_ENTRADAS_EN_FEED = 300
@@ -317,6 +317,29 @@ def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz):
         return estado
 
 
+MINIMO_ENTRADAS_DEL_RESPALDO = 5
+FRACCION_MINIMA_CON_FECHA_EN_RESPALDO = 0.5
+
+
+def buscar_entradas_por_tarjetas(sitio, respuesta, decisiones, cliente, presupuesto):
+    """Método principal: elige un bloque de tarjetas repetidas y filtra lo que no son artículos.
+
+    Devuelve (entradas, motivo_del_fallo); sin entradas, el motivo explica por qué."""
+    candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)
+    if not candidatos:
+        return [], "sin listado de artículos reconocible (¿página con JavaScript?)"
+    decisiones_del_sitio = decisiones.setdefault(sitio["id"], {})
+    elegido, motivo = elegir_grupo(sitio, candidatos, decisiones_del_sitio, cliente, presupuesto)
+    if elegido is None:
+        return [], motivo
+    if cliente is not None:
+        decisiones_del_sitio["firma"] = firma_sin_cantidad(elegido["firma"])
+    entradas = filtrar_entradas(sitio, elegido["entradas"][:MAXIMO_ENTRADAS], decisiones_del_sitio, cliente, presupuesto)
+    if not entradas:
+        return [], "tras filtrar no queda ninguna entrada"
+    return entradas, ""
+
+
 def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -373,37 +396,35 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
                 estado["detalle"] = "no se han encontrado enlaces que parezcan artículos"
                 return estado
 
+        usa_respaldo_por_enlaces = False
         if entradas is None:
-            candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)
-            if not candidatos:
-                if feed_generico:
-                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-                estado["detalle"] = "sin listado de artículos reconocible (¿página con JavaScript?)"
-                return estado
-
-            decisiones_del_sitio = decisiones.setdefault(sitio["id"], {})
-            elegido, motivo = elegir_grupo(sitio, candidatos, decisiones_del_sitio, cliente, presupuesto)
-            if elegido is None:
-                if feed_generico:
-                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-                estado["detalle"] = motivo
-                return estado
-            if cliente is not None:
-                decisiones_del_sitio["firma"] = firma_sin_cantidad(elegido["firma"])
-
-            entradas = filtrar_entradas(sitio, elegido["entradas"][:MAXIMO_ENTRADAS], decisiones_del_sitio,
-                                        cliente, presupuesto)
+            entradas, motivo_del_fallo = buscar_entradas_por_tarjetas(sitio, respuesta, decisiones, cliente, presupuesto)
             if not entradas:
-                if feed_generico:
+                # Las tarjetas no han dado nada utilizable: se prueba con los enlaces que parecen artículos.
+                respaldo = extractor.entradas_por_enlaces(
+                    respuesta.texto, respuesta.url_final, sitio.get("zona_horaria_de_las_urls"))[:MAXIMO_ENTRADAS_POR_ENLACES]
+                if len(respaldo) >= MINIMO_ENTRADAS_DEL_RESPALDO:
+                    entradas = respaldo
+                    usa_respaldo_por_enlaces = True
+                elif feed_generico:
                     return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-                estado["detalle"] = "tras filtrar no queda ninguna entrada"
-                return estado
+                else:
+                    estado["detalle"] = motivo_del_fallo
+                    return estado
 
         con_texto = 0
         if sitio.get("texto_completo"):
             con_texto = completar_con_texto(entradas, articulos, descargas)
         else:
             completar_fechas(entradas, articulos, descargas, decisiones.setdefault(sitio["id"], {}))
+
+        if usa_respaldo_por_enlaces:
+            # Los enlaces largos también son fichas de producto o menús: solo los artículos acaban con fecha.
+            if sum(1 for entrada in entradas if entrada["fecha"]) < FRACCION_MINIMA_CON_FECHA_EN_RESPALDO * len(entradas):
+                if feed_generico:
+                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
+                estado["detalle"] = motivo_del_fallo + " (el respaldo por enlaces no encuentra fechas: no parecen artículos)"
+                return estado
 
         entradas_del_feed = fusionar_con_historial(
             historial.setdefault(sitio["id"], {}), entradas, sitio.get("conservar_dias", CONSERVAR_DIAS_POR_DEFECTO),
@@ -416,6 +437,8 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         estado["entradas"] = len(entradas_del_feed)
         estado["con_texto_completo"] = con_texto
         estado["detalle"] = "con IA" if cliente is not None else "sin IA (no hay clave de API)"
+        if usa_respaldo_por_enlaces:
+            estado["detalle"] += "; listado por enlaces (las tarjetas no daban nada)"
         return estado
     except Exception as error:
         estado["detalle"] = f"error interno: {type(error).__name__}: {error}"

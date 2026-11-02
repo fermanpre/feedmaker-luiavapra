@@ -913,6 +913,10 @@ def fecha_del_articulo(html, cuerpo=""):
         r'content=["\']([^"\']+)["\'][^>]*property=["\']article:published_time',
         r'"datePublished"\s*:\s*"([^"]+)"',
         r'<time[^>]+datetime=["\']([^"\']+)',
+        r'itemprop=["\']datePublished["\'][^>]*content=["\']([^"\']+)',
+        r'content=["\']([^"\']+)["\'][^>]*itemprop=["\']datePublished',
+        r'<meta[^>]+name=["\'](?:date|pubdate|publishdate|dc\.date(?:\.issued)?)["\'][^>]*content=["\']([^"\']+)',
+        r'<time[^>]*>\s*([^<]{6,40}?)\s*</time>',  # fecha como texto de <time> (puede llevar una clase «hidden»)
     )
     for patron in patrones:
         coincidencia = re.search(patron, html, re.IGNORECASE)

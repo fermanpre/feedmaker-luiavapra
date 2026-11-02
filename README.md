@@ -81,6 +81,13 @@ Una entrada de `feeds.json` con `combina` junta en un solo feed las entradas del
 - El combinado se alimenta del historial de cada web, así que gana la misma profundidad (`conservar_dias`).
 - Una web que solo ofrece feed propio no aporta entradas al combinado, salvo que lleve `leer_feed_propio: true`.
 
+## Respaldo por enlaces
+
+Si las tarjetas no dan nada utilizable (no hay bloque reconocible o el modelo responde que no hay listado), se prueba con los
+enlaces de la página que parecen artículos, como con `modo_enlaces`. Para no publicar menús ni fichas de producto, el respaldo
+solo se acepta si tiene 5 entradas o más y, tras completar las fechas entrando en cada artículo, al menos la mitad llevan fecha.
+`estado.json` lo anota en el detalle («listado por enlaces»).
+
 ## Fechas que faltan
 
 Si a menos del 60 % de las entradas de una web les consta la fecha, se busca entrando en cada artículo (una descarga por
