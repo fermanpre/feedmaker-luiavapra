@@ -940,6 +940,30 @@ PATRON_CONTENEDOR_DE_ARTICULO = (
 MAXIMO_CARACTERES_EXTRACTO = 400
 
 
+def _titulos_de_la_pagina(html_del_articulo):
+    """Textos de <title> y og:title, en minúsculas, para saber si una descripción solo repite el título."""
+    titulos = []
+    for patron in (r"<title[^>]*>(.*?)</title>",
+                   r'<meta[^>]+property=["\']og:title["\'][^>]*content=["\']([^"\']+)',
+                   r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*property=["\']og:title'):
+        coincidencia = re.search(patron, html_del_articulo, re.IGNORECASE | re.DOTALL)
+        if coincidencia:
+            titulos.append(_texto_sin_html(coincidencia.group(1)).lower())
+    return titulos
+
+
+MARGEN_DE_CARACTERES_SOBRE_EL_TITULO = 15
+
+
+def _repite_el_titulo(candidato, titulos):
+    """True si la descripción es el título (o está dentro de él, o es el título con poco más)."""
+    texto = candidato.lower().strip(" .:-")
+    for titulo in titulos:
+        if texto in titulo or (titulo in texto and len(texto) <= len(titulo) + MARGEN_DE_CARACTERES_SOBRE_EL_TITULO):
+            return True
+    return False
+
+
 def extracto_del_articulo(html_del_articulo, cuerpo=""):
     """Descripción corta del artículo: los metadatos de la página (og:description, twitter:description, description) y,
     si no hay, el primer párrafo del cuerpo. Texto plano, o '' si no se encuentra nada."""
@@ -947,10 +971,11 @@ def extracto_del_articulo(html_del_articulo, cuerpo=""):
         r'<meta[^>]+(?:property|name)=["\'](?:og:description|twitter:description|description)["\'][^>]*content=["\']([^"\']+)',
         r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:description|twitter:description|description)["\']',
     )
+    titulos = _titulos_de_la_pagina(html_del_articulo)
     for patron in patrones:
         for coincidencia in re.finditer(patron, html_del_articulo, re.IGNORECASE):
             candidato = _texto_sin_html(coincidencia.group(1))
-            if len(candidato) >= MINIMO_CARACTERES_EXTRACTO:
+            if len(candidato) >= MINIMO_CARACTERES_EXTRACTO and not _repite_el_titulo(candidato, titulos):
                 return candidato[:MAXIMO_CARACTERES_EXTRACTO]
     for parrafo in re.findall(r"<p[^>]*>(.*?)</p>", cuerpo or "", re.IGNORECASE | re.DOTALL):
         candidato = _texto_sin_html(parrafo)

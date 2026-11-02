@@ -21,7 +21,7 @@ USER_AGENT_NAVEGADOR = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 CODIGOS_DE_BLOQUEO = (403, 406)
-VERSION_CACHE_ARTICULOS = 4  # súbela cuando cambie la extracción del cuerpo o de la fecha
+VERSION_CACHE_ARTICULOS = 5  # súbela cuando cambie la extracción del cuerpo o de la fecha
 MAXIMO_ENTRADAS = 50
 CONSERVAR_DIAS_POR_DEFECTO = 180  # campo «conservar_dias» de cada web; 0 = solo lo que enseña hoy la web
 MAXIMO_ENTRADAS_EN_FEED = 300
