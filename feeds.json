@@ -88,11 +88,20 @@
     "oculto": true
   },
   {
+    "id": "diariodesevilla-tag-baloncesto",
+    "nombre": "Diario de Sevilla Baloncesto (etiqueta)",
+    "etiqueta": "Diario de Sevilla",
+    "url": "https://www.diariodesevilla.es/tag/baloncesto/",
+    "oculto": true,
+    "leer_feed_propio": true
+  },
+  {
     "id": "caja87",
     "nombre": "Caja87 (ABC, Diario de Sevilla y Muchodeporte)",
     "combina": [
       "abc-deportes-sevilla",
       "diariodesevilla-betis-baloncesto",
+      "diariodesevilla-tag-baloncesto",
       "muchodeporte-baloncesto",
       "muchodeporte-caja87"
     ],
