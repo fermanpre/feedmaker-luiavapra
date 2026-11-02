@@ -57,11 +57,28 @@ parámetros de seguimiento (`utm_…`).
 | `forzar_tarjetas: true` | Genera el feed aunque la web ya tenga uno propio. |
 | `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 15 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
 | `conservar_dias` | Días que se conserva en el feed una entrada que la web ya no enseña (por defecto 180). Cuenta desde la última vez que se vio, no desde su fecha: lo que sigue listado no caduca. `0` = solo lo que enseña hoy la web. |
+| `leer_feed_propio: true` | Si la web tiene un feed que corresponde a la página, en vez de responder «ya tiene feed» se leen sus entradas, que traen fechas reales, y se guardan en el historial. Sirve para alimentar un combinado. |
+| `etiqueta` | Nombre corto que antepone a los títulos cuando la web forma parte de un combinado: «[ABC] …». Por defecto, el nombre de la web. |
+| `oculto: true` | La página no enseña la web en «Mis feeds». Para webs que solo son ingredientes de un combinado. |
+| `filtro_en_combinado` | Lista de palabras que sustituye, solo para esta web, al filtro del combinado. |
 
 **Aviso:** con `texto_completo`, el repositorio y los feeds, que son públicos, contienen copias del texto de
 webs ajenas. Úsalo solo en las pocas webs que realmente lees.
 
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
+
+## Feeds combinados
+
+Una entrada de `feeds.json` con `combina` junta en un solo feed las entradas del historial de varias webs:
+
+    {"id": "caja87", "nombre": "Caja87", "combina": ["web-a", "web-b"], "filtro": ["caja 87", "caja87"]}
+
+- `combina`: los `id` de las webs, que se procesan como cualquier otra (se recomienda marcarlas `oculto`).
+- `filtro` (opcional): solo pasan las entradas cuyo título o extracto contiene alguna de esas palabras o frases, como
+  palabra completa (`caja` no coincide con `Cajasol`). Sin filtro pasan todas.
+- Cada título lleva delante la web de origen, y se quitan los enlaces repetidos entre webs.
+- El combinado se alimenta del historial de cada web, así que gana la misma profundidad (`conservar_dias`).
+- Una web que solo ofrece feed propio no aporta entradas al combinado, salvo que lleve `leer_feed_propio: true`.
 
 ## Historial de entradas
 

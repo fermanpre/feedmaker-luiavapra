@@ -7,6 +7,7 @@ Solo biblioteca estándar. Se identifica con un User-Agent honesto y respeta rob
 (RFC 9309): 2xx se interpreta, 4xx = sin restricciones, 5xx o fallo de red = no se rastrea.
 """
 
+import html
 import os
 import re
 import time
@@ -14,9 +15,10 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
-from email.utils import format_datetime
+from email.utils import format_datetime, parsedate_to_datetime
 from html.parser import HTMLParser
 from urllib.robotparser import RobotFileParser
+from xml.etree import ElementTree
 from xml.sax.saxutils import escape
 
 AGENTE_USUARIO = "feedmaker/0.1 (+https://github.com/fermanpre/feedmaker)"
@@ -620,6 +622,64 @@ def feed_corresponde_a_la_pagina(html, url_pagina, url_del_feed):
         return True
     proporcion = proporcion_del_feed_en_la_pagina(html, url_pagina, url_del_feed)
     return proporcion is None or proporcion >= UMBRAL_FEED_DE_LA_PAGINA
+
+
+def _etiqueta_sin_espacio_de_nombres(elemento):
+    return elemento.tag.split("}")[-1].lower() if isinstance(elemento.tag, str) else ""
+
+
+def _texto_sin_html(texto):
+    sin_etiquetas = re.sub(r"<[^>]+>", " ", html.unescape(texto or ""))
+    return " ".join(sin_etiquetas.split())
+
+
+def _fecha_de_feed(texto):
+    if not texto or not texto.strip():
+        return None
+    try:
+        fecha = parsedate_to_datetime(texto.strip())
+    except (TypeError, ValueError):
+        fecha = interpretar_fecha(texto)
+        if fecha is None:
+            try:
+                fecha = datetime.fromisoformat(texto.strip().replace("Z", "+00:00"))
+            except ValueError:
+                return None
+    return fecha if fecha.tzinfo else fecha.replace(tzinfo=timezone.utc)
+
+
+MAXIMO_BYTES_DE_FEED = 5_000_000
+
+
+def entradas_de_feed(texto_del_feed):
+    """Entradas de un feed RSS o Atom como dicts {titulo, enlace, fecha, extracto}; lista vacía si no se puede leer.
+
+    Se rechazan los feeds con declaraciones de entidades (<!ENTITY): son la vía de las bombas de expansión de XML."""
+    if len(texto_del_feed) > MAXIMO_BYTES_DE_FEED or "<!ENTITY" in texto_del_feed:
+        return []
+    try:
+        raiz = ElementTree.fromstring(texto_del_feed.encode("utf-8"))
+    except ElementTree.ParseError:
+        return []
+    entradas = []
+    for elemento in raiz.iter():
+        if _etiqueta_sin_espacio_de_nombres(elemento) not in ("item", "entry"):
+            continue
+        datos = {"titulo": "", "enlace": "", "fecha": None, "extracto": ""}
+        for hijo in elemento:
+            etiqueta = _etiqueta_sin_espacio_de_nombres(hijo)
+            valor = (hijo.text or "").strip()
+            if etiqueta == "title":
+                datos["titulo"] = _texto_sin_html(valor)
+            elif etiqueta == "link":
+                datos["enlace"] = hijo.attrib.get("href", "").strip() or valor
+            elif etiqueta in ("pubdate", "published", "updated", "date") and datos["fecha"] is None:
+                datos["fecha"] = _fecha_de_feed(valor)
+            elif etiqueta in ("description", "summary") and not datos["extracto"]:
+                datos["extracto"] = _texto_sin_html(valor)[:400]
+        if datos["titulo"] and datos["enlace"].startswith(("http://", "https://")):
+            entradas.append(datos)
+    return entradas
 
 
 # --------------------------------------------------------------------------- análisis completo

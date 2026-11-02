@@ -111,6 +111,21 @@ def _fecha_de_registro(texto_iso):
     return fecha if fecha.tzinfo else fecha.replace(tzinfo=timezone.utc)
 
 
+def entrada_desde_registro(enlace, registro, articulos, con_texto_completo):
+    entrada = {"titulo": registro["titulo"], "enlace": enlace, "fecha": _fecha_de_registro(registro["fecha"]),
+               "extracto": registro["extracto"]}
+    if con_texto_completo:
+        entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
+    return entrada
+
+
+def momento_de_orden(fecha, visto_iso):
+    """Las entradas se ordenan por su fecha; si no tienen, por el día en que se vieron por primera vez."""
+    if fecha:
+        return fecha
+    return datetime.combine(date.fromisoformat(visto_iso), time.min, tzinfo=timezone.utc)
+
+
 def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, articulos, con_texto_completo):
     """Mezcla lo que enseña hoy la web con lo que se vio en días anteriores y devuelve las entradas del feed.
 
@@ -138,19 +153,12 @@ def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, ar
         if enlace in actuales_por_enlace:
             entrada = actuales_por_enlace[enlace]
         else:
-            entrada = {"titulo": registro["titulo"], "enlace": enlace, "fecha": _fecha_de_registro(registro["fecha"]),
-                       "extracto": registro["extracto"]}
-            if con_texto_completo:
-                entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
+            entrada = entrada_desde_registro(enlace, registro, articulos, con_texto_completo)
         fusionadas.append(entrada)
 
-    def momento_de_orden(entrada):
-        if entrada["fecha"]:
-            return entrada["fecha"]
-        visto = date.fromisoformat(historial_del_sitio[entrada["enlace"]]["visto"])
-        return datetime.combine(visto, time.min, tzinfo=timezone.utc)
-
-    fusionadas.sort(key=momento_de_orden, reverse=True)
+    fusionadas.sort(
+        key=lambda entrada: momento_de_orden(entrada["fecha"], historial_del_sitio[entrada["enlace"]]["visto"]),
+        reverse=True)
     for sobrante in fusionadas[MAXIMO_ENTRADAS_EN_FEED:]:
         del historial_del_sitio[sobrante["enlace"]]
     return fusionadas[:MAXIMO_ENTRADAS_EN_FEED]
@@ -192,11 +200,79 @@ def estado_con_feed_propio(estado, feed_propio, detalle):
     return estado
 
 
+def _normalizar_para_filtro(texto):
+    return " ".join(texto.lower().replace("\xa0", " ").split())
+
+
+def construir_combinado(combinado, sitios_por_id, historial, articulos):
+    """Junta las entradas del historial de varias webs en un solo feed.
+
+    Devuelve (entradas, avisos). Con `filtro` (lista de palabras o frases), solo pasan las entradas cuyo título o
+    extracto contiene alguna como palabra completa («caja» no coincide con «Cajasol»). Una web puede sustituir ese
+    filtro por el suyo con `filtro_en_combinado`. Cada título lleva delante el nombre de su web de origen."""
+    palabras_generales = [_normalizar_para_filtro(palabra) for palabra in combinado.get("filtro", [])]
+    entradas = []
+    avisos = []
+    for identificador in combinado["combina"]:
+        miembro = sitios_por_id.get(identificador)
+        registros = historial.get(identificador, {})
+        if miembro is None:
+            avisos.append(f"{identificador}: no existe en feeds.json")
+            continue
+        if not registros:
+            avisos.append(f"{identificador}: sin entradas guardadas (¿tiene feed propio o falló?)")
+            continue
+        etiqueta = miembro.get("etiqueta") or miembro["nombre"]
+        palabras = [_normalizar_para_filtro(palabra) for palabra in miembro.get("filtro_en_combinado", [])]             or palabras_generales
+        for enlace, registro in registros.items():
+            contenido = _normalizar_para_filtro(registro["titulo"] + " " + registro["extracto"])
+            if palabras and not any(re.search(r"(?<!\w)" + re.escape(palabra) + r"(?!\w)", contenido)
+                                    for palabra in palabras):
+                continue
+            entrada = entrada_desde_registro(enlace, registro, articulos, bool(miembro.get("texto_completo")))
+            entrada["titulo"] = f"[{etiqueta}] {entrada['titulo']}"
+            entrada["momento"] = momento_de_orden(entrada["fecha"], registro["visto"])
+            entradas.append(entrada)
+    por_enlace = {}
+    for entrada in sorted(entradas, key=lambda e: e["momento"], reverse=True):
+        por_enlace.setdefault(entrada["enlace"], entrada)
+    ordenadas = sorted(por_enlace.values(), key=lambda e: e["momento"], reverse=True)
+    return ordenadas[:MAXIMO_ENTRADAS_EN_FEED], avisos
+
+
+def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz):
+    ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    estado = {"id": combinado["id"], "nombre": combinado["nombre"], "url": "", "estado": "error", "detalle": "",
+              "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora}
+    try:
+        entradas, avisos = construir_combinado(combinado, sitios_por_id, historial, articulos)
+        if len(avisos) == len(combinado["combina"]):
+            estado["detalle"] = "ninguna de las webs tiene entradas: " + "; ".join(avisos)
+            return estado
+        repositorio = os.environ.get("GITHUB_REPOSITORY", "")
+        enlace_del_canal = f"https://github.com/{repositorio}" if repositorio else "https://github.com"
+        ruta_feed = os.path.join(raiz, "docs", "feeds", combinado["id"] + ".xml")
+        escribir_texto(ruta_feed, extractor.construir_rss(combinado["nombre"], enlace_del_canal, entradas))
+        estado["estado"] = "ok"
+        estado["entradas"] = len(entradas)
+        estado["con_texto_completo"] = sum(1 for entrada in entradas if entrada.get("cuerpo"))
+        partes = [f"combina {len(combinado['combina'])} webs"]
+        if combinado.get("filtro"):
+            partes.append("filtro: " + ", ".join(combinado["filtro"]))
+        estado["detalle"] = "; ".join(partes + avisos)
+        return estado
+    except Exception as error:
+        estado["detalle"] = f"error interno: {type(error).__name__}: {error}"
+        return estado
+
+
 def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": sitio["id"], "nombre": sitio["nombre"], "url": sitio["url"], "estado": "error",
               "detalle": "", "feed_propio": "", "entradas": 0, "user_agent": "feedmaker", "actualizado": ahora}
+    if sitio.get("oculto"):
+        estado["oculto"] = True  # solo es ingrediente de un combinado: la página no la enseña en la lista
     try:
         # user_agent: "auto" (por defecto) prueba primero el honesto y reintenta como navegador solo si la
         # web responde 403/406; "honesto" nunca se presenta como navegador; "navegador" lo hace siempre.
@@ -228,33 +304,41 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         feed_generico = bool(feed_propio) and (
             entradas_del_feed == 0
             or not extractor.feed_corresponde_a_la_pagina(respuesta.texto, respuesta.url_final, feed_propio))
+        entradas = None
         if feed_propio and not feed_generico and not sitio.get("forzar_tarjetas"):
-            return estado_con_feed_propio(estado, feed_propio, "la web ya tiene feed: suscríbete a ese")
+            if sitio.get("leer_feed_propio"):
+                # Para webs que alimentan un combinado: se leen las entradas del feed, que traen fechas reales.
+                respuesta_feed = extractor.peticion(feed_propio)
+                if 200 <= respuesta_feed.estado < 300:
+                    entradas = extractor.entradas_de_feed(respuesta_feed.texto)[:MAXIMO_ENTRADAS] or None
+            if entradas is None:
+                return estado_con_feed_propio(estado, feed_propio, "la web ya tiene feed: suscríbete a ese")
 
-        candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)
-        if not candidatos:
-            if feed_generico:
-                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-            estado["detalle"] = "sin listado de artículos reconocible (¿página con JavaScript?)"
-            return estado
+        if entradas is None:
+            candidatos = extractor.detectar_candidatos(respuesta.texto, respuesta.url_final, MAXIMO_CANDIDATOS)
+            if not candidatos:
+                if feed_generico:
+                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
+                estado["detalle"] = "sin listado de artículos reconocible (¿página con JavaScript?)"
+                return estado
 
-        decisiones_del_sitio = decisiones.setdefault(sitio["id"], {})
-        elegido, motivo = elegir_grupo(sitio, candidatos, decisiones_del_sitio, cliente, presupuesto)
-        if elegido is None:
-            if feed_generico:
-                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-            estado["detalle"] = motivo
-            return estado
-        if cliente is not None:
-            decisiones_del_sitio["firma"] = firma_sin_cantidad(elegido["firma"])
+            decisiones_del_sitio = decisiones.setdefault(sitio["id"], {})
+            elegido, motivo = elegir_grupo(sitio, candidatos, decisiones_del_sitio, cliente, presupuesto)
+            if elegido is None:
+                if feed_generico:
+                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
+                estado["detalle"] = motivo
+                return estado
+            if cliente is not None:
+                decisiones_del_sitio["firma"] = firma_sin_cantidad(elegido["firma"])
 
-        entradas = filtrar_entradas(sitio, elegido["entradas"][:MAXIMO_ENTRADAS], decisiones_del_sitio,
-                                    cliente, presupuesto)
-        if not entradas:
-            if feed_generico:
-                return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
-            estado["detalle"] = "tras filtrar no queda ninguna entrada"
-            return estado
+            entradas = filtrar_entradas(sitio, elegido["entradas"][:MAXIMO_ENTRADAS], decisiones_del_sitio,
+                                        cliente, presupuesto)
+            if not entradas:
+                if feed_generico:
+                    return estado_con_feed_propio(estado, feed_propio, FEED_GENERICO_SIN_ALTERNATIVA)
+                estado["detalle"] = "tras filtrar no queda ninguna entrada"
+                return estado
 
         con_texto = 0
         if sitio.get("texto_completo"):
@@ -299,7 +383,7 @@ def main():
     print("IA:", "activada (Haiku 5.5)" if cliente else "desactivada: no hay ANTHROPIC_API_KEY", flush=True)
 
     resultados = []
-    for sitio in sitios:
+    for sitio in [sitio for sitio in sitios if "combina" not in sitio]:
         estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial)
         anterior = estado_anterior.get(sitio["id"])
         if estado["estado"] == "error" and anterior and anterior["estado"] == "ok":
@@ -308,6 +392,12 @@ def main():
             estado["detalle"] = "no se pudo actualizar (se mantiene el feed anterior): " + estado["detalle"]
         resultados.append(estado)
         print(f"- {sitio['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
+
+    sitios_por_id = {sitio["id"]: sitio for sitio in sitios}
+    for combinado in [sitio for sitio in sitios if "combina" in sitio]:
+        estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz)
+        resultados.append(estado)
+        print(f"- {combinado['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
     escribir_json(ruta_decisiones, decisiones)
     escribir_json(ruta_historial, historial)

@@ -54,5 +54,52 @@
     "nombre": "www.muchodeporte.com/feed",
     "url": "https://www.muchodeporte.com/feed",
     "texto_completo": true
+  },
+  {
+    "id": "abc-deportes-sevilla",
+    "nombre": "ABC Deportes Sevilla",
+    "etiqueta": "ABC",
+    "url": "https://www.abc.es/deportes/sevilla/",
+    "oculto": true,
+    "filtro_en_combinado": [
+      "caja"
+    ]
+  },
+  {
+    "id": "diariodesevilla-betis-baloncesto",
+    "nombre": "Diario de Sevilla Betis Baloncesto",
+    "etiqueta": "Diario de Sevilla",
+    "url": "https://www.diariodesevilla.es/deportes/betis-baloncesto/",
+    "oculto": true,
+    "leer_feed_propio": true
+  },
+  {
+    "id": "muchodeporte-baloncesto",
+    "nombre": "Muchodeporte Baloncesto",
+    "etiqueta": "Muchodeporte",
+    "url": "https://www.muchodeporte.com/baloncesto/",
+    "oculto": true
+  },
+  {
+    "id": "muchodeporte-caja87",
+    "nombre": "Muchodeporte Caja87",
+    "etiqueta": "Muchodeporte",
+    "url": "https://www.muchodeporte.com/caja87/",
+    "oculto": true
+  },
+  {
+    "id": "caja87",
+    "nombre": "Caja87 (ABC, Diario de Sevilla y Muchodeporte)",
+    "combina": [
+      "abc-deportes-sevilla",
+      "diariodesevilla-betis-baloncesto",
+      "muchodeporte-baloncesto",
+      "muchodeporte-caja87"
+    ],
+    "filtro": [
+      "caja 87",
+      "caja87",
+      "caja-87"
+    ]
   }
 ]

@@ -82,7 +82,7 @@ def registrar(ruta_feeds):
 
     with open(ruta_feeds, encoding="utf-8") as fichero:
         sitios = json.load(fichero)
-    existente = next((sitio for sitio in sitios if normalizar_url(sitio["url"]) == normalizar_url(url)), None)
+    existente = next((sitio for sitio in sitios if normalizar_url(sitio.get("url", "")) == normalizar_url(url)), None)
     if existente is None:
         identificador = crear_identificador(url, {sitio["id"] for sitio in sitios})
         partes = urllib.parse.urlsplit(url)

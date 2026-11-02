@@ -176,11 +176,13 @@
 
   function pintarLista(estado) {
     lista.textContent = "";
-    if (!estado.sitios.length) {
+    // Las webs «ocultas» solo son ingredientes de un feed combinado: no se enseñan en la lista.
+    var visibles = estado.sitios.filter(function (sitio) { return !sitio.oculto; });
+    if (!visibles.length) {
       lista.appendChild(crearElemento("li", "Todavía no hay ninguna web.", "meta"));
       return;
     }
-    estado.sitios.forEach(function (sitio) {
+    visibles.forEach(function (sitio) {
       var fila = document.createElement("li");
       pintarSitio(sitio, fila);
       lista.appendChild(fila);
