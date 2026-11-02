@@ -1,0 +1,878 @@
+{
+ "anthropic-com-news": {
+  "https://www.anthropic.com/claude-haiku-5-5": {
+   "extracto": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use.",
+   "fecha": "2026-10-07T12:00:00+00:00",
+   "titulo": "Introducing Claude Haiku 5.5",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/claude-opus-5-5": {
+   "extracto": "Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads.",
+   "fecha": "2026-09-22T12:00:00+00:00",
+   "titulo": "Introducing Claude Opus 5.5",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/claude-sonnet-5-5": {
+   "extracto": "Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work.",
+   "fecha": "2026-09-28T12:00:00+00:00",
+   "titulo": "Introducing Claude Sonnet 5.5",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/features/ebola-response": {
+   "extracto": "A rare Ebola strain is spreading in the DRC, with no confirmed vaccine. Global health organizations are using Claude to respond as fast as possible.",
+   "fecha": "2026-09-21T12:00:00+00:00",
+   "titulo": "The Situation Report",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/2026-us-midterms": {
+   "extracto": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+   "fecha": "2026-10-14T12:00:00+00:00",
+   "titulo": "Preparing for the 2026 US midterms",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/2026-usage-policy-update": {
+   "extracto": "We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.",
+   "fecha": "2026-10-08T12:00:00+00:00",
+   "titulo": "2026 Usage Policy update",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/accenture-embedded-evaluation": {
+   "extracto": "We’re partnering with Accenture on independent evaluation of frontier AI—part of our recent commitment to embed evaluators at Anthropic. Both we and Accenture expect to invest at least $1 billion to build capacity in this area over the next five years.",
+   "fecha": "2026-09-18T12:00:00+00:00",
+   "titulo": "Partnering with Accenture on embedded evaluation",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions": {
+   "extracto": "We’re highlighting 20 scientific foundations, institutions, and research groups around the world that we’ve partnered with in an expansion of our AI for Science program.",
+   "fecha": "2026-10-28T12:00:00+00:00",
+   "titulo": "AI for Science expands to foundations and research institutions",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/an-update-on-independent-evaluators": {
+   "extracto": "To evaluate the safety of our systems, Anthropic is giving employee-like access to a team from METR, a nonprofit that evaluates frontier AI models, and we're in early discussions with several other organizations, including Hugging Face.",
+   "fecha": "2026-10-15T12:00:00+00:00",
+   "titulo": "An update on independent evaluators",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/anthropic-cyber-mission": {
+   "extracto": "We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.",
+   "fecha": "2026-10-08T12:00:00+00:00",
+   "titulo": "Introducing the Anthropic Cyber Mission",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/barclays-scales-claude": {
+   "extracto": "Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.",
+   "fecha": "2026-10-01T12:00:00+00:00",
+   "titulo": "Barclays scales Claude to upgrade operations and improve client experience",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust": {
+   "extracto": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic’s Long-Term Benefit Trust. He brings to the Trust decades of scientific expertise across observational cosmology and precision measurement.",
+   "fecha": "2026-10-21T12:00:00+00:00",
+   "titulo": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/claude-frontier-academy": {
+   "extracto": "Anthropic is investing $100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027, with cohorts from Accenture, Bain, CBA, Deloitte, McKinsey, Morgan Stanley and Novo Nordisk already underway.",
+   "fecha": "2026-10-02T12:00:00+00:00",
+   "titulo": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/cyber-verification-program": {
+   "extracto": "We’re launching a new, expanded version of our Cyber Verification Program, which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.",
+   "fecha": "2026-10-06T12:00:00+00:00",
+   "titulo": "Expanding the Cyber Verification Program",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/distillation-defenses": {
+   "extracto": "Illicit distillation allows model developers to copy frontier AI capabilities without creating proportionally robust safeguards. Here, we describe how we’ve reduced the rate of distillation by more than 90%.",
+   "fecha": "2026-10-12T12:00:00+00:00",
+   "titulo": "Strengthening our defenses against distillation attacks",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation": {
+   "extracto": "We’re donating Agent Skills, the open standard that gives AI agents specialized knowledge and workflows, to the Agentic AI Foundation. More than 70 agent platforms, including ChatGPT, Cursor, GitHub Copilot, and VS Code, have integrated Agent Skills since we published the standard in December 2025.",
+   "fecha": "2026-10-22T12:00:00+00:00",
+   "titulo": "Donating Agent Skills to the Agentic AI Foundation",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/expanding-partnership-gsa": {
+   "extracto": "We are expanding our partnership with the General Services Administration (GSA) through a new agreement that gives government partners a 40% discount on Claude Enterprise, Claude for Government, and the Claude API.",
+   "fecha": "2026-10-27T12:00:00+00:00",
+   "titulo": "Expanding our partnership with GSA to bring Claude to all levels of government",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/genesis-mission-commitment": {
+   "extracto": "Anthropic is committing $150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.",
+   "fecha": "2026-10-08T12:00:00+00:00",
+   "titulo": "Building on our commitment to American scientific discovery",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/life-sciences-verification-program": {
+   "extracto": "The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work.",
+   "fecha": "2026-09-17T12:00:00+00:00",
+   "titulo": "Introducing the Life Sciences Verification Program",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences": {
+   "extracto": "Today, we’re inviting members of the life sciences community to apply to work with us on special projects.",
+   "fecha": "2026-10-22T12:00:00+00:00",
+   "titulo": "Open call for guest investigators in the life sciences",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/public-benefit-fund": {
+   "extracto": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+   "fecha": "2026-10-18T12:00:00+00:00",
+   "titulo": "Investing in the public benefit",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/s1-sec": {
+   "extracto": "Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.",
+   "fecha": "2026-10-26T12:00:00+00:00",
+   "titulo": "Anthropic files S-1 with the SEC for proposed initial public offering",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/news/singapore-office-opening": {
+   "extracto": "Anthropic has opened an office in Singapore and signed an MOU with the country’s government to advance safe, responsible AI adoption.",
+   "fecha": "2026-10-14T12:00:00+00:00",
+   "titulo": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
+   "visto": "2026-11-02"
+  },
+  "https://www.anthropic.com/research/early-progress-drug-development": {
+   "extracto": "We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines.",
+   "fecha": "2026-10-27T12:00:00+00:00",
+   "titulo": "Early progress on accelerating drug development with Claude",
+   "visto": "2026-11-02"
+  }
+ },
+ "esade-galindo": {
+  "https://www.esade.edu/ecpol/es/publicaciones/a-quien-llegan-los-bonos-energeticos-un-analisis-por-nivel-de-renta-y-tipos-de-familia/": {
+   "extracto": "Solo un 8,3% de los hogares reciben algún bono social energético, aunque un 14,3% declaró que tuvo problemas para mantener su vivienda a una temperatura adecuada en 2021, el último dato disponible. Este porcentaje sube solo hasta el 17% entre el tercio de hogares de menor ingreso, y desciende rápidamente conforme nos fijamos en hogares […]",
+   "fecha": "2023-03-21T12:00:00+00:00",
+   "titulo": "A quién llegan los bonos energéticos: un análisis por nivel de renta y tipos de familia",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/como-alinear-los-objetivos-de-independencia-energetica-y-descarbonizacion-retos-clave-y-posibles-vias-para-superarlos/": {
+   "extracto": "El nuevo objetivo de independencia energética europea de Rusia se suma a y debe alinearse con el ya establecido de descarbonización de nuestra economía. Esta alineación parece obvia en el muy largo plazo, pero en el corto y medio plantea retos para España y para el resto de países: La presión inmediata al alza de […]",
+   "fecha": "2022-06-02T12:00:00+00:00",
+   "titulo": "Cómo alinear los objetivos de independencia energética y descarbonización: retos clave y posibles vías para superarlos",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/como-son-los-viajes-de-media-y-larga-distancia-en-espana-y-que-hacer-para-reducir-sus-emisiones/": {
+   "extracto": "España se ha marcado unos objetivos muy ambiciosos para la descarbonización del sector transporte: una reducción de emisiones de CO2 del 34% para 2030, y un 60% para 2040, y un 90% para 2050. A largo plazo los cambios estructurales (desarrollo de infraestructuras ferroviarias, penetración del vehículo eléctrico, modificación de la oferta y demanda de […]",
+   "fecha": "2025-01-30T12:00:00+00:00",
+   "titulo": "Cómo son los viajes de media y larga distancia en España y qué hacer para reducir sus emisiones",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/concentracion-de-la-propiedad-y-precios-de-alquiler-en-espana/": {
+   "extracto": "Este informe usa los microdatos del Panel de Hogares IEF/AEAT (788.033 observaciones de referencia catastral por año entre 2019 y 2023) para estudiar si las viviendas de hogares con dos o más viviendas en alquiler (multiarrendadores) se alquilan a precios distintos de las de hogares con una sola (monoarrendadores), a qué responde esa diferencia y […]",
+   "fecha": "2026-10-21T12:00:00+00:00",
+   "titulo": "Concentración de la propiedad y precios de alquiler en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/el-mercado-de-alquiler-en-espana-alquiler-vacacional-de-temporada-y-largo-plazo-ante-la-regulacion/": {
+   "extracto": "→ El alquiler de temporada ha crecido en Barcelona del 2,1% del total de anuncios en 2019 al 14,4% en 2023: su peso relativo se ha multiplicado por siete. → En Madrid ha aumentado también de manera exponencial, aunque con menor intensidad: del 4% al 10% (x3,5). → En paralelo, el peso de las ofertas […]",
+   "fecha": "2024-11-21T12:00:00+00:00",
+   "titulo": "El mercado de alquiler en España: alquiler vacacional, de temporada y largo plazo ante la regulación",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/el-peso-del-territorio-en-las-posiciones-sobre-la-transicion-verde/": {
+   "extracto": "Ideas claves → Las diferencias que existen en torno a las políticas de transición verde entre habitantes de ciudades y pequeños municipios se restringen a políticas concretas, más que a actitudes generales, valores o emociones → Se observan diferencias significativas entre personas de municipios grandes y pequeños en materia de vehículos, de instalación de renovables […]",
+   "fecha": "2023-07-13T12:00:00+00:00",
+   "titulo": "El peso del territorio en las posiciones sobre la transición verde",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/estimando-el-efecto-del-tope-al-precio-del-gas/": {
+   "extracto": "Para moderar la escalada del precio de la electricidad, una de las medidas más significativas hasta el momento es el tope al gas implementado de manera excepcional en España y Portugal. Este tope es en realidad una compensación que se paga a los generadores de electricidad con esta fuente para que rebajen el precio ofertado […]",
+   "fecha": "2022-09-30T12:00:00+00:00",
+   "titulo": "Estimando el efecto del tope al precio del gas",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/evolucion-de-los-fondos-next-gen-eu-en-espana-2/": {
+   "extracto": "Con el horizonte de ejecución de agosto de 2026 ya a la vista, EsadeEcPol presenta la actualización de su NextGenEU Tracker con datos a 12 de marzo de 2026. El informe radiografía un programa que entra en su esprint final: los avances son sustanciales, pero la brecha entre lo convocado y lo adjudicado, la concentración […]",
+   "fecha": "2026-04-16T12:00:00+00:00",
+   "titulo": "Evolución de los Fondos Next-Gen EU en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/evolucion-de-los-fondos-next-gen-eu-en-espana/": {
+   "extracto": "Analizar al detalle el destino y el ritmo al que se están transfiriendo los 80.000 millones de € que España tiene asignados a día de hoy en el marco del programa de Fondos Next Generation EU sigue suponiendo un reto mayúsculo, incluso a la luz de la reciente la valoración de medio término que acaba […]",
+   "fecha": "2024-02-29T12:00:00+00:00",
+   "titulo": "Evolución de los Fondos NextGen EU en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/explicar-la-caida-del-aprendizaje-por-cuartiles-socioeconomicos-en-pisa-2025-a-partir-de-los-cambios-metodologicos/": {
+   "extracto": "Working paper en colaboración con Innovamat Research Lab El Volumen I de PISA 2025 (OCDE, 2026a) señala que la brecha socioeconómica se redujo entre 2022 y 2025 porque el alumnado aventajado fue el que más empeoró: «un nuevo fenómeno de estudiantes de familias acomodadas con dificultades académicas». Sin embargo, este patrón se explica por los […]",
+   "fecha": "2026-09-23T12:00:00+00:00",
+   "titulo": "Explicar la caída del aprendizaje por cuartiles socioeconómicos en PISA 2025 a partir de los cambios metodológicos",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/ia-sector-publico/": {
+   "extracto": "En colaboración con Implement Consulting Group · Con el apoyo de Google ↓ Descarga el informe completo La IA presenta un gran potencial para mejorar la prestación de servicios públicos al tiempo que aborda retos especialmente urgentes en el contexto actual español, como reducir la carga burocrática o mejorar las interacciones con los ciudadanos. En un […]",
+   "fecha": "2025-09-01T12:00:00+00:00",
+   "titulo": "El impacto de la IA en el sector público español",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/informe-economico-y-financiero-38/": {
+   "extracto": "Esade publica cada seis meses, con el apoyo del Banco Sabadell, el Informe Económico y Financiero, que en esta ocasión alcanza su edición número 38 bajo el título La Europa que falta: capacidades para un mundo hostil. Con él, Esade mantiene su vocación de contribuir al debate público a través de un análisis riguroso y […]",
+   "fecha": "2026-03-24T12:00:00+00:00",
+   "titulo": "Informe Económico y Financiero # 38 · Europa, capacidades para un mundo hostil",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/la-evaluacion-de-los-impactos-sociales-en-el-contexto-de-la-transicion-hacia-una-movilidad-de-cero-emisiones/": {
+   "extracto": "La necesidad urgente de llevar a cabo una descarbonización ha ampliado el alcance de las políticas de transporte, que han pasado de centrarse en la mejora de las condiciones de la red, reduciendo la congestión o mejorando la accesibilidad, por ejemplo, a incluir cuestiones de sostenibilidad y promover una movilidad de cero emisiones y medidas […]",
+   "fecha": "2023-11-23T12:00:00+00:00",
+   "titulo": "La evaluación de los impactos sociales en el contexto de la transición hacia una movilidad de cero emisiones",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/la-juventud-mediterranea-frente-a-los-desafios-de-la-crisis-permanente/": {
+   "extracto": "El tránsito a la vida adulta para las generaciones nacidas entre 1980 y 2005 ha estado marcado por múltiples crisis económicas y sociales, afectando especialmente a jóvenes en el sur de Europa y, por regla general, el arco mediterráneo. Nuestro estudio actualiza y expande investigaciones anteriores, incorporando datos de una novedosa, completa y ambiciosa encuesta […]",
+   "fecha": "2023-11-14T12:00:00+00:00",
+   "titulo": "La juventud mediterránea frente a los desafíos de la crisis permanente",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/la-reforma-del-mercado-electrico-europeo-una-valoracion-y-proximos-pasos/": {
+   "extracto": "El funcionamiento del mercado de energía eléctrica europeo necesita nuevos instrumentos para fomentar las inversiones en proyectos de energías renovables a gran escala y en almacenamiento. Aunque en teoría los mercados como el europeo podrían incentivar la inversión, en la práctica no lo han logrado. De hecho, llegados a cierto punto de madurez, el descenso […]",
+   "fecha": "2024-01-12T12:00:00+00:00",
+   "titulo": "La reforma del mercado eléctrico europeo: una valoración y próximos pasos",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/las-escuelas-se-estan-quedando-sin-ninos-una-oportunidad-para-transformar-el-sistema-educativo/": {
+   "extracto": "Entre 2013 (el máximo histórico) y 2023 España ha perdido 450.000 niños menores de 16 años, es decir, de alumnos potenciales de las etapas obligatorias de la educación infantil y obligatoria. En 2037 la cifra habrá sobrepasado 1 millón de niños. El sistema educativo pasará de tener que absorber 7,5 millones a menos de 6,5 […]",
+   "fecha": "2023-09-13T12:00:00+00:00",
+   "titulo": "Las escuelas se están quedando sin niños: una oportunidad para transformar el sistema educativo.",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/lo-que-servira-y-lo-que-no-de-la-nueva-politica-de-vivienda-para-mejorar-el-acceso-al-alquiler/": {
+   "extracto": "La nueva política de vivienda plantea resolver los evidentes problemas del alquiler en las ciudades españolas a través de un control de precios en zonas tensionadas y un esfuerzo para incrementar la oferta de alquiler social. El esfuerzo en acceso es prometedor y va en la dirección adecuada para resolver el problema, mientras que el […]",
+   "fecha": "2023-05-03T12:00:00+00:00",
+   "titulo": "Lo que servirá y lo que no de la nueva política de vivienda para mejorar el acceso al alquiler",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/logro-la-subvencion-al-transporte-publico-metropolitano-sacar-coches-de-las-ciudades-un-analisis-con-datos-de-trafico-en-tiempo-real-de-la-ciudad-de-madrid/": {
+   "extracto": "Ideas clave → Con la evidencia disponible no podemos afirmar que la subvención al transporte metropolitano en ferrocarril haya reducido los coches en las calles de Madrid. → Tampoco hay efecto para las zonas con mayor intensidad de tráfico, menor (o mayor) nivel de renta, ni para las vías principales (M-30) de acceso a la […]",
+   "fecha": "2023-10-18T12:00:00+00:00",
+   "titulo": "¿Logró la subvención al transporte público metropolitano sacar coches de las ciudades?",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/los-efectos-del-aumento-del-iva-en-el-consumo-de-las-bebidas-azucaradas-en-espana/": {
+   "extracto": "Este policy brief es un resumen del working paper académico realizado por Ángel Martínez Jorge y Javier Martínez Santos que podéis encontrar aquí. Los impuestos sobre el azúcar se han consolidado como la medida de referencia para desincentivar el consumo de un producto que se considera fuertemente asociado a la obesidad, especialmente la infantil. En […]",
+   "fecha": "2022-11-29T12:00:00+00:00",
+   "titulo": "Los efectos del aumento del IVA en el consumo de las bebidas azucaradas en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/los-efectos-del-tope-al-gas-en-los-precios-la-inflacion-y-el-consumo-seis-meses-despues/": {
+   "extracto": "La medida más destacada para moderar la escalada del precio de la electricidad durante 2022 ha sido el tope al gas implementado de manera excepcional en España y Portugal. Se trata de una compensación que se paga a las centrales de ciclo combinado de gas, a las de carbón y a las de cogeneración para […]",
+   "fecha": "2023-02-02T12:00:00+00:00",
+   "titulo": "Los efectos del tope al gas en los precios, la inflación y el consumo seis meses después.",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/los-reticentes-a-las-politicas-contra-el-cambio-climatico-quienes-son-que-piensan-y-como-votan/": {
+   "extracto": "La ciudadanía española está de acuerdo con la existencia y la gravedad del cambio climático: solo un 5% le otorga poca importancia (EsadeEcPol 2022), apenas un 8% piensa que no es real (CIS 2022) y para un 71% sus consecuencias son ya visibles. Pero este consenso en el reconocimiento de la crisis climática se desvanece cuando […]",
+   "fecha": "2022-11-10T12:00:00+00:00",
+   "titulo": "Los reticentes a las políticas contra el cambio climático: quiénes son, qué piensan y cómo votan",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macro-insights-09/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para septiembre de 2024. Coyuntura macro El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB rondaría el +0,6% trimestral en el 3T24, moderándose levemente frente al 0,8% del 1T y el 2T. Ello introduce sesgos alcistas en las proyecciones […]",
+   "fecha": "2024-09-13T12:00:00+00:00",
+   "titulo": "Macro Insights #09",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macro-insights-mayo-de-2026/": {
+   "extracto": "El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima un crecimiento del PIB del 0,5% en el 2T26, rebajando de la tendencia de los últimos dos años. Demanda, confianza, oferta y mercado laboral contribuyen al crecimiento trimestral, lo que apunta a una diversificación favorable de las fuentes de crecimiento. De confirmarse la […]",
+   "fecha": "2026-06-04T12:00:00+00:00",
+   "titulo": "Macro Insights – Mayo de 2026",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-01/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para junio de 2023. Coyuntura macro Las previsiones de crecimiento de la economía española son positivas a corto plazo: estimamos en torno a un +0,5% intertrimestral en el PIB del segundo trimestre. El sector servicios está siendo el motor de este crecimiento, lo que implica que si se […]",
+   "fecha": "2023-06-23T12:00:00+00:00",
+   "titulo": "MacroInsights #01",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-02/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para septiembre de 2023. Coyuntura macro Las previsiones de la economía española son positivas a corto plazo: el RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima un crecimiento intertrimestral del PIB en torno a un +0,6% en el 2T23, en línea con el registro del […]",
+   "fecha": "2023-07-19T12:00:00+00:00",
+   "titulo": "MacroInsights #02",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-03/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para octubre de 2023. Coyuntura macro: La economía española entra en negativo a corto plazo: el RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima una evolución negativa del PIB en el 3T23: -0,1%. Esta tasa, que ya tiene en cuenta la revisión del INE de […]",
+   "fecha": "2023-09-21T12:00:00+00:00",
+   "titulo": "MacroInsights #03",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-04/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para noviembre de 2023. Coyuntura macro La economía española se mantiene en positivo en el último tramo del año: el RealTimeTracker estima una evolución positiva del PIB en el 4T23 (+0,2%), mostrando una tendencia de suave ralentización en los últimos trimestres, pero cifras de avance superiores a las […]",
+   "fecha": "2023-11-28T12:00:00+00:00",
+   "titulo": "MacroInsights #04",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-05/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para enero de 2024. Coyuntura macro El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el PIB español cerrará con un +0,5% del PIB en el 4TR23. Aproximamos así que el 2023 se habría saldado con un avance de +2,4%. De manera preliminar, para […]",
+   "fecha": "2024-01-25T12:00:00+00:00",
+   "titulo": "MacroInsights #05",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-06/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para marzo de 2024. Coyuntura macro El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB alcanzará +0,8% en el 1T24, superando las expectativas de principio de año. Anticipamos un crecimiento algo más moderado en el 2T24. La lectura tentativa […]",
+   "fecha": "2024-03-26T12:00:00+00:00",
+   "titulo": "MacroInsights #06",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-07/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para mayo de 2024. Coyuntura macro El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB podría alcanzar +0,5% en el 2T24. El crecimiento anual quedaría en el 2,3%, dos décimas menor que en 2023 pero triplicando la cifra proyectada […]",
+   "fecha": "2024-05-10T12:00:00+00:00",
+   "titulo": "MacroInsights #07",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-08/": {
+   "extracto": "Coyuntura macro, enfoque global y perspectiva micro para junio de 2024. Coyuntura macro El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB se situaría de +0,4% a +0,5% en el 2T24, moderándose frente al 0,7% del 1T24. El balance de riesgos no ha cambiado sustancialmente y […]",
+   "fecha": "2024-06-20T12:00:00+00:00",
+   "titulo": "MacroInsights #08",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-10/": {
+   "extracto": "Análisis macro en partnership con EY Insights. El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB se situaría en un +0,6% en el 4T24, moderándose frente a trimestres previos. Los indicadores de servicios impulsaron este crecimiento del PIB en el trimestre, mientras que la inversión en […]",
+   "fecha": "2024-11-13T12:00:00+00:00",
+   "titulo": "MacroInsights #10",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/macroinsights-febrero-de-2026/": {
+   "extracto": "El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que un crecimiento trimestral del PIB del 0,7% en el 1T26, en línea con el promedio de los últimos trimestres. También anticipa, con información aún muy incompleta, una desaceleración en el 2T26 hasta el +0,4%, indicando que el mantenimiento del dinamismo de la […]",
+   "fecha": "2026-02-13T12:00:00+00:00",
+   "titulo": "MacroInsights – Febrero de 2026",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/mujeres-en-stem/": {
+   "extracto": "Este estudio propone el análisis más profundo y detallado de la desigualdad de género en los ámbitos de STEM en España realizado hasta la fecha. De manera distintiva, ponemos el foco en los ámbitos con mayor peso de las matemáticas, área en la que se producen las brechas más acusadas; cubrimos desde la educación básica, […]",
+   "fecha": "2024-03-04T12:00:00+00:00",
+   "titulo": "Mujeres en STEM: Desde la educación básica hasta la carrera laboral",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/nextgeneu-tracker-evolucion-de-los-fondos-nextgen-eu-en-espana/": {
+   "extracto": "Desde el lanzamiento del Marco de Recuperación y Resiliencia europeo (MRR) el análisis y seguimiento de la ejecución de los fondos asignados a España ha sido fundamental para evaluar no sólo la absorción económica, sino también su capacidad para impulsar transformaciones significativas en la economía española tal y como busca el Plan de Recuperación, Transformación […]",
+   "fecha": "2025-04-03T12:00:00+00:00",
+   "titulo": "NextGenEU Tracker: Evolución de los Fondos NextGen EU en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/nuevo-libro-un-pais-posible/": {
+   "extracto": "España tiene prácticamente la misma renta real per capita que hace 15 años, mientras que otros países de nuestro entorno son mucho más ricos que entonces. Esto significa que en los últimos dieciocho años no hemos mejorado, de media, nuestro nivel de vida. Nos encontramos, por tanto, en el camino hacia dos décadas perdidas. Hay […]",
+   "fecha": "2023-10-10T12:00:00+00:00",
+   "titulo": "Nuevo libro: ‘Un país posible’",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/que-politicas-funcionaran-mejor-para-aumentar-la-eficiencia-y-moderar-la-demanda-energetica/": {
+   "extracto": "La necesidad de alinear objetivos de descarbonización e independencia energética de Rusia aumenta el requerimiento de políticas para racionalizar nuestro consumo energético. Las políticas más prometedoras para hacerlo son las que afecten al precio de la energía mediante impuestos y similares, especialmente para hogares, particulares y establecimientos comerciales, por dos razones: Mantienen la señal de […]",
+   "fecha": "2022-05-26T12:00:00+00:00",
+   "titulo": "¿Qué políticas funcionarán mejor para aumentar la eficiencia y moderar la demanda energética?",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/radiografia-de-la-adopcion-de-tecnologias-limpias-en-los-hogares-espanoles/": {
+   "extracto": "La adopción de tecnologías más limpias o más eficientes suele ser más temprana en los hogares de más ingresos, o definidos por otras variables que facilitan incurrir en el coste de dicha adopción. El rol de la política pública, en un contexto en el que nos hemos marcado como objetivo común descarbonizar nuestra economía, debería […]",
+   "fecha": "2025-02-28T12:00:00+00:00",
+   "titulo": "Radiografía de la adopción de tecnologías limpias en los hogares españoles",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/radiografia-de-la-evolucion-del-patrimonio-de-los-hogares-espanoles-la-dificultad-del-ahorro-para-las-nuevas-generaciones/": {
+   "extracto": "El presente estudio, parte del Observatorio del Ahorro que mantenemos con la Fundación Mutualidad de la Abogacía, analiza a fondo la evolución de la acumulación de patrimonio y cómo ha variado en el tiempo y entre composición de los hogares por segmentos de edad, e incluyendo también algunas dimensiones horizontales especialmente relevantes. Primero, observamos la […]",
+   "fecha": "2025-10-09T12:00:00+00:00",
+   "titulo": "Radiografía de la evolución del patrimonio de los hogares españoles: la dificultad del ahorro para las nuevas generaciones",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/radiografia-de-las-divisiones-y-consensos-de-la-sociedad-espanola-en-torno-al-cambio-climatico/": {
+   "extracto": "Para entender mejor los consensos y divisiones en torno al reto crucial de la transición verde, EsadeEcPol ha realizado una encuesta pionera en su amplitud y profundidad. Presentamos aquí sus resultados clave y la radiografía resultante de la opinión de la ciudadanía. Los consensos fundamentales empiezan en la alta importancia que se le da al […]",
+   "fecha": "2022-06-15T12:00:00+00:00",
+   "titulo": "Radiografía de las divisiones y consensos de la sociedad española en torno al cambio climático",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/radiografia-de-las-reformas-para-mejorar-la-eficiencia-energetica-de-las-viviendas-en-espana/": {
+   "extracto": "La adecuación de las viviendas a un uso lo más eficiente posible de la energía que consume el hogar que las habita es uno de los factores que más determina sus condiciones de vida, y su importancia no deja de crecer: el encarecimiento de la energía ha elevado el coste de habitar una vivienda poco […]",
+   "fecha": "2026-07-22T12:00:00+00:00",
+   "titulo": "Radiografía de las reformas para mejorar la eficiencia energética de las viviendas en España",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/realtimemacro-diciembre-de-2025/": {
+   "extracto": "• El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que un crecimiento trimestral del PIB del 0,7% en el 4T25, en línea con el promedio de los últimos cuatro trimestres. También anticipa, con información aún muy incompleta, una leve aceleración en el 1T26 (+0,8%), indicando que el mantenimiento del dinamismo de […]",
+   "fecha": "2025-12-15T12:00:00+00:00",
+   "titulo": "RealTimeMacro – diciembre de 2025",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/realtimemacro-feb25/": {
+   "extracto": "El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB se situaría en un +0,7% en el 1T25, moderándose muy levemente frente a los últimos trimestres. Ese avance del +0,7% está empujado por la revisión de la contabilidad nacional y los indicadores recientes de inversión. Han restado […]",
+   "fecha": "2025-02-12T12:00:00+00:00",
+   "titulo": "RealTimeMacro – febrero 2025",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/realtimemacro-mayo-de-2025/": {
+   "extracto": "• El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que el crecimiento trimestral del PIB se situaría en un rango del 0,5%-0,6% en el 2T25, moderándose levemente frente a los últimos trimestres. También anticipa, con información aún muy incompleta, un avance del +0,2% en el 3T que sugeriría una paulatina desaceleración […]",
+   "fecha": "2025-05-19T12:00:00+00:00",
+   "titulo": "RealTimeMacro – mayo de 2025",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/realtimemacro-septiembre-de-2025/": {
+   "extracto": "El RealTimeTracker, nuestro modelo de seguimiento y pronóstico en tiempo real, estima que un crecimiento trimestral del PIB del 0,7% en el 3T25, en línea con los registros de los últimos trimestres. También anticipa, con información aún muy incompleta, un avance del +0,5% en el 4T que sugeriría una desaceleración moderada del crecimiento en el […]",
+   "fecha": "2025-09-17T12:00:00+00:00",
+   "titulo": "RealTimeMacro – septiembre de 2025",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/the-iberian-exception-estimating-the-impact-of-a-cap-on-gas-prices-for-electricity-generation-on-consumer-prices-and-market-dynamics/": {
+   "extracto": "As the volatility of short-term energy market prices increases due to exogenous shocks and the changing nature of the energy mix market interventions are gaining importance in the policy debate. Accurate and robust quantification of their impact is becoming therefore essential. This paper conducts a causality analysis to evaluate the Spanish ‘gas cap’ for electricity […]",
+   "fecha": "2023-11-17T12:00:00+00:00",
+   "titulo": "The Iberian exception: estimating the impact of a cap on gas prices for electricity generation on consumer prices and market dynamics",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/una-politica-industrial-verde-para-espana-en-el-marco-europeo/": {
+   "extracto": "La descarbonización presenta una oportunidad para desarrollar tecnologías que impulsen la transición energética. Si bien España ha experimentado un declive en su sector industrial, la transición a una economía descarbonizada abre una ventana para revertir esta tendencia. El objetivo no es solo reindustrializar, sino hacerlo en sectores de alto valor añadido que impulsen el empleo […]",
+   "fecha": "2025-03-01T12:00:00+00:00",
+   "titulo": "Una política industrial verde para España en el marco europeo",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/una-propuesta-mas-justa-de-revalorizacion-de-las-pensiones/": {
+   "extracto": "El proyecto inicial de los PGE para 2023 anticipa un incremento de unos 25.000 millones de euros en gasto social en comparación con 2022. De estos, unos 19.500 se dedicarán a pensiones, y 12.430 específicamente a la revalorización general al 8,5% anunciada por el gobierno. Es decir: la mitad del nuevo gasto social se va […]",
+   "fecha": "2022-10-10T12:00:00+00:00",
+   "titulo": "Una propuesta más justa de revalorización de las pensiones",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/publicaciones/unidos-en-la-diversidad-respuestas-nacionales-a-la-crisis-energetica-europea/": {
+   "extracto": "Con motivo de la crisis energética exacerbada por la invasión rusa de Ucrania, publicamos este papel conjunto con think tanks de toda Europa (AMO, Bruegel, ECCO, y el Instituto Jacques Delors) para resumir y valorar las aproximaciones de política económica que cada país está tomando. Nuestro director adjunto, Jorge Galindo, se centra en la parte […]",
+   "fecha": "2022-05-30T12:00:00+00:00",
+   "titulo": "¿Unidos en la diversidad? Respuestas nacionales a la crisis energética europea",
+   "visto": "2026-11-02"
+  },
+  "https://www.esade.edu/ecpol/es/webinars-eventos/esta-la-sociedad-espanola-polarizada-en-torno-a-la-transicion-verde/": {
+   "extracto": "La transición verde es uno de los mayores retos de política pública y económica a los que se enfrenta España. Sin embargo, sabemos aún poco hasta qué punto nuestra sociedad está polarizada o dividida en torno a las medidas que debemos abordar, o al menos considerar, para reducir los efectos del cambio climático y descarbonizar […]",
+   "fecha": "2022-06-15T12:00:00+00:00",
+   "titulo": "¿Está la sociedad española polarizada en torno a la transición verde?",
+   "visto": "2026-11-02"
+  }
+ },
+ "ine-es": {
+  "https://www.ine.es/dyngs/CEL/index.htm?cid=1699": {
+   "extracto": "Las elecciones a Cortes Generales se celebrarán el 29 de noviembre, de conformidad con lo dispuesto en el Real Decreto 806/2026, de 5 de octubre, de disolución del Congreso de los Diputados y del Senado y de convocatoria de elecciones, publicado el 6 de octubre en el Boletín Oficial del Estado (BOE).",
+   "fecha": "2026-11-29T12:00:00+00:00",
+   "titulo": "Elecciones Generales de 29 de noviembre 2026",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/FYE/index.htm?cid=138": {
+   "extracto": "",
+   "fecha": "2026-10-26T12:00:00+00:00",
+   "titulo": "Entrega del Premio Nacional de Estadística",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/INE/index.htm?cid=1319": {
+   "extracto": "El día 20 de octubre se celebra el Día Europeo de la Estadística bajo el lema \"Las estadísticas europeas en una encrucijada: prioridades, oportunidades y limitaciones\".",
+   "fecha": "2026-10-20T12:00:00+00:00",
+   "titulo": "Día Europeo de la Estadística 2026",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/Podcast/episodio1.htm": {
+   "extracto": "La presidenta del Instituto Nacional de Estadística, Elena Manzanera, inaugura este pódcast en el que nos acerca al trabajo que realiza la organización y al papel de las estadísticas oficiales para comprender mejor la realidad que nos rodea.",
+   "fecha": "2026-09-16T12:00:00+00:00",
+   "titulo": "En Clave INE, Ep 1: Conoce el INE",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/Podcast/episodio2.htm": {
+   "extracto": "En este segundo episodio de En Clave INE, Ignacio González Veiga, Subdirector General de Estadísticas Coyunturales del INE, explica cómo se configura y actualiza la cesta del IPC, qué productos y servicios incluye y cómo se recogen sus precios para medir su evolución.",
+   "fecha": "2026-10-14T12:00:00+00:00",
+   "titulo": "En Clave INE, Ep 2: La cesta del IPC, el reflejo de nuestro consumo",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=1": {
+   "extracto": "Varios expertos del INE participaron a primeros del mes de septiembre en el XLII Congreso Nacional de Estadística, Investigación Operativa y Ciencia de Datos (SEIO 2026) celebrado en Santiago de Compostela.",
+   "fecha": "2026-09-24T12:00:00+00:00",
+   "titulo": "El INE participa en el XLII Congreso Nacional de Estadística, Investigación Operativa y Ciencia de Datos",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=1259954904138": {
+   "extracto": "La presidenta del INE presenta la postura de España, que mantiene el foco en las necesidades de los usuarios y en la calidad de la información.",
+   "fecha": "2026-09-08T12:00:00+00:00",
+   "titulo": "El SEE debate un plan de simplificación para reducir la carga a informantes y oficinas de estadística",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=2": {
+   "extracto": "Manzanera destaca que el seguimiento de estos objetivos se insertó desde el inicio de la estadística oficial, lo que garantiza que se elaboran con metodologías sólidas y comparables.",
+   "fecha": "2026-09-25T12:00:00+00:00",
+   "titulo": "La Presidenta del INE participa en el V Observatorio ODS",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=3": {
+   "extracto": "El INE y las oficinas de estadística de las CCAA trataron distintos asuntos relacionados con la producción y modernización.",
+   "fecha": "2026-10-02T12:00:00+00:00",
+   "titulo": "El CITE y el FER abordan nuevos ámbitos de coordinación y cooperación estadística",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=4": {
+   "extracto": "El Instituto también proporciona asistencia técnica a El Salvador en materia de estadísticas de innovación e I+D.",
+   "fecha": "2026-10-02T12:00:00+00:00",
+   "titulo": "El INE comparte su experiencia en estadísticas de gasto turístico con Andorra",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=5": {
+   "extracto": "En la reunión se presentaron varios proyectos de operaciones estadísticas e informes de los Comités Técnicos Sectoriales.",
+   "fecha": "2026-10-22T12:00:00+00:00",
+   "titulo": "La Comisión Permanente del CSE aborda el Programa anual 2027 del Plan Estadístico Nacional",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=6": {
+   "extracto": "Durante el encuentro se acordaron nuevos desarrollos metodológicos para la medición y comunicación del progreso hacia los ODS y se debatieron los trabajos sobre la iniciativa Beyond GDP.",
+   "fecha": "2026-10-16T12:00:00+00:00",
+   "titulo": "El INE copreside la reunión del Steering Group sobre estadísticas para los ODS de la CES-UNECE",
+   "visto": "2026-11-02"
+  },
+  "https://www.ine.es/dyngs/masINE/noticia.htm?cid=8": {
+   "extracto": "El portal incluye contenidos y material específicos para cada nivel educativo, para profesores y nuevos juegos y diverso material audiovisual que facilita el acceso a la información.",
+   "fecha": "2026-10-22T12:00:00+00:00",
+   "titulo": "El INE lanza el nuevo portal divulgativo \"Explica\" para la comunidad educativa",
+   "visto": "2026-11-02"
+  },
+  "https://www.revistaindice.com/": {
+   "extracto": "Se publica un nuevo número de la Revista Índice. En este número, dedicado al endeudamiento de hogares, empresas y Administraciones Públicas, se reúnen contribuciones sobre las fuentes estadísticas que permiten medirlo y analizarlo.",
+   "fecha": "2026-10-15T12:00:00+00:00",
+   "titulo": "Revista Índice 103. Estadísticas de deuda y financiación II",
+   "visto": "2026-11-02"
+  }
+ },
+ "kubernetes-io-blog": {
+  "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/": {
+   "extracto": "By Qi Wang (Red Hat), Sohan Kunkerkar (Red Hat) | Monday, September 14, 2026 in Blog",
+   "fecha": "2026-09-14T12:00:00+00:00",
+   "titulo": "Kubernetes v1.37: Memory QoS Graduates to Beta",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/": {
+   "extracto": "By Kevin Torres Martinez (Google) | Tuesday, September 15, 2026 in Blog",
+   "fecha": "2026-09-15T12:00:00+00:00",
+   "titulo": "Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/": {
+   "extracto": "By Nispriha Jagan (Red Hat), Neeraj Krishna Gopalakrishna (Red Hat) | Wednesday, September 16, 2026 in Blog",
+   "fecha": "2026-09-16T12:00:00+00:00",
+   "titulo": "Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/": {
+   "extracto": "By Roman Bednář (Red Hat) | Monday, September 21, 2026 in Blog",
+   "fecha": "2026-09-21T12:00:00+00:00",
+   "titulo": "Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/": {
+   "extracto": "By Natalie Fisher (VMware by Broadcom) | Tuesday, September 22, 2026 in Blog",
+   "fecha": "2026-09-22T12:00:00+00:00",
+   "titulo": "Spotlight on SIG Apps",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/": {
+   "extracto": "By Ocean Xie , Yuan Wang | Monday, October 05, 2026 in Blog",
+   "fecha": "2026-10-05T12:00:00+00:00",
+   "titulo": "Scaling Kubernetes Workloads with Node Swap",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/": {
+   "extracto": "By Paco Xu (DaoCloud) | Tuesday, October 06, 2026 in Blog",
+   "fecha": "2026-10-06T12:00:00+00:00",
+   "titulo": "The Shift to cgroup v2 in Kubernetes: What You Need to Know",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/": {
+   "extracto": "By Utkarsh Raj (LFX Mentee, CNCF), René Dudfield (Microsoft), Kevin Hannon (Red Hat) | Wednesday, October 14, 2026 in Blog",
+   "fecha": "2026-10-14T12:00:00+00:00",
+   "titulo": "Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/": {
+   "extracto": "By Nabarun Pal (Broadcom) on behalf of WG Workload Conformance | Tuesday, October 27, 2026 in Blog",
+   "fecha": "2026-10-27T12:00:00+00:00",
+   "titulo": "Announcing the Workload Conformance Working Group",
+   "visto": "2026-11-02"
+  },
+  "https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/": {
+   "extracto": "By Frederico Muñoz (SAS Institute), Kirti Goyal (independent) | Thursday, October 29, 2026 in Blog",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "From Working Group to SIG Architecture: spotlight on AI Conformance",
+   "visto": "2026-11-02"
+  }
+ },
+ "martinfowler-com": {
+  "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html": {
+   "extracto": "Naresh Jain compares coding agents building the same API service with and without a behavioral harness. A frontier model, GPT-6 Sol, passed every external evaluation either way. But a cost-optimized model, GPT-6 Luna, succeeded in only 3 of 10 unharnessed runs and all 10 with the harness. While adding the harness increased token usage and runtime for Luna, the harnessed Luna runs achieved the same 10-for-10 reliability as GPT-6 Sol while costing 33% less per run ($0.273 vs $0.406). This experiment suggests a behavioral harness might be a practical way to get dependable results from smaller, cost-optimized models.",
+   "fecha": "2026-10-13T12:00:00+00:00",
+   "titulo": "Are Harnesses Worth the Cost?",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/articles/never-send-slides/build-your-slide-template.html": {
+   "extracto": "Building a slide template starts with three foundational choices — colours, fonts and layouts. Sumeet Gayathri Moghe covers the basics of color theory and how to build a reusable palette, the essentials of typography, including serif, sans-serif, handwritten and monospace fonts, plus the finer points of kerning and leading, and why a near-blank layout might serve you better than the prescribed layouts that ship with your slideware.",
+   "fecha": "2026-10-14T12:00:00+00:00",
+   "titulo": "Build your slide template",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/articles/never-send-slides/slide-principles.html": {
+   "extracto": "Not every presentation needs slides, but when they earn their place, they work as a visual channel that complements the speaker rather than replacing them. Sumeet Gayathri Moghe sets out the principles that follow from that idea — control over the rate of knowledge exposition, tight coupling between slides and speaker, minimalism by default, visuals that say more than words can, and never sending your slides out in advance.",
+   "fecha": "2026-09-30T12:00:00+00:00",
+   "titulo": "Principles for effective slides",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/articles/practitioner-voice.html#TheCraftOfPractitionerVoice": {
+   "extracto": "A couple of months ago Jim Highsmith explained how practitioners writing for each other forms a distinct style of writing. He now adds a section to the article with more detail on the craft of how we write in this style. How the writer shows up in the prose, its four principles, the role of story, how to sensibly use AI, three levels of editing, and clarity of the audience.",
+   "fecha": "2026-10-13T12:00:00+00:00",
+   "titulo": "The Craft of Practitioner Voice",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/articles/software-meets-hardware.html": {
+   "extracto": "When software meets hardware, engineering principles remain largely the same, but the sensible defaults often change. Kuldeep Singh describes our experience modernizing a large IoT fleet of battery-powered sensors. Our familiar principles remained important; what changed was how we applied them. These practices emerged through experiments, failures, and operational experience—each challenge helping us replace a reasonable assumption with a more sensible default.",
+   "fecha": "2026-10-15T12:00:00+00:00",
+   "titulo": "When Software Meets Hardware",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/bliki/LLM-Voice.html": {
+   "extracto": "Sometimes when I read a post, I get the growing feeling that I'm reading the output of an LLM. I can't necessarily define why, although there are the common tells (it's not the em-dashes, it's the load-bearing tapestries). As I do this my desire to read on atrophies, sometimes to the point of revulsion",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "Bliki: LLM Voice",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/fragments/2026-10-21.html": {
+   "extracto": "LLM generated prose generates rejection, cancellation of Grade Hopper celebration, using AI to assist debugging unfamiliar code",
+   "fecha": "2026-10-21T12:00:00+00:00",
+   "titulo": "Fragments: October 21",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/fragments/2026-10-28.html": {
+   "extracto": "widening perception gap of LLMs, notes from Foocamp, today is 1997, a shift to supervisory control, Eric Evans keynote, Thoughtworks's token sourcing strategy",
+   "fecha": "2026-10-28T12:00:00+00:00",
+   "titulo": "Fragments: October 28",
+   "visto": "2026-11-02"
+  },
+  "https://martinfowler.com/rachels-ramblings/good-devs-wary.html": {
+   "extracto": "Good developers’ caution about agentic development comes from knowing that built isn’t the same as working in production.",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "Why are good developers so wary of agentic development?",
+   "visto": "2026-11-02"
+  }
+ },
+ "share-google-j8rjlbcek9e8zppdm": {
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ancelotti-olvida-betico-natan-renovacion-brasil-20261031090003-nts.html": {
+   "extracto": "El central del Betis había estado en la prelista después de su gran inicio de temporada",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "Ancelotti se 'olvida' del bético Natan en la renovación de Brasil",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-recibe-unico-equipo-ganado-laliga-20261030225043-nts.html": {
+   "extracto": "El Málaga tiene su casillero a cero después de diez jornadas en Primera y ha celebrado su primer triunfo de la temporada al vencer por 0-3 al modesto Sporting de Alcázar en la Copa",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "El Betis recibe al único equipo que aún no ha ganado en LaLiga",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/primera-vez-pellegrini-malaga-partido-oficial-despues-20261030205654-nts.html": {
+   "extracto": "El técnico chileno es historia del conjunto malaguista, con el que llegó a unos cuartos de final de la Champions League; tiene una glorieta con su nombre en el perímetro exterior de la barriada de La Roca",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "La primera vez de Pellegrini contra el Málaga en partido oficial después de hacer historia en La Rosaleda: «Fueron tres años maravillosos»",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/recio-baja-entrenamiento-malaga-cuadro-viral-20261030160710-nts.html": {
+   "extracto": "Pablo Martínez, Joaquín, Juan Cruz, Aaron Ochoa y Lobete trabajaron al margen del grupo y serán baja para el partido ante el Betis",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Recio, baja en el entrenamiento del Málaga CF por un cuadro viral",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/reencuentros-betis-malaga-boqueron-20261031115620-nts.html": {
+   "extracto": "Además de Pellegrini y de Isco, Diego Llorente y Pablo Fornals se enfrentan este sábado a uno de los clubes que marcaron sus exitosas carreras",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "Los otros reencuentros del Betis - Málaga: «Aquí hay un boquerón más»",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/tiago-polo-abandera-cantera-betis-ganar-mundial-20261030165222-nts.html": {
+   "extracto": "El atacante anotó el primer gol de la final y el también bético Bruno Fernández el segundo en la victoria de España ante la República Checa",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Tiago Polo abandera a la cantera del Betis para ganar el Mundial sub 15",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-betis-malaga-canal-streaming-online-partido-20261030190135-nts.html": {
+   "extracto": "Los de Pellegrini vuelven este sábado al estadio de la Cartuja para este encuentro de la undécima jornada liguera",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Dónde ver Betis - Málaga: canal de TV y streaming online del partido de LaLiga EA Sports 2026-2027",
+   "visto": "2026-11-02"
+  }
+ },
+ "share-google-uroemjvtz4ce2cv75": {
+  "https://www.muchodeporte.com/real-betis/0-2-el-betis-deportivo-prolonga-su-mala-racha-con-una-derrota-ante-el-decano/": {
+   "extracto": "El Betis Deportivo perdió por 0-2 en la Ciudad Deportiva Luis del Sol ante un Recreativo de Huelva que confirmó su condición de líder. Los goles de José Carlos y Ale Marín prolongan la mala racha de los de Dani Fragoso, que encadenan cuatro jornadas sin ganar . El filial verdiblanco no pudo aprovechar la visita del Decano para asaltar la primera posición del Grupo IV de Segunda RFEF. El conjunto onubense se impuso por 0-2 y dejó patente su superioridad durante buena parte del encuentro.",
+   "fecha": "2026-11-01T12:00:00+00:00",
+   "titulo": "0-2: el Betis Deportivo prolonga su mala racha con una derrota ante el Decano",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/antony-se-recupera-a-tiempo-y-apunta-al-malaga/": {
+   "extracto": "El Real Betis ha recibido una noticia positiva en su regreso a los entrenamientos. Antony se ha ejercitado este jueves con el resto de sus compañeros y da un paso adelante para estar disponible ante el Málaga. El conjunto verdiblanco prepara el encuentro de este sábado en La Cartuja, correspondiente a la undécima jornada de LaLiga 2026-27, después del aplazamiento de su compromiso copero frente al CDA Navalcarnero.",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "Antony se recupera a tiempo y apunta al Málaga",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": {
+   "extracto": "El Borussia Dortmund afrontará su duelo de Champions League ante el Real Betis después de superar una exigente prueba en la Bundesliga. El conjunto dirigido por Niko Kovac empató 2-2 en su visita al Bayern de Múnich , en una nueva edición del clásico alemán, y confirmó que atraviesa un buen momento de forma. Los amarillos fueron capaces de reaccionar en dos ocasiones y evitaron la derrota gracias a un gol de Fábio Silva en el tramo final. El resultado mantiene a ambos equipos igualados a 18 puntos después de ocho jornadas, aunque el Bayern conserva el liderato por su mejor diferencia de goles. El Dortmund, por tanto, llegará al compromiso europeo sin conocer todavía la derrota en el campeonato doméstico y con la confianza que supone haber competido de tú a tú ante el principale aspirante al título.",
+   "fecha": "2026-11-01T12:00:00+00:00",
+   "titulo": "Así llega el Borussia Dortmund, rival del Betis en la Champions League",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/el-betis-lanza-un-aviso-a-los-beticos-que-viajen-a-dortmund/": {
+   "extracto": "El Real Betis ha informado de las condiciones de acceso al Signal Iduna Park para el partido de Champions League ante el Borussia Dortmund del próximo miércoles 4 de noviembre (21.00 horas). El club alemán permitirá la entrada a los aficionados verdiblancos que compraron localidades en sectores locales, salvo en determinadas zonas del Fondo Sur, donde las entradas han sido anuladas. La entidad sevillana también ha reclamado máxima responsabilidad para evitar incidentes que puedan comprometer futuros desplazamientos europeos.",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "El Betis lanza un aviso a los aficionados que viajen a Dortmund",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/el-malaga-solo-gano-en-tres-de-sus-trece-visitas-al-betis/": {
+   "extracto": "El Málaga, que visita La Cartuja el sábado en partido de la undécima jornada liguera, sólo ha ganado tres de los trece partidos oficiales que ha disputado en el campo del Real Betis, donde además ha cosechado cinco empates y otras tantas victorias.",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "El Málaga sólo ganó en tres de sus trece visitas al Betis",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/el-videoblog-de-javier-leon-imagen-vulgar-puntuacion-salvaje-2026-10-31/": {
+   "extracto": "La puesta en escena del Betis volvió a ser una de sus principales virtudes. Con La Cartuja empujando desde la grada, el equipo de Pellegrini salió decidido a imponer un ritmo alto y recuperar el balón cerca del área rival. El Málaga apenas encontraba respuestas ante semejante despliegue. En los primeros compases llegaron dos oportunidades clarísimas: un disparo de Riquelme que desvió un defensor y acabó rozando el poste y un remate de cabeza de Bartra, completamente liberado en el córner posterior, que no encontró portería. La estadística reflejaba con claridad lo sucedido sobre el césped: diez remates béticos y ninguno del conjunto malagueño antes de cumplirse el primer cuarto de hora.",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "El videoblog de Javier León: \"Imagen vulgar, puntuación salvaje\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/fornals-mira-alto-contento-de-sacar-los-tres-puntos-despues-de-que-el-atleti-tambien-lo-hiciera/": {
+   "extracto": "Pablo Fornals ha firmado un muy buen partido ante el Málaga. El centrocampista, que declaró hace unas semanas no estar en su mejor nivel, dio un paso al frente contra el conjunto de Funes. Retrasando su posición de la mediapunta al interior, el ex del West Ham anotó el 2-0 que, a la postre, serviría para superar el tanto de Niño. A pesar de la alegría que conlleva anotar un tanto en la élite, Fornals, con pasado en el Málaga, se contuvo en su celebración.",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "Fornals mira alto: \"Contento de sacar los tres puntos después de que el Atleti también lo hiciera\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/junior-descartado-para-el-betis-malaga/": {
+   "extracto": "Junior Firpo no estará en la lista de convocados para el partido de mañana sábado, a las 18.30 horas, ante el Málaga CF. El dominicano, que lleva ejercitándose junto al resto de sus compañeros desde antes del viaje a Madrid para el partido copero, necesita más entrenamientos para poder competir. Así lo ha explicado el propio Manuel Pellegrini en rueda de prensa.",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Junior, descartado para el Betis-Málaga",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/la-cronica/2-1-el-habito-de-ganar/": {
+   "extracto": "La puntuación del Betis en estas primeras once jornadas es un disparate, 23 , que se compagina con un pleno en la Champions. Poco más cabría añadir, aunque aquí contaremos cómo derrotó al Málaga la tropa de Manuel Pellegrini : con insultante superioridad en el juego, dudas en defensa, poca puntería y, consecuencia de ello, dos sustos finales por la mínima diferencia en el marcador. Son muchas pegas, quizá, por eso conviene fijarse más en el resultado y en el cómputo global de la campaña olvidando un encuentro que fue mejorable, ciertamente, aunque la también es cierto que la debilidad del rival puede que incitase a los béticos a reducir su intensidad, capaces como se veían de ganar sin poner la sexta marcha.",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "2-1: El hábito de ganar",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/lista-de-23-futbolistas-para-el-betis-malaga/": {
+   "extracto": "El Betis afronta este sábado una nueva cita en La Cartuja. El conjunto dirigido por Manuel Pellegrini recibirá al Málaga a partir de las 18:30 horas, en el encuentro correspondiente a la undécima jornada de LaLiga. Para ello, el técnico chileno ha dado a conocer este viernes la convocatoria para el choque ante el conjunto malagueño, en la que figuran tres ausencias: Facundo Bernal, Cucho Hernández y Junior Firpo.",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Lista de 23 futbolistas para el Betis-Málaga",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/onces-probables-del-betis-malaga-ya-llegara-dortmund/": {
+   "extracto": "El Betis afronta el encuentro ante el Málaga CF con la mirada puesta también en su próximo compromiso europeo. Manuel Pellegrini dispone de una plantilla que llega con descanso después del aplazamiento del partido de Copa del Rey frente al Navalcarnero. El encuentro, que debía disputarse este miércoles, se ha trasladado al próximo parón de selecciones y permitirá al técnico chileno gestionar de otra manera las cargas de sus futbolistas. Sin embargo, el calendario no concede demasiado margen. El miércoles espera el Borussia Dortmund, en una cita de máxima exigencia en la UEFA Champions League.",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Los onces probables del Betis-Málaga: ya llegará Dortmund",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/pellegrini-no-fue-un-problema-de-relajo-hay-otro-equipo-que-juega/": {
+   "extracto": "Manuel Pellegrini se mostró satisfecho por el trabajo del equipo al término de la victoria de su equipo ante el Málaga (2-1). El Betis sigue muy arriba, con 23 sobre 33 puntos posibles, y a pesar que terminó mirando al reloj ante el colista, abre una veda de once puntos con los aspirantes Celta y, sobre todo, Villarreal. Cuestionado sobre la relajación del equipo en la recta final, el 'Ingeniero' lo tuvo claro: \"Yo creo que hicimos un gran partido hasta el 2-1 de ellos. El marcador nos apretó, pero supimos defender bien. El primer tiempo me dejó muy conforme. En el segundo buscamos salir a buscar el tercero y, ya con el 2-1, el equipo se apretó un poco. Era importante no perder el resultado. Dicho eso, Álvaro no tuvo grandes tapadas. Me dejó conforme\" . Estas han sido sus declaraciones:",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "Pellegrini: \"No fue un problema de relajo, hay otro equipo que juega\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/pellegrini-y-su-carino-al-malaga-fueron-tres-anos-inolvidables/": {
+   "extracto": "Pellegrini afronta un partido especial este próximo sábado en La Cartuja. Por primera vez desde su salida al Manchester City en el año 2013, el técnico chileno se verá las caras en uno de los clubes donde mejor recuerdo ha dejado: el Málaga CF. A las órdenes del banquillo costasoleño, los andaluces se clasificaron por primera vez a la Liga de Campeones, disfrutando en el año 2013 de la posibilidad de disputar unos cuartos de final. Sólo un polémico arbitraje sufrido en Dortmund, próximo rival del Betis en Champions, impidió la presencia del Málaga en todas unas semifinales de la Liga de Campeones. Estas han sido sus declaraciones:",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Pellegrini y su cariño al Málaga: \"Fueron tres años inolvidables\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/pepe-mel-intervenido-de-urgencia-tras-sufrir-un-ictus/": {
+   "extracto": "Pepe Mel, técnico del Betis durante los dos últimos ascensos del club verdiblanco y futbolista de la entidad de las trece barras a finales de los años ochenta y principios de los noventa, se encuentra en el Hospital Virgen del Rocío, donde se recupera de un accidente cerebrovascular sufrido este pasado domingo.",
+   "fecha": "2026-11-02T12:00:00+00:00",
+   "titulo": "Pepe Mel, intervenido de urgencia tras sufrir un ictus",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/podcast-del-betis-malaga-2-1-las-mil-maneras-de-ganar-tambien-relajandose/": {
+   "extracto": "El Betis sigue lanzado y los números empiezan a hablar por sí solos: 23 puntos en las once primeras jornadas y pleno de victorias en la Champions. Un balance extraordinario que confirma el gran momento del equipo de Manuel Pellegrini, aunque no todo fue perfecto en su última cita. Frente al Málaga, los verdiblancos volvieron a demostrar su enorme superioridad futbolística, pero también dejaron algunas dudas que estuvieron cerca de costarles un disgusto.",
+   "fecha": "2026-11-01T12:00:00+00:00",
+   "titulo": "Podcast del Betis-Málaga (2-1): las mil maneras de ganar, también relajándose",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/resultados-dispares-del-betis-en-sus-cuatro-visitas-a-alemania/": {
+   "extracto": "El Real Betis, que el miércoles visita al Borussia Dortmund en partido de la cuarta jornada de la liguilla de la Liga Campeones, ha jugado hasta el momento cuatro encuentros oficiales en Alemania en los que ha obtenido una victoria, dos empates y una derrota.",
+   "fecha": "2026-11-01T12:00:00+00:00",
+   "titulo": "Resultados dispares del Betis en sus cuatro visitas a Alemania",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/sigue-en-vivo-y-en-directo-el-real-betis-malaga-cf-de-laliga-ea-sports/": {
+   "extracto": "Vuelve LaLiga para el Real Betis y lo hace contra uno de los rivales más especiales para su técnico, Manuel Pellegrini: el Málaga CF. Por primera vez desde su salida del club costasoleño en 2013, el chileno volverá a medirse a un club donde hizo historia. Clasificación Champions y cuartos de final de la máxima competición continental precisamente en Dortmund, próxima parada para los verdiblancos tras el choque de esta tarde a partir de las 18.30 horas.",
+   "fecha": "2026-11-02T12:00:00+00:00",
+   "titulo": "Sigue en vivo y en directo el Real Betis-Málaga CF de LaLiga EA Sports",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/solo-una-derrota-del-betis-con-busquets-ferrer-arbitro-para-el-duelo-ante-el-malaga/": {
+   "extracto": "Ya hay árbitro para el Betis-Málaga. Mateo Busquets Ferrer, del colegio balear, será el encargado de dirigir un duelo especial para Manuel Pellegrini: será la primera vez, desde su salida de La Rosaleda, que el 'Ingeniero' se mida con el club blanquiazul. Javier Iglesias Villanueva será el colegiado VAR del choque.",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Sólo una derrota del Betis con Busquets Ferrer, árbitro para el duelo ante el Málaga",
+   "visto": "2026-11-02"
+  }
+ },
+ "stripe-com-blog": {
+  "https://stripe.com/blog/economics-of-ai-monetization": {
+   "extracto": "As usage, costs, and customer expectations change, AI companies are moving beyond traditional SaaS pricing. Leaders at Monetize 2026 shared how they’re combining subscriptions with usage-based billing, building spend controls into products, adapting packaging and value metrics, and making pricing readable for both human and AI buyers.",
+   "fecha": "2026-10-13T12:00:00+00:00",
+   "titulo": "The “alien” economics of AI monetization",
+   "visto": "2026-11-02"
+  },
+  "https://stripe.com/blog/helping-personal-agents-shop-more-intelligently-and-reliably-with-link": {
+   "extracto": "As agents take on more purchases, agent builders have increasingly asked us to help agents navigate checkout and earn consumer trust. Today, we’re sharing three major improvements to support this broader set of needs.",
+   "fecha": "2026-09-29T12:00:00+00:00",
+   "titulo": "Helping personal agents shop more intelligently and reliably with Link",
+   "visto": "2026-11-02"
+  },
+  "https://stripe.com/blog/new-ways-for-fintechs-to-move-money-and-expand-globally": {
+   "extracto": "We’re introducing three updates to help fintechs launch products and grow internationally more easily: simpler payout management with Stripe Global Payouts, support for stablecoin cards in more countries, and unified APIs for building global financial products.",
+   "fecha": "2026-10-16T12:00:00+00:00",
+   "titulo": "New ways for fintechs to move money and expand globally",
+   "visto": "2026-11-02"
+  },
+  "https://stripe.com/blog/ousd-now-live-on-stripe": {
+   "extracto": "Open USD (OUSD), a stablecoin built for global money movement, is now available across Stripe. Businesses can use OUSD to manage funds, make payments, and offer new financial services.",
+   "fecha": "2026-09-30T12:00:00+00:00",
+   "titulo": "OUSD is now the default stablecoin on Stripe",
+   "visto": "2026-11-02"
+  },
+  "https://stripe.com/blog/real-time-stripe-data-postgres": {
+   "extracto": "Applications rely on current Stripe data to fulfill orders, update customer accounts, and manage access to paid features. Until now, developers have had to build and maintain custom integrations to keep application databases in sync with Stripe. We’re introducing real-time sync to Postgres for Stripe Data Pipeline, which lets them keep databases current without having to build custom integrations.",
+   "fecha": "2026-10-15T12:00:00+00:00",
+   "titulo": "Sync real-time Stripe data to Postgres with Stripe Data Pipeline",
+   "visto": "2026-11-02"
+  },
+  "https://stripe.com/blog/where-pricing-is-headed": {
+   "extracto": "Token billing is useful infrastructure, but usually a bad customer-facing pricing model. Your invoice should define the value your product delivers, not break down what it cost you to create it.",
+   "fecha": "2026-10-01T12:00:00+00:00",
+   "titulo": "Why I tried to kill token billing (and why we kept it)",
+   "visto": "2026-11-02"
+  }
+ },
+ "worldbank-org-en-news": {
+  "https://www.worldbank.org/en/news/press-release/2026/10/12/world-bank-group-launches-philanthropy-hub-to-unlock-capital-knowledge-and-network": {
+   "extracto": "",
+   "fecha": "2026-10-12T12:00:00+00:00",
+   "titulo": "World Bank Group Launches Philanthropy Hub to Unlock Capital, Knowledge and Networks for Development",
+   "visto": "2026-11-02"
+  },
+  "https://www.worldbank.org/en/news/press-release/2026/10/18/uae-signs-agreement-to-host-2029-world-bank-group-annual-meetings": {
+   "extracto": "",
+   "fecha": "2026-10-18T12:00:00+00:00",
+   "titulo": "UAE Signs Agreement to Host 2029 World Bank Group and IMF Annual Meetings in Abu Dhabi",
+   "visto": "2026-11-02"
+  },
+  "https://www.worldbank.org/en/news/press-release/2026/10/20/world-bank-group-launches-first-digital-strategy-to-expand-access-and-create-jobs": {
+   "extracto": "",
+   "fecha": "2026-10-20T12:00:00+00:00",
+   "titulo": "World Bank Group Launches First Digital Strategy to Expand Access and Create Jobs",
+   "visto": "2026-11-02"
+  },
+  "https://www.worldbank.org/en/news/press-release/2026/10/26/more-and-better-jobs-key-to-putting-poverty-reduction-back-on-track": {
+   "extracto": "",
+   "fecha": "2026-10-26T12:00:00+00:00",
+   "titulo": "More and Better Jobs Key to Putting Poverty Reduction Back on Track",
+   "visto": "2026-11-02"
+  },
+  "https://www.worldbank.org/en/news/speech/2026/10/16/remarks-by-world-bank-group-president-ajay-banga-at-the-2026-annual-meetings-plena": {
+   "extracto": "",
+   "fecha": "2026-10-16T12:00:00+00:00",
+   "titulo": "Remarks by World Bank Group President Ajay Banga at the 2026 Annual Meetings Plenary",
+   "visto": "2026-11-02"
+  }
+ }
+}

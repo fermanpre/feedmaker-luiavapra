@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-01T23:15:35+00:00",
+ "generado": "2026-11-02T11:13:17+00:00",
  "llamadas_ia": 2,
  "sitios": [
   {
-   "actualizado": "2026-11-01T23:14:05+00:00",
+   "actualizado": "2026-11-02T11:11:50+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-01T23:14:17+00:00",
+   "actualizado": "2026-11-02T11:12:07+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:14:26+00:00",
+   "actualizado": "2026-11-02T11:12:16+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:14:35+00:00",
+   "actualizado": "2026-11-02T11:12:25+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:14:44+00:00",
+   "actualizado": "2026-11-02T11:12:34+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:14:53+00:00",
+   "actualizado": "2026-11-02T11:12:43+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:15:02+00:00",
+   "actualizado": "2026-11-02T11:12:52+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:15:11+00:00",
+   "actualizado": "2026-11-02T11:13:01+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -99,8 +99,8 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:15:15+00:00",
-   "con_texto_completo": 15,
+   "actualizado": "2026-11-02T11:13:09+00:00",
+   "con_texto_completo": 18,
    "detalle": "con IA",
    "entradas": 18,
    "estado": "ok",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-01T23:15:34+00:00",
+   "actualizado": "2026-11-02T11:13:16+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
