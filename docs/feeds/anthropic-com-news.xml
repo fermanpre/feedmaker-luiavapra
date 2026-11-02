@@ -4,7 +4,7 @@
 <title>www.anthropic.com/news</title>
 <link>https://www.anthropic.com/news</link>
 <description>Feed no oficial generado por Feedmaker a partir de https://www.anthropic.com/news</description>
-<lastBuildDate>Mon, 02 Nov 2026 11:12:34 +0000</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 11:44:03 +0000</lastBuildDate>
 <item>
 <title>AI for Science expands to foundations and research institutions</title>
 <link>https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions</link>
@@ -13,18 +13,18 @@
 <description>We’re highlighting 20 scientific foundations, institutions, and research groups around the world that we’ve partnered with in an expansion of our AI for Science program.</description>
 </item>
 <item>
-<title>Early progress on accelerating drug development with Claude</title>
-<link>https://www.anthropic.com/research/early-progress-drug-development</link>
-<guid isPermaLink="true">https://www.anthropic.com/research/early-progress-drug-development</guid>
-<pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
-<description>We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines.</description>
-</item>
-<item>
 <title>Expanding our partnership with GSA to bring Claude to all levels of government</title>
 <link>https://www.anthropic.com/news/expanding-partnership-gsa</link>
 <guid isPermaLink="true">https://www.anthropic.com/news/expanding-partnership-gsa</guid>
 <pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
 <description>We are expanding our partnership with the General Services Administration (GSA) through a new agreement that gives government partners a 40% discount on Claude Enterprise, Claude for Government, and the Claude API.</description>
+</item>
+<item>
+<title>Early progress on accelerating drug development with Claude</title>
+<link>https://www.anthropic.com/research/early-progress-drug-development</link>
+<guid isPermaLink="true">https://www.anthropic.com/research/early-progress-drug-development</guid>
+<pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
+<description>We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines.</description>
 </item>
 <item>
 <title>Anthropic files S-1 with the SEC for proposed initial public offering</title>
@@ -90,18 +90,18 @@
 <description>Illicit distillation allows model developers to copy frontier AI capabilities without creating proportionally robust safeguards. Here, we describe how we’ve reduced the rate of distillation by more than 90%.</description>
 </item>
 <item>
-<title>Introducing the Anthropic Cyber Mission</title>
-<link>https://www.anthropic.com/news/anthropic-cyber-mission</link>
-<guid isPermaLink="true">https://www.anthropic.com/news/anthropic-cyber-mission</guid>
-<pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
-<description>We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.</description>
-</item>
-<item>
 <title>2026 Usage Policy update</title>
 <link>https://www.anthropic.com/news/2026-usage-policy-update</link>
 <guid isPermaLink="true">https://www.anthropic.com/news/2026-usage-policy-update</guid>
 <pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
 <description>We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.</description>
+</item>
+<item>
+<title>Introducing the Anthropic Cyber Mission</title>
+<link>https://www.anthropic.com/news/anthropic-cyber-mission</link>
+<guid isPermaLink="true">https://www.anthropic.com/news/anthropic-cyber-mission</guid>
+<pubDate>Thu, 08 Oct 2026 12:00:00 +0000</pubDate>
+<description>We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.</description>
 </item>
 <item>
 <title>Building on our commitment to American scientific discovery</title>

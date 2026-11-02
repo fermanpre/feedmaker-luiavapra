@@ -1,4 +1,14 @@
 {
+ "abc-deportes-sevilla": {
+  "enlaces": {
+   "https://www.abc.es/contentfactory/post/2026/09/21/santander-asi-empezo-todo-4cyce-stranfford-como-crecer-fabricando-a-medida/?utm_source=vnews&utm_medium=oro&utm_campaign=internacionalizacion_5": "descartar",
+   "https://www.abc.es/deportes/sevilla/caja-ante-peligro-medirse-domicilio-inesperado-colista-20261030193557-nts.html": "ok",
+   "https://www.abc.es/deportes/sevilla/cajasol-sevilla-proin-llega-momento-alzar-vuelo-20261029183608-nts.html": "ok",
+   "https://www.abc.es/deportes/sevilla/fundacion-cajasol-voleibol-asignatura-pendiente-casa-20261031070641-nts.html": "ok",
+   "https://www.abc.es/deportes/sevilla/regata-sevilla-betis-une-proyecto-hombre-destacar-20261029112011-nts.html": "ok"
+  },
+  "firma": "ul.v-r-bdr-h.v-r-s > li.v-r-s__c.v-r-s__c--1"
+ },
  "anthropic-com-news": {
   "enlaces": {
    "https://www.anthropic.com/claude-haiku-5-5": "ok",
@@ -143,6 +153,44 @@
   },
   "firma": "section.entries > article.feed-entry"
  },
+ "muchodeporte-baloncesto": {
+  "enlaces": {
+   "https://www.muchodeporte.com/baloncesto/73-53-el-sevilla-cajasol-gardenstore-baloncesto-mantiene-su-invicto-y-derrota-a-melilla-ciudad-del-deporte-la-salle/": "ok",
+   "https://www.muchodeporte.com/baloncesto/73-79-el-insolac-caja-87-estrena-la-pretemporada-con-una-victoria-de-caracter-ante-coto-cordoba/": "ok",
+   "https://www.muchodeporte.com/baloncesto/coviran-granada-e-insolac-caja-87-se-jugaran-este-miercoles-el-pase-a-la-gran-final-de-la-copa-andalucia/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-caja-87-asalta-granada-con-guante-de-hierro-y-se-cita-con-el-unicaja-en-la-final-de-la-copa-de-andalucia/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-caja87-y-el-cb-guillena-se-unen-para-potenciar-el-baloncesto-de-base-en-la-provincia/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-insolac-caja-87-se-impone-en-el-caos-de-san-pablo-77-74/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-estrena-hoy-su-andadura-en-la-copa-espana-en-la-pista-del-bisbal-basquet/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-regresa-a-casa-para-estrenar-san-pablo-en-primera-feb/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-firma-un-arranque-impecable-y-suma-su-tercer-triunfo-consecutivo-en-gran-canaria-54-67/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-pone-a-prueba-su-liderato-en-san-pablo-en-el-primer-derbi-andaluz-de-la-temporada/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-se-hace-fuerte-en-san-pablo-y-firma-el-pleno-de-triunfos/": "ok",
+   "https://www.muchodeporte.com/baloncesto/juani-diez-afronta-su-estreno-con-insolac-caja-87-con-ilusion-trabajo-y-humildad/": "ok",
+   "https://www.muchodeporte.com/baloncesto/juani-diez-de-cara-al-debut-afirma-que-conoce-el-rumbo-que-hay-que-tomar/": "ok",
+   "https://www.muchodeporte.com/baloncesto/juani-diez-y-el-debut-en-san-pablo-sera-un-partido-especial/": "ok",
+   "https://www.muchodeporte.com/baloncesto/nuga-decide-un-apasionante-derbi-andaluz-para-el-cajasol-coto-cordoba-sobre-la-bocina-83-81/": "ok",
+   "https://www.muchodeporte.com/baloncesto/presentacion-campana-de-abonos-del-cajasol-baloncesto-sevilla-femenino/": "ok",
+   "https://www.muchodeporte.com/deporte-andaluz/81-84-coviran-granada-vence-al-caja-87-en-la-prorroga-y-se-lleva-el-derbi-andaluz-de-primera-feb/": "ok",
+   "https://www.muchodeporte.com/deporte-andaluz/unicaja-impone-su-ley-ante-el-caja-87-86-61-y-conquista-con-autoridad-la-xxix-copa-andalucia/": "ok"
+  },
+  "firma": "div.CONTENIDO-IZQ.LISTADO_BUSQUEDA > div.MODULO"
+ },
+ "muchodeporte-caja87": {
+  "enlaces": {
+   "https://www.muchodeporte.com/baloncesto/insolac-caja-87-con-todo-y-con-moody-ante-jaen-cb/": "ok",
+   "https://www.muchodeporte.com/baloncesto/los-guinos-que-la-historia-le-lanza-al-insolac-caja-87/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/68-72-el-caja87-condenado-ante-melilla-baloncesto-por-un-psimo-segundo-cuarto/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/72-78-el-caja87-suma-y-sigue-en-huelva/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/disputar-la-copa-diputacin-ante-el-udea-algeciras/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/el-caja-87-ficha-al-base-internacional-chileno-nacho-arroyo-varela/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/el-caja87-firma-una-histrica-victoria-ante-el-udea-algeciras-51-58/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/la-paliza-dentro-y-fuera-de-la-pista-del-coto-crdoba-al-caja87/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/nueva-derrota-del-caja87-92-75/": "ok",
+   "https://www.muchodeporte.com/club-muchodeporte/caja87/un-equipo-que-deja-de-ser-invisible/": "ok"
+  },
+  "firma": "div.CONTENIDO-IZQ.LISTADO_BUSQUEDA > div.MODULO"
+ },
  "share-google-j8rjlbcek9e8zppdm": {
   "enlaces": {
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ancelotti-olvida-betico-natan-renovacion-brasil-20261031090003-nts.html": "ok",
@@ -162,6 +210,7 @@
   "enlaces": {
    "https://www.muchodeporte.com/real-betis/0-2-el-betis-deportivo-prolonga-su-mala-racha-con-una-derrota-ante-el-decano/": "ok",
    "https://www.muchodeporte.com/real-betis/antony-se-recupera-a-tiempo-y-apunta-al-malaga/": "ok",
+   "https://www.muchodeporte.com/real-betis/arbitro-neerlandes-para-el-betis-en-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": "ok",
    "https://www.muchodeporte.com/real-betis/el-betis-lanza-un-aviso-a-los-beticos-que-viajen-a-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/el-malaga-solo-gano-en-tres-de-sus-trece-visitas-al-betis/": "ok",

@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-02T11:13:17+00:00",
- "llamadas_ia": 2,
+ "generado": "2026-11-02T11:44:53+00:00",
+ "llamadas_ia": 7,
  "sitios": [
   {
-   "actualizado": "2026-11-02T11:11:50+00:00",
+   "actualizado": "2026-11-02T11:43:21+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-02T11:12:07+00:00",
+   "actualizado": "2026-11-02T11:43:36+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:12:16+00:00",
+   "actualizado": "2026-11-02T11:43:44+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:12:25+00:00",
+   "actualizado": "2026-11-02T11:43:53+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:12:34+00:00",
+   "actualizado": "2026-11-02T11:44:03+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:12:43+00:00",
+   "actualizado": "2026-11-02T11:44:12+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:12:52+00:00",
+   "actualizado": "2026-11-02T11:44:21+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:13:01+00:00",
+   "actualizado": "2026-11-02T11:44:30+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -99,10 +99,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:13:09+00:00",
-   "con_texto_completo": 18,
+   "actualizado": "2026-11-02T11:44:34+00:00",
+   "con_texto_completo": 19,
    "detalle": "con IA",
-   "entradas": 18,
+   "entradas": 19,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:13:16+00:00",
+   "actualizado": "2026-11-02T11:44:38+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -120,6 +120,75 @@
    "nombre": "www.muchodeporte.com/feed",
    "url": "https://www.muchodeporte.com/feed",
    "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-02T11:44:39+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 4,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "abc-deportes-sevilla",
+   "nombre": "ABC Deportes Sevilla",
+   "oculto": true,
+   "url": "https://www.abc.es/deportes/sevilla/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-02T11:44:43+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 20,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "diariodesevilla-betis-baloncesto",
+   "nombre": "Diario de Sevilla Betis Baloncesto",
+   "oculto": true,
+   "url": "https://www.diariodesevilla.es/deportes/betis-baloncesto/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-02T11:44:47+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 18,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "muchodeporte-baloncesto",
+   "nombre": "Muchodeporte Baloncesto",
+   "oculto": true,
+   "url": "https://www.muchodeporte.com/baloncesto/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-02T11:44:50+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 10,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "muchodeporte-caja87",
+   "nombre": "Muchodeporte Caja87",
+   "oculto": true,
+   "url": "https://www.muchodeporte.com/caja87/",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-02T11:44:53+00:00",
+   "combina": [
+    "abc-deportes-sevilla",
+    "diariodesevilla-betis-baloncesto",
+    "muchodeporte-baloncesto",
+    "muchodeporte-caja87"
+   ],
+   "con_texto_completo": 0,
+   "detalle": "combina 4 webs; filtro: caja 87, caja87, caja-87",
+   "entradas": 35,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "caja87",
+   "nombre": "Caja87 (ABC, Diario de Sevilla y Muchodeporte)",
+   "url": ""
   }
  ]
 }

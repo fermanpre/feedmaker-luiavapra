@@ -1,4 +1,30 @@
 {
+ "abc-deportes-sevilla": {
+  "https://www.abc.es/deportes/sevilla/caja-ante-peligro-medirse-domicilio-inesperado-colista-20261030193557-nts.html": {
+   "extracto": "Los verdirrojos visitan este sábado al Básquet Menorca, que partía como aspirante al play off de ascenso y, tras cinco jornadas, cierra la tabla",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "El Caja 87, ante el peligro de medirse a domicilio a un inesperado colista",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/sevilla/cajasol-sevilla-proin-llega-momento-alzar-vuelo-20261029183608-nts.html": {
+   "extracto": "El Fertiberia Puerto Sagunto, recién ascendido, noveno de la tabla y rival directo, visita este domingo a los hispalenses",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "Al Cajasol Sevilla Proin le llega ya el momento de alzar el vuelo en Amate",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/sevilla/fundacion-cajasol-voleibol-asignatura-pendiente-casa-20261031070641-nts.html": {
+   "extracto": "Tras su eliminación de la Champions, pero no de Europa, las nazarenas retoman este domingo la competición doméstica visitando al CV Sayre, en Gran Canaria",
+   "fecha": "2026-10-31T12:00:00+00:00",
+   "titulo": "El Fundación Cajasol de voleibol tiene una asignatura pendiente fuera de casa",
+   "visto": "2026-11-02"
+  },
+  "https://www.abc.es/deportes/sevilla/regata-sevilla-betis-une-proyecto-hombre-destacar-20261029112011-nts.html": {
+   "extracto": "El derbi del remo, programado el 14 de noviembre, dedica su presente edición a visibilizar la labor de la entidad, que cumple 35 años tras haber atendido a más de 30.000 jóvenes",
+   "fecha": "2026-10-29T12:00:00+00:00",
+   "titulo": "La Regata Sevilla - Betis se une a Proyecto Hombre para destacar su compromiso social",
+   "visto": "2026-11-02"
+  }
+ },
  "anthropic-com-news": {
   "https://www.anthropic.com/claude-haiku-5-5": {
    "extracto": "Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use.",
@@ -142,6 +168,128 @@
    "extracto": "We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines.",
    "fecha": "2026-10-27T12:00:00+00:00",
    "titulo": "Early progress on accelerating drug development with Claude",
+   "visto": "2026-11-02"
+  }
+ },
+ "diariodesevilla-betis-baloncesto": {
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/37-anos-despues-mallorca-vuelve-caja-san-fernando-caja-87_0_2008126215.html": {
+   "extracto": "El antiguo conjunto sevillano selló ante el Syrius Patronato su histórico ascenso a la ACB en 1989; ahora, el Palmer Basket visita San Pablo para enfrentarse a un proyecto, que inicia una nueva etapa en su estreno en casa en la Primera FEB El Caja 87",
+   "fecha": "2026-10-02T09:33:05+02:00",
+   "titulo": "La plantilla del Caja San Fernando, que logró el ascenso, con la actual plantilla del Caja 87",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-abre-nueva-san-pablo-palmer-basket_0_2008124927.html": {
+   "extracto": "El conjunto sevillano afronta ante el Palmer Basket su primer partido como local en la categoría de plata, con Juani Díez reencontrándose con su anterior equipo El Caja 87 ya conoce su camino en la Copa de España",
+   "fecha": "2026-10-02T09:00:16+02:00",
+   "titulo": "Juani Díez llama a Moody, en el encuentro del Caja 87.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-cita-historica-unicaja_0_2007862404.html": {
+   "extracto": "El equipo dirigido por Juani Díez derrotó a un ex ACB como el Covirán Granada y se medirá el próximo sábado al equipo malagueño El Caja 87, a una cita histórica con el Unicaja en la Copa de Andalucía (74-89)",
+   "fecha": "2026-09-02T22:54:39+02:00",
+   "titulo": "Sergio Cecilia realiza un mate en el partido ante el Covirán Granada.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-deja-escapar-13_0_2008274168.html": {
+   "extracto": "El conjunto de Juani Díez llegó a disfrutar de una ventaja importante en el tercer cuarto, pero se bloqueó y acabó cayendo en el derbi tras una canasta de Nugu a dos décimas del final",
+   "fecha": "2026-10-17T21:13:54+02:00",
+   "titulo": "Ramón Vila y Bolavie intentan capturar un rebote.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-dribla-patinazo-gijon_0_2005618242.html": {
+   "extracto": "El conjunto sevillano remontó ante el colista en el tramo final con un parcial de 2-16 desde el 65-57 cuando quedaban 4.30 minutos para la conclusión",
+   "fecha": "2026-01-10T22:36:44+01:00",
+   "titulo": "Franch llama desde el banquillo a sus compañeros.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-echa-andar_0_2007733670.html": {
+   "extracto": "El conjunto sevillano inició este lunes su pretemporada, en la que disputará cuatro amistosos, que podrían ser cinco El Caja 87 cierra la plantilla con los fichajes de Rafa García Salamé y Javier Valero",
+   "fecha": "2026-08-17T14:33:55+02:00",
+   "titulo": "El técnico Juani Díez dirige su primera sesión en San Pablo y por detrás Germán, el segundo entrenador.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-llevo-coviran-granada_0_2008337881.html": {
+   "extracto": "El conjunto sevillano forzó el tiempo extra tras una gran reacción en la segunda mitad, pero acabó cediendo ante los nazarís liderados por Parham, que acabó con 21 puntos El Caja 87 quiere que San Pablo sea un fortín",
+   "fecha": "2026-10-25T15:25:54+01:00",
+   "titulo": "Bolavie, mejor jugador del Caja 87, lucha por un balón ante varios juigadores del Granada.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-no-da-opcion-clavijo_0_2005672010.html": {
+   "extracto": "Tras una igualada primera parte y un mal arranque local en la reanudación, un 17-6 en los segundos cinco minutos del tercer cuarto liquidó el partido",
+   "fecha": "2026-01-18T14:49:38+01:00",
+   "titulo": "Clarke, jugador del Caja 87.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-peleo-unicaja-impuso_0_2007883154.html": {
+   "extracto": "El conjunto dirigido por Juani Díez compitió por momentos ante un equipo ACB El Caja 87 peleó, pero Unicaja impuso su categoría (86-61)",
+   "fecha": "2026-09-05T22:35:02+02:00",
+   "titulo": "La plantilla del Caja 87 tras ser subcampeones en la Copa de Andalucía.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-reto-competir-unicaja-copa-de-andalucia_0_2007876860.html": {
+   "extracto": "Juani Díez recupera a Nacho Varela y Mendikote, por lo que podrá contar con toda la plantilla · El duelo entre los hermanos Djedovic será otro de los alicientes El Caja 87, a una cita histórica con el Unicaja en la Copa de Andalucía (74-89)",
+   "fecha": "2026-09-05T09:00:09+02:00",
+   "titulo": "Los jugadores del Caja 87 en el encuento ante el Covirán Granada.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja-87-sigue-cuesta-abajo_0_2005913578.html": {
+   "extracto": "El conjunto sevillano cayó en la prórroga y encadenó su tercera derrota consecutiva en un partido en el que la imagen volvió a ser preocupante Otro resbalón que lleva a la derrota y la derrota, a las dudas en el Caja 87 (88-92)",
+   "fecha": "2026-02-15T15:38:55+01:00",
+   "titulo": "Lance del partido del Caja87 ante el Toledo",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/caja87-impone-superioridad-gerona-octavos-copa-espana-61-76_0_2008297857.html": {
+   "extracto": "El conjunto sevillano supera al Sol Gironès Bisbal Bàsquet con una actuación sólida y el liderazgo ofensivo de Nedim Djedovic, autor de 20 puntos Los de Juani Díez controlaron el marcador desde el primer cuarto y esperan al vencedor del Valladolid-Fu",
+   "fecha": "2026-10-20T22:35:20+02:00",
+   "titulo": "El base Varela bota el balón en busca del pase más adecuado a un compañero.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/insolac-caja87-incorpora-gigante-belga-archange-bolavie_0_2007480366.html": {
+   "extracto": "El internacional belga, mejor taponador de la Primera FEB la pasada temporada, volverá a ponerse a las órdenes de Juani Díez tras coincidir en el Palmer Basket Mallorca El proyecto sevillano ya suma cuatro fichajes y mantiene el bloque con las renova",
+   "fecha": "2026-07-17T14:30:30+02:00",
+   "titulo": "Archange Izaw-Bolavie, en una sesión de fotos oficial con el Baxi Manresa.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/javi-carrasco-caja-87-plantillon_0_2006287677.html": {
+   "extracto": "El técnico sevillano trata de salvar al Jaén Baloncesto, rival esta jornada del conjunto hispalense, un proyecto con \"buena pinta\" El que fuese entrenador del Betis Baloncesto vio con \"tristeza\" la desaparición del club \"por la ciudad, la afición y l",
+   "fecha": "2026-03-25T09:00:56+01:00",
+   "titulo": "Javi Carrasco da instrucciones a dos jugadores durante un partido.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/nuevo-caja-87-marcha-coto-cordoba-copa-de-andalucia_0_2007826989.html": {
+   "extracto": "Los de Juani Díez disputarán su primer encuentro de pretemporada en el que no estará Nacho Varela Juani Díez: \"Queremos ser un equipo incómodo desde el primer día\"",
+   "fecha": "2026-08-30T07:01:29+02:00",
+   "titulo": "Los jugadores del Caja 87 en el entrenamiento en San Pablo.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/real-betis-baloncesto-concurso-acreedores_0_2006609388.html": {
+   "extracto": "Entre los acreedores figura el Instituto Municipal de Deportes de Sevilla, que tenía en vía ejecutiva el cobro de 166.000 euros por usar las canchas del pabellón de San Pablo El Betis Baloncesto es comprado por Hereda",
+   "fecha": "2026-04-28T09:17:41+02:00",
+   "titulo": "Pedro Fernández y Ramón Alarcón, en una foto de las redes sociales del club de baloncesto.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/resurgir-baloncesto-sevillano-elite-caja-87-san-fernando_0_2007484787.html": {
+   "extracto": "Ya estamos otra vez en el punto de partida; justo donde empezó el Caja San Fernando El Insolac Caja 87 incorpora al gigante belga Archange Bolavie para reforzar una plantilla cada vez más ambiciosa",
+   "fecha": "2026-07-18T06:19:08+02:00",
+   "titulo": "Una de las plantillas del histórico Caja San Fernando.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/sevilla-cajasol-gardenstore-defiende-condicion-invicto-melilla_0_2008319920.html": {
+   "extracto": "Las sevillanas, segundas en la Liga Femenina Challenge con tres victorias en tres partidos, reciben este sábado a un rival situado en la quinta posición El equipo de Jaime Sañudo busca su cuarto triunfo consecutivo en San Pablo, donde tendrá que vigi",
+   "fecha": "2026-10-23T09:59:39+02:00",
+   "titulo": "Una imagen de un entrenamiento del Sevilla Cajasol GardenStore.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/betis-baloncesto/sevillana-marta-garcia-estrena-espana-espana-femenino-baloncesto-alemania_0_2007724877.html": {
+   "extracto": "La marchenera debutó con la selección absoluta con un rebote y una asistencia La sevillana Marta García, en la prelista de España para preparar el Mundial",
+   "fecha": "2026-08-15T22:06:02+02:00",
+   "titulo": "Marta García en el encuentro ante Alemania.",
+   "visto": "2026-11-02"
+  },
+  "https://www.diariodesevilla.es/deportes/universidad-sevilla-conquista-europa-oro_0_2007640218.html": {
+   "extracto": "El equipo masculino, liderado por Joaquín Cebolla, se proclamó campeón · El equipo femenino acabó en tercera posición con la internacional con España, Marta García, en sus filas Agenda Polideportiva de Sevilla",
+   "fecha": "2026-08-02T11:12:03+02:00",
+   "titulo": "Los equipos de la Universidad de Sevilla 3x3 de baloncesto",
    "visto": "2026-11-02"
   }
  },
@@ -651,6 +799,178 @@
    "visto": "2026-11-02"
   }
  },
+ "muchodeporte-baloncesto": {
+  "https://www.muchodeporte.com/baloncesto/73-53-el-sevilla-cajasol-gardenstore-baloncesto-mantiene-su-invicto-y-derrota-a-melilla-ciudad-del-deporte-la-salle/": {
+   "extracto": "El Sevilla Cajasol GardenStore Baloncesto mantiene su pleno de triunfos en el arranque de la Liga Femenina Challenge. Las sevillanas derrotaron al Melilla Ciudad del Deporte La Salle por 73-53 en el Palacio de Deportes de San Pablo, en un encuentro que exigió máxima concentración hasta el tramo final. Pese a las dificultades sufridas durante buena parte del choque, la escuadra dirigida por Jaime Sañudo encontró en el último cuarto la fórmula para transformar la igualdad en una victoria contundente.",
+   "fecha": "2026-10-25T12:00:00+00:00",
+   "titulo": "73-53: El Sevilla Cajasol GardenStore Baloncesto mantiene su invicto y derrota a Melilla Ciudad del Deporte La Salle",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/73-79-el-insolac-caja-87-estrena-la-pretemporada-con-una-victoria-de-caracter-ante-coto-cordoba/": {
+   "extracto": "El Insolac Caja 87 comenzó su andadura en la pretemporada con una trabajada victoria ante el Cajasol Coto Córdoba (73-79) en el Palacio Municipal de Deportes Vista Alegre, en el segundo encuentro de la Copa Andalucía. El conjunto sevillano, que afrontaba su primera prueba del verano, mostró buenas sensaciones y, sobre todo, capacidad para competir y resolver un encuentro igualado ante un rival que también militará esta temporada en Primera FEB.",
+   "fecha": "2026-08-31T12:00:00+00:00",
+   "titulo": "73-79: El Insolac Caja 87 estrena la pretemporada con una victoria de carácter ante Coto Córdoba",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/coviran-granada-e-insolac-caja-87-se-jugaran-este-miercoles-el-pase-a-la-gran-final-de-la-copa-andalucia/": {
+   "extracto": "La XXIX Copa Andalucía Masculina 2026 afronta su momento decisivo. Este miércoles, 2 de septiembre , el Palacio Municipal de Deportes de Granada acogerá a partir de las 20:00 horas el último y definitivo encuentro de la fase previa entre el Covirán Granada y el Insolac Caja 87.",
+   "fecha": "2026-08-31T12:00:00+00:00",
+   "titulo": "Covirán Granada e Insolac Caja 87 se jugarán este miércoles el pase a la gran final de la Copa Andalucía",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-caja-87-asalta-granada-con-guante-de-hierro-y-se-cita-con-el-unicaja-en-la-final-de-la-copa-de-andalucia/": {
+   "extracto": "El Insolac Caja 87 firmó una de esas actuaciones que dejan huella en pretemporada al imponerse con autoridad por 74-89 al Covirán Granada en el Palacio de los Deportes. Pese a sumar apenas su segundo test de preparación y arrastrar las ausencias de peso de Mendikote y Varela , el conjunto hispalense desplegó un engranaje colectivo y una voracidad defensiva poco habituales a estas alturas del calendario. El encuentro, disputado a puerta cerrada como medida de precaución por la actividad sísmica registrada en la capital nazarí, no restó ni un ápice de competitividad a una cita donde los sevillanos tutearon sin complejos a un rival directo de la LEB Oro con aspiraciones de ascenso a la Liga Endesa.",
+   "fecha": "2026-09-03T12:00:00+00:00",
+   "titulo": "El Caja 87 asalta Granada con guante de hierro y se cita con el Unicaja en la final de la Copa de Andalucía",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-caja87-y-el-cb-guillena-se-unen-para-potenciar-el-baloncesto-de-base-en-la-provincia/": {
+   "extracto": "El Caja87 Baloncesto y el Club Baloncesto Guillena han formalizado un convenio de colaboración estratégica destinado a promover el deporte de la canasta y abrir nuevas vías de desarrollo formativo para las jóvenes promesas del municipio.",
+   "fecha": "2026-09-15T12:00:00+00:00",
+   "titulo": "El Caja87 y el CB Guillena se unen para potenciar el baloncesto de base en la provincia",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-insolac-caja-87-se-impone-en-el-caos-de-san-pablo-77-74/": {
+   "extracto": "El Insolac Caja 87 ha firmado en la mañana de este domingo su segunda victoria consecutiva de la temporada (77-74) en un partido frenético ante el Partizan de Fuenlabrada . El cuadro cajista supo sufrir para hacerse con los dos puntos, que lo elevan hasta la octava posición en la Primera FEB.",
+   "fecha": "2026-10-11T12:00:00+00:00",
+   "titulo": "El Insolac Caja 87 se impone en el caos de San Pablo (77-74)",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-estrena-hoy-su-andadura-en-la-copa-espana-en-la-pista-del-bisbal-basquet/": {
+   "extracto": "El Insolac Caja87 arranca esta tarde (19:30 horas, BalONcestoTV) su participación en la Copa España con la vista puesta en el Pavelló Vell, donde se enfrentará al Sol Gironès Bisbal Bàsquet. El conjunto sevillano ha puesto rumbo al Baix Empordà (Girona) para disputar el primero de sus dos compromisos de esta semana, en un choque que medirá el momento de forma de los verdirrojos tras el ajustado tropiezo liguero del pasado fin de semana.",
+   "fecha": "2026-10-20T12:00:00+00:00",
+   "titulo": "El Insolac Caja87 estrena hoy su andadura en la Copa España en la pista del Bisbal Bàsquet",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-regresa-a-casa-para-estrenar-san-pablo-en-primera-feb/": {
+   "extracto": "El Palacio de los Deportes de San Pablo se viste este viernes de gala para acoger el esperado debut como local del Insolac Caja87 en la Primera FEB. A partir de las 20:30 horas, el conjunto sevillano se medirá al Palmer Basket en la segunda jornada del campeonato, en un choque cargado de emotividad por el reencuentro del técnico cajista, Juani Díez, con el equipo al que salvó la pasada campaña.",
+   "fecha": "2026-10-02T12:00:00+00:00",
+   "titulo": "El Insolac Caja87 regresa a casa para estrenar San Pablo en Primera FEB",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-firma-un-arranque-impecable-y-suma-su-tercer-triunfo-consecutivo-en-gran-canaria-54-67/": {
+   "extracto": "Paso firme e inmaculado del Sevilla Cajasol Gardenstore en este arranque de temporada. El conjunto dirigido por Jaime Sañudo ha sumado su tercera victoria consecutiva en la jornada 3 de la Liga Femenina Challenge 2026/27 tras imponerse con solvencia al SPAR Gran Canaria a domicilio (54-67), en un choque disputado en el Pabellón Deportivo Insular La Paterna bajo el arbitraje de Alejandro López Lecuona y Alejandro Gómez Luque. Con un juego cimentado sobre una sólida estructura defensiva y un ataque coral con picos de brillantez individual, las hispalenses mantienen su condición de invictas en la competición.",
+   "fecha": "2026-10-19T12:00:00+00:00",
+   "titulo": "El Sevilla Cajasol Gardenstore firma un arranque impecable y suma su tercer triunfo consecutivo en Gran Canaria (54-67)",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-pone-a-prueba-su-liderato-en-san-pablo-en-el-primer-derbi-andaluz-de-la-temporada/": {
+   "extracto": "El Sevilla Cajasol GardenStore Baloncesto afronta este sábado (31 de octubre) una prueba de fuego para consolidar su extraordinario arranque de curso. El conjunto hispalense recibe en el Palacio Municipal de Deportes San Pablo al Unicaja Mijas en el que será el primer derbi andaluz del ejercicio en la Liga Femenina Challenge, correspondiente a la quinta jornada de competición.",
+   "fecha": "2026-10-30T12:00:00+00:00",
+   "titulo": "El Sevilla Cajasol GardenStore pone a prueba su liderato en San Pablo en el primer derbi andaluz de la temporada",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-se-hace-fuerte-en-san-pablo-y-firma-el-pleno-de-triunfos/": {
+   "extracto": "Segunda jornada de la Liga Femenina Challenge y segunda victoria consecutiva para el Sevilla Cajasol Gardenstore Baloncesto. El conjunto dirigido por Jaime Sañudo se impuso con autoridad este sábado en el Palacio Municipal de Deportes de San Pablo al Fustecma NBF Castelló (72-57), consolidando un arranque perfecto de temporada gracias a una notable reacción defensiva en la segunda parte.",
+   "fecha": "2026-10-13T12:00:00+00:00",
+   "titulo": "El Sevilla Cajasol Gardenstore se hace fuerte en San Pablo y firma el pleno de triunfos",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/juani-diez-afronta-su-estreno-con-insolac-caja-87-con-ilusion-trabajo-y-humildad/": {
+   "extracto": "El entrenador argentino Juani Díez afronta con “ilusión, muchísimo trabajo y humildad” su nueva etapa al frente del Insolac Caja 87 (equipo que este curso se estrenará en Primera FEB), con el que debutará como primer técnico en una categoría “muy exigente” y con el objetivo de construir desde el primer día una identidad basada en la intensidad, la agresividad y la solidez defensiva.",
+   "fecha": "2026-08-28T12:00:00+00:00",
+   "titulo": "Juani Díez afronta su estreno con Insolac Caja 87 con “ilusión, trabajo y humildad”",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/juani-diez-de-cara-al-debut-afirma-que-conoce-el-rumbo-que-hay-que-tomar/": {
+   "extracto": "El entrenador de Insolac Caja87 , el argentino Juani Díez , se ha congratulado de haber \"podido concluir de buena manera la pretemporada\" y dice conocer \"el rumbo que hay que tomar para seguir mejorando\" en vísperas de iniciar este domingo el campeonato en la cancha del Movistar Estudiantes .",
+   "fecha": "2026-09-26T12:00:00+00:00",
+   "titulo": "Juani Díez, de cara al debut, afirma que conoce \"el rumbo que hay que tomar\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/juani-diez-y-el-debut-en-san-pablo-sera-un-partido-especial/": {
+   "extracto": "El argentino Juani Díez , entrenador del Insolac Caja87 , disfruta ya ante la perspectiva de un \"partido especial\" que marca \"el regreso a San Pablo\" de su equipo en la segunda jornada de Primera FEB, ya que recibe este viernes (20:30 horas) al Palmer Basket Mallorca.",
+   "fecha": "2026-10-02T12:00:00+00:00",
+   "titulo": "Juani Díez y el debut en San Pablo: \"Será un partido especial\"",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/nuga-decide-un-apasionante-derbi-andaluz-para-el-cajasol-coto-cordoba-sobre-la-bocina-83-81/": {
+   "extracto": "El Palacio Municipal de Deportes Vista Alegre de Córdoba vivió un derbi andaluz repleto de emoción y tensión correspondiente a la cuarta jornada de la Primera FEB. El Cajasol Coto Córdoba terminó imponiéndose por un ajustado 83-81 ante el Insolac Caja 87, gracias a una canasta heroica de Mike Nuga a solo un segundo para el final. El exterior local firmó una actuación memorable con 25 puntos, convirtiéndose en el máximo anotador y gran protagonista del choque.",
+   "fecha": "2026-10-19T12:00:00+00:00",
+   "titulo": "Nuga decide un apasionante derbi andaluz para el Cajasol Coto Córdoba sobre la bocina (83-81)",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/presentacion-campana-de-abonos-del-cajasol-baloncesto-sevilla-femenino/": {
+   "extracto": "El Cajasol Baloncesto Sevilla Femenino ya tiene lema para una temporada que supone un nuevo punto de partida: 'Nueva energía, misma pasión' . La entidad sevillana presentó este jueves por la noche su campaña de abonos para el curso 2026/27, que arrancará este viernes (más información: cbsevillafemenino.com ), un acto celebrado junto a patrocinadores y medios de comunicación y que contó con la presencia de la directiva, encabezada por su presidenta y gerente, Susana Otero y el exfutbolista Pepe Prieto , y de la primera plantilla.",
+   "fecha": "2026-09-03T12:00:00+00:00",
+   "titulo": "'Nueva energía, misma pasión': el Cajasol Baloncesto Sevilla Femenino presenta su campaña de abonos",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/deporte-andaluz/81-84-coviran-granada-vence-al-caja-87-en-la-prorroga-y-se-lleva-el-derbi-andaluz-de-primera-feb/": {
+   "extracto": "El Covirán Granada se llevó el derbi andaluz ante el Insolac Caja 87 por 81-84 en la prórroga . El conjunto sevillano logró recuperar terreno después de un inicio favorable a los visitantes y llevó el partido hasta el tiempo extra, donde el equipo granadino terminó decidiendo el resultado. El derbi se disputó en un Palacio de los Deportes de San Pablo vibrante, que dio cita a unos 4.500 espectadores .",
+   "fecha": "2026-10-25T12:00:00+00:00",
+   "titulo": "81-84: Covirán Granada vence al Caja 87 en la prórroga y se lleva el derbi andaluz de Primera FEB",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/deporte-andaluz/unicaja-impone-su-ley-ante-el-caja-87-86-61-y-conquista-con-autoridad-la-xxix-copa-andalucia/": {
+   "extracto": "El Unicaja Málaga se proclamó este sábado campeón de la XXIX Copa Andalucía tras imponerse al Insolac Caja 87 por 86-61 en una final en la que el bloque malagueño hizo valer desde el primer minuto su ritmo, intensidad y superioridad para llevarse el título autonómico.",
+   "fecha": "2026-09-07T12:00:00+00:00",
+   "titulo": "Unicaja impone su ley ante el Caja 87 (86-61) y conquista con autoridad la XXIX Copa Andalucía",
+   "visto": "2026-11-02"
+  }
+ },
+ "muchodeporte-caja87": {
+  "https://www.muchodeporte.com/baloncesto/insolac-caja-87-con-todo-y-con-moody-ante-jaen-cb/": {
+   "extracto": "En su lucha por acabar la liga regular en lo más alto del Grupo Oeste de la Segunda FEB, Insolac Caja 87 sabe que este sábado (a partir de las 20:00 horas), ante Jaén CB en el Olivo Arena, solo le vale la victoria. El liderato no depende exclusivamente del conjunto sevillano, pero frente al equipo del sevillano Javi Carrasco toca cumplir con su parte.",
+   "fecha": "2026-03-27T12:00:00+00:00",
+   "titulo": "Insolac Caja 87: Con todo y con Moody ante Jaén CB",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/baloncesto/los-guinos-que-la-historia-le-lanza-al-insolac-caja-87/": {
+   "extracto": "Hay semanas en las que el deporte parece escribirse solo. Como si la historia, caprichosa y sentimental, decidiera dejar pequeñas pistas por el camino para quien quiera creer en ellas. Y alrededor del Insolac Caja 87 empiezan a aparecer demasiadas coincidencias como para no detenerse un instante a mirarlas.",
+   "fecha": "2026-05-24T12:00:00+00:00",
+   "titulo": "Los guiños que la historia le lanza al Insolac Caja 87",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/68-72-el-caja87-condenado-ante-melilla-baloncesto-por-un-psimo-segundo-cuarto/": {
+   "extracto": "Pese a sumar una nueva derrota por 68-72 esta pretemporada (ya van cuatro) el Caja87 disputaba su mejor partido de lo que llevamos de preparación para el arranque liguero ante Huesca ante Melilla Baloncesto en el Municipal de San Pablo, uno de los equipos llamados a luchar por el ascenso a la Primera FEB (categoría en la que el cuadro de la Ciudad Autónoma militaba el curso pasado.",
+   "fecha": "2024-09-22T12:00:00+00:00",
+   "titulo": "68-72: El Caja87, condenado ante Melilla Baloncesto por un pésimo segundo cuarto",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/72-78-el-caja87-suma-y-sigue-en-huelva/": {
+   "extracto": "Si hace unos días el Caja87 lograba ante UDEA Algeciras en tierras gaditanas (51-58) la primera victoria de una pretemporada que agoniza para los hombres de Rafa Gomáriz, en la Palma del Condado ha logrado este sábado la segunda tras derrotar al Ciudad de Huelva por 72-78 . Dos victorias ante dos rivales de la Segunda FEB (categoría en la que militarán este curso los sevillanos).",
+   "fecha": "2024-09-29T12:00:00+00:00",
+   "titulo": "72-78: El Caja87, suma y sigue en Huelva",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/disputar-la-copa-diputacin-ante-el-udea-algeciras/": {
+   "extracto": "Antes de su estreno liguero ante el histórico Magia de Huesca en el Municipal de San Pablo, el Caja87 seguirá disputando amistosos para llegar en la mejor forma posible a dicha cita. Y para tal menester, la disputa en tierras gaditanas de la Copa Diputación ante un elenco de la misma categoría el próximo 25 de septiembre: El Damex UDEA Algeciras, conjunto al que se medirá este miércoles en Sevilla.",
+   "fecha": "2024-09-18T12:00:00+00:00",
+   "titulo": "Disputará la Copa Diputación ante el UDEA Algeciras",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/el-caja-87-ficha-al-base-internacional-chileno-nacho-arroyo-varela/": {
+   "extracto": "El Caja 87, recién ascendido a la Primera FEB, ha anunciado este sábado el fichaje para la próxima temporada del base chileno Nacho Arroyo Varela, un jugador con una amplia experiencia en la segunda categoría del baloncesto nacional y que procede del Gipuzkoa Basket.",
+   "fecha": "2026-07-11T12:00:00+00:00",
+   "titulo": "El Caja 87 ficha al base internacional chileno Nacho Arroyo Varela",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/el-caja87-firma-una-histrica-victoria-ante-el-udea-algeciras-51-58/": {
+   "extracto": "Se trata de un triunfo en el marco de un amistoso de pretemporada, pero a nadie se le escapa que encierra mucho más. Y es que el Caja87, tras acumular cuatro derrotas en los anteriormente disputados, ha logrado su primera victoria desde su nacimiento el pasado mes de julio ante UDEA Algeciras en tierras gaditanas (por 51-58) . Sin duda, una buena noticia para los cajistas a poco más de una semana para su estreno liguero ante Huesca en el Municipal de San Pablo.",
+   "fecha": "2024-09-26T12:00:00+00:00",
+   "titulo": "El Caja87 firma una histórica victoria ante el UDEA Algeciras (51-58)",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/la-paliza-dentro-y-fuera-de-la-pista-del-coto-crdoba-al-caja87/": {
+   "extracto": "No se asusten los aficionados al baloncesto más veteranos. El Caja87 no ha perdido ante el histórico Cotonificio (conjunto catalán afincado en Badalona, entrenado por Aíto García Reneses hace tantos años y obligado a desaparecer por cuestiones económicas) el primer partido de su historia. Lo ha hecho ante el Coto Córdoba (equipo que militará este año en la Segunda FEB, como el sevillano). Y lo hecho de manera clara (64-84) al final del tiempo reglamentario. Clara victoria cordobesa, dentro y fuera de la cancha.",
+   "fecha": "2024-09-08T12:00:00+00:00",
+   "titulo": "La paliza, dentro y fuera de la pista, del Coto Córdoba al Caja87",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/nueva-derrota-del-caja87-92-75/": {
+   "extracto": "El Caja87 ha vueto a sumar una nueva derrota en su segundo amistoso. Ante el mismo conjunto, el Coto Córdoba CB, por 92-75 (en el disputado hace unos días en el Municipal de San Pablo a puerta cerrada cayó por 64-84).",
+   "fecha": "2024-09-14T12:00:00+00:00",
+   "titulo": "Nueva derrota del Caja87 (92-75)",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/club-muchodeporte/caja87/un-equipo-que-deja-de-ser-invisible/": {
+   "extracto": "Casi una semana después de comenzar la pretempora, el Caja87 ha hecho pública su primera imagen del trabajo encaminado a comenzar el curso de la mejor manera posible. Curiosamente, después de que una cuenta ajena al club hispalense mostrara una instantánea en la que posaban jugadores, cuerpo técnico y uno de sus cabezas visibles (Gonzalo Crespo) en el centro de la pista principal del Municipal de San Pablo. La que ilustra esta pieza, por cierto.",
+   "fecha": "2024-09-04T12:00:00+00:00",
+   "titulo": "Un equipo que deja de ser 'invisible'",
+   "visto": "2026-11-02"
+  }
+ },
  "share-google-j8rjlbcek9e8zppdm": {
   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ancelotti-olvida-betico-natan-renovacion-brasil-20261031090003-nts.html": {
    "extracto": "El central del Betis había estado en la prelista después de su gran inicio de temporada",
@@ -706,6 +1026,12 @@
    "extracto": "El Real Betis ha recibido una noticia positiva en su regreso a los entrenamientos. Antony se ha ejercitado este jueves con el resto de sus compañeros y da un paso adelante para estar disponible ante el Málaga. El conjunto verdiblanco prepara el encuentro de este sábado en La Cartuja, correspondiente a la undécima jornada de LaLiga 2026-27, después del aplazamiento de su compromiso copero frente al CDA Navalcarnero.",
    "fecha": "2026-10-29T12:00:00+00:00",
    "titulo": "Antony se recupera a tiempo y apunta al Málaga",
+   "visto": "2026-11-02"
+  },
+  "https://www.muchodeporte.com/real-betis/arbitro-neerlandes-para-el-betis-en-dortmund/": {
+   "extracto": "El neerlandés Serdar Gözübüyük será el encargado de dirigir el encuentro entre el Borussia Dortmund y el Real Betis , correspondiente a la cuarta jornada de la fase de liga de la Champions League. El partido se disputará este miércoles, 4 de noviembre, a partir de las 21:00 horas en el Signal Iduna Park. Gözübüyük estará acompañado por los asistentes Patrick Inia y Rogier Honig, el cuarto árbitro Martijn Vos y el responsable del VAR, Deniis Higler , todos ellos de la misma federación.",
+   "fecha": "2026-11-02T12:00:00+00:00",
+   "titulo": "Árbitro neerlandés para el Betis en Dortmund",
    "visto": "2026-11-02"
   },
   "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": {
