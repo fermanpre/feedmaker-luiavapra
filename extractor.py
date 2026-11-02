@@ -19,6 +19,7 @@ from email.utils import format_datetime, parsedate_to_datetime
 from html.parser import HTMLParser
 from urllib.robotparser import RobotFileParser
 from xml.etree import ElementTree
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from xml.sax.saxutils import escape
 
 AGENTE_USUARIO = "feedmaker/0.1 (+https://github.com/fermanpre/feedmaker)"
@@ -699,18 +700,29 @@ def _slug_de_articulo(url):
     return ultimo
 
 
-def _fecha_de_la_url(url):
+def _zona_horaria(nombre):
+    """ZoneInfo de ese nombre («Europe/Madrid»), o UTC si no se indica o el sistema no la conoce."""
+    if not nombre:
+        return timezone.utc
+    try:
+        return ZoneInfo(nombre)
+    except (ZoneInfoNotFoundError, ValueError):
+        return timezone.utc
+
+
+def _fecha_de_la_url(url, nombre_de_zona=None):
+    """Fecha de la marca de tiempo de la dirección, en la zona horaria de la web (las webs la suelen poner en hora local)."""
     coincidencia = PATRON_MARCA_DE_TIEMPO_EN_URL.search(urllib.parse.urlsplit(url).path)
     if not coincidencia:
         return None
     anio, mes, dia, hora, minuto, segundo = (int(valor or 0) for valor in coincidencia.groups())
     try:
-        return datetime(anio, mes, dia, hora, minuto, segundo, tzinfo=timezone.utc)
+        return datetime(anio, mes, dia, hora, minuto, segundo, tzinfo=_zona_horaria(nombre_de_zona))
     except ValueError:
         return None
 
 
-def entradas_por_enlaces(html, url_base):
+def entradas_por_enlaces(html, url_base, zona_horaria_de_las_urls=None):
     """Alternativa a las tarjetas: todos los enlaces de la página que parecen artículos.
 
     Un enlace cuenta si es de la misma web y su último tramo es un «slug» largo (5 palabras o más separadas por guiones).
@@ -728,7 +740,7 @@ def entradas_por_enlaces(html, url_base):
         if not slug:
             continue
         texto_del_enlace = texto_de(nodo)
-        entrada = por_enlace.setdefault(enlace, {"titulo": "", "enlace": enlace, "fecha": _fecha_de_la_url(enlace),
+        entrada = por_enlace.setdefault(enlace, {"titulo": "", "enlace": enlace, "fecha": _fecha_de_la_url(enlace, zona_horaria_de_las_urls),
                                                   "extracto": "", "slug": slug})
         if len(texto_del_enlace) > len(entrada["titulo"]) and len(texto_del_enlace.split()) >= 3:
             entrada["titulo"] = texto_del_enlace[:200]

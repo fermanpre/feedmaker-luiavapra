@@ -317,7 +317,8 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
 
         if entradas is None and sitio.get("modo_enlaces"):
             # Sin IA: los enlaces de una página repartida en bloques distintos no forman un grupo de tarjetas.
-            entradas = extractor.entradas_por_enlaces(respuesta.texto, respuesta.url_final)[:MAXIMO_ENTRADAS_POR_ENLACES]
+            entradas = extractor.entradas_por_enlaces(
+                respuesta.texto, respuesta.url_final, sitio.get("zona_horaria_de_las_urls"))[:MAXIMO_ENTRADAS_POR_ENLACES]
             if not entradas:
                 estado["detalle"] = "no se han encontrado enlaces que parezcan artículos"
                 return estado

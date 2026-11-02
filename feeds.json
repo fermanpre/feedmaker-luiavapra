@@ -64,7 +64,8 @@
     "filtro_en_combinado": [
       "caja"
     ],
-    "modo_enlaces": true
+    "modo_enlaces": true,
+    "zona_horaria_de_las_urls": "Europe/Madrid"
   },
   {
     "id": "abc-deportes-sevilla-pagina-1",
@@ -75,7 +76,8 @@
     "modo_enlaces": true,
     "filtro_en_combinado": [
       "caja"
-    ]
+    ],
+    "zona_horaria_de_las_urls": "Europe/Madrid"
   },
   {
     "id": "abc-deportes-sevilla-pagina-2",
@@ -86,7 +88,8 @@
     "modo_enlaces": true,
     "filtro_en_combinado": [
       "caja"
-    ]
+    ],
+    "zona_horaria_de_las_urls": "Europe/Madrid"
   },
   {
     "id": "abc-deportes-sevilla-pagina-3",
@@ -97,7 +100,8 @@
     "modo_enlaces": true,
     "filtro_en_combinado": [
       "caja"
-    ]
+    ],
+    "zona_horaria_de_las_urls": "Europe/Madrid"
   },
   {
     "id": "diariodesevilla-betis-baloncesto",

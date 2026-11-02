@@ -60,7 +60,7 @@ parámetros de seguimiento (`utm_…`).
 | `leer_feed_propio: true` | Si la web tiene un feed que corresponde a la página, en vez de responder «ya tiene feed» se leen sus entradas, que traen fechas reales, y se guardan en el historial. Sirve para alimentar un combinado. |
 | `etiqueta` | Nombre corto que antepone a los títulos cuando la web forma parte de un combinado: «[ABC] …». Por defecto, el nombre de la web. |
 | `oculto: true` | La página no enseña la web en «Mis feeds». Para webs que solo son ingredientes de un combinado. |
-| `modo_enlaces: true` | En vez de buscar un bloque de tarjetas, recoge todos los enlaces de la página que parecen artículos (de la misma web y con una dirección larga de 5 palabras o más). Saca la fecha de la propia dirección si lleva marca de tiempo. Para páginas con el listado repartido en bloques distintos, como la sección de ABC. Sin IA. |
+| `modo_enlaces: true` | En vez de buscar un bloque de tarjetas, recoge todos los enlaces de la página que parecen artículos (de la misma web y con una dirección larga de 5 palabras o más). Saca la fecha de la propia dirección si lleva marca de tiempo. Para páginas con el listado repartido en bloques distintos, como la sección de ABC. Sin IA. Con `zona_horaria_de_las_urls` (p. ej. `Europe/Madrid`) esa marca se interpreta en la hora local de la web, no en UTC. |
 | `filtro_en_combinado` | Lista de palabras que sustituye, solo para esta web, al filtro del combinado. |
 
 **Aviso:** con `texto_completo`, el repositorio y los feeds, que son públicos, contienen copias del texto de
