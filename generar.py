@@ -208,7 +208,7 @@ def construir_combinado(combinado, sitios_por_id, historial, articulos):
     """Junta las entradas del historial de varias webs en un solo feed.
 
     Devuelve (entradas, avisos). Con `filtro` (lista de palabras o frases), solo pasan las entradas cuyo título o
-    extracto contiene alguna como palabra completa («caja» no coincide con «Cajasol»). Una web puede sustituir ese
+    extracto o dirección (los pies de foto no suelen nombrar al equipo, la URL sí) contiene alguna como palabra completa («caja» no coincide con «Cajasol»). Una web puede sustituir ese
     filtro por el suyo con `filtro_en_combinado`. Cada título lleva delante el nombre de su web de origen."""
     palabras_generales = [_normalizar_para_filtro(palabra) for palabra in combinado.get("filtro", [])]
     entradas = []
@@ -225,7 +225,7 @@ def construir_combinado(combinado, sitios_por_id, historial, articulos):
         etiqueta = miembro.get("etiqueta") or miembro["nombre"]
         palabras = [_normalizar_para_filtro(palabra) for palabra in miembro.get("filtro_en_combinado", [])]             or palabras_generales
         for enlace, registro in registros.items():
-            contenido = _normalizar_para_filtro(registro["titulo"] + " " + registro["extracto"])
+            contenido = _normalizar_para_filtro(registro["titulo"] + " " + registro["extracto"] + " " + enlace)
             if palabras and not any(re.search(r"(?<!\w)" + re.escape(palabra) + r"(?!\w)", contenido)
                                     for palabra in palabras):
                 continue
