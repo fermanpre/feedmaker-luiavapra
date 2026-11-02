@@ -10,6 +10,9 @@
   },
   "firma": "ul.v-r-bdr-h.v-r-s > li.v-r-s__c.v-r-s__c--1"
  },
+ "abc-deportes-sevilla-pagina-1": {},
+ "abc-deportes-sevilla-pagina-2": {},
+ "abc-deportes-sevilla-pagina-3": {},
  "anthropic-com-news": {
   "enlaces": {
    "https://www.anthropic.com/claude-haiku-5-5": "ok",
@@ -51,6 +54,8 @@
   },
   "firma": "div.carousel.carousel-with-button > div"
  },
+ "diariodesevilla-betis-baloncesto": {},
+ "diariodesevilla-tag-baloncesto": {},
  "esade-galindo": {
   "enlaces": {
    "https://www.esade.edu/ecpol/es/publicaciones/a-quien-llegan-los-bonos-energeticos-un-analisis-por-nivel-de-renta-y-tipos-de-familia/": "ok",

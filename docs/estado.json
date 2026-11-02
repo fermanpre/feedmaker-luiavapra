@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-02T13:17:59+00:00",
+ "generado": "2026-11-02T13:25:00+00:00",
  "llamadas_ia": 1,
  "sitios": [
   {
-   "actualizado": "2026-11-02T13:16:08+00:00",
+   "actualizado": "2026-11-02T13:23:08+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-02T13:16:23+00:00",
+   "actualizado": "2026-11-02T13:23:23+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:16:31+00:00",
+   "actualizado": "2026-11-02T13:23:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:16:40+00:00",
+   "actualizado": "2026-11-02T13:23:41+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:16:50+00:00",
+   "actualizado": "2026-11-02T13:23:50+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:16:59+00:00",
+   "actualizado": "2026-11-02T13:23:59+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:09+00:00",
+   "actualizado": "2026-11-02T13:24:08+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:18+00:00",
+   "actualizado": "2026-11-02T13:24:18+00:00",
    "con_texto_completo": 8,
    "detalle": "con IA",
    "entradas": 8,
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:22+00:00",
+   "actualizado": "2026-11-02T13:24:22+00:00",
    "con_texto_completo": 19,
    "detalle": "con IA",
    "entradas": 19,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:24+00:00",
+   "actualizado": "2026-11-02T13:24:24+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:26+00:00",
+   "actualizado": "2026-11-02T13:24:26+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 33,
+   "entradas": 34,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:28+00:00",
+   "actualizado": "2026-11-02T13:24:28+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 32,
+   "entradas": 33,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:31+00:00",
+   "actualizado": "2026-11-02T13:24:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 33,
+   "entradas": 34,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:34+00:00",
+   "actualizado": "2026-11-02T13:24:34+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 33,
+   "entradas": 34,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:37+00:00",
+   "actualizado": "2026-11-02T13:24:37+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:42+00:00",
+   "actualizado": "2026-11-02T13:24:42+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 18,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:43+00:00",
+   "actualizado": "2026-11-02T13:24:43+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:45+00:00",
+   "actualizado": "2026-11-02T13:24:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:48+00:00",
+   "actualizado": "2026-11-02T13:24:48+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos",
    "entradas": 0,
    "estado": "error",
@@ -237,7 +237,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T13:17:59+00:00",
+   "actualizado": "2026-11-02T13:25:00+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
