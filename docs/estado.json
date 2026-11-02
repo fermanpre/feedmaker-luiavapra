@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-02T11:50:07+00:00",
- "llamadas_ia": 0,
+ "generado": "2026-11-02T11:54:37+00:00",
+ "llamadas_ia": 1,
  "sitios": [
   {
-   "actualizado": "2026-11-02T11:48:37+00:00",
+   "actualizado": "2026-11-02T11:53:04+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-02T11:48:52+00:00",
+   "actualizado": "2026-11-02T11:53:18+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:00+00:00",
+   "actualizado": "2026-11-02T11:53:26+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:09+00:00",
+   "actualizado": "2026-11-02T11:53:36+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:19+00:00",
+   "actualizado": "2026-11-02T11:53:45+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:28+00:00",
+   "actualizado": "2026-11-02T11:53:54+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:37+00:00",
+   "actualizado": "2026-11-02T11:54:03+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:46+00:00",
+   "actualizado": "2026-11-02T11:54:13+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:50+00:00",
+   "actualizado": "2026-11-02T11:54:17+00:00",
    "con_texto_completo": 19,
    "detalle": "con IA",
    "entradas": 19,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:53+00:00",
+   "actualizado": "2026-11-02T11:54:19+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:54+00:00",
+   "actualizado": "2026-11-02T11:54:21+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 4,
+   "entradas": 5,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,7 +135,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:49:56+00:00",
+   "actualizado": "2026-11-02T11:54:24+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -148,7 +148,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:50:00+00:00",
+   "actualizado": "2026-11-02T11:54:30+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 18,
@@ -161,7 +161,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:50:02+00:00",
+   "actualizado": "2026-11-02T11:54:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:50:04+00:00",
+   "actualizado": "2026-11-02T11:54:33+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T11:50:07+00:00",
+   "actualizado": "2026-11-02T11:54:37+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "diariodesevilla-betis-baloncesto",
@@ -197,7 +197,7 @@
    ],
    "con_texto_completo": 0,
    "detalle": "combina 5 webs; filtro: caja 87, caja87, caja-87",
-   "entradas": 39,
+   "entradas": 46,
    "estado": "ok",
    "feed_propio": "",
    "id": "caja87",
