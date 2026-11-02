@@ -989,6 +989,37 @@ def extracto_del_articulo(html_del_articulo, cuerpo=""):
     return ""
 
 
+CLASES_DE_CONTENEDOR_DE_ARTICULO = (
+    "long-text", "entry-content", "post-content", "article-body", "article__body", "story-body", "news-body",
+    "noticia-texto", "texto-noticia", "cuerpo-noticia", "content-text",
+)
+
+
+def _cuerpo_de_contenedor_con_divs(raiz, url_base):
+    """Respaldo para webs que escriben el artículo con <div> en vez de <p>: toma el contenedor con una clase de
+    contenido conocida y convierte cada bloque de primer nivel en un párrafo. '' si no sale un cuerpo razonable."""
+    for nodo in descendientes(raiz):
+        if nodo.etiqueta not in ("div", "section", "article") or _es_ruido(nodo, False):
+            continue
+        if not any(clase in CLASES_DE_CONTENEDOR_DE_ARTICULO for clase in nodo.clases):
+            continue
+        parrafos = []
+        for hijo in nodo.hijos:
+            if hijo.es_texto():
+                contenido = " ".join(hijo.contenido.split())
+                html_del_bloque = escape(contenido) if contenido else ""
+            elif hijo.etiqueta in ("br", "img") or _es_ruido(hijo, True):
+                continue
+            else:
+                html_del_bloque = re.sub(r"\s+", " ", _a_html_simple(hijo, url_base, True)).strip()
+            if re.sub(r"<[^>]+>", "", html_del_bloque).strip():
+                parrafos.append(f"<p>{html_del_bloque}</p>")
+        cuerpo = "".join(parrafos)
+        if len(re.sub(r"<[^>]+>", "", cuerpo)) >= MINIMO_CARACTERES_CUERPO:
+            return cuerpo
+    return ""
+
+
 def extraer_cuerpo_articulo(html, url_base):
     """Devuelve el cuerpo del artículo como HTML simple, o '' si no se reconoce uno razonable."""
     raiz = construir_arbol(html)
@@ -999,7 +1030,7 @@ def extraer_cuerpo_articulo(html, url_base):
         cuerpo = re.sub(r"\s+", " ", _a_html_simple(contenedor, url_base, usar_clases)).strip()
         if len(re.sub(r"<[^>]+>", "", cuerpo)) >= MINIMO_CARACTERES_CUERPO:
             return cuerpo
-    return ""
+    return _cuerpo_de_contenedor_con_divs(raiz, url_base)
 
 
 def construir_rss(titulo, url_pagina, entradas):
