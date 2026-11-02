@@ -932,6 +932,29 @@ def fecha_del_articulo(html, cuerpo=""):
     return ""
 
 
+MINIMO_CARACTERES_EXTRACTO = 30
+MAXIMO_CARACTERES_EXTRACTO = 400
+
+
+def extracto_del_articulo(html_del_articulo, cuerpo=""):
+    """Descripción corta del artículo: los metadatos de la página (og:description, twitter:description, description) y,
+    si no hay, el primer párrafo del cuerpo. Texto plano, o '' si no se encuentra nada."""
+    patrones = (
+        r'<meta[^>]+(?:property|name)=["\'](?:og:description|twitter:description|description)["\'][^>]*content=["\']([^"\']+)',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:description|twitter:description|description)["\']',
+    )
+    for patron in patrones:
+        for coincidencia in re.finditer(patron, html_del_articulo, re.IGNORECASE):
+            candidato = _texto_sin_html(coincidencia.group(1))
+            if len(candidato) >= MINIMO_CARACTERES_EXTRACTO:
+                return candidato[:MAXIMO_CARACTERES_EXTRACTO]
+    for parrafo in re.findall(r"<p[^>]*>(.*?)</p>", cuerpo or "", re.IGNORECASE | re.DOTALL):
+        candidato = _texto_sin_html(parrafo)
+        if len(candidato) >= 2 * MINIMO_CARACTERES_EXTRACTO:
+            return candidato[:MAXIMO_CARACTERES_EXTRACTO]
+    return ""
+
+
 def extraer_cuerpo_articulo(html, url_base):
     """Devuelve el cuerpo del artículo como HTML simple, o '' si no se reconoce uno razonable."""
     raiz = construir_arbol(html)
@@ -969,8 +992,10 @@ def construir_rss(titulo, url_pagina, entradas):
         if not resumen and entrada.get("cuerpo"):
             # Algunos lectores solo muestran <description>: sin extracto, se usa el principio del cuerpo.
             resumen = " ".join(re.sub(r"<[^>]+>", " ", entrada["cuerpo"]).split())
-        if resumen:
-            lineas.append(f"<description>{escape(resumen[:400])}</description>")
+        if not resumen:
+            # Sin <description>, Feedly muestra «[no content]»: en último caso, el propio título.
+            resumen = entrada["titulo"]
+        lineas.append(f"<description>{escape(resumen[:400])}</description>")
         if entrada.get("cuerpo"):
             cuerpo_seguro = entrada["cuerpo"].replace("]]>", "]]&gt;")
             lineas.append(f"<content:encoded><![CDATA[{cuerpo_seguro}]]></content:encoded>")

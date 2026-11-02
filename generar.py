@@ -149,6 +149,8 @@ def completar_fechas(entradas, articulos, descargas, decisiones_del_sitio):
         enlace = entrada["enlace"]
         guardado = articulos.get(enlace)
         if guardado is not None and guardado.get("v") == VERSION_CACHE_ARTICULOS:
+            if not entrada["extracto"]:
+                entrada["extracto"] = guardado.get("extracto", "")
             fecha_guardada = extractor.interpretar_fecha(guardado.get("fecha", ""))
             if fecha_guardada:
                 entrada["fecha"] = fecha_guardada
@@ -158,13 +160,11 @@ def completar_fechas(entradas, articulos, descargas, decisiones_del_sitio):
             continue
         descargas["hechas"] += 1
         intentos += 1
-        texto_de_la_fecha = ""
-        if extractor.permitido_por_robots(enlace):
-            respuesta = extractor.peticion(enlace)
-            if 200 <= respuesta.estado < 300:
-                cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
-                texto_de_la_fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo) or ""
-        articulos[enlace] = {"cuerpo": "", "fecha": texto_de_la_fecha, "v": VERSION_CACHE_ARTICULOS, "solo_fecha": True}
+        _, texto_de_la_fecha, extracto = descargar_datos_del_articulo(enlace)
+        articulos[enlace] = {"cuerpo": "", "fecha": texto_de_la_fecha, "extracto": extracto,
+                             "v": VERSION_CACHE_ARTICULOS, "solo_fecha": True}
+        if not entrada["extracto"]:
+            entrada["extracto"] = extracto
         fecha = extractor.interpretar_fecha(texto_de_la_fecha)
         if fecha:
             entrada["fecha"] = fecha
@@ -173,6 +173,38 @@ def completar_fechas(entradas, articulos, descargas, decisiones_del_sitio):
             decisiones_del_sitio["fechas_en_articulos"] = False
             break
     return conseguidas
+
+
+def completar_extractos(entradas, articulos, descargas):
+    """Da extracto a las entradas que no lo tienen, desde la caché o entrando en el artículo (con el tope de descargas).
+
+    Lo ya intentado se guarda con éxito o sin él. Si de paso se descarga una fecha que faltaba, también se aplica.
+    Devuelve cuántas entradas han ganado extracto."""
+    conseguidos = 0
+    for entrada in entradas:
+        if entrada["extracto"]:
+            continue
+        enlace = entrada["enlace"]
+        guardado = articulos.get(enlace)
+        if guardado is not None and "extracto" in guardado:
+            if guardado["extracto"]:
+                entrada["extracto"] = guardado["extracto"]
+                conseguidos += 1
+            continue  # ya se intentó, con extracto o sin él
+        if descargas["hechas"] >= descargas["tope"]:
+            continue
+        descargas["hechas"] += 1
+        cuerpo, texto_de_la_fecha, extracto = descargar_datos_del_articulo(enlace)
+        if guardado is None:
+            guardado = {"cuerpo": "", "fecha": texto_de_la_fecha, "v": VERSION_CACHE_ARTICULOS, "solo_fecha": True}
+        guardado["extracto"] = extracto
+        articulos[enlace] = guardado
+        if extracto:
+            entrada["extracto"] = extracto
+            conseguidos += 1
+        if not entrada["fecha"] and texto_de_la_fecha:
+            entrada["fecha"] = extractor.interpretar_fecha(texto_de_la_fecha)
+    return conseguidos
 
 
 def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, articulos, con_texto_completo):
@@ -213,6 +245,19 @@ def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, ar
     return fusionadas[:MAXIMO_ENTRADAS_EN_FEED]
 
 
+def descargar_datos_del_articulo(enlace):
+    """(cuerpo, fecha, extracto) de un artículo; cadenas vacías si no se puede descargar o no se reconoce."""
+    if not extractor.permitido_por_robots(enlace):
+        return "", "", ""
+    respuesta = extractor.peticion(enlace)
+    if not (200 <= respuesta.estado < 300):
+        return "", "", ""
+    cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final) or ""
+    fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo) or ""
+    extracto = extractor.extracto_del_articulo(respuesta.texto, cuerpo)
+    return cuerpo, fecha, extracto
+
+
 def completar_con_texto(entradas, articulos, descargas):
     """Añade a cada entrada el cuerpo del artículo, descargando solo los que no están en caché.
 
@@ -226,17 +271,14 @@ def completar_con_texto(entradas, articulos, descargas):
         necesita_descarga = guardado.get("v") != VERSION_CACHE_ARTICULOS or guardado.get("solo_fecha")
         if necesita_descarga and descargas["hechas"] < descargas["tope"]:
             descargas["hechas"] += 1
-            cuerpo = ""
-            fecha = ""
-            if extractor.permitido_por_robots(enlace):
-                respuesta = extractor.peticion(enlace)
-                if 200 <= respuesta.estado < 300:
-                    cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
-                    fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo)
-            articulos[enlace] = {"cuerpo": cuerpo, "fecha": fecha, "v": VERSION_CACHE_ARTICULOS}
-        entrada["cuerpo"] = articulos.get(enlace, {}).get("cuerpo", "")
-        if not entrada["fecha"] and articulos.get(enlace, {}).get("fecha"):
-            entrada["fecha"] = extractor.interpretar_fecha(articulos[enlace]["fecha"])
+            cuerpo, fecha, extracto = descargar_datos_del_articulo(enlace)
+            articulos[enlace] = {"cuerpo": cuerpo, "fecha": fecha, "extracto": extracto, "v": VERSION_CACHE_ARTICULOS}
+        guardado = articulos.get(enlace, {})
+        entrada["cuerpo"] = guardado.get("cuerpo", "")
+        if not entrada["fecha"] and guardado.get("fecha"):
+            entrada["fecha"] = extractor.interpretar_fecha(guardado["fecha"])
+        if not entrada["extracto"] and guardado.get("extracto"):
+            entrada["extracto"] = guardado["extracto"]
     return sum(1 for entrada in entradas if entrada["cuerpo"])
 
 
@@ -291,12 +333,13 @@ def construir_combinado(combinado, sitios_por_id, historial, articulos):
     return ordenadas[:MAXIMO_ENTRADAS_EN_FEED], avisos
 
 
-def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz):
+def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas):
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": combinado["id"], "nombre": combinado["nombre"], "url": "", "estado": "error", "detalle": "",
               "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora}
     try:
         entradas, avisos = construir_combinado(combinado, sitios_por_id, historial, articulos)
+        completar_extractos(entradas, articulos, descargas)
         if len(avisos) == len(combinado["combina"]):
             estado["detalle"] = "ninguna de las webs tiene entradas: " + "; ".join(avisos)
             return estado
@@ -418,6 +461,9 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         else:
             completar_fechas(entradas, articulos, descargas, decisiones.setdefault(sitio["id"], {}))
 
+        if not sitio.get("oculto"):
+            completar_extractos(entradas, articulos, descargas)
+
         if usa_respaldo_por_enlaces:
             # Los enlaces largos también son fichas de producto o menús: solo los artículos acaban con fecha.
             if sum(1 for entrada in entradas if entrada["fecha"]) < FRACCION_MINIMA_CON_FECHA_EN_RESPALDO * len(entradas):
@@ -479,7 +525,7 @@ def main():
 
     sitios_por_id = {sitio["id"]: sitio for sitio in sitios}
     for combinado in [sitio for sitio in sitios if "combina" in sitio]:
-        estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz)
+        estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas)
         resultados.append(estado)
         print(f"- {combinado['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
