@@ -55,7 +55,7 @@ parámetros de seguimiento (`utm_…`).
 |---|---|
 | `user_agent` | `"auto"` (por defecto): se identifica como `feedmaker` y, solo si la web responde 403 o 406, repite la petición presentándose como un navegador. `"honesto"`: nunca se presenta como navegador. `"navegador"`: siempre lo hace. `estado.json` anota cuál se usó en cada web. |
 | `forzar_tarjetas: true` | Genera el feed aunque la web ya tenga uno propio. |
-| `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 15 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
+| `texto_completo: true` | Descarga cada artículo y mete su texto en el feed (`content:encoded`), no solo el extracto. Sin IA: es extracción por reglas. Se descargan como máximo 30 artículos nuevos por ejecución (`FEEDMAKER_MAX_ARTICULOS`); lo ya descargado se guarda en `datos/articulos.json`. |
 | `conservar_dias` | Días que se conserva en el feed una entrada que la web ya no enseña (por defecto 180). Cuenta desde la última vez que se vio, no desde su fecha: lo que sigue listado no caduca. `0` = solo lo que enseña hoy la web. |
 | `leer_feed_propio: true` | Si la web tiene un feed que corresponde a la página, en vez de responder «ya tiene feed» se leen sus entradas, que traen fechas reales, y se guardan en el historial. Sirve para alimentar un combinado. |
 | `etiqueta` | Nombre corto que antepone a los títulos cuando la web forma parte de un combinado: «[ABC] …». Por defecto, el nombre de la web. |
@@ -80,6 +80,14 @@ Una entrada de `feeds.json` con `combina` junta en un solo feed las entradas del
 - Cada título lleva delante la web de origen, y se quitan los enlaces repetidos entre webs.
 - El combinado se alimenta del historial de cada web, así que gana la misma profundidad (`conservar_dias`).
 - Una web que solo ofrece feed propio no aporta entradas al combinado, salvo que lleve `leer_feed_propio: true`.
+
+## Fechas que faltan
+
+Si a menos del 60 % de las entradas de una web les consta la fecha, se busca entrando en cada artículo (una descarga por
+entrada, con el tope de arriba compartido con `texto_completo`). El resultado se guarda en `datos/articulos.json`, con
+éxito o sin él, para no repetir la descarga. Si los 3 primeros artículos de una web no dan ninguna fecha, se deja de
+intentar en esa web (`fechas_en_articulos: false` en `datos/decisiones.json`; bórralo para reintentar). Una web nueva con
+muchas entradas sin fecha tarda unos días en completarse, por el tope.
 
 ## Historial de entradas
 

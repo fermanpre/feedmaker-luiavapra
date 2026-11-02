@@ -127,6 +127,54 @@ def momento_de_orden(fecha, visto_iso):
     return datetime.combine(date.fromisoformat(visto_iso), time.min, tzinfo=timezone.utc)
 
 
+FRACCION_CON_FECHA_SUFICIENTE = 0.6
+INTENTOS_SIN_EXITO_PARA_RENDIRSE = 3
+
+
+def completar_fechas(entradas, articulos, descargas, decisiones_del_sitio):
+    """Si a muchas entradas les falta la fecha, la busca entrando en cada artículo (sin guardar su texto).
+
+    Solo actúa si menos del 60 % de las entradas tienen fecha. Lo ya intentado se guarda en la caché de artículos,
+    con éxito o sin él, para no repetir la descarga. Comparte con `completar_con_texto` el tope de descargas por
+    ejecución. Si los primeros 3 artículos de una web no dan ninguna fecha, se deja de intentarlo en esa web.
+    Devuelve cuántas entradas han ganado fecha."""
+    if decisiones_del_sitio.get("fechas_en_articulos") is False:
+        return 0
+    sin_fecha = [entrada for entrada in entradas if not entrada["fecha"]]
+    if len(entradas) - len(sin_fecha) >= FRACCION_CON_FECHA_SUFICIENTE * len(entradas):
+        return 0
+    conseguidas = 0
+    intentos = 0
+    for entrada in sin_fecha:
+        enlace = entrada["enlace"]
+        guardado = articulos.get(enlace)
+        if guardado is not None and guardado.get("v") == VERSION_CACHE_ARTICULOS:
+            fecha_guardada = extractor.interpretar_fecha(guardado.get("fecha", ""))
+            if fecha_guardada:
+                entrada["fecha"] = fecha_guardada
+                conseguidas += 1
+            continue  # ya se intentó: con fecha o sin ella, no se vuelve a descargar
+        if descargas["hechas"] >= descargas["tope"]:
+            continue
+        descargas["hechas"] += 1
+        intentos += 1
+        texto_de_la_fecha = ""
+        if extractor.permitido_por_robots(enlace):
+            respuesta = extractor.peticion(enlace)
+            if 200 <= respuesta.estado < 300:
+                cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final)
+                texto_de_la_fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo) or ""
+        articulos[enlace] = {"cuerpo": "", "fecha": texto_de_la_fecha, "v": VERSION_CACHE_ARTICULOS, "solo_fecha": True}
+        fecha = extractor.interpretar_fecha(texto_de_la_fecha)
+        if fecha:
+            entrada["fecha"] = fecha
+            conseguidas += 1
+        elif intentos >= INTENTOS_SIN_EXITO_PARA_RENDIRSE and conseguidas == 0:
+            decisiones_del_sitio["fechas_en_articulos"] = False
+            break
+    return conseguidas
+
+
 def fusionar_con_historial(historial_del_sitio, entradas_actuales, dias, hoy, articulos, con_texto_completo):
     """Mezcla lo que enseña hoy la web con lo que se vio en días anteriores y devuelve las entradas del feed.
 
@@ -174,7 +222,9 @@ def completar_con_texto(entradas, articulos, descargas):
     for entrada in entradas:
         enlace = entrada["enlace"]
         # Las entradas de una versión anterior de la caché se vuelven a descargar una vez (VERSION_CACHE_ARTICULOS).
-        if articulos.get(enlace, {}).get("v") != VERSION_CACHE_ARTICULOS and descargas["hechas"] < descargas["tope"]:
+        guardado = articulos.get(enlace, {})
+        necesita_descarga = guardado.get("v") != VERSION_CACHE_ARTICULOS or guardado.get("solo_fecha")
+        if necesita_descarga and descargas["hechas"] < descargas["tope"]:
             descargas["hechas"] += 1
             cuerpo = ""
             fecha = ""
@@ -352,6 +402,8 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         con_texto = 0
         if sitio.get("texto_completo"):
             con_texto = completar_con_texto(entradas, articulos, descargas)
+        else:
+            completar_fechas(entradas, articulos, descargas, decisiones.setdefault(sitio["id"], {}))
 
         entradas_del_feed = fusionar_con_historial(
             historial.setdefault(sitio["id"], {}), entradas, sitio.get("conservar_dias", CONSERVAR_DIAS_POR_DEFECTO),
@@ -384,7 +436,7 @@ def main():
     articulos = leer_json(ruta_articulos, {})
     ruta_historial = os.path.join(raiz, "datos", "historial.json")
     historial = leer_json(ruta_historial, {})
-    descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "15"))}
+    descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "30"))}
     estado_anterior = {entrada["id"]: entrada for entrada in leer_json(ruta_estado, {}).get("sitios", [])}
 
     cliente = ia.crear_cliente()
