@@ -562,6 +562,11 @@ def main():
         resultados.append(estado)
         print(f"- {combinado['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
+    # estado.json sigue el orden de feeds.json (las webs nuevas se añaden al final), no el de proceso: los combinados
+    # se procesan los últimos, pero su sitio en la lista es el que tienen en feeds.json.
+    posicion_en_feeds = {sitio["id"]: posicion for posicion, sitio in enumerate(sitios)}
+    resultados.sort(key=lambda estado: posicion_en_feeds[estado["id"]])
+
     escribir_json(ruta_decisiones, decisiones)
     escribir_json(ruta_historial, historial)
     if articulos:

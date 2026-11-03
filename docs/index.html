@@ -185,7 +185,8 @@
       lista.appendChild(crearElemento("li", "Todavía no hay ninguna web.", "meta"));
       return;
     }
-    visibles.forEach(function (sitio) {
+    // estado.json va en el orden de feeds.json (las webs nuevas, al final): se enseñan las más recientes primero.
+    visibles.slice().reverse().forEach(function (sitio) {
       var fila = document.createElement("li");
       pintarSitio(sitio, fila);
       lista.appendChild(fila);
