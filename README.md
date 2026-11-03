@@ -112,6 +112,10 @@ Deportes enlazado desde la página de un solo equipo). Se considera general si l
 en la URL del feed y menos del 40 % de las 10 entradas más recientes del feed están enlazadas en la página.
 En ese caso se genera el feed de la página, y si no sale ninguno se conserva el feed propio.
 
+La decisión se mide la primera vez y se guarda (`feed_generico` en `datos/decisiones.json`), porque el solape depende de las
+noticias del día y una decisión que cambia con ellas dejaría el feed sin actualizar. Para volver a medirla, borra esa clave;
+`forzar_tarjetas: true` en `feeds.json` la anula.
+
 ## Límites conocidos
 
 - No funciona con páginas que construyen el listado con JavaScript.

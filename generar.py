@@ -394,6 +394,17 @@ def buscar_entradas_por_tarjetas(sitio, respuesta, decisiones, cliente, presupue
     return entradas, ""
 
 
+def decidir_si_el_feed_es_generico(decisiones_del_sitio, respuesta, feed_propio):
+    """True si el feed enlazado es más general que la página. La primera vez se mide y se guarda en decisiones.json:
+    el solape entre el feed y la página depende de las noticias del día (la semana en que el Betis domina Deportes, la
+    página de un equipo parece la sección entera), y una decisión que cambia con ellas dejaría el feed sin actualizar.
+    Para volver a medirlo, borra `feed_generico` de decisiones.json; `forzar_tarjetas` lo anula."""
+    if "feed_generico" not in decisiones_del_sitio:
+        decisiones_del_sitio["feed_generico"] = not extractor.feed_corresponde_a_la_pagina(
+            respuesta.texto, respuesta.url_final, feed_propio)
+    return decisiones_del_sitio["feed_generico"]
+
+
 def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial):
     """Devuelve el estado público del sitio. Nunca lanza: un fallo no debe parar a los demás."""
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -433,7 +444,7 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         # generar el feed de la página y, si no sale, se conserva el feed propio.
         feed_generico = bool(feed_propio) and (
             entradas_del_feed == 0
-            or not extractor.feed_corresponde_a_la_pagina(respuesta.texto, respuesta.url_final, feed_propio))
+            or decidir_si_el_feed_es_generico(decisiones.setdefault(sitio["id"], {}), respuesta, feed_propio))
         entradas = None
         if feed_propio and not feed_generico and not sitio.get("forzar_tarjetas"):
             if sitio.get("leer_feed_propio"):

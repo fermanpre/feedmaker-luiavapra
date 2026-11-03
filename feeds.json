@@ -41,7 +41,8 @@
     "id": "share-google-j8rjlbcek9e8zppdm",
     "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
     "url": "https://share.google/j8rjlbcEk9E8ZpPdM",
-    "texto_completo": true
+    "texto_completo": true,
+    "forzar_tarjetas": true
   },
   {
     "id": "share-google-uroemjvtz4ce2cv75",
