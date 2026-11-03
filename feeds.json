@@ -166,5 +166,11 @@
     "nombre": "www.bruegel.org/publications/analyses",
     "url": "https://www.bruegel.org/publications/analyses",
     "texto_completo": true
+  },
+  {
+    "id": "smashingmagazine-com-articles",
+    "nombre": "smashingmagazine.com/articles",
+    "url": "https://smashingmagazine.com/articles",
+    "texto_completo": true
   }
 ]
