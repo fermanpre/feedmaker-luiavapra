@@ -89,6 +89,35 @@
  "diariodesevilla-tag-baloncesto": {
   "feed_generico": false
  },
+ "elconfidencial-com": {
+  "enlaces": {
+   "https://www.elconfidencial.com/alma-corazon-vida/2026-11-03/juan-jose-ebenezer-mecanico-por-no-hacer-mantenimiento-motor-roto-1qrt_4458114/": "ok",
+   "https://www.elconfidencial.com/alma-corazon-vida/2026-11-03/winston-churchill-politico-ingles-exito-fracaso_4381417/": "ok",
+   "https://www.elconfidencial.com/deportes/2026-11-03/jesus-de-miguel-muere-tenerife-directo_4457772/": "ok",
+   "https://www.elconfidencial.com/deportes/futbol/2026-07-25/vinicius-diomande-roc-nation-real-madrid_4395978/": "ok",
+   "https://www.elconfidencial.com/deportes/futbol/2026-11-03/atletico-madrid-bayern-munich-hora-donde-ver-partido-champions-1qrt_4457910/": "ok",
+   "https://www.elconfidencial.com/deportes/futbol/2026-11-03/barcelona-aston-villa-hora-donde-ver-partido-champions-1qrt_4457736/": "ok",
+   "https://www.elconfidencial.com/deportes/futbol/2026-11-03/jarque-jesus-miguel-muertes-mundo-futbol-1qrt_4457825/": "ok",
+   "https://www.elconfidencial.com/deportes/tenis/2026-11-03/jodar-ruud-hora-donde-ver-tv-partido-masters-1000-paris-1qrt_4457790/": "ok",
+   "https://www.elconfidencial.com/economia/2026-10-11/simulador-sueldo-vox-herramienta-digital-permite-calcular_4442881/": "ok",
+   "https://www.elconfidencial.com/economia/2026-11-03/precio-luz-martes-3-noviembre-horas-baratas-1qrt_4457763/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-bilbao-martes_4453474/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-gijon-martes_4443461/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-ourense-martes_4448432/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-oviedo-martes_4443462/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-segovia-martes_4443470/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-03/el-tiempo-en-torremolinos-martes_4448429/": "ok",
+   "https://www.elconfidencial.com/espana/2026-11-03/mesa-electoral-hasta-cuando-notifican-tocado-multa_4458089/": "ok",
+   "https://www.elconfidencial.com/espana/2026-11-03/quien-es-quien-elecciones-29n-candidatos-partido-1qrt_4457707/": "ok",
+   "https://www.elconfidencial.com/espana/2026-11-03/roberto-brasero-sobre-el-cambio-de-tiempo-en-espana_4457716/": "ok",
+   "https://www.elconfidencial.com/espana/galicia/2026-08-02/nombre-nina-gallego-poco-comun-corto-1qrt-1tna_4399276/": "ok",
+   "https://www.elconfidencial.com/mundo/2026-11-03/elecciones-estados-unidos-resultados-2026-directo_4457009/": "ok",
+   "https://www.elconfidencial.com/tags/temas/elecciones-generales-29n-21558/": "descartar",
+   "https://www.elconfidencial.com/television/series-tv/2026-11-03/la-promesa-avance-capitulo-940-miercoles-4-noviembre_4457706/": "ok",
+   "https://www.elconfidencial.com/viajes/2026-11-03/aldea-gallega-refugio-oscar-puente-padre-1qrt-1tna_4457759/": "ok"
+  },
+  "firma": "ul.lastNews__content > li.lastNews__item"
+ },
  "esade-galindo": {
   "enlaces": {
    "https://www.esade.edu/ecpol/es/publicaciones/5-graficos-que-desvelan-quien-sufrira-el-impacto-de-esta-crisis/": "ok",
@@ -251,6 +280,7 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/alineaciones-probables-betis-malaga-laliga-sports-20262027-20261030134729-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/analisis-angel-cuellar-betis-malaga-cartuja-empiezan-20261031212703-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ancelotti-olvida-betico-natan-renovacion-brasil-20261031090003-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/bartra-version-goleadora-vuelta-dortmund-lugar-nunca-20261102071656-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-deportivo-cae-ante-recreativo-huelva-deja-20261101151949-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-malaga-estadisticas-partido-20261031191144-dis.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-pellegrini-firma-mejor-arranque-laliga-20261101183623-nts.html": "ok",
@@ -281,6 +311,7 @@
    "https://www.muchodeporte.com/real-betis/antony-se-recupera-a-tiempo-y-apunta-al-malaga/": "ok",
    "https://www.muchodeporte.com/real-betis/arbitro-neerlandes-para-el-betis-en-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": "ok",
+   "https://www.muchodeporte.com/real-betis/diego-llorente-reivindica-el-espiritu-colectivo-hay-que-seguir-apretando-el-acelerador/": "ok",
    "https://www.muchodeporte.com/real-betis/el-betis-lanza-un-aviso-a-los-beticos-que-viajen-a-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/el-malaga-solo-gano-en-tres-de-sus-trece-visitas-al-betis/": "ok",
    "https://www.muchodeporte.com/real-betis/el-regreso-mas-especial-de-bartra-vuelve-a-dortmund-en-plena-racha-goleadora/": "ok",

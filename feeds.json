@@ -172,5 +172,11 @@
     "nombre": "smashingmagazine.com/articles",
     "url": "https://smashingmagazine.com/articles",
     "texto_completo": true
+  },
+  {
+    "id": "elconfidencial-com",
+    "nombre": "elconfidencial.com",
+    "url": "https://elconfidencial.com",
+    "texto_completo": true
   }
 ]
