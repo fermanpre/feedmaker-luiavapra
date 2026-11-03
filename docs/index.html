@@ -132,7 +132,8 @@
 
   function urlDelFeedDe(sitio) {
     // «version_url» (feeds.json) hace que Feedly lea el feed como una dirección nueva, sin la copia vacía que guardó antes.
-    if (sitio.estado === "ok") {
+    // Con error pero con un feed ya publicado («feed_anterior»), el enlace sigue valiendo: se actualizará cuando la web responda.
+    if (sitio.estado === "ok" || (sitio.estado === "error" && sitio.feed_anterior)) {
       return base + "feeds/" + sitio.id + ".xml" + (sitio.version_url ? "?v=" + encodeURIComponent(sitio.version_url) : "");
     }
     if (sitio.estado === "feed_propio") { return sitio.feed_propio; }
@@ -149,14 +150,25 @@
     return boton;
   }
 
+  function fechaLegible(iso) {
+    var fecha = new Date(iso);
+    if (isNaN(fecha.getTime())) { return "de fecha desconocida"; }
+    return fecha.toLocaleString("es-ES", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  }
+
   function pintarSitio(sitio, contenedor) {
     var urlFeed = urlDelFeedDe(sitio);
     var titulo = crearElemento("div", sitio.nombre);
     titulo.style.fontWeight = "600";
     contenedor.appendChild(titulo);
+    var conFeedAnterior = sitio.estado === "error" && Boolean(sitio.feed_anterior);
     var texto = { ok: "Feed generado (" + sitio.entradas + " entradas)",
                   feed_propio: "La web ya tiene feed propio" }[sitio.estado] || ("No se ha podido: " + sitio.detalle);
-    var clase = sitio.estado === "ok" ? "estado-ok" : (sitio.estado === "feed_propio" ? "estado-aviso" : "estado-error");
+    if (conFeedAnterior) {
+      texto = "La web no responde ahora (" + sitio.detalle + "). Se mantiene el feed de la última lectura correcta, " +
+              fechaLegible(sitio.feed_anterior) + ", con " + sitio.entradas + " entradas.";
+    }
+    var clase = sitio.estado === "ok" ? "estado-ok" : ((sitio.estado === "feed_propio" || conFeedAnterior) ? "estado-aviso" : "estado-error");
     contenedor.appendChild(crearElemento("div", texto, "meta " + clase));
     if (urlFeed) {
       contenedor.appendChild(crearElemento("code", urlFeed));

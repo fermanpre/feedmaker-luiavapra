@@ -13,6 +13,7 @@ import os
 import re
 import sys
 from datetime import date, datetime, time, timezone
+from email.utils import parsedate_to_datetime
 from time import sleep as esperar_segundos
 
 import extractor
@@ -296,6 +297,24 @@ FEED_GENERICO_SIN_ALTERNATIVA = ("el feed de la web es más general que esta pá
                                  "propio de la página: suscríbete a ese")
 
 
+def leer_feed_publicado(raiz, identificador):
+    """(número de entradas, hora de su última generación en ISO) del XML ya publicado de una web, o None si no hay."""
+    ruta = os.path.join(raiz, "docs", "feeds", identificador + ".xml")
+    if not os.path.exists(ruta):
+        return None
+    with open(ruta, encoding="utf-8") as fichero:
+        xml = fichero.read()
+    entradas = xml.count("<item>")
+    coincidencia = re.search(r"<lastBuildDate>(.*?)</lastBuildDate>", xml)
+    generado = ""
+    if coincidencia:
+        try:
+            generado = parsedate_to_datetime(coincidencia.group(1).strip()).isoformat()
+        except (TypeError, ValueError):
+            generado = ""
+    return entradas, generado
+
+
 def descripcion_del_error_http(codigo):
     """Mensaje para la página. Un 403 o 406 solo dice que la web rechaza la petición: suele ser porque bloquea las
     conexiones automáticas desde servidores como los de GitHub, pero el código no lo prueba, por eso el texto dice «suele»."""
@@ -550,7 +569,6 @@ def main():
     ruta_historial = os.path.join(raiz, "datos", "historial.json")
     historial = leer_json(ruta_historial, {})
     descargas = {"hechas": 0, "tope": int(os.environ.get("FEEDMAKER_MAX_ARTICULOS", "60"))}
-    estado_anterior = {entrada["id"]: entrada for entrada in leer_json(ruta_estado, {}).get("sitios", [])}
 
     cliente = ia.crear_cliente()
     presupuesto = Presupuesto(TOPE_LLAMADAS_IA)
@@ -559,11 +577,6 @@ def main():
     resultados = []
     for sitio in [sitio for sitio in sitios if "combina" not in sitio]:
         estado = procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, descargas, historial)
-        anterior = estado_anterior.get(sitio["id"])
-        if estado["estado"] == "error" and anterior and anterior["estado"] == "ok":
-            # El feed anterior sigue publicado: se conserva su número de entradas y se anota el fallo.
-            estado["entradas"] = anterior["entradas"]
-            estado["detalle"] = "no se pudo actualizar (se mantiene el feed anterior): " + estado["detalle"]
         resultados.append(estado)
         print(f"- {sitio['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 
@@ -572,6 +585,14 @@ def main():
         estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas)
         resultados.append(estado)
         print(f"- {combinado['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
+
+    # Una web con error que ya tenía un feed publicado lo conserva: se anotan sus entradas y cuándo se generó, para
+    # que la página lo enseñe con un aviso y con su enlace en vez de dejarlo sin dirección.
+    for estado in resultados:
+        if estado["estado"] == "error":
+            publicado = leer_feed_publicado(raiz, estado["id"])
+            if publicado is not None:
+                estado["entradas"], estado["feed_anterior"] = publicado
 
     # estado.json sigue el orden de feeds.json (las webs nuevas se añaden al final), no el de proceso: los combinados
     # se procesan los últimos, pero su sitio en la lista es el que tienen en feeds.json.
