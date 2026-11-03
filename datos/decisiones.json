@@ -8,11 +8,18 @@
    "https://www.abc.es/deportes/sevilla/fundacion-cajasol-voleibol-asignatura-pendiente-casa-20261031070641-nts.html": "ok",
    "https://www.abc.es/deportes/sevilla/regata-sevilla-betis-une-proyecto-hombre-destacar-20261029112011-nts.html": "ok"
   },
+  "feed_generico": true,
   "firma": "ul.v-r-bdr-h.v-r-s > li.v-r-s__c.v-r-s__c--1"
  },
- "abc-deportes-sevilla-pagina-1": {},
- "abc-deportes-sevilla-pagina-2": {},
- "abc-deportes-sevilla-pagina-3": {},
+ "abc-deportes-sevilla-pagina-1": {
+  "feed_generico": true
+ },
+ "abc-deportes-sevilla-pagina-2": {
+  "feed_generico": true
+ },
+ "abc-deportes-sevilla-pagina-3": {
+  "feed_generico": true
+ },
  "anthropic-com-news": {
   "enlaces": {
    "https://www.anthropic.com/claude-haiku-5-5": "ok",
@@ -54,8 +61,12 @@
   },
   "firma": "div.carousel.carousel-with-button > div"
  },
- "diariodesevilla-betis-baloncesto": {},
- "diariodesevilla-tag-baloncesto": {},
+ "diariodesevilla-betis-baloncesto": {
+  "feed_generico": false
+ },
+ "diariodesevilla-tag-baloncesto": {
+  "feed_generico": false
+ },
  "esade-galindo": {
   "enlaces": {
    "https://www.esade.edu/ecpol/es/publicaciones/a-quien-llegan-los-bonos-energeticos-un-analisis-por-nivel-de-renta-y-tipos-de-familia/": "ok",
@@ -203,13 +214,20 @@
  "realbetisbalompie-es-noticias-actualidad": {},
  "share-google-j8rjlbcek9e8zppdm": {
   "enlaces": {
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/aitor-ruibal-celebra-vuelta-emocion-20261101131444-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/alineaciones-probables-betis-malaga-laliga-sports-20262027-20261030134729-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/analisis-angel-cuellar-betis-malaga-cartuja-empiezan-20261031212703-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ancelotti-olvida-betico-natan-renovacion-brasil-20261031090003-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-deportivo-cae-ante-recreativo-huelva-deja-20261101151949-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-malaga-estadisticas-partido-20261031191144-dis.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-propone-isco-dispone-20261101224337-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-recibe-unico-equipo-ganado-laliga-20261030225043-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/betis-resuelve-desidia-dia-oficina-seguir-ganando-20261031204339-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/busquets-ferrer-betis-solo-perdio-partido-arbitro-20261031135346-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/convocatoria-pellegrini-tres-bajas-betis-malaga-20261030132846-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/fabio-silva-igualo-dortmund-ante-bayern-recibir-20261101111945-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/funes-entrenador-malaga-revela-trabajan-jugada-ensayada-20261030155850-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/pellegrini-equipo-madurez-estar-pensando-solo-champions-20261031223542-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/pellegrini-reencontrarse-malaga-estima-club-dejarla-lado-20261030130547-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/primera-vez-pellegrini-malaga-partido-oficial-despues-20261030205654-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/recio-baja-entrenamiento-malaga-cuadro-viral-20261030160710-nts.html": "ok",
@@ -217,11 +235,13 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/tiago-polo-abandera-cantera-betis-ganar-mundial-20261030165222-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-betis-malaga-canal-streaming-online-partido-20261030190135-nts.html": "ok"
   },
+  "feed_generico": true,
   "firma": "ul.v-r-bdr-h.v-r-s > li.v-r-s__c.v-r-s__c--1"
  },
  "share-google-uroemjvtz4ce2cv75": {
   "enlaces": {
    "https://www.muchodeporte.com/real-betis/0-2-el-betis-deportivo-prolonga-su-mala-racha-con-una-derrota-ante-el-decano/": "ok",
+   "https://www.muchodeporte.com/real-betis/alvaro-fidalgo-baja-de-ultima-hora-en-el-betis-para-visitar-al-borussia-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/antony-se-recupera-a-tiempo-y-apunta-al-malaga/": "ok",
    "https://www.muchodeporte.com/real-betis/arbitro-neerlandes-para-el-betis-en-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": "ok",
