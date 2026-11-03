@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-03T12:40:01+00:00",
+ "generado": "2026-11-03T12:56:04+00:00",
  "llamadas_ia": 1,
  "sitios": [
   {
-   "actualizado": "2026-11-03T12:38:21+00:00",
+   "actualizado": "2026-11-03T12:54:20+00:00",
    "con_texto_completo": 45,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-03T12:38:34+00:00",
+   "actualizado": "2026-11-03T12:54:33+00:00",
    "con_texto_completo": 9,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:38:42+00:00",
+   "actualizado": "2026-11-03T12:54:41+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:38:52+00:00",
+   "actualizado": "2026-11-03T12:54:50+00:00",
    "con_texto_completo": 24,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:01+00:00",
+   "actualizado": "2026-11-03T12:55:00+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:10+00:00",
+   "actualizado": "2026-11-03T12:55:09+00:00",
    "con_texto_completo": 15,
    "detalle": "con IA",
    "entradas": 15,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:19+00:00",
+   "actualizado": "2026-11-03T12:55:17+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,10 +87,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:28+00:00",
-   "detalle": "HTTP 404",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-03T12:55:27+00:00",
+   "con_texto_completo": 18,
+   "detalle": "con IA",
+   "entradas": 18,
+   "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
    "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
@@ -98,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:30+00:00",
+   "actualizado": "2026-11-03T12:55:30+00:00",
    "con_texto_completo": 28,
    "detalle": "con IA",
    "entradas": 28,
@@ -110,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:32+00:00",
+   "actualizado": "2026-11-03T12:55:32+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -121,10 +122,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:34+00:00",
-   "detalle": "HTTP 404",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-03T12:55:34+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 49,
+   "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
    "nombre": "ABC Deportes Sevilla",
@@ -133,10 +135,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:35+00:00",
-   "detalle": "HTTP 404",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-03T12:55:35+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 48,
+   "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
    "nombre": "ABC Deportes Sevilla (página 1)",
@@ -145,10 +148,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:36+00:00",
-   "detalle": "HTTP 404",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-03T12:55:37+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 49,
+   "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
    "nombre": "ABC Deportes Sevilla (página 2)",
@@ -157,10 +161,11 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:37+00:00",
-   "detalle": "HTTP 404",
-   "entradas": 0,
-   "estado": "error",
+   "actualizado": "2026-11-03T12:55:39+00:00",
+   "con_texto_completo": 0,
+   "detalle": "con IA",
+   "entradas": 49,
+   "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
    "nombre": "ABC Deportes Sevilla (página 3)",
@@ -169,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:38+00:00",
+   "actualizado": "2026-11-03T12:55:41+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -182,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:41+00:00",
+   "actualizado": "2026-11-03T12:55:44+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -195,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:42+00:00",
+   "actualizado": "2026-11-03T12:55:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -208,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:39:44+00:00",
+   "actualizado": "2026-11-03T12:55:47+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -221,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T12:40:01+00:00",
+   "actualizado": "2026-11-03T12:56:04+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -243,7 +248,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-03T12:39:47+00:00",
+   "actualizado": "2026-11-03T12:55:49+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
    "entradas": 6,
@@ -256,9 +261,9 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-03T12:39:57+00:00",
-   "detalle": "no se pudo actualizar (se mantiene el feed anterior): HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
-   "entradas": 16,
+   "actualizado": "2026-11-03T12:56:00+00:00",
+   "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
+   "entradas": 0,
    "estado": "error",
    "feed_propio": "",
    "id": "bruegel-org-analysis",
@@ -267,9 +272,9 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-03T12:39:59+00:00",
-   "detalle": "no se pudo actualizar (se mantiene el feed anterior): HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
-   "entradas": 16,
+   "actualizado": "2026-11-03T12:56:02+00:00",
+   "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
+   "entradas": 0,
    "estado": "error",
    "feed_propio": "",
    "id": "bruegel-org-publications-analyses",
