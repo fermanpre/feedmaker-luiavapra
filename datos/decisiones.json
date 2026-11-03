@@ -126,6 +126,7 @@
    "https://www.ine.es/dyngs/masINE/noticia.htm?cid=5": "ok",
    "https://www.ine.es/dyngs/masINE/noticia.htm?cid=6": "ok",
    "https://www.ine.es/dyngs/masINE/noticia.htm?cid=8": "ok",
+   "https://www.ine.es/dyngs/masINE/noticia.htm?cid=9": "ok",
    "https://www.revistaindice.com/": "ok"
   },
   "firma": "div.carrouselComponent.d104c > article.contenEnlace"
@@ -167,8 +168,10 @@
    "https://www.muchodeporte.com/baloncesto/el-caja-87-asalta-granada-con-guante-de-hierro-y-se-cita-con-el-unicaja-en-la-final-de-la-copa-de-andalucia/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-caja87-y-el-cb-guillena-se-unen-para-potenciar-el-baloncesto-de-base-en-la-provincia/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-insolac-caja-87-se-impone-en-el-caos-de-san-pablo-77-74/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-asalta-mahon-en-un-desenlace-de-infarto-y-logra-su-primer-triunfo-a-domicilio-69-73/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-estrena-hoy-su-andadura-en-la-copa-espana-en-la-pista-del-bisbal-basquet/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-insolac-caja87-regresa-a-casa-para-estrenar-san-pablo-en-primera-feb/": "ok",
+   "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-firma-el-cinco-de-cinco-tras-tumbar-al-unicaja-mijas-en-san-pablo/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-firma-un-arranque-impecable-y-suma-su-tercer-triunfo-consecutivo-en-gran-canaria-54-67/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-pone-a-prueba-su-liderato-en-san-pablo-en-el-primer-derbi-andaluz-de-la-temporada/": "ok",
    "https://www.muchodeporte.com/baloncesto/el-sevilla-cajasol-gardenstore-se-hace-fuerte-en-san-pablo-y-firma-el-pleno-de-triunfos/": "ok",
@@ -224,14 +227,18 @@
    "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": "ok",
    "https://www.muchodeporte.com/real-betis/el-betis-lanza-un-aviso-a-los-beticos-que-viajen-a-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/el-malaga-solo-gano-en-tres-de-sus-trece-visitas-al-betis/": "ok",
+   "https://www.muchodeporte.com/real-betis/el-regreso-mas-especial-de-bartra-vuelve-a-dortmund-en-plena-racha-goleadora/": "ok",
    "https://www.muchodeporte.com/real-betis/el-videoblog-de-javier-leon-imagen-vulgar-puntuacion-salvaje-2026-10-31/": "ok",
    "https://www.muchodeporte.com/real-betis/fornals-mira-alto-contento-de-sacar-los-tres-puntos-despues-de-que-el-atleti-tambien-lo-hiciera/": "ok",
+   "https://www.muchodeporte.com/real-betis/haro-marca-los-tiempos-con-la-renovacion-de-pellegrini-lo-haremos-como-hasta-ahora/": "ok",
+   "https://www.muchodeporte.com/real-betis/haro-y-el-nuevo-villamarin-es-prioridad-un-estadio-de-calidad-en-precio/": "ok",
    "https://www.muchodeporte.com/real-betis/horario-y-donde-ver-el-borussia-dortmund-betis-de-la-cuarta-jornada-de-champions/": "ok",
    "https://www.muchodeporte.com/real-betis/junior-descartado-para-el-betis-malaga/": "ok",
    "https://www.muchodeporte.com/real-betis/la-cronica/2-1-el-habito-de-ganar/": "ok",
    "https://www.muchodeporte.com/real-betis/la-emotiva-reflexion-de-bartra-tras-el-accidente-ferroviario-de-toledo/": "ok",
    "https://www.muchodeporte.com/real-betis/lista-de-23-futbolistas-para-el-betis-malaga/": "ok",
    "https://www.muchodeporte.com/real-betis/lista-de-24-futbolistas-incluido-facundo-bernal-para-el-viaje-a-dortmund/": "ok",
+   "https://www.muchodeporte.com/real-betis/manu-fajardo-en-nombre-del-betis-estamos-rotos-de-dolor-por-el-tragico-suceso/": "ok",
    "https://www.muchodeporte.com/real-betis/onces-probables-del-betis-malaga-ya-llegara-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/pellegrini-no-fue-un-problema-de-relajo-hay-otro-equipo-que-juega/": "ok",
    "https://www.muchodeporte.com/real-betis/pellegrini-y-su-carino-al-malaga-fueron-tres-anos-inolvidables/": "ok",
@@ -239,7 +246,9 @@
    "https://www.muchodeporte.com/real-betis/podcast-del-betis-malaga-2-1-las-mil-maneras-de-ganar-tambien-relajandose/": "ok",
    "https://www.muchodeporte.com/real-betis/resultados-dispares-del-betis-en-sus-cuatro-visitas-a-alemania/": "ok",
    "https://www.muchodeporte.com/real-betis/sigue-en-vivo-y-en-directo-el-real-betis-malaga-cf-de-laliga-ea-sports/": "ok",
-   "https://www.muchodeporte.com/real-betis/solo-una-derrota-del-betis-con-busquets-ferrer-arbitro-para-el-duelo-ante-el-malaga/": "ok"
+   "https://www.muchodeporte.com/real-betis/solo-una-derrota-del-betis-con-busquets-ferrer-arbitro-para-el-duelo-ante-el-malaga/": "ok",
+   "https://www.muchodeporte.com/real-betis/verticalidad-presion-y-una-defensa-fiable-asi-es-la-fabrica-de-estrellas-del-borussia-dortmund/": "ok",
+   "https://www.muchodeporte.com/sevilla-fc/caparros-se-acuerda-de-pepe-mel-este-partido-lo-vas-a-ganar-seguro/": "ok"
   },
   "firma": "div.CONTENIDO-IZQ.LISTADO_BUSQUEDA > div.MODULO"
  },

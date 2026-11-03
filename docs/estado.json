@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-02T17:43:20+00:00",
- "llamadas_ia": 1,
+ "generado": "2026-11-03T10:36:54+00:00",
+ "llamadas_ia": 4,
  "sitios": [
   {
-   "actualizado": "2026-11-02T17:41:02+00:00",
+   "actualizado": "2026-11-03T10:33:42+00:00",
    "con_texto_completo": 45,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-02T17:41:15+00:00",
+   "actualizado": "2026-11-03T10:35:00+00:00",
    "con_texto_completo": 9,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:41:23+00:00",
+   "actualizado": "2026-11-03T10:35:08+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:41:33+00:00",
+   "actualizado": "2026-11-03T10:35:18+00:00",
    "con_texto_completo": 24,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:41:42+00:00",
+   "actualizado": "2026-11-03T10:35:27+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,10 +63,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:41:51+00:00",
-   "con_texto_completo": 14,
+   "actualizado": "2026-11-03T10:35:36+00:00",
+   "con_texto_completo": 15,
    "detalle": "con IA",
-   "entradas": 14,
+   "entradas": 15,
    "estado": "ok",
    "feed_propio": "",
    "id": "ine-es",
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:00+00:00",
+   "actualizado": "2026-11-03T10:35:47+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,22 +87,21 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:09+00:00",
-   "con_texto_completo": 10,
-   "detalle": "con IA",
-   "entradas": 10,
-   "estado": "ok",
-   "feed_propio": "",
+   "actualizado": "2026-11-03T10:35:56+00:00",
+   "detalle": "la web ya tiene feed: suscríbete a ese",
+   "entradas": 0,
+   "estado": "feed_propio",
+   "feed_propio": "https://www.abc.es/rss/2.0/deportes/",
    "id": "share-google-j8rjlbcek9e8zppdm",
    "nombre": "share.google/j8rjlbcEk9E8ZpPdM",
    "url": "https://share.google/j8rjlbcEk9E8ZpPdM",
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:13+00:00",
-   "con_texto_completo": 21,
+   "actualizado": "2026-11-03T10:36:01+00:00",
+   "con_texto_completo": 27,
    "detalle": "con IA",
-   "entradas": 21,
+   "entradas": 27,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +110,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:16+00:00",
+   "actualizado": "2026-11-03T10:36:10+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +121,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:17+00:00",
+   "actualizado": "2026-11-03T10:36:11+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 34,
+   "entradas": 47,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +134,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:19+00:00",
+   "actualizado": "2026-11-03T10:36:14+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 33,
+   "entradas": 46,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +147,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:22+00:00",
+   "actualizado": "2026-11-03T10:36:17+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 34,
+   "entradas": 47,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +160,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:25+00:00",
+   "actualizado": "2026-11-03T10:36:20+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 34,
+   "entradas": 47,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +173,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:28+00:00",
+   "actualizado": "2026-11-03T10:36:23+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,10 +186,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:33+00:00",
+   "actualizado": "2026-11-03T10:36:28+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 18,
+   "entradas": 20,
    "estado": "ok",
    "feed_propio": "",
    "id": "muchodeporte-baloncesto",
@@ -200,7 +199,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:34+00:00",
+   "actualizado": "2026-11-03T10:36:30+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +212,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:36+00:00",
+   "actualizado": "2026-11-03T10:36:31+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -226,7 +225,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-02T17:42:39+00:00",
+   "actualizado": "2026-11-03T10:36:34+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
    "entradas": 6,
@@ -235,10 +234,11 @@
    "id": "realbetisbalompie-es-noticias-actualidad",
    "nombre": "www.realbetisbalompie.es/noticias/actualidad",
    "url": "https://www.realbetisbalompie.es/noticias/actualidad/",
-   "user_agent": "feedmaker"
+   "user_agent": "feedmaker",
+   "version_url": 3
   },
   {
-   "actualizado": "2026-11-02T17:42:50+00:00",
+   "actualizado": "2026-11-03T10:36:53+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -249,14 +249,15 @@
     "muchodeporte-baloncesto",
     "muchodeporte-caja87"
    ],
-   "con_texto_completo": 56,
+   "con_texto_completo": 57,
    "detalle": "combina 8 webs; filtro: caja 87, caja87, caja-87",
-   "entradas": 56,
+   "entradas": 57,
    "estado": "ok",
    "feed_propio": "",
    "id": "caja87",
    "nombre": "Caja87 (ABC, Diario de Sevilla y Muchodeporte)",
-   "url": ""
+   "url": "",
+   "version_url": 3
   }
  ]
 }
