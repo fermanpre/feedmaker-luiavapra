@@ -19,7 +19,11 @@ jobs:
   actualizar:
     runs-on: ubuntu-latest
     steps:
+      # Siempre la última versión de main: con la cola de «concurrency», una ejecución que espera su turno
+      # empezaría si no desde la versión del momento en que se lanzó y chocaría al publicar.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:

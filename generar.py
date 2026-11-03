@@ -444,7 +444,11 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
             respuesta = extractor.peticion(sitio["url"])
         estado["user_agent"] = "navegador" if usa_navegador else "feedmaker"
         if not (200 <= respuesta.estado < 300):
-            estado["detalle"] = respuesta.error or descripcion_del_error_http(respuesta.estado)
+            # extractor.peticion ya rellena `error` con «HTTP 403»: para estos códigos manda el mensaje explicado.
+            if respuesta.estado in CODIGOS_DE_BLOQUEO:
+                estado["detalle"] = descripcion_del_error_http(respuesta.estado)
+            else:
+                estado["detalle"] = respuesta.error or descripcion_del_error_http(respuesta.estado)
             return estado
 
         feed_propio, entradas_del_feed = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
