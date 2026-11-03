@@ -26,7 +26,7 @@
   h1 { font-size: 1.6rem; margin: 0 0 4px; }
   p.sub { margin: 0 0 24px; color: var(--suave); }
   form { display: flex; gap: 8px; flex-wrap: wrap; }
-  input[type=url] { flex: 1 1 280px; min-width: 0; padding: 12px; font: inherit; color: var(--texto);
+  input#url { flex: 1 1 280px; min-width: 0; padding: 12px; font: inherit; color: var(--texto);
                     background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 8px; }
   button, a.boton { padding: 12px 16px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
                     background: var(--acento); color: var(--acento-texto); border: 0; border-radius: 8px;
@@ -56,7 +56,7 @@
   <p class="sub">Pega la URL de una web y consigue el enlace para añadirla a Feedly.</p>
 
   <form id="formulario">
-    <input id="url" type="url" required placeholder="https://ejemplo.com/blog/" autocomplete="off">
+    <input id="url" type="text" inputmode="url" required placeholder="https://ejemplo.com/blog/" autocomplete="off" autocapitalize="off" spellcheck="false">
     <button type="submit">Obtener enlace</button>
   </form>
   <label class="opcion">
@@ -328,9 +328,16 @@
            direccion.port === "" && !direccion.username && !direccion.password;
   }
 
+  // Quien pega «www.ejemplo.com/blog» no escribe el esquema: se le añade https://. Una dirección con otro esquema
+  // (http://, ftp://…) se deja tal cual y urlValida la rechaza con su mensaje.
+  function completarEsquema(texto) {
+    if (!texto || /^[a-z][a-z0-9+.-]*:\/\//i.test(texto)) { return texto; }
+    return "https://" + texto.replace(/^\/+/, "");
+  }
+
   document.getElementById("formulario").addEventListener("submit", function (evento) {
     evento.preventDefault();
-    var url = campoUrl.value.trim();
+    var url = completarEsquema(campoUrl.value.trim());
     if (!urlValida(url)) {
       mensaje.textContent = "La URL debe empezar por https:// y ser una dirección web normal (sin IP ni puerto).";
       return;
