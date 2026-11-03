@@ -18,6 +18,15 @@ import extractor
 
 URL_FEEDLY = "https://feedly.com/i/subscription/feed/"
 
+# Combinados: límites pensados para uso personal; el servidor los aplica aunque la página ya los compruebe.
+MINIMO_DE_FEEDS_POR_COMBINADO = 2
+MAXIMO_DE_FEEDS_POR_COMBINADO = 5
+MAXIMO_DE_COMBINADOS = 20
+MAXIMO_DE_PALABRAS_DE_FILTRO = 5
+MAXIMA_LONGITUD_DE_PALABRA = 40
+MAXIMA_LONGITUD_DEL_NOMBRE = 80
+PATRON_DE_IDENTIFICADOR = re.compile(r"^[a-z0-9][a-z0-9-]{0,79}$")
+
 
 def extraer_url(titulo):
     coincidencia = re.match(r"^\s*alta:\s*(\S+)\s*$", titulo or "", re.IGNORECASE)
@@ -75,7 +84,110 @@ def escribir_salida(**valores):
     print("\n".join(lineas))
 
 
+def limpiar_texto_libre(texto, maximo):
+    """Texto de una sola línea, sin caracteres de control, con los espacios normalizados y recortado."""
+    sin_control = re.sub(r"[\x00-\x1f\x7f]", " ", texto or "")
+    return " ".join(sin_control.split())[:maximo]
+
+
+def separar_por_comas(texto):
+    """Lista sin vacíos ni repetidos (sin distinguir mayúsculas), en el orden en que aparecen."""
+    vistos = set()
+    elementos = []
+    for trozo in (texto or "").split(","):
+        elemento = " ".join(trozo.split())
+        if elemento and elemento.lower() not in vistos:
+            vistos.add(elemento.lower())
+            elementos.append(elemento)
+    return elementos
+
+
+def leer_peticion_de_combinado():
+    """(identificadores, nombre, filtro) si el alta pide un combinado, o None si pide una web.
+
+    Llega por los parámetros del workflow (COMBINA, NOMBRE_COMBINADO, FILTRO_COMBINADO) o por una incidencia con el
+    título «combinar: id1, id2, id3» y, en el cuerpo, líneas opcionales «nombre: …» y «filtro: palabra1, palabra2»."""
+    combina = os.environ.get("COMBINA", "").strip()
+    nombre = os.environ.get("NOMBRE_COMBINADO", "")
+    filtro = os.environ.get("FILTRO_COMBINADO", "")
+    if not combina:
+        coincidencia = re.match(r"^\s*combinar:\s*(.+?)\s*$", os.environ.get("ISSUE_TITLE", ""), re.IGNORECASE)
+        if not coincidencia:
+            return None
+        combina = coincidencia.group(1)
+        cuerpo = os.environ.get("ISSUE_BODY", "")
+        linea_nombre = re.search(r"^\s*nombre:\s*(.*?)\s*$", cuerpo, re.IGNORECASE | re.MULTILINE)
+        linea_filtro = re.search(r"^\s*filtro:\s*(.*?)\s*$", cuerpo, re.IGNORECASE | re.MULTILINE)
+        nombre = linea_nombre.group(1) if linea_nombre else ""
+        filtro = linea_filtro.group(1) if linea_filtro else ""
+    return separar_por_comas(combina), limpiar_texto_libre(nombre, MAXIMA_LONGITUD_DEL_NOMBRE), separar_por_comas(filtro)
+
+
+def validar_combinado(identificadores, filtro, sitios):
+    """Motivo de rechazo, o '' si el combinado es aceptable."""
+    if not MINIMO_DE_FEEDS_POR_COMBINADO <= len(identificadores) <= MAXIMO_DE_FEEDS_POR_COMBINADO:
+        return (f"un combinado lleva de {MINIMO_DE_FEEDS_POR_COMBINADO} a {MAXIMO_DE_FEEDS_POR_COMBINADO} feeds "
+                f"(se han indicado {len(identificadores)})")
+    por_identificador = {sitio["id"]: sitio for sitio in sitios}
+    for identificador in identificadores:
+        if not PATRON_DE_IDENTIFICADOR.match(identificador):
+            return "identificador de feed no válido"
+        miembro = por_identificador.get(identificador)
+        if miembro is None:
+            return f"el feed «{identificador}» no existe"
+        if "combina" in miembro:
+            return f"«{identificador}» es un combinado: no se pueden anidar"
+    if len(filtro) > MAXIMO_DE_PALABRAS_DE_FILTRO:
+        return f"el filtro admite hasta {MAXIMO_DE_PALABRAS_DE_FILTRO} palabras"
+    if any(len(palabra) > MAXIMA_LONGITUD_DE_PALABRA or re.search(r"[\x00-\x1f\x7f]", palabra) for palabra in filtro):
+        return f"cada palabra del filtro admite hasta {MAXIMA_LONGITUD_DE_PALABRA} caracteres"
+    return ""
+
+
+def registrar_combinado(ruta_feeds, identificadores, nombre, filtro):
+    with open(ruta_feeds, encoding="utf-8") as fichero:
+        sitios = json.load(fichero)
+    motivo = validar_combinado(identificadores, filtro, sitios)
+    if motivo:
+        escribir_salida(valida="false", motivo=motivo.replace("\n", " "), id="")
+        return
+    claves = (frozenset(identificadores), tuple(sorted(palabra.lower() for palabra in filtro)))
+    existente = next((sitio for sitio in sitios if "combina" in sitio and (
+        frozenset(sitio["combina"]), tuple(sorted(palabra.lower() for palabra in sitio.get("filtro", [])))) == claves), None)
+    if existente is not None:
+        escribir_salida(valida="true", motivo="", id=existente["id"])
+        return
+    if sum(1 for sitio in sitios if "combina" in sitio) >= MAXIMO_DE_COMBINADOS:
+        escribir_salida(valida="false", motivo=f"ya hay {MAXIMO_DE_COMBINADOS} combinados: borra alguno antes", id="")
+        return
+    por_identificador = {sitio["id"]: sitio for sitio in sitios}
+    if not nombre:
+        nombres = [por_identificador[i].get("etiqueta") or por_identificador[i]["nombre"] for i in identificadores]
+        nombre = limpiar_texto_libre("Combinado: " + " + ".join(nombres), MAXIMA_LONGITUD_DEL_NOMBRE)
+    base = "comb-" + (re.sub(r"[^a-z0-9]+", "-", nombre.lower()).strip("-")[:40].strip("-") or "feeds")
+    en_uso = {sitio["id"] for sitio in sitios}
+    nuevo_id, contador = base, 2
+    while nuevo_id in en_uso:
+        nuevo_id = f"{base}-{contador}"
+        contador += 1
+    combinado = {"id": nuevo_id, "nombre": nombre, "combina": identificadores}
+    if filtro:
+        combinado["filtro"] = filtro
+    pedido = texto_completo_pedido()
+    if pedido is not None:
+        combinado["texto_completo"] = pedido
+    sitios.append(combinado)
+    with open(ruta_feeds, "w", encoding="utf-8", newline="\n") as fichero:
+        json.dump(sitios, fichero, ensure_ascii=False, indent=2)
+        fichero.write("\n")
+    escribir_salida(valida="true", motivo="", id=nuevo_id)
+
+
 def registrar(ruta_feeds):
+    peticion_de_combinado = leer_peticion_de_combinado()
+    if peticion_de_combinado is not None:
+        registrar_combinado(ruta_feeds, *peticion_de_combinado)
+        return
     # La URL llega por el parámetro del workflow (URL_ALTA) o por el título de una incidencia.
     url = os.environ.get("URL_ALTA", "").strip() or extraer_url(os.environ.get("ISSUE_TITLE", ""))
     motivo = "no se ha recibido ninguna URL (el título debe ser «alta: <url>»)" if not url else extractor.validar_url(url)

@@ -26,7 +26,7 @@
   h1 { font-size: 1.6rem; margin: 0 0 4px; }
   p.sub { margin: 0 0 24px; color: var(--suave); }
   form { display: flex; gap: 8px; flex-wrap: wrap; }
-  input#url { flex: 1 1 280px; min-width: 0; padding: 12px; font: inherit; color: var(--texto);
+  input#url, #formulario-combinar input[type=text] { flex: 1 1 280px; min-width: 0; padding: 12px; font: inherit; color: var(--texto);
                     background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 8px; }
   button, a.boton { padding: 12px 16px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
                     background: var(--acento); color: var(--acento-texto); border: 0; border-radius: 8px;
@@ -44,6 +44,11 @@
   .meta { color: var(--suave); font-size: .85rem; }
   details.tarjeta summary { cursor: pointer; font-weight: 600; }
   #formulario-token { margin-top: 8px; }
+  #formulario-combinar { flex-direction: column; align-items: stretch; }
+  .lista-combinar { display: flex; flex-direction: column; gap: 6px; max-height: 260px; overflow: auto;
+                    padding: 8px 0; }
+  .lista-combinar label { cursor: pointer; }
+  .lista-combinar .meta { margin-left: 6px; }
   label.opcion { display: block; margin-top: 12px; cursor: pointer; }
   .opcion-nota { margin: 4px 0 0; }
   #mensaje { min-height: 1.5em; margin-top: 12px; color: var(--suave); }
@@ -89,6 +94,24 @@
       <button type="button" id="quitar-clave" class="secundario">Quitar contraseña</button>
     </form>
     <div id="estado-clave" class="meta"></div>
+  </details>
+
+  <details class="tarjeta" id="combinar">
+    <summary>Combinar varios feeds en uno</summary>
+    <p class="meta">Marca de 2 a 5 feeds de «Mis feeds» y se creará un feed único con las entradas de todos, de la más
+      reciente a la más antigua. Con filtro, solo pasan las entradas cuyo título, extracto o dirección contienen alguna
+      de las palabras (completas: «caja» no coincide con «Cajasol»).</p>
+    <form id="formulario-combinar">
+      <div id="lista-combinar" class="lista-combinar"><span class="meta">Cargando…</span></div>
+      <input id="nombre-combinado" type="text" maxlength="80" autocomplete="off" placeholder="Nombre del combinado (opcional)">
+      <input id="filtro-combinado" type="text" maxlength="400" autocomplete="off" autocapitalize="off" spellcheck="false"
+             placeholder="Palabras del filtro, separadas por comas (opcional, hasta 5)">
+      <label class="opcion"><input id="texto-completo-combinado" type="checkbox" checked>
+        Incluir el texto completo de los artículos</label>
+      <div><button type="submit">Crear feed combinado</button></div>
+    </form>
+    <div id="mensaje-combinar" class="meta" role="status" aria-live="polite"></div>
+    <div id="resultado-combinar"></div>
   </details>
 
   <div class="tarjeta">
@@ -198,6 +221,7 @@
       return;
     }
     // estado.json va en el orden de feeds.json (las webs nuevas, al final): se enseñan las más recientes primero.
+    pintarOpcionesDeCombinar(estado);
     visibles.slice().reverse().forEach(function (sitio) {
       var fila = document.createElement("li");
       pintarSitio(sitio, fila);
@@ -205,11 +229,12 @@
     });
   }
 
-  function mostrarResultado(sitio) {
-    resultado.textContent = "";
+  function mostrarResultado(sitio, destino) {
+    destino = destino || resultado;
+    destino.textContent = "";
     var tarjeta = crearElemento("div", "", "tarjeta");
     pintarSitio(sitio, tarjeta);
-    resultado.appendChild(tarjeta);
+    destino.appendChild(tarjeta);
   }
 
   // Misma normalización que alta.py: sin «www.», sin barra final, sin fragmento ni parámetros de seguimiento.
@@ -235,25 +260,42 @@
     return estado.sitios.filter(function (sitio) { return normalizarUrl(sitio.url) === buscada; })[0];
   }
 
-  function esperarResultado(url) {
+  // `buscar(estado)` devuelve la entrada de estado.json que se espera (o undefined). Los mensajes y el resultado van
+  // a los elementos indicados (por defecto, los del formulario de una web).
+  function esperarResultado(buscar, elementoMensaje, elementoResultado) {
+    elementoMensaje = elementoMensaje || mensaje;
     var intentos = 0;
     clearInterval(reintentos);
     reintentos = setInterval(function () {
       intentos += 1;
       cargarEstado().then(function (estado) {
-        var sitio = buscarPorUrl(estado, url);
+        var sitio = buscar(estado);
         if (sitio) {
           clearInterval(reintentos);
-          mensaje.textContent = "";
-          mostrarResultado(sitio);
+          elementoMensaje.textContent = "";
+          mostrarResultado(sitio, elementoResultado);
           pintarLista(estado);
         } else if (intentos >= 30) {
           clearInterval(reintentos);
-          mensaje.textContent = "No ha aparecido en 5 minutos. Comprueba que enviaste la incidencia en GitHub " +
-                                "y mira la pestaña Actions del repositorio.";
+          elementoMensaje.textContent = "No ha aparecido en 5 minutos. Comprueba que enviaste la incidencia en GitHub " +
+                                        "y mira la pestaña Actions del repositorio.";
         }
       });
     }, 10000);
+  }
+
+  // Un combinado se reconoce por sus feeds y su filtro (sin distinguir orden ni mayúsculas), como hace alta.py.
+  function claveDeCombinado(identificadores, filtro) {
+    var ordenados = identificadores.slice().sort().join(",");
+    var palabras = filtro.map(function (palabra) { return palabra.toLowerCase(); }).sort().join(",");
+    return ordenados + "|" + palabras;
+  }
+
+  function buscarCombinado(estado, identificadores, filtro) {
+    var buscada = claveDeCombinado(identificadores, filtro);
+    return estado.sitios.filter(function (sitio) {
+      return sitio.combina && claveDeCombinado(sitio.combina, sitio.filtro || []) === buscada;
+    })[0];
   }
 
   // --- Token de GitHub: solo en el almacenamiento local de este navegador.
@@ -289,10 +331,24 @@
   // --- Lanzamiento del alta: una sola función, para poder cambiar el mecanismo sin tocar el resto.
   // Devuelve una promesa con { ok: boolean, mensaje: string }.
   // Orden de preferencia: servicio intermedio con contraseña, token de GitHub, incidencia.
+  // `peticion` es { tipo: "web", url, textoCompleto } o { tipo: "combinado", combina, nombre, filtro, textoCompleto }.
   function lanzarAlta(url, textoCompleto) {
-    if (URL_SERVICIO && leerClave()) { return lanzarAltaPorServicio(url, textoCompleto); }
+    return enviarPeticion({ tipo: "web", url: url, textoCompleto: textoCompleto });
+  }
+
+  function parametrosDelWorkflow(peticion) {
+    var texto = peticion.textoCompleto ? "true" : "false";
+    if (peticion.tipo === "combinado") {
+      return { url: "", combina: peticion.combina.join(","), nombre_combinado: peticion.nombre,
+               filtro_combinado: peticion.filtro.join(","), texto_completo: texto };
+    }
+    return { url: peticion.url, texto_completo: texto };
+  }
+
+  function enviarPeticion(peticion) {
+    if (URL_SERVICIO && leerClave()) { return lanzarAltaPorServicio(peticion); }
     var token = leerToken();
-    if (!token) { return lanzarAltaPorIncidencia(url, textoCompleto); }
+    if (!token) { return lanzarAltaPorIncidencia(peticion); }
     return fetch("https://api.github.com/repos/" + propietario + "/" + repositorio +
                  "/actions/workflows/alta.yml/dispatches", {
       method: "POST",
@@ -302,7 +358,7 @@
         "X-GitHub-Api-Version": "2022-11-28",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ ref: "main", inputs: { url: url, texto_completo: textoCompleto ? "true" : "false" } })
+      body: JSON.stringify({ ref: "main", inputs: parametrosDelWorkflow(peticion) })
     }).then(function (respuesta) {
       if (respuesta.status === 204) {
         return { ok: true, mensaje: "Workflow lanzado. El enlace de Feedly aparecerá aquí en uno o dos minutos." };
@@ -319,11 +375,16 @@
     });
   }
 
-  function lanzarAltaPorIncidencia(url, textoCompleto) {
+  function lanzarAltaPorIncidencia(peticion) {
+    var titulo = peticion.tipo === "combinado" ? "combinar: " + peticion.combina.join(", ") : "alta: " + peticion.url;
+    var cuerpo = "Alta automática. Pulsa «Submit new issue» y no cambies el título.";
+    if (peticion.tipo === "combinado") {
+      if (peticion.nombre) { cuerpo += "\n\nnombre: " + peticion.nombre; }
+      if (peticion.filtro.length) { cuerpo += "\nfiltro: " + peticion.filtro.join(", "); }
+    }
+    cuerpo += "\n\ntexto_completo: " + (peticion.textoCompleto ? "true" : "false");
     var enlaceIncidencia = "https://github.com/" + propietario + "/" + repositorio + "/issues/new" +
-      "?title=" + encodeURIComponent("alta: " + url) +
-      "&body=" + encodeURIComponent("Alta automática. Pulsa «Submit new issue» y no cambies el título." +
-        "\n\ntexto_completo: " + (textoCompleto ? "true" : "false"));
+      "?title=" + encodeURIComponent(titulo) + "&body=" + encodeURIComponent(cuerpo);
     window.open(enlaceIncidencia, "_blank", "noopener");
     return Promise.resolve({
       ok: true,
@@ -365,7 +426,7 @@
       }
       lanzarAlta(url, document.getElementById("texto-completo").checked).then(function (resultadoDelAlta) {
         mensaje.textContent = resultadoDelAlta.mensaje;
-        if (resultadoDelAlta.ok) { esperarResultado(url); }
+        if (resultadoDelAlta.ok) { esperarResultado(function (estadoActual) { return buscarPorUrl(estadoActual, url); }); }
       });
     });
   });
@@ -407,11 +468,14 @@
     pintarEstadoClave();
   });
 
-  function lanzarAltaPorServicio(url, textoCompleto) {
+  function lanzarAltaPorServicio(peticion) {
+    var cuerpo = peticion.tipo === "combinado"
+      ? { combina: peticion.combina, nombre: peticion.nombre, filtro: peticion.filtro, clave: leerClave(), texto_completo: peticion.textoCompleto }
+      : { url: peticion.url, clave: leerClave(), texto_completo: peticion.textoCompleto };
     return fetch(URL_SERVICIO, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url, clave: leerClave(), texto_completo: textoCompleto })
+      body: JSON.stringify(cuerpo)
     }).then(function (respuesta) {
       return respuesta.json().then(function (datos) {
         if (respuesta.ok && datos.ok) {
@@ -423,6 +487,102 @@
       return { ok: false, mensaje: "No se ha podido contactar con el servicio." };
     });
   }
+
+  // --- Combinar varios feeds en uno.
+  var MINIMO_COMBINADO = 2;
+  var MAXIMO_COMBINADO = 5;
+  var MAXIMO_PALABRAS = 5;
+  var MAXIMA_LONGITUD_PALABRA = 40;
+  var PATRON_DE_CONTROL = /[\u0000-\u001f\u007f]/;
+  var listaCombinar = document.getElementById("lista-combinar");
+  var mensajeCombinar = document.getElementById("mensaje-combinar");
+  var resultadoCombinar = document.getElementById("resultado-combinar");
+
+  // Se pueden combinar los feeds que ya existen: generados, de la propia web, o con error pero con un feed publicado.
+  function sePuedeCombinar(sitio) {
+    return !sitio.oculto && !sitio.combina &&
+      (sitio.estado === "ok" || sitio.estado === "feed_propio" || (sitio.estado === "error" && Boolean(sitio.feed_anterior)));
+  }
+
+  function marcadosParaCombinar() {
+    return Array.prototype.slice.call(listaCombinar.querySelectorAll("input[type=checkbox]:checked"))
+      .map(function (casilla) { return casilla.value; });
+  }
+
+  function pintarOpcionesDeCombinar(estado) {
+    var marcados = marcadosParaCombinar();
+    listaCombinar.textContent = "";
+    var posibles = estado.sitios.filter(sePuedeCombinar).reverse();
+    if (posibles.length < MINIMO_COMBINADO) {
+      listaCombinar.appendChild(crearElemento("span", "Hacen falta al menos " + MINIMO_COMBINADO + " feeds en «Mis feeds».", "meta"));
+      return;
+    }
+    posibles.forEach(function (sitio) {
+      var etiqueta = document.createElement("label");
+      var casilla = document.createElement("input");
+      casilla.type = "checkbox";
+      casilla.value = sitio.id;
+      casilla.checked = marcados.indexOf(sitio.id) >= 0;
+      etiqueta.appendChild(casilla);
+      etiqueta.appendChild(document.createTextNode(" " + sitio.nombre));
+      if (sitio.estado === "feed_propio") { etiqueta.appendChild(crearElemento("span", "(feed propio de la web)", "meta")); }
+      listaCombinar.appendChild(etiqueta);
+    });
+  }
+
+  function textoDeUnaLinea(texto, maximo) {
+    return texto.replace(PATRON_DE_CONTROL, " ").replace(/\s+/g, " ").trim().slice(0, maximo);
+  }
+
+  // Palabras del filtro: separadas por comas, sin vacías ni repetidas. Devuelve { palabras } o { error }.
+  function palabrasDelFiltro(texto) {
+    var vistas = {};
+    var palabras = [];
+    texto.split(",").forEach(function (trozo) {
+      var palabra = textoDeUnaLinea(trozo, 1000);
+      if (palabra && !vistas[palabra.toLowerCase()]) {
+        vistas[palabra.toLowerCase()] = true;
+        palabras.push(palabra);
+      }
+    });
+    if (palabras.length > MAXIMO_PALABRAS) { return { error: "El filtro admite hasta " + MAXIMO_PALABRAS + " palabras." }; }
+    for (var i = 0; i < palabras.length; i += 1) {
+      if (palabras[i].length > MAXIMA_LONGITUD_PALABRA) {
+        return { error: "Cada palabra del filtro admite hasta " + MAXIMA_LONGITUD_PALABRA + " caracteres." };
+      }
+    }
+    return { palabras: palabras };
+  }
+
+  document.getElementById("formulario-combinar").addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    resultadoCombinar.textContent = "";
+    var identificadores = marcadosParaCombinar();
+    if (identificadores.length < MINIMO_COMBINADO || identificadores.length > MAXIMO_COMBINADO) {
+      mensajeCombinar.textContent = "Marca de " + MINIMO_COMBINADO + " a " + MAXIMO_COMBINADO + " feeds (has marcado " + identificadores.length + ").";
+      return;
+    }
+    var filtro = palabrasDelFiltro(document.getElementById("filtro-combinado").value);
+    if (filtro.error) { mensajeCombinar.textContent = filtro.error; return; }
+    var nombre = textoDeUnaLinea(document.getElementById("nombre-combinado").value, 80);
+    var textoCompleto = document.getElementById("texto-completo-combinado").checked;
+    cargarEstado().then(function (estado) {
+      var existente = buscarCombinado(estado, identificadores, filtro.palabras);
+      if (existente) {
+        mensajeCombinar.textContent = "Ya existe un combinado con esos feeds y ese filtro.";
+        mostrarResultado(existente, resultadoCombinar);
+        return;
+      }
+      enviarPeticion({ tipo: "combinado", combina: identificadores, nombre: nombre, filtro: filtro.palabras,
+                       textoCompleto: textoCompleto }).then(function (resultadoDelAlta) {
+        mensajeCombinar.textContent = resultadoDelAlta.mensaje.replace("El enlace de Feedly", "El combinado");
+        if (resultadoDelAlta.ok) {
+          esperarResultado(function (estadoActual) { return buscarCombinado(estadoActual, identificadores, filtro.palabras); },
+                           mensajeCombinar, resultadoCombinar);
+        }
+      });
+    });
+  });
 
   pintarEstadoToken();
   pintarEstadoClave();

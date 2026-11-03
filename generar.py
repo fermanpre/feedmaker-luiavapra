@@ -371,14 +371,43 @@ def construir_combinado(combinado, sitios_por_id, historial, articulos):
     return ordenadas[:MAXIMO_ENTRADAS_EN_FEED], avisos
 
 
-def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas):
+def completar_historial_con_feeds_propios(combinado, sitios_por_id, estados_por_id, historial):
+    """Las webs que solo tienen feed propio no generan historial: se lee su feed y se fusiona en su historial (con la
+    misma caducidad que las demás), para que el combinado las incluya. Devuelve los avisos de lo que no se ha podido leer."""
+    avisos = []
+    ahora = datetime.now(timezone.utc)
+    for identificador in combinado["combina"]:
+        miembro = sitios_por_id.get(identificador)
+        estado = estados_por_id.get(identificador)
+        if miembro is None or estado is None or estado["estado"] != "feed_propio" or not estado.get("feed_propio"):
+            continue
+        direccion = estado["feed_propio"]
+        if not extractor.permitido_por_robots(direccion):
+            avisos.append(f"{identificador}: su feed no se puede leer (robots.txt)")
+            continue
+        respuesta = extractor.peticion(direccion)
+        entradas = extractor.entradas_de_feed(respuesta.texto)[:MAXIMO_ENTRADAS] if 200 <= respuesta.estado < 300 else []
+        if not entradas:
+            avisos.append(f"{identificador}: no se han podido leer entradas de su feed")
+            continue
+        fusionar_con_historial(historial.setdefault(identificador, {}), entradas,
+                               miembro.get("conservar_dias", CONSERVAR_DIAS_POR_DEFECTO), ahora, {}, False)
+    return avisos
+
+
+def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas, estados_por_id=None):
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": combinado["id"], "nombre": combinado["nombre"], "url": "", "estado": "error", "detalle": "",
-              "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora}
+              "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora,
+              "filtro": combinado.get("filtro", [])}
     if combinado.get("version_url"):
         estado["version_url"] = combinado["version_url"]  # la página añade «?v=N» a la dirección del feed
     try:
+        avisos_de_lectura = completar_historial_con_feeds_propios(combinado, sitios_por_id, estados_por_id or {}, historial)
         entradas, avisos = construir_combinado(combinado, sitios_por_id, historial, articulos)
+        # Una web cuyo feed propio se acaba de leer ya no «no tiene entradas»: se quita ese aviso.
+        avisos = [aviso for aviso in avisos if not any(aviso.startswith(f"{i}: sin entradas") for i in combinado["combina"]
+                                                       if historial.get(i))] + avisos_de_lectura
         if combinado.get("texto_completo", True):
             completar_con_texto(entradas, articulos, descargas)
         else:
@@ -582,7 +611,8 @@ def main():
 
     sitios_por_id = {sitio["id"]: sitio for sitio in sitios}
     for combinado in [sitio for sitio in sitios if "combina" in sitio]:
-        estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas)
+        estado = procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, descargas,
+                                    {resultado["id"]: resultado for resultado in resultados})
         resultados.append(estado)
         print(f"- {combinado['id']}: {estado['estado']} ({estado['entradas']} entradas) {estado['detalle']}", flush=True)
 

@@ -5,15 +5,31 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: URL de la web que se quiere dar de alta
-        required: true
+        description: URL de la web que se quiere dar de alta (vacía si se pide un combinado)
+        required: false
+        default: ""
+        type: string
+      combina:
+        description: Identificadores de los feeds de un combinado, separados por comas (de 2 a 5)
+        required: false
+        default: ""
+        type: string
+      nombre_combinado:
+        description: Nombre del combinado (opcional)
+        required: false
+        default: ""
+        type: string
+      filtro_combinado:
+        description: Palabras del filtro del combinado, separadas por comas (opcional)
+        required: false
+        default: ""
         type: string
       texto_completo:
         description: «false» para que el feed lleve solo título, enlace y extracto (por defecto, texto completo)
         required: false
         default: "true"
         type: string
-  # Alternativa sin token: una incidencia con el título «alta: <url>».
+  # Alternativa sin token: una incidencia con el título «alta: <url>» o «combinar: id1, id2».
   issues:
     types: [opened]
 
@@ -34,11 +50,14 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event.issue.user.login == github.repository_owner &&
-       startsWith(github.event.issue.title, 'alta:'))
+       (startsWith(github.event.issue.title, 'alta:') || startsWith(github.event.issue.title, 'combinar:')))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
       URL_ALTA: ${{ inputs.url }}
+      COMBINA: ${{ inputs.combina }}
+      NOMBRE_COMBINADO: ${{ inputs.nombre_combinado }}
+      FILTRO_COMBINADO: ${{ inputs.filtro_combinado }}
       TEXTO_COMPLETO: ${{ inputs.texto_completo }}
       ISSUE_BODY: ${{ github.event.issue.body }}
       ISSUE_TITLE: ${{ github.event.issue.title }}

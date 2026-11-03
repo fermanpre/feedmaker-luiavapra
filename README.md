@@ -84,7 +84,24 @@ Una entrada de `feeds.json` con `combina` junta en un solo feed las entradas del
   palabra completa (`caja` no coincide con `Cajasol`). Sin filtro pasan todas.
 - Cada título lleva delante la web de origen, y se quitan los enlaces repetidos entre webs.
 - El combinado se alimenta del historial de cada web, así que gana la misma profundidad (`conservar_dias`).
-- Una web que solo ofrece feed propio no aporta entradas al combinado, salvo que lleve `leer_feed_propio: true`.
+- Una web que solo ofrece feed propio entra igualmente: el servicio lee su feed y guarda sus entradas en su historial.
+  (`leer_feed_propio: true` hace lo mismo para una web que además quieres ver como feed propio en «Mis feeds».)
+
+### Crear un combinado desde la página
+
+En «Combinar varios feeds en uno» se marcan de 2 a 5 feeds de «Mis feeds» (los generados, los que solo tienen feed propio y
+los que tienen un error pero ya un feed publicado), y opcionalmente un nombre y hasta 5 palabras de filtro. Se crea por
+los mismos tres caminos que el alta de una web:
+
+- **Servicio con contraseña** (Worker): la página envía `{combina, nombre, filtro, texto_completo}`. Hay que desplegar el Worker
+  de nuevo (`npx wrangler deploy`) para que reconozca `combina`.
+- **Token de GitHub**: lanza `alta.yml` con los parámetros `combina`, `nombre_combinado` y `filtro_combinado`.
+- **Incidencia**: título `combinar: id1, id2, id3`; en el cuerpo, líneas opcionales `nombre: …`, `filtro: a, b` y
+  `texto_completo: false`.
+
+Límites, aplicados por el servidor (`alta.py`) aunque la página ya los compruebe: de 2 a 5 feeds, un máximo de 20 combinados,
+hasta 5 palabras de filtro de 40 caracteres como máximo, y no se pueden anidar combinados. Si ya existe un combinado con los
+mismos feeds y el mismo filtro, no se crea otro. El texto completo viene marcado por defecto, como en las webs.
 
 ## Respaldo por enlaces
 

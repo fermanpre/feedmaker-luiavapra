@@ -73,7 +73,52 @@ async function sumarContador(env, clave, segundosDeVida) {
   await env.LIMITES.put(clave, String(actual + 1), { expirationTtl: segundosDeVida });
 }
 
-async function lanzarWorkflow(env, url, textoCompleto) {
+const PATRON_DE_IDENTIFICADOR = /^[a-z0-9][a-z0-9-]{0,79}$/;
+const PATRON_DE_CONTROL = /[\u0000-\u001f\u007f]/;
+const MINIMO_DE_FEEDS = 2;
+const MAXIMO_DE_FEEDS = 5;
+const MAXIMO_DE_PALABRAS_DE_FILTRO = 5;
+const MAXIMA_LONGITUD_DE_PALABRA = 40;
+const MAXIMA_LONGITUD_DEL_NOMBRE = 200;
+
+// Valida una petición de combinado ({combina, nombre?, filtro?}). Devuelve { motivo } si no vale o { inputs } con los
+// parámetros que espera alta.yml. alta.py vuelve a validarlo todo: esto evita lanzar un workflow en balde.
+export function prepararCombinado(datos) {
+  const identificadores = datos.combina;
+  if (!Array.isArray(identificadores) || identificadores.length < MINIMO_DE_FEEDS || identificadores.length > MAXIMO_DE_FEEDS) {
+    return { motivo: `un combinado lleva de ${MINIMO_DE_FEEDS} a ${MAXIMO_DE_FEEDS} feeds` };
+  }
+  if (!identificadores.every((i) => typeof i === "string" && PATRON_DE_IDENTIFICADOR.test(i))) {
+    return { motivo: "identificador de feed no válido" };
+  }
+  if (new Set(identificadores).size !== identificadores.length) {
+    return { motivo: "hay feeds repetidos" };
+  }
+  const nombre = datos.nombre === undefined || datos.nombre === null ? "" : datos.nombre;
+  if (typeof nombre !== "string" || nombre.length > MAXIMA_LONGITUD_DEL_NOMBRE) {
+    return { motivo: "nombre no válido" };
+  }
+  const filtro = datos.filtro === undefined || datos.filtro === null ? [] : datos.filtro;
+  if (!Array.isArray(filtro) || filtro.length > MAXIMO_DE_PALABRAS_DE_FILTRO) {
+    return { motivo: `el filtro admite hasta ${MAXIMO_DE_PALABRAS_DE_FILTRO} palabras` };
+  }
+  const palabrasValidas = filtro.every((p) => typeof p === "string" && p.trim().length > 0 &&
+    p.length <= MAXIMA_LONGITUD_DE_PALABRA && !p.includes(",") && !PATRON_DE_CONTROL.test(p));
+  if (!palabrasValidas) {
+    return { motivo: "palabra de filtro no válida" };
+  }
+  return {
+    inputs: {
+      url: "",
+      combina: identificadores.join(","),
+      nombre_combinado: nombre.replace(PATRON_DE_CONTROL, " ").trim(),
+      filtro_combinado: filtro.map((p) => p.trim()).join(","),
+      texto_completo: datos.texto_completo === true ? "true" : "false",
+    },
+  };
+}
+
+async function lanzarWorkflow(env, inputs) {
   const respuesta = await fetch(
     `https://api.github.com/repos/${env.REPO}/actions/workflows/alta.yml/dispatches`,
     {
@@ -85,7 +130,7 @@ async function lanzarWorkflow(env, url, textoCompleto) {
         "User-Agent": "feedmaker-worker",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ref: "main", inputs: { url, texto_completo: textoCompleto ? "true" : "false" } }),
+      body: JSON.stringify({ ref: "main", inputs }),
     }
   );
   return respuesta.status;
@@ -124,16 +169,27 @@ export async function manejar(peticion, env) {
     return responder(env, 401, { ok: false, mensaje: "Contraseña incorrecta." });
   }
 
-  const motivo = validarUrl(datos.url);
-  if (motivo) {
-    return responder(env, 400, { ok: false, mensaje: motivo });
+  // Una petición con «combina» es un combinado (y se ignora «url»); si no, es el alta de una web.
+  let inputs;
+  if (datos.combina !== undefined) {
+    const combinado = prepararCombinado(datos);
+    if (combinado.motivo) {
+      return responder(env, 400, { ok: false, mensaje: combinado.motivo });
+    }
+    inputs = combinado.inputs;
+  } else {
+    const motivo = validarUrl(datos.url);
+    if (motivo) {
+      return responder(env, 400, { ok: false, mensaje: motivo });
+    }
+    // Solo el booleano true activa el texto completo; cualquier otro valor se trata como «no».
+    inputs = { url: datos.url, texto_completo: datos.texto_completo === true ? "true" : "false" };
   }
   if ((await leerContador(env, `altas:${dia}`)) >= maximoAltas) {
     return responder(env, 429, { ok: false, mensaje: "Se ha alcanzado el máximo de altas de hoy." });
   }
 
-  // Solo el booleano true activa el texto completo; cualquier otro valor se trata como «no».
-  const estado = await lanzarWorkflow(env, datos.url, datos.texto_completo === true);
+  const estado = await lanzarWorkflow(env, inputs);
   if (estado !== 204) {
     // El detalle del error de GitHub no se devuelve a la página: podría revelar información del repositorio.
     return responder(env, 502, { ok: false, mensaje: `GitHub no ha aceptado el lanzamiento (código ${estado}).` });
