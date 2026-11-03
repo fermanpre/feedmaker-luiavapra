@@ -343,6 +343,8 @@ def procesar_combinado(combinado, sitios_por_id, historial, articulos, raiz, des
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": combinado["id"], "nombre": combinado["nombre"], "url": "", "estado": "error", "detalle": "",
               "feed_propio": "", "entradas": 0, "combina": combinado["combina"], "actualizado": ahora}
+    if combinado.get("version_url"):
+        estado["version_url"] = combinado["version_url"]  # la página añade «?v=N» a la dirección del feed
     try:
         entradas, avisos = construir_combinado(combinado, sitios_por_id, historial, articulos)
         if combinado.get("texto_completo", True):
@@ -397,6 +399,8 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     estado = {"id": sitio["id"], "nombre": sitio["nombre"], "url": sitio["url"], "estado": "error",
               "detalle": "", "feed_propio": "", "entradas": 0, "user_agent": "feedmaker", "actualizado": ahora}
+    if sitio.get("version_url"):
+        estado["version_url"] = sitio["version_url"]  # la página añade «?v=N» a la dirección del feed generado
     if sitio.get("oculto"):
         estado["oculto"] = True  # solo es ingrediente de un combinado: la página no la enseña en la lista
     try:

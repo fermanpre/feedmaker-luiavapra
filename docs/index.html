@@ -131,7 +131,10 @@
   }
 
   function urlDelFeedDe(sitio) {
-    if (sitio.estado === "ok") { return base + "feeds/" + sitio.id + ".xml"; }
+    // «version_url» (feeds.json) hace que Feedly lea el feed como una dirección nueva, sin la copia vacía que guardó antes.
+    if (sitio.estado === "ok") {
+      return base + "feeds/" + sitio.id + ".xml" + (sitio.version_url ? "?v=" + encodeURIComponent(sitio.version_url) : "");
+    }
     if (sitio.estado === "feed_propio") { return sitio.feed_propio; }
     return "";
   }
