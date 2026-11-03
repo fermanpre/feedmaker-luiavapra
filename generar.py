@@ -13,6 +13,7 @@ import os
 import re
 import sys
 from datetime import date, datetime, time, timezone
+from time import sleep as esperar_segundos
 
 import extractor
 import ia
@@ -21,6 +22,9 @@ USER_AGENT_NAVEGADOR = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 CODIGOS_DE_BLOQUEO = (403, 406)
+# Segundos que se espera antes del único reintento cuando una web rechaza la petición (403/406). Algunas webs
+# responden a ratos, según desde qué servidor o con qué carga; un reintento por ejecución, sin insistir más.
+SEGUNDOS_ANTES_DEL_REINTENTO = int(os.environ.get("FEEDMAKER_ESPERA_REINTENTO", "20"))
 VERSION_CACHE_ARTICULOS = 6  # súbela cuando cambie la extracción del cuerpo o de la fecha
 MAXIMO_ENTRADAS = 50
 CONSERVAR_DIAS_POR_DEFECTO = 180  # campo «conservar_dias» de cada web; 0 = solo lo que enseña hoy la web
@@ -441,6 +445,9 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
         if respuesta.estado in CODIGOS_DE_BLOQUEO and modo_user_agent == "auto":
             extractor.CABECERA_USER_AGENT = USER_AGENT_NAVEGADOR
             usa_navegador = True
+            respuesta = extractor.peticion(sitio["url"])
+        if respuesta.estado in CODIGOS_DE_BLOQUEO:
+            esperar_segundos(SEGUNDOS_ANTES_DEL_REINTENTO)
             respuesta = extractor.peticion(sitio["url"])
         estado["user_agent"] = "navegador" if usa_navegador else "feedmaker"
         if not (200 <= respuesta.estado < 300):

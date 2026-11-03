@@ -67,6 +67,10 @@ parámetros de seguimiento (`utm_…`).
 **Aviso:** como el texto completo es lo normal, el repositorio y los feeds, que son públicos, contienen copias del
 texto de webs ajenas durante `conservar_dias` días. Para una web concreta, `texto_completo: false` lo evita.
 
+Si una web rechaza la petición (403 o 406), se espera 20 segundos y se reintenta **una vez** por ejecución
+(`FEEDMAKER_ESPERA_REINTENTO` cambia la espera): algunas webs responden a ratos. Si sigue rechazando, el feed anterior se
+mantiene y `estado.json` lo anota; no se insiste más.
+
 `robots.txt` se respeta siempre. Si una web lo prohíbe, no se descarga.
 
 ## Feeds combinados
