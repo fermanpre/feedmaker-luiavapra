@@ -178,5 +178,11 @@
     "nombre": "elconfidencial.com",
     "url": "https://elconfidencial.com",
     "texto_completo": true
+  },
+  {
+    "id": "imf-org-en-news",
+    "nombre": "imf.org/en/News",
+    "url": "https://imf.org/en/News",
+    "texto_completo": true
   }
 ]
