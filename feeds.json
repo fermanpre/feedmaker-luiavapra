@@ -160,5 +160,11 @@
     "url": "https://www.realbetisbalompie.es/noticias/actualidad/",
     "texto_completo": true,
     "version_url": 3
+  },
+  {
+    "id": "bruegel-org-analysis",
+    "nombre": "bruegel.org/analysis",
+    "url": "https://bruegel.org/analysis",
+    "texto_completo": true
   }
 ]
