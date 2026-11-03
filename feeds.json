@@ -166,5 +166,11 @@
     "nombre": "bruegel.org/analysis",
     "url": "https://bruegel.org/analysis",
     "texto_completo": true
+  },
+  {
+    "id": "bruegel-org-publications-analyses",
+    "nombre": "www.bruegel.org/publications/analyses",
+    "url": "https://www.bruegel.org/publications/analyses",
+    "texto_completo": true
   }
 ]

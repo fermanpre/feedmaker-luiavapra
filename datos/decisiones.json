@@ -61,6 +61,50 @@
   },
   "firma": "div.carousel.carousel-with-button > div"
  },
+ "bruegel-org-analysis": {
+  "enlaces": {
+   "https://www.bruegel.org/analysis/ahead-presidential-election-france-first-needs-help-itself-debt": "ok",
+   "https://www.bruegel.org/analysis/buyer-beware-taxonomy-risks-international-carbon-credits": "ok",
+   "https://www.bruegel.org/analysis/calls-eu-financial-rule-simplification-should-not-spill-over-lower-standards": "ok",
+   "https://www.bruegel.org/analysis/chinas-artificial-intelligence-goals-and-strategic-choices-europe": "ok",
+   "https://www.bruegel.org/analysis/chinas-outbound-ai-strategy-starts-models-and-governance-and-ends-chips": "ok",
+   "https://www.bruegel.org/analysis/eu-emissions-trading-system-works-most-industrial-decarbonisation-still-come": "ok",
+   "https://www.bruegel.org/analysis/how-climate-policies-can-speed-manufacturing-decarbonisation-western-balkans": "ok",
+   "https://www.bruegel.org/analysis/less-focus-poverty-reduction-evaluation-eu-2028-2034-development-aid-plan": "ok",
+   "https://www.bruegel.org/analysis/more-flexibility-needs-greater-accountability-defence-2028-2034-eu-budget": "ok",
+   "https://www.bruegel.org/analysis/more-flexible-european-union-spending-needs-stronger-parliamentary-scrutiny": "ok",
+   "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe": "ok",
+   "https://www.bruegel.org/analysis/should-european-central-bank-slow-down-quantitative-tightening": "ok",
+   "https://www.bruegel.org/analysis/stack-battles-us-china-artificial-intelligence-rivalry-moving-beyond-chips-alone": "ok",
+   "https://www.bruegel.org/analysis/what-driving-global-rise-long-term-interest-rates": "ok",
+   "https://www.bruegel.org/analysis/where-and-when-it-pays-economic-value-solar-and-wind-power-placement-europe": "ok",
+   "https://www.bruegel.org/analysis/why-ai-goes-rogue-and-what-can-be-done-about-it": "ok"
+  },
+  "feed_generico": true,
+  "firma": "div.c-listing__items > div.views-row"
+ },
+ "bruegel-org-publications-analyses": {
+  "enlaces": {
+   "https://www.bruegel.org/analysis/ahead-presidential-election-france-first-needs-help-itself-debt": "ok",
+   "https://www.bruegel.org/analysis/buyer-beware-taxonomy-risks-international-carbon-credits": "ok",
+   "https://www.bruegel.org/analysis/calls-eu-financial-rule-simplification-should-not-spill-over-lower-standards": "ok",
+   "https://www.bruegel.org/analysis/chinas-artificial-intelligence-goals-and-strategic-choices-europe": "ok",
+   "https://www.bruegel.org/analysis/chinas-outbound-ai-strategy-starts-models-and-governance-and-ends-chips": "ok",
+   "https://www.bruegel.org/analysis/eu-emissions-trading-system-works-most-industrial-decarbonisation-still-come": "ok",
+   "https://www.bruegel.org/analysis/how-climate-policies-can-speed-manufacturing-decarbonisation-western-balkans": "ok",
+   "https://www.bruegel.org/analysis/less-focus-poverty-reduction-evaluation-eu-2028-2034-development-aid-plan": "ok",
+   "https://www.bruegel.org/analysis/more-flexibility-needs-greater-accountability-defence-2028-2034-eu-budget": "ok",
+   "https://www.bruegel.org/analysis/more-flexible-european-union-spending-needs-stronger-parliamentary-scrutiny": "ok",
+   "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe": "ok",
+   "https://www.bruegel.org/analysis/should-european-central-bank-slow-down-quantitative-tightening": "ok",
+   "https://www.bruegel.org/analysis/stack-battles-us-china-artificial-intelligence-rivalry-moving-beyond-chips-alone": "ok",
+   "https://www.bruegel.org/analysis/what-driving-global-rise-long-term-interest-rates": "ok",
+   "https://www.bruegel.org/analysis/where-and-when-it-pays-economic-value-solar-and-wind-power-placement-europe": "ok",
+   "https://www.bruegel.org/analysis/why-ai-goes-rogue-and-what-can-be-done-about-it": "ok"
+  },
+  "feed_generico": true,
+  "firma": "div.c-listing__items > div.views-row"
+ },
  "diariodesevilla-betis-baloncesto": {
   "feed_generico": false
  },
