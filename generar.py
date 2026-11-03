@@ -292,6 +292,17 @@ FEED_GENERICO_SIN_ALTERNATIVA = ("el feed de la web es más general que esta pá
                                  "propio de la página: suscríbete a ese")
 
 
+def descripcion_del_error_http(codigo, probo_como_navegador):
+    """Mensaje para la página. Un 403 o 406 solo dice que la web rechaza la petición (y, si se reintentó como navegador, que
+    tampoco lo acepta): suele ser porque bloquea las conexiones automáticas desde servidores como los de GitHub, pero
+    el código no lo prueba, por eso el texto dice «suele»."""
+    if codigo in CODIGOS_DE_BLOQUEO:
+        presentacion = ", también presentándose como navegador" if probo_como_navegador else ""
+        return (f"HTTP {codigo}: la web rechaza la petición{presentacion} "
+                "(suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)")
+    return f"HTTP {codigo}"
+
+
 def estado_con_feed_propio(estado, feed_propio, detalle):
     estado["estado"] = "feed_propio"
     estado["feed_propio"] = feed_propio
@@ -435,7 +446,7 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
             respuesta = extractor.peticion(sitio["url"])
         estado["user_agent"] = "navegador" if usa_navegador else "feedmaker"
         if not (200 <= respuesta.estado < 300):
-            estado["detalle"] = respuesta.error or f"HTTP {respuesta.estado}"
+            estado["detalle"] = respuesta.error or descripcion_del_error_http(respuesta.estado, usa_navegador)
             return estado
 
         feed_propio, entradas_del_feed = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
