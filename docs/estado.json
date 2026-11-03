@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-03T11:48:23+00:00",
- "llamadas_ia": 3,
+ "generado": "2026-11-03T12:14:24+00:00",
+ "llamadas_ia": 2,
  "sitios": [
   {
-   "actualizado": "2026-11-03T11:46:27+00:00",
+   "actualizado": "2026-11-03T12:12:38+00:00",
    "con_texto_completo": 45,
    "detalle": "con IA",
    "entradas": 50,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-03T11:46:40+00:00",
+   "actualizado": "2026-11-03T12:12:52+00:00",
    "con_texto_completo": 9,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:46:48+00:00",
+   "actualizado": "2026-11-03T12:13:00+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:46:57+00:00",
+   "actualizado": "2026-11-03T12:13:09+00:00",
    "con_texto_completo": 24,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:07+00:00",
+   "actualizado": "2026-11-03T12:13:18+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:16+00:00",
+   "actualizado": "2026-11-03T12:13:28+00:00",
    "con_texto_completo": 15,
    "detalle": "con IA",
    "entradas": 15,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:24+00:00",
+   "actualizado": "2026-11-03T12:13:37+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:34+00:00",
-   "con_texto_completo": 17,
+   "actualizado": "2026-11-03T12:13:46+00:00",
+   "con_texto_completo": 18,
    "detalle": "con IA",
-   "entradas": 17,
+   "entradas": 18,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:45+00:00",
+   "actualizado": "2026-11-03T12:13:51+00:00",
    "con_texto_completo": 28,
    "detalle": "con IA",
    "entradas": 28,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:49+00:00",
+   "actualizado": "2026-11-03T12:13:54+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,7 +122,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:50+00:00",
+   "actualizado": "2026-11-03T12:13:56+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 49,
@@ -135,7 +135,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:52+00:00",
+   "actualizado": "2026-11-03T12:13:57+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 48,
@@ -148,7 +148,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:55+00:00",
+   "actualizado": "2026-11-03T12:13:59+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 49,
@@ -161,7 +161,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:47:58+00:00",
+   "actualizado": "2026-11-03T12:14:01+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 49,
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:48:01+00:00",
+   "actualizado": "2026-11-03T12:14:03+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:48:05+00:00",
+   "actualizado": "2026-11-03T12:14:06+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:48:07+00:00",
+   "actualizado": "2026-11-03T12:14:08+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:48:08+00:00",
+   "actualizado": "2026-11-03T12:14:09+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-03T11:48:12+00:00",
+   "actualizado": "2026-11-03T12:14:11+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
    "entradas": 6,
@@ -239,7 +239,18 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-03T11:48:23+00:00",
+   "actualizado": "2026-11-03T12:14:22+00:00",
+   "detalle": "HTTP 403",
+   "entradas": 0,
+   "estado": "error",
+   "feed_propio": "",
+   "id": "realinstitutoelcano-org-analisis",
+   "nombre": "realinstitutoelcano.org/analisis",
+   "url": "https://realinstitutoelcano.org/analisis",
+   "user_agent": "navegador"
+  },
+  {
+   "actualizado": "2026-11-03T12:14:24+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",

@@ -160,5 +160,11 @@
     "url": "https://www.realbetisbalompie.es/noticias/actualidad/",
     "texto_completo": true,
     "version_url": 3
+  },
+  {
+    "id": "realinstitutoelcano-org-analisis",
+    "nombre": "realinstitutoelcano.org/analisis",
+    "url": "https://realinstitutoelcano.org/analisis",
+    "texto_completo": true
   }
 ]
