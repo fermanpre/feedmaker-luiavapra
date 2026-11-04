@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-04T12:07:57+00:00",
- "llamadas_ia": 4,
+ "generado": "2026-11-04T13:10:44+00:00",
+ "llamadas_ia": 3,
  "sitios": [
   {
-   "actualizado": "2026-11-04T12:05:02+00:00",
+   "actualizado": "2026-11-04T13:08:15+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-04T12:05:16+00:00",
+   "actualizado": "2026-11-04T13:08:29+00:00",
    "con_texto_completo": 9,
    "detalle": "con IA",
    "entradas": 9,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:05:24+00:00",
+   "actualizado": "2026-11-04T13:08:37+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:05:33+00:00",
+   "actualizado": "2026-11-04T13:08:47+00:00",
    "con_texto_completo": 24,
    "detalle": "con IA",
    "entradas": 24,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:05:42+00:00",
+   "actualizado": "2026-11-04T13:08:56+00:00",
    "con_texto_completo": 5,
    "detalle": "con IA",
    "entradas": 5,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:05:51+00:00",
+   "actualizado": "2026-11-04T13:09:05+00:00",
    "con_texto_completo": 15,
    "detalle": "con IA",
    "entradas": 15,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:01+00:00",
+   "actualizado": "2026-11-04T13:09:15+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:10+00:00",
+   "actualizado": "2026-11-04T13:09:24+00:00",
    "con_texto_completo": 27,
    "detalle": "con IA",
    "entradas": 27,
@@ -99,10 +99,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:20+00:00",
+   "actualizado": "2026-11-04T13:09:27+00:00",
    "con_texto_completo": 33,
    "detalle": "con IA",
-   "entradas": 33,
+   "entradas": 34,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:26+00:00",
+   "actualizado": "2026-11-04T13:09:32+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:27+00:00",
+   "actualizado": "2026-11-04T13:09:33+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 75,
+   "entradas": 76,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:28+00:00",
+   "actualizado": "2026-11-04T13:09:34+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 74,
+   "entradas": 75,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:30+00:00",
+   "actualizado": "2026-11-04T13:09:36+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 75,
+   "entradas": 76,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:32+00:00",
+   "actualizado": "2026-11-04T13:09:38+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 75,
+   "entradas": 76,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:34+00:00",
+   "actualizado": "2026-11-04T13:09:40+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:37+00:00",
+   "actualizado": "2026-11-04T13:09:44+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:38+00:00",
+   "actualizado": "2026-11-04T13:09:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:06:40+00:00",
+   "actualizado": "2026-11-04T13:09:47+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:07:57+00:00",
+   "actualizado": "2026-11-04T13:10:44+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -253,7 +253,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-04T12:06:42+00:00",
+   "actualizado": "2026-11-04T13:09:50+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
    "entradas": 9,
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-04T12:06:55+00:00",
+   "actualizado": "2026-11-04T13:10:00+00:00",
    "con_texto_completo": 16,
    "detalle": "con IA",
    "entradas": 16,
@@ -278,7 +278,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:07:03+00:00",
+   "actualizado": "2026-11-04T13:10:08+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -290,10 +290,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:07:06+00:00",
-   "con_texto_completo": 43,
+   "actualizado": "2026-11-04T13:10:12+00:00",
+   "con_texto_completo": 44,
    "detalle": "con IA",
-   "entradas": 43,
+   "entradas": 44,
    "estado": "ok",
    "feed_propio": "",
    "id": "elconfidencial-com",
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-04T12:07:35+00:00",
+   "actualizado": "2026-11-04T13:10:22+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
