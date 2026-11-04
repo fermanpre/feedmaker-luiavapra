@@ -171,7 +171,9 @@ def descargar_respetuosamente(url):
 class Nodo:
     def __init__(self, etiqueta, atributos=None, padre=None, contenido=""):
         self.etiqueta = etiqueta
-        self.atributos = atributos or {}
+        # Un atributo sin valor (<img alt>) llega de HTMLParser como None: se guarda como texto vacío para que ningún
+        # sitio del código reciba None donde espera una cadena.
+        self.atributos = {clave: ("" if valor is None else valor) for clave, valor in (atributos or {}).items()}
         self.padre = padre
         self.hijos = []
         self.contenido = contenido

@@ -263,9 +263,14 @@ def descargar_datos_del_articulo(enlace):
     respuesta = extractor.peticion(enlace)
     if not (200 <= respuesta.estado < 300):
         return "", "", ""
-    cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final) or ""
-    fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo) or ""
-    extracto = extractor.extracto_del_articulo(respuesta.texto, cuerpo)
+    try:
+        cuerpo = extractor.extraer_cuerpo_articulo(respuesta.texto, respuesta.url_final) or ""
+        fecha = extractor.fecha_del_articulo(respuesta.texto, cuerpo) or ""
+        extracto = extractor.extracto_del_articulo(respuesta.texto, cuerpo)
+    except Exception as error:
+        # Un artículo con un HTML raro no debe tumbar el feed entero: se anota y se sigue con el resto.
+        print(f"  aviso: no se ha podido extraer {enlace}: {type(error).__name__}: {error}", flush=True)
+        return "", "", ""
     return cuerpo, fecha, extracto
 
 
@@ -587,8 +592,14 @@ def main():
     ruta_sitios = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else "feeds.json")
     raiz = os.path.dirname(ruta_sitios)
     sitios = leer_json(ruta_sitios, [])
+    if not os.path.exists(ruta_sitios):
+        raise SystemExit(f"ERROR: {ruta_sitios} no existe.")
     if not sitios:
-        raise SystemExit(f"ERROR: {ruta_sitios} no existe o está vacío.")
+        # Una instalación nueva todavía no tiene webs: no es un error. Se publica un estado vacío para la página.
+        escribir_json(os.path.join(raiz, "docs", "estado.json"), {
+            "generado": datetime.now(timezone.utc).isoformat(timespec="seconds"), "llamadas_ia": 0, "sitios": []})
+        print("feeds.json no tiene webs: no hay nada que generar.", flush=True)
+        return
 
     ruta_decisiones = os.path.join(raiz, "datos", "decisiones.json")
     ruta_estado = os.path.join(raiz, "docs", "estado.json")
@@ -642,7 +653,7 @@ def main():
     })
     print(f"Llamadas a la IA: {presupuesto.llamadas} (tokens {presupuesto.tokens_entrada} entrada / "
           f"{presupuesto.tokens_salida} salida)")
-    if all(estado["estado"] == "error" for estado in resultados):
+    if resultados and all(estado["estado"] == "error" for estado in resultados):
         raise SystemExit("ERROR: ninguna web se ha podido procesar.")
 
 
