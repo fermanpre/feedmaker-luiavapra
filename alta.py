@@ -235,7 +235,11 @@ def comentario(identificador, ruta_estado):
     if sitio["estado"] == "feed_propio":
         return (f"Esta web ya tiene feed propio: {sitio['feed_propio']}\n\n"
                 f"Añadir a Feedly: {enlace_feedly(sitio['feed_propio'])}")
-    return f"No se ha podido generar el feed: {sitio['detalle']}"
+    mensaje = f"No se ha podido generar el feed: {sitio['detalle']}"
+    if sitio.get("sugerencias"):
+        mensaje += "\n\nPrueba con alguna de estas direcciones, que parecen listados:\n" + "\n".join(
+            f"- {direccion}" for direccion in sitio["sugerencias"])
+    return mensaje
 
 
 if __name__ == "__main__":

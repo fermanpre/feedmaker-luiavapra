@@ -511,6 +511,21 @@ def procesar_sitio(sitio, raiz, decisiones, cliente, presupuesto, articulos, des
                 estado["detalle"] = respuesta.error or descripcion_del_error_http(respuesta.estado)
             return estado
 
+        if not sitio.get("es_listado") and extractor.parece_un_articulo(respuesta.texto, respuesta.url_final):
+            # Un artículo no tiene «lista de noticias»: lo que se sacara de él sería el menú o las noticias relacionadas.
+            # Se avisa, se sugieren los listados que enlaza y se retira lo que se hubiera generado antes con esta dirección.
+            sugerencias = extractor.sugerir_listados(respuesta.texto, respuesta.url_final)
+            estado["es_articulo"] = True
+            estado["detalle"] = "esta dirección es un artículo suelto, no un listado de noticias" + (
+                ": prueba con la sección o la etiqueta que lo contiene" if sugerencias else "")
+            if sugerencias:
+                estado["sugerencias"] = sugerencias
+            ruta_del_xml = os.path.join(raiz, "docs", "feeds", sitio["id"] + ".xml")
+            if os.path.exists(ruta_del_xml):
+                os.remove(ruta_del_xml)
+            historial.pop(sitio["id"], None)
+            return estado
+
         feed_propio, entradas_del_feed = extractor.descubrir_feed(respuesta.texto, respuesta.url_final)
         # Un feed enlazado desde la página no siempre sirve: el de toda la sección Deportes no es el de la
         # página de un solo equipo, y un feed sin entradas no sirve para nada. En esos casos se intenta
@@ -630,7 +645,7 @@ def main():
     # Una web con error que ya tenía un feed publicado lo conserva: se anotan sus entradas y cuándo se generó, para
     # que la página lo enseñe con un aviso y con su enlace en vez de dejarlo sin dirección.
     for estado in resultados:
-        if estado["estado"] == "error":
+        if estado["estado"] == "error" and not estado.get("es_articulo"):
             publicado = leer_feed_publicado(raiz, estado["id"])
             if publicado is not None:
                 estado["entradas"], estado["feed_anterior"] = publicado

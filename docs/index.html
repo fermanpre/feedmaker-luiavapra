@@ -135,7 +135,7 @@
   var reintentos = null;
   // Dirección del servicio intermedio (Cloudflare Worker), p. ej. "https://feedmaker.usuario.workers.dev/".
   // Vacía = no hay servicio: la página usa el token o, si no, la incidencia de GitHub.
-  var URL_SERVICIO = "https://feedmaker-luiavapra.yellowsubdomain.workers.dev/";
+  var URL_SERVICIO = "feedmaker-luiavapra:https://feedmaker-luiavapra.yellowsubdomain.workers.dev/";
 
   var campoUrl = document.getElementById("url");
   var mensaje = document.getElementById("mensaje");
@@ -193,6 +193,22 @@
     }
     var clase = sitio.estado === "ok" ? "estado-ok" : ((sitio.estado === "feed_propio" || conFeedAnterior) ? "estado-aviso" : "estado-error");
     contenedor.appendChild(crearElemento("div", texto, "meta " + clase));
+    if (sitio.sugerencias && sitio.sugerencias.length) {
+      contenedor.appendChild(crearElemento("div", "Prueba con una de estas direcciones, que parecen listados:", "meta"));
+      sitio.sugerencias.forEach(function (direccion) {
+        var fila = crearElemento("div", "", "acciones");
+        fila.appendChild(crearElemento("code", direccion));
+        var usar = crearElemento("button", "Usar esta", "secundario");
+        usar.type = "button";
+        usar.addEventListener("click", function () {
+          campoUrl.value = direccion;
+          campoUrl.focus();
+          window.scrollTo(0, 0);
+        });
+        fila.appendChild(usar);
+        contenedor.appendChild(fila);
+      });
+    }
     if (urlFeed) {
       contenedor.appendChild(crearElemento("code", urlFeed));
       var acciones = crearElemento("div", "", "acciones");

@@ -756,6 +756,54 @@ def entradas_por_enlaces(html, url_base, zona_horaria_de_las_urls=None):
     return entradas
 
 
+PATRONES_DE_PAGINA_DE_ARTICULO = (
+    r'<meta[^>]+property=["\']og:type["\'][^>]*content=["\']article["\']',
+    r'<meta[^>]+content=["\']article["\'][^>]*property=["\']og:type["\']',
+    r'<meta[^>]+property=["\']article:published_time["\']',
+)
+PATRON_DE_RUTA_DE_LISTADO = re.compile(
+    r"/(?:tag|tags|tema|temas|etiqueta|etiquetas|topic|topics|categoria|categorias|category|seccion|secciones|section)/",
+    re.IGNORECASE)
+MAXIMO_DE_LISTADOS_SUGERIDOS = 5
+
+
+def es_pagina_de_articulo(html_de_la_pagina):
+    """True si la propia página dice que es un artículo suelto (og:type=article o fecha de publicación de artículo).
+
+    No se mira el JSON-LD: una portada puede traer los datos de cada noticia, y no por eso es un artículo."""
+    return any(re.search(patron, html_de_la_pagina, re.IGNORECASE) for patron in PATRONES_DE_PAGINA_DE_ARTICULO)
+
+
+def parece_un_articulo(html_de_la_pagina, url_de_la_pagina):
+    """True si la página se declara artículo Y su dirección termina en una frase larga (el «slug» de un artículo).
+
+    Solo con los metadatos, 9 de 88 listados de la muestra (portadas de blogs y de webs de noticias) se habrían tomado por
+    artículos; con la forma de la dirección, ninguno."""
+    return es_pagina_de_articulo(html_de_la_pagina) and bool(_slug_de_articulo(url_de_la_pagina))
+
+
+def sugerir_listados(html_de_la_pagina, url_de_la_pagina):
+    """Direcciones de la misma web que probablemente sean un listado: las carpetas de la ruta del artículo (la sección) y
+    los enlaces de etiqueta, tema o categoría. Primero las carpetas más profundas, luego las etiquetas."""
+    partes = urllib.parse.urlsplit(url_de_la_pagina)
+    anfitrion = _host_sin_www(url_de_la_pagina)
+    segmentos = [segmento for segmento in partes.path.split("/") if segmento]
+    carpetas = ["/" + "/".join(segmentos[:numero]) for numero in range(len(segmentos) - 1, 0, -1)]
+    enlaces_de_la_pagina = {}
+    for crudo in re.findall(r'href=["\']([^"\'#]+)', html_de_la_pagina):
+        enlace = urllib.parse.urljoin(url_de_la_pagina, crudo.strip())
+        trozos = urllib.parse.urlsplit(enlace)
+        if trozos.scheme in ("http", "https") and _host_sin_www(enlace) == anfitrion:
+            ruta_normalizada = trozos.path.rstrip("/") or "/"
+            enlaces_de_la_pagina[ruta_normalizada] = f"{trozos.scheme}://{trozos.netloc}{trozos.path.rstrip('/')}/"
+    sugeridos = [enlaces_de_la_pagina[carpeta] for carpeta in carpetas if carpeta in enlaces_de_la_pagina]
+    for ruta_del_enlace, enlace in enlaces_de_la_pagina.items():
+        if (PATRON_DE_RUTA_DE_LISTADO.search(ruta_del_enlace + "/") and enlace not in sugeridos
+                and ruta_del_enlace != partes.path.rstrip("/")):
+            sugeridos.append(enlace)
+    return sugeridos[:MAXIMO_DE_LISTADOS_SUGERIDOS]
+
+
 # --------------------------------------------------------------------------- análisis completo
 
 def validar_url(url):

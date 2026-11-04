@@ -110,6 +110,14 @@ enlaces de la página que parecen artículos, como con `modo_enlaces`. Para no p
 solo se acepta si tiene 5 entradas o más y, tras completar las fechas entrando en cada artículo, al menos la mitad llevan fecha.
 `estado.json` lo anota en el detalle («listado por enlaces»).
 
+## Direcciones de artículos
+
+Si la dirección pegada es un artículo suelto (la página se declara artículo en sus metadatos y su dirección termina en una
+frase larga) no se genera ningún feed: un artículo no tiene lista de noticias, y lo que se sacara de él serían el menú o las
+noticias relacionadas. Se avisa y se sugieren los listados que enlaza (la carpeta de la ruta, o las etiquetas y categorías), con
+un botón «Usar esta» en la página. En una muestra de 88 listados no marcó ninguno por error, pero no detecta todos los
+artículos (los que no traen ninguna marca estándar siguen como antes). `es_listado: true` en `feeds.json` desactiva el aviso.
+
 ## Fechas que faltan
 
 Si a menos del 60 % de las entradas de una web les consta la fecha, se busca entrando en cada artículo (una descarga por
