@@ -190,5 +190,11 @@
     "nombre": "share.google/G0MT08B29ZOVBvrF8",
     "url": "https://share.google/G0MT08B29ZOVBvrF8",
     "texto_completo": true
+  },
+  {
+    "id": "proteccion-asilo-interior-gob-es-es-inicio",
+    "nombre": "proteccion-asilo.interior.gob.es/es/inicio",
+    "url": "https://proteccion-asilo.interior.gob.es/es/inicio/",
+    "texto_completo": true
   }
 ]

@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-05T13:25:00+00:00",
- "llamadas_ia": 7,
+ "generado": "2026-11-06T08:36:04+00:00",
+ "llamadas_ia": 10,
  "sitios": [
   {
-   "actualizado": "2026-11-05T13:21:56+00:00",
+   "actualizado": "2026-11-06T08:32:29+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,10 +15,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-05T13:22:09+00:00",
-   "con_texto_completo": 9,
+   "actualizado": "2026-11-06T08:32:43+00:00",
+   "con_texto_completo": 10,
    "detalle": "con IA",
-   "entradas": 9,
+   "entradas": 10,
    "estado": "ok",
    "feed_propio": "",
    "id": "martinfowler-com",
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:22:18+00:00",
+   "actualizado": "2026-11-06T08:32:53+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,10 +39,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:22:27+00:00",
-   "con_texto_completo": 24,
+   "actualizado": "2026-11-06T08:33:02+00:00",
+   "con_texto_completo": 25,
    "detalle": "con IA",
-   "entradas": 24,
+   "entradas": 25,
    "estado": "ok",
    "feed_propio": "",
    "id": "anthropic-com-news",
@@ -51,10 +51,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:22:36+00:00",
-   "con_texto_completo": 5,
+   "actualizado": "2026-11-06T08:33:12+00:00",
+   "con_texto_completo": 6,
    "detalle": "con IA",
-   "entradas": 5,
+   "entradas": 6,
    "estado": "ok",
    "feed_propio": "",
    "id": "worldbank-org-en-news",
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:22:45+00:00",
+   "actualizado": "2026-11-06T08:33:23+00:00",
    "con_texto_completo": 17,
    "detalle": "con IA",
    "entradas": 17,
@@ -75,10 +75,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:22:58+00:00",
-   "con_texto_completo": 6,
+   "actualizado": "2026-11-06T08:33:32+00:00",
+   "con_texto_completo": 7,
    "detalle": "con IA",
-   "entradas": 6,
+   "entradas": 7,
    "estado": "ok",
    "feed_propio": "",
    "id": "stripe-com-blog",
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:07+00:00",
-   "con_texto_completo": 37,
+   "actualizado": "2026-11-06T08:33:43+00:00",
+   "con_texto_completo": 43,
    "detalle": "con IA",
-   "entradas": 37,
+   "entradas": 43,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,10 +99,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:13+00:00",
-   "con_texto_completo": 41,
+   "actualizado": "2026-11-06T08:33:53+00:00",
+   "con_texto_completo": 44,
    "detalle": "con IA",
-   "entradas": 42,
+   "entradas": 45,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:19+00:00",
+   "actualizado": "2026-11-06T08:34:00+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:20+00:00",
+   "actualizado": "2026-11-06T08:34:01+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 99,
+   "entradas": 112,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:21+00:00",
+   "actualizado": "2026-11-06T08:34:02+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 98,
+   "entradas": 111,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:23+00:00",
+   "actualizado": "2026-11-06T08:34:04+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 98,
+   "entradas": 111,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:25+00:00",
+   "actualizado": "2026-11-06T08:34:06+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 99,
+   "entradas": 112,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:27+00:00",
+   "actualizado": "2026-11-06T08:34:08+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:30+00:00",
+   "actualizado": "2026-11-06T08:34:12+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 22,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:32+00:00",
+   "actualizado": "2026-11-06T08:34:13+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:23:33+00:00",
+   "actualizado": "2026-11-06T08:34:15+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 20,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:24:58+00:00",
+   "actualizado": "2026-11-06T08:36:04+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -253,10 +253,10 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-05T13:23:36+00:00",
-   "con_texto_completo": 9,
+   "actualizado": "2026-11-06T08:34:17+00:00",
+   "con_texto_completo": 10,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
-   "entradas": 12,
+   "entradas": 13,
    "estado": "ok",
    "feed_propio": "",
    "id": "realbetisbalompie-es-noticias-actualidad",
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-05T13:23:50+00:00",
+   "actualizado": "2026-11-06T08:34:33+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 16,
    "estado": "error",
@@ -278,10 +278,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-05T13:24:12+00:00",
-   "con_texto_completo": 10,
+   "actualizado": "2026-11-06T08:34:56+00:00",
+   "con_texto_completo": 11,
    "detalle": "con IA",
-   "entradas": 10,
+   "entradas": 11,
    "estado": "ok",
    "feed_propio": "",
    "id": "smashingmagazine-com-articles",
@@ -290,10 +290,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:24:15+00:00",
-   "con_texto_completo": 67,
+   "actualizado": "2026-11-06T08:35:01+00:00",
+   "con_texto_completo": 72,
    "detalle": "con IA",
-   "entradas": 67,
+   "entradas": 73,
    "estado": "ok",
    "feed_propio": "",
    "id": "elconfidencial-com",
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-05T13:24:34+00:00",
+   "actualizado": "2026-11-06T08:35:19+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,15 +313,26 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-05T13:24:57+00:00",
-   "con_texto_completo": 10,
+   "actualizado": "2026-11-06T08:35:42+00:00",
+   "con_texto_completo": 16,
    "detalle": "con IA",
-   "entradas": 10,
+   "entradas": 16,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-g0mt08b29zovbvrf8",
    "nombre": "share.google/G0MT08B29ZOVBvrF8",
    "url": "https://share.google/G0MT08B29ZOVBvrF8",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-06T08:35:44+00:00",
+   "detalle": "robots.txt lo prohíbe",
+   "entradas": 0,
+   "estado": "error",
+   "feed_propio": "",
+   "id": "proteccion-asilo-interior-gob-es-es-inicio",
+   "nombre": "proteccion-asilo.interior.gob.es/es/inicio",
+   "url": "https://proteccion-asilo.interior.gob.es/es/inicio/",
    "user_agent": "feedmaker"
   }
  ]
