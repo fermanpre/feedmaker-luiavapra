@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-10T06:00:50+00:00",
- "llamadas_ia": 8,
+ "generado": "2026-11-10T08:31:43+00:00",
+ "llamadas_ia": 5,
  "sitios": [
   {
-   "actualizado": "2026-11-10T05:56:45+00:00",
+   "actualizado": "2026-11-10T08:27:49+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-10T05:56:59+00:00",
+   "actualizado": "2026-11-10T08:28:02+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:07+00:00",
+   "actualizado": "2026-11-10T08:28:10+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:16+00:00",
+   "actualizado": "2026-11-10T08:28:19+00:00",
    "con_texto_completo": 26,
    "detalle": "con IA",
    "entradas": 26,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:26+00:00",
+   "actualizado": "2026-11-10T08:28:29+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:36+00:00",
+   "actualizado": "2026-11-10T08:28:38+00:00",
    "con_texto_completo": 17,
    "detalle": "con IA",
    "entradas": 17,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:45+00:00",
+   "actualizado": "2026-11-10T08:28:46+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:57:54+00:00",
-   "con_texto_completo": 74,
+   "actualizado": "2026-11-10T08:28:56+00:00",
+   "con_texto_completo": 75,
    "detalle": "con IA",
-   "entradas": 74,
+   "entradas": 75,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:00+00:00",
+   "actualizado": "2026-11-10T08:29:00+00:00",
    "con_texto_completo": 67,
    "detalle": "con IA",
    "entradas": 68,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:08+00:00",
+   "actualizado": "2026-11-10T08:29:02+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:09+00:00",
+   "actualizado": "2026-11-10T08:29:04+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 136,
+   "entradas": 145,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:10+00:00",
+   "actualizado": "2026-11-10T08:29:05+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 135,
+   "entradas": 144,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:12+00:00",
+   "actualizado": "2026-11-10T08:29:07+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 135,
+   "entradas": 144,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:14+00:00",
+   "actualizado": "2026-11-10T08:29:09+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 135,
+   "entradas": 144,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:16+00:00",
+   "actualizado": "2026-11-10T08:29:11+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 23,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:19+00:00",
+   "actualizado": "2026-11-10T08:29:14+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:20+00:00",
+   "actualizado": "2026-11-10T08:29:15+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:58:22+00:00",
+   "actualizado": "2026-11-10T08:29:17+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 26,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T06:00:50+00:00",
+   "actualizado": "2026-11-10T08:31:43+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -253,7 +253,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-10T05:58:24+00:00",
+   "actualizado": "2026-11-10T08:29:20+00:00",
    "con_texto_completo": 15,
    "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
    "entradas": 19,
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-10T05:58:35+00:00",
+   "actualizado": "2026-11-10T08:29:31+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 16,
    "estado": "error",
@@ -278,7 +278,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-10T05:58:57+00:00",
+   "actualizado": "2026-11-10T08:29:53+00:00",
    "con_texto_completo": 12,
    "detalle": "con IA",
    "entradas": 12,
@@ -290,10 +290,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:59:00+00:00",
-   "con_texto_completo": 150,
+   "actualizado": "2026-11-10T08:29:56+00:00",
+   "con_texto_completo": 158,
    "detalle": "con IA",
-   "entradas": 151,
+   "entradas": 159,
    "estado": "ok",
    "feed_propio": "",
    "id": "elconfidencial-com",
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:59:16+00:00",
+   "actualizado": "2026-11-10T08:30:13+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,10 +313,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-10T05:59:38+00:00",
-   "con_texto_completo": 47,
+   "actualizado": "2026-11-10T08:30:36+00:00",
+   "con_texto_completo": 48,
    "detalle": "con IA",
-   "entradas": 47,
+   "entradas": 48,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-g0mt08b29zovbvrf8",
@@ -325,7 +325,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T05:59:41+00:00",
+   "actualizado": "2026-11-10T08:30:37+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -336,7 +336,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T06:00:01+00:00",
+   "actualizado": "2026-11-10T08:30:57+00:00",
    "detalle": "URLError: <urlopen error timed out>",
    "entradas": 0,
    "estado": "error",
@@ -347,7 +347,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T06:00:21+00:00",
+   "actualizado": "2026-11-10T08:31:17+00:00",
    "con_texto_completo": 19,
    "detalle": "con IA",
    "entradas": 19,
@@ -359,7 +359,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-10T06:00:25+00:00",
+   "actualizado": "2026-11-10T08:31:20+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
    "entradas": 0,
    "estado": "error",
@@ -367,6 +367,17 @@
    "id": "go-ivoox-com-sq-3250031",
    "nombre": "go.ivoox.com/sq/3250031",
    "url": "https://go.ivoox.com/sq/3250031",
+   "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-10T08:31:43+00:00",
+   "detalle": "robots.txt lo prohíbe",
+   "entradas": 0,
+   "estado": "error",
+   "feed_propio": "",
+   "id": "google-com-search",
+   "nombre": "www.google.com/search",
+   "url": "https://www.google.com/search?client=ms-android-samsung-ss&hs=X9IW&sca_esv=65004a4481887a1a&sxsrf=AKL5yDiL-zfITw0r2rGYZr4ULcZI9V8SmQ:1794299186366&q=accem&tbm=nws&source=lnms&fbs=ACAhTvxDTS-ni9snbvXAFbgMPtDHHUOrMMD94RIopvocq8JOAcjjyZbraCz2xDofa-xAfvFgr1Xc_n1ytVd_E6ugZQbLJ8u_gG4D1cgwIDh9cNuiH3FEyV5WR23K73FShi1htzn8pmJc8UJNPSPefHsugMycdjtOzLK9t3l2ZsiXMW5-iZFRyns0GeeT7U_lsTPu6mmmkX6o&sa=X&ved=2ahUKEwjYu_6s_fyXAxXF0AIHHfahDIsQ0pQJegQIIBAB&biw=411&bih=776&dpr=2.63",
    "user_agent": "feedmaker"
   }
  ]
