@@ -23,6 +23,7 @@
  "anthropic-com-news": {
   "enlaces": {
    "https://www.anthropic.com/claude-fable-and-mythos-5-1": "ok",
+   "https://www.anthropic.com/claude-fable-and-mythos-5-2": "ok",
    "https://www.anthropic.com/claude-haiku-5-5": "ok",
    "https://www.anthropic.com/claude-opus-5-5": "ok",
    "https://www.anthropic.com/claude-sonnet-5-5": "ok",
@@ -109,6 +110,7 @@
    "https://www.elconfidencial.com/alma-corazon-vida/2026-11-09/azorin-escritor-espanol-del-98-personas-felices_4461536/": "ok",
    "https://www.elconfidencial.com/alma-corazon-vida/2026-11-09/chefs-coinciden-utilizar-horno-recetas-mas-delicioso_4458134/": "ok",
    "https://www.elconfidencial.com/alma-corazon-vida/2026-11-09/javier-albares-neurofisiologo-estres_4461517/": "ok",
+   "https://www.elconfidencial.com/alma-corazon-vida/2026-11-10/electricista-cargadores-carga-ultrarrapida-conectaddos_4460686/": "ok",
    "https://www.elconfidencial.com/cultura/cine/2026-11-06/la-bola-negra-ana-duato-mensajes-miguel-bernardeau-1qrt_4458757/": "ok",
    "https://www.elconfidencial.com/deportes/2026-11-03/jesus-de-miguel-muere-tenerife-directo_4457772/": "ok",
    "https://www.elconfidencial.com/deportes/2026-11-04/jose-abellan-cardiologo-sobre-la-muerte-de-jesus-de-miguel_4458549/": "ok",
@@ -185,6 +187,12 @@
    "https://www.elconfidencial.com/el-tiempo/2026-11-09/el-tiempo-en-oviedo-lunes_4447618/": "ok",
    "https://www.elconfidencial.com/el-tiempo/2026-11-09/el-tiempo-en-teruel-lunes_4447628/": "ok",
    "https://www.elconfidencial.com/el-tiempo/2026-11-09/el-tiempo-en-torremolinos-lunes_4447614/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-gijon-martes_4443461/": "descartar",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-las-palmas-de-gran-canaria-martes_4448435/": "descartar",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-segovia-martes_4443470/": "descartar",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-telde-martes_4448437/": "ok",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-valencia-martes_4457613/": "descartar",
+   "https://www.elconfidencial.com/el-tiempo/2026-11-10/el-tiempo-en-vigo-martes_4453471/": "ok",
    "https://www.elconfidencial.com/empresas/2026-11-09/espana-centros-datos-gigafactorias-europa-1hms-1svm_4461643/": "ok",
    "https://www.elconfidencial.com/espana/2026-11-03/mesa-electoral-hasta-cuando-notifican-tocado-multa_4458089/": "ok",
    "https://www.elconfidencial.com/espana/2026-11-03/quien-es-quien-elecciones-29n-candidatos-partido-1qrt_4457707/": "ok",
@@ -237,6 +245,7 @@
    "https://www.elconfidencial.com/tecnologia/ciencia/2026-11-07/primera-inyeccion-problemas-vista-edad-1qrt_4217031/": "ok",
    "https://www.elconfidencial.com/tecnologia/ciencia/2026-11-09/huellas-dinosaurio-techo-cueva-francia-1qrt_4355920/": "ok",
    "https://www.elconfidencial.com/tecnologia/ciencia/2026-11-09/japon-noruega-madera-arena-hormigon-1qrt_4298634/": "ok",
+   "https://www.elconfidencial.com/tecnologia/ciencia/2026-11-10/piedra-30-kilos-ancla-mas-antigua-mundo-1qrt_4459414/": "ok",
    "https://www.elconfidencial.com/television/2026-11-09/quien-es-asraf-beno-concursante-supervivientes-1qrt_4461567/": "ok",
    "https://www.elconfidencial.com/television/programas-tv/2026-11-04/la-septima-cuando-se-estrena-nuevo-canal-donde-verlo-1qrt_4419077/": "ok",
    "https://www.elconfidencial.com/television/programas-tv/2026-11-06/pablo-motos-el-hormiguero-alberto-nunez-feijoo_4460322/": "ok",
@@ -245,7 +254,8 @@
    "https://www.elconfidencial.com/viajes/2026-11-04/pueblo-natal-ministro-economia-carlos-cuerpo-1qrt-1tna_4458593/": "ok",
    "https://www.elconfidencial.com/viajes/2026-11-06/refugio-javier-ambrossi-galicia-veranos-macarena-garcia-1qrt-1tna_4459430/": "ok",
    "https://www.elconfidencial.com/viajes/2026-11-07/isla-espana-punto-mas-meridional-europa-1qrt-1tna_4460255/": "ok",
-   "https://www.elconfidencial.com/viajes/2026-11-08/refugio-gran-canaria-raquel-del-rosario-1qrt_4459464/": "ok"
+   "https://www.elconfidencial.com/viajes/2026-11-08/refugio-gran-canaria-raquel-del-rosario-1qrt_4459464/": "ok",
+   "https://www.elconfidencial.com/viajes/2026-11-10/oasis-urbano-valencia-pulmon-verde-1qrt-1tna_4459661/": "ok"
   },
   "firma": "ul.lastNews__content > li.lastNews__item"
  },
@@ -315,6 +325,7 @@
   },
   "firma": "div.mt-4.pt-5 > div.animate__animated.animate__zoomIn"
  },
+ "go-ivoox-com-sq-3250031": {},
  "ine-es": {
   "enlaces": {
    "https://www.ine.es/dyngs/CEL/index.htm?cid=1699": "ok",
@@ -434,7 +445,7 @@
    "https://www.agendadesevilla.com/programacion-teatro-lope-de-vega/": "ok",
    "https://www.agendadesevilla.com/voces-viram-o-meu-cao/": "ok"
   },
-  "firma": "div.block.block-61 > article.agenda-post-destacado.ani-base"
+  "firma": "div.block.block-61 > article.ani-base.article-ani"
  },
  "share-google-g0mt08b29zovbvrf8": {
   "enlaces": {
@@ -456,12 +467,14 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/borussia-dortmund-betis-muro-alto-betis-pese-20261104230344-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/borussia-dortmund-betis-muro-amarillo-mide-salto-20261104072558-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/borussia-dortmund-betis-notas-jugadores-valles-abde-20261104232242-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/elche-betis-celso-competir-elche-dortmund-20261108072541-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/europa-lista-adios-20251205104025-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/fidalgo-virus-viaja-betis-dortmund-20261103114436-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/fuente-argumenta-elecciones-valles-roca-seleccion-haciendo-20261106125735-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/haro-dije-entendia-pesimismo-demostrando-plantilla-ideal-20261103124830-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/haro-prioritario-tener-estadio-calidad-comodo-precio-20261103095201-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/hoja-excel-pellegrini-vez-muere-orilla-20261105073839-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/jose-juan-romero-deja-entrenador-ceuta-tras-20261108103331-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/junior-vuelve-convocatorias-betis-partido-ante-elche-20261107145325-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/kobel-borussia-dortmund-betis-buenos-partidos-defensa-20261104192938-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/kovac-borussia-dortmund-betis-solo-direccion-queremos-20261104105422-nts.html": "ok",
@@ -481,7 +494,8 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/pellegrini-tranquilo-parrott-era-mejor-tantos-goles-20261107132729-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/schlotterbeck-quito-sombrero-ante-espectacular-aficion-betis-20261105112356-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/valles-marc-roca-tras-convocados-espana-llegado-20261106133115-nts.html": "ok",
-   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-borussia-dortmund-betis-canal-streaming-online-20261103221711-nts.html": "ok"
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-borussia-dortmund-betis-canal-streaming-online-20261103221711-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-elche-betis-canal-streaming-online-partido-20261107185958-nts.html": "ok"
   },
   "feed_generico": true,
   "firma": "ul.v-r-bdr-h.v-r-s > li.v-r-s__c.v-r-s__c--1"
@@ -523,6 +537,7 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/comienza-viaje-champions-ilusion-despierta-aficion-betis-20261102132502-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/convocatoria-pellegrini-tres-bajas-betis-malaga-20261030132846-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/dani-ceballos-antony-talismanes-betis-ante-borussia-20261102184947-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/elche-betis-celso-competir-elche-dortmund-20261108072541-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/europa-lista-adios-20251205104025-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/fabio-silva-igualo-dortmund-ante-bayern-recibir-20261101111945-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/facundo-bernal-vuelve-champions-convocatoria-betis-20261102151034-nts.html": "ok",
@@ -532,6 +547,7 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/haro-dije-entendia-pesimismo-demostrando-plantilla-ideal-20261103124830-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/haro-prioritario-tener-estadio-calidad-comodo-precio-20261103095201-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/hoja-excel-pellegrini-vez-muere-orilla-20261105073839-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/jose-juan-romero-deja-entrenador-ceuta-tras-20261108103331-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/junior-vuelve-convocatorias-betis-partido-ante-elche-20261107145325-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/kobel-borussia-dortmund-betis-buenos-partidos-defensa-20261104192938-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/kovac-borussia-dortmund-betis-solo-direccion-queremos-20261104105422-nts.html": "ok",
@@ -561,6 +577,7 @@
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/valles-marc-roca-tras-convocados-espana-llegado-20261106133115-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-betis-malaga-canal-streaming-online-partido-20261030190135-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-borussia-dortmund-betis-canal-streaming-online-20261103221711-nts.html": "ok",
+   "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/ver-elche-betis-canal-streaming-online-partido-20261107185958-nts.html": "ok",
    "https://www.abc.es/deportes/alfinaldelapalmera/noticias-betis/victoria-dos-empates-derrota-cuatro-victorias-real-20261102121023-nts.html": "ok"
   },
   "feed_generico": true,
@@ -571,6 +588,7 @@
    "https://www.muchodeporte.com/real-betis/0-2-el-betis-deportivo-prolonga-su-mala-racha-con-una-derrota-ante-el-decano/": "ok",
    "https://www.muchodeporte.com/real-betis/alvaro-fidalgo-baja-de-ultima-hora-en-el-betis-para-visitar-al-borussia-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/antony-de-nuevo-el-primero-en-salir-y-cada-dia-menos-intocable/": "ok",
+   "https://www.muchodeporte.com/real-betis/antony-se-abre-en-su-peor-momento-siento-vuestro-carino/": "ok",
    "https://www.muchodeporte.com/real-betis/antony-se-recupera-a-tiempo-y-apunta-al-malaga/": "ok",
    "https://www.muchodeporte.com/real-betis/arbitro-neerlandes-para-el-betis-en-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/asi-llega-el-borussia-dortmund-rival-del-betis-en-la-champions-league/": "ok",
@@ -583,6 +601,7 @@
    "https://www.muchodeporte.com/real-betis/el-betis-se-queda-sin-nueve-jugadores-por-el-paron-internacional-para-visitar-al-navalcarnero-en-copa/": "ok",
    "https://www.muchodeporte.com/real-betis/el-campo-del-elche-muy-asequible-para-el-betis/": "ok",
    "https://www.muchodeporte.com/real-betis/el-malaga-solo-gano-en-tres-de-sus-trece-visitas-al-betis/": "ok",
+   "https://www.muchodeporte.com/real-betis/el-mensaje-de-iris-mel-a-su-padre-pepe-mel-se-que-vas-a-volver-conmigo/": "ok",
    "https://www.muchodeporte.com/real-betis/el-posible-once-del-betis-ante-el-borussia-dortmund/": "ok",
    "https://www.muchodeporte.com/real-betis/el-regreso-mas-especial-de-bartra-vuelve-a-dortmund-en-plena-racha-goleadora/": "ok",
    "https://www.muchodeporte.com/real-betis/el-respaldo-de-pellegrini-a-troy-parrott-ni-antes-era-el-mejor-ni-ahora-el-peor/": "ok",
@@ -631,6 +650,8 @@
    "https://www.muchodeporte.com/real-betis/sigue-en-vivo-y-en-directo-el-elche-cf-real-betis-de-laliga-ea-sports/": "ok",
    "https://www.muchodeporte.com/real-betis/sigue-en-vivo-y-en-directo-el-real-betis-malaga-cf-de-laliga-ea-sports/": "ok",
    "https://www.muchodeporte.com/real-betis/solo-una-derrota-del-betis-con-busquets-ferrer-arbitro-para-el-duelo-ante-el-malaga/": "ok",
+   "https://www.muchodeporte.com/real-betis/un-rompecabezas-en-la-porteria-del-betis-por-las-bajas-internacionales/": "ok",
+   "https://www.muchodeporte.com/real-betis/valles-y-marc-roca-ya-trabajan-a-las-ordenes-de-luis-de-la-fuente/": "ok",
    "https://www.muchodeporte.com/real-betis/verticalidad-presion-y-una-defensa-fiable-asi-es-la-fabrica-de-estrellas-del-borussia-dortmund/": "ok",
    "https://www.muchodeporte.com/sevilla-fc/caparros-se-acuerda-de-pepe-mel-este-partido-lo-vas-a-ganar-seguro/": "ok"
   },
