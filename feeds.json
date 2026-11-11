@@ -220,5 +220,11 @@
     "nombre": "www.google.com/search",
     "url": "https://www.google.com/search?client=ms-android-samsung-ss&hs=X9IW&sca_esv=65004a4481887a1a&sxsrf=AKL5yDiL-zfITw0r2rGYZr4ULcZI9V8SmQ:1794299186366&q=accem&tbm=nws&source=lnms&fbs=ACAhTvxDTS-ni9snbvXAFbgMPtDHHUOrMMD94RIopvocq8JOAcjjyZbraCz2xDofa-xAfvFgr1Xc_n1ytVd_E6ugZQbLJ8u_gG4D1cgwIDh9cNuiH3FEyV5WR23K73FShi1htzn8pmJc8UJNPSPefHsugMycdjtOzLK9t3l2ZsiXMW5-iZFRyns0GeeT7U_lsTPu6mmmkX6o&sa=X&ved=2ahUKEwjYu_6s_fyXAxXF0AIHHfahDIsQ0pQJegQIIBAB&biw=411&bih=776&dpr=2.63",
     "texto_completo": true
+  },
+  {
+    "id": "24segundos-pages-dev",
+    "nombre": "24segundos.pages.dev",
+    "url": "https://24segundos.pages.dev/",
+    "texto_completo": true
   }
 ]
