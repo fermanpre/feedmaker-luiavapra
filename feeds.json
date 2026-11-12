@@ -232,5 +232,11 @@
     "nombre": "www.elperiodico.com/es/autor/jose-maria-raya-52262",
     "url": "https://www.elperiodico.com/es/autor/jose-maria-raya-52262/",
     "texto_completo": true
+  },
+  {
+    "id": "josepmariaraya-com-divulgacion",
+    "nombre": "josepmariaraya.com/divulgacion",
+    "url": "https://josepmariaraya.com/divulgacion/",
+    "texto_completo": true
   }
 ]

@@ -7175,6 +7175,68 @@
    "visto": "2026-11-12"
   }
  },
+ "josepmariaraya-com-divulgacion": {
+  "https://agendapublica.es/noticia/19926/vivienda-construccion-regulacion-oferta-espa%C3%B1a": {
+   "extracto": "Los precios de la vivienda en España vuelven a crecer a tasas de dos dígitos, pero no por una burbuja, sino por un profundo desequilibrio entre oferta y demanda. José María Raya, catedrático del Tecnocampus-Universitat Pompeu Fabra, propone construir viviendas y pensar políticas complementarias para \"pasar ya la pantalla de la escasez y la gestión de colas\".",
+   "fecha": "2025-06-26T12:00:00+00:00",
+   "titulo": "¿Qué hacemos con el precio de la vivienda?",
+   "visto": "2026-11-12"
+  },
+  "https://agendapublica.es/noticia/19927/vivienda-generaciones-jovenes": {
+   "extracto": "La lucha contra la desigualdad: una prioridad editorial para",
+   "fecha": "2025-06-12T12:00:00+00:00",
+   "titulo": "Sin vivienda en propiedad crecerá la desigualdad intergeneracional",
+   "visto": "2026-11-12"
+  },
+  "https://agendapublica.es/noticia/20407/somos-europeos-con-relacion-al-mercado-vivienda": {
+   "extracto": "El experto en vivienda José María Raya analiza el mercado de la vivienda en España y señala que la raíz del problema no es la concentración, sino la falta de oferta. Con años construyendo \"aproximadamente el 60% de las viviendas que se necesitan\" la tensión se desplaza al alquiler, donde acceder a un piso es cada vez más difícil y \"la cola cada vez es más larga\".",
+   "fecha": "2025-11-25T12:00:00+00:00",
+   "titulo": "¿Somos europeos con relación al mercado de la vivienda?",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20250131/drama-vpo-administracion-construccion-articulo-jose-maria-raya-113851081": {
+   "extracto": "",
+   "fecha": "2025-01-31T12:00:00+00:00",
+   "titulo": "El drama de la VPO",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20250629/todo-vale-para-tener-mas-viviendas-sociales-articulo-jose-maria-raya-119174062": {
+   "extracto": "El 20% de población más pobre no debería estar en el mercado del alquiler privado; debería estar atendido mediante vivienda en alquiler social",
+   "fecha": "2025-06-29T12:00:00+00:00",
+   "titulo": "Todo vale... para tener más viviendas sociales",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20250713/15-anos-resaca-vivienda-construccion-articulo-jose-maria-raya-119617245": {
+   "extracto": "Pese al crecimiento de los visados de obra nueva, sigue siendo muy insuficiente para atender simplemente a la demanda que proviene de los nuevos hogares",
+   "fecha": "2025-07-13T12:00:00+00:00",
+   "titulo": "15 años de 'resaca'",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20250717/pequeno-gran-tenedor-encuentra-alternativas-articulo-jose-maria-raya-119768478": {
+   "extracto": "¿Cómo saber si el propietario de mi piso de alquiler es un gran tenedor?",
+   "fecha": "2025-07-17T12:00:00+00:00",
+   "titulo": "El ‘pequeño-gran’ tenedor encuentra alternativas",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20251028/exactamente-compra-vivienda-especulativa-nuevo-articulo-jose-maria-raya-123106141": {
+   "extracto": "Cada año hacemos la mitad de los pisos que necesitamos en relación a los hogares que se crean. El Banco de España cuantificó el déficit acumulado en 600.000 en 2023",
+   "fecha": "2025-10-28T12:00:00+00:00",
+   "titulo": "¿Qué es exactamente una compra de vivienda especulativa? El nuevo 'chas'",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20251102/ciudadanos-versus-cientificos-vivienda-articulo-jose-maria-raya-123242115": {
+   "extracto": "En materia residencial, la distancia más grande está entre la ciencia y la ciudadanía",
+   "fecha": "2025-11-02T12:00:00+00:00",
+   "titulo": "Ciudadanos versus científicos",
+   "visto": "2026-11-12"
+  },
+  "https://www.elperiodico.com/es/opinion/20251217/viviendas-lujo-outliers-mercado-vivienda-articulo-jose-maria-raya-124856747": {
+   "extracto": "Quizá los atípicos éramos nosotros, por vivir en un lugar del mundo privilegiado en clima, gastronomía, paisaje y seguridad",
+   "fecha": "2025-12-17T12:00:00+00:00",
+   "titulo": "Las viviendas de lujo, los 'outliers' del mercado de la vivienda",
+   "visto": "2026-11-12"
+  }
+ },
  "kubernetes-io-blog": {
   "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/": {
    "extracto": "By Qi Wang (Red Hat), Sohan Kunkerkar (Red Hat) | Monday, September 14, 2026 in Blog",

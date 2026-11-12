@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-12T19:16:09+00:00",
- "llamadas_ia": 9,
+ "generado": "2026-11-12T19:21:07+00:00",
+ "llamadas_ia": 4,
  "sitios": [
   {
-   "actualizado": "2026-11-12T19:11:20+00:00",
+   "actualizado": "2026-11-12T19:16:30+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-12T19:11:36+00:00",
+   "actualizado": "2026-11-12T19:16:45+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:11:45+00:00",
+   "actualizado": "2026-11-12T19:16:53+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:11:55+00:00",
+   "actualizado": "2026-11-12T19:17:02+00:00",
    "con_texto_completo": 27,
    "detalle": "con IA",
    "entradas": 27,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:04+00:00",
+   "actualizado": "2026-11-12T19:17:11+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:13+00:00",
+   "actualizado": "2026-11-12T19:17:20+00:00",
    "con_texto_completo": 18,
    "detalle": "con IA",
    "entradas": 18,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:22+00:00",
+   "actualizado": "2026-11-12T19:17:29+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -87,7 +87,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:31+00:00",
+   "actualizado": "2026-11-12T19:17:38+00:00",
    "con_texto_completo": 102,
    "detalle": "con IA",
    "entradas": 102,
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:39+00:00",
+   "actualizado": "2026-11-12T19:17:41+00:00",
    "con_texto_completo": 86,
    "detalle": "con IA",
    "entradas": 87,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:44+00:00",
+   "actualizado": "2026-11-12T19:17:43+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,7 +122,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:45+00:00",
+   "actualizado": "2026-11-12T19:17:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 200,
@@ -135,7 +135,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:47+00:00",
+   "actualizado": "2026-11-12T19:17:46+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 199,
@@ -148,7 +148,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:49+00:00",
+   "actualizado": "2026-11-12T19:17:48+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 200,
@@ -161,7 +161,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:51+00:00",
+   "actualizado": "2026-11-12T19:17:50+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 200,
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:53+00:00",
+   "actualizado": "2026-11-12T19:17:52+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 23,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:56+00:00",
+   "actualizado": "2026-11-12T19:17:55+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:57+00:00",
+   "actualizado": "2026-11-12T19:17:56+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:12:59+00:00",
+   "actualizado": "2026-11-12T19:17:58+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 26,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:16:09+00:00",
+   "actualizado": "2026-11-12T19:21:07+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -253,7 +253,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-12T19:13:03+00:00",
+   "actualizado": "2026-11-12T19:18:01+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos",
    "entradas": 24,
    "estado": "error",
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-12T19:13:13+00:00",
+   "actualizado": "2026-11-12T19:18:12+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 16,
    "estado": "error",
@@ -278,7 +278,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-12T19:13:36+00:00",
+   "actualizado": "2026-11-12T19:18:34+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -290,7 +290,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:13:39+00:00",
+   "actualizado": "2026-11-12T19:18:37+00:00",
    "con_texto_completo": 208,
    "detalle": "con IA",
    "entradas": 209,
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:13:57+00:00",
+   "actualizado": "2026-11-12T19:18:46+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,7 +313,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-12T19:14:20+00:00",
+   "actualizado": "2026-11-12T19:19:08+00:00",
    "con_texto_completo": 75,
    "detalle": "con IA",
    "entradas": 75,
@@ -325,7 +325,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:14:21+00:00",
+   "actualizado": "2026-11-12T19:19:09+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -336,7 +336,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:14:41+00:00",
+   "actualizado": "2026-11-12T19:19:29+00:00",
    "detalle": "URLError: <urlopen error timed out>",
    "entradas": 0,
    "estado": "error",
@@ -347,7 +347,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:15:02+00:00",
+   "actualizado": "2026-11-12T19:19:49+00:00",
    "con_texto_completo": 21,
    "detalle": "con IA",
    "entradas": 21,
@@ -359,7 +359,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:15:04+00:00",
+   "actualizado": "2026-11-12T19:19:51+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
    "entradas": 0,
    "estado": "error",
@@ -370,7 +370,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:15:34+00:00",
+   "actualizado": "2026-11-12T19:20:17+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -381,7 +381,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:15:34+00:00",
+   "actualizado": "2026-11-12T19:20:17+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
@@ -392,7 +392,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-12T19:15:42+00:00",
+   "actualizado": "2026-11-12T19:20:25+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -402,6 +402,18 @@
    "nombre": "www.elperiodico.com/es/autor/jose-maria-raya-52262",
    "url": "https://www.elperiodico.com/es/autor/jose-maria-raya-52262/",
    "user_agent": "navegador"
+  },
+  {
+   "actualizado": "2026-11-12T19:20:36+00:00",
+   "con_texto_completo": 6,
+   "detalle": "con IA",
+   "entradas": 10,
+   "estado": "ok",
+   "feed_propio": "",
+   "id": "josepmariaraya-com-divulgacion",
+   "nombre": "josepmariaraya.com/divulgacion",
+   "url": "https://josepmariaraya.com/divulgacion/",
+   "user_agent": "feedmaker"
   }
  ]
 }

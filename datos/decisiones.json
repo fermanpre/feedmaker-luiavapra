@@ -426,6 +426,21 @@
   },
   "firma": "div.carrouselComponent.d104c > article.contenEnlace"
  },
+ "josepmariaraya-com-divulgacion": {
+  "enlaces": {
+   "https://agendapublica.es/noticia/19926/vivienda-construccion-regulacion-oferta-espa%C3%B1a": "ok",
+   "https://agendapublica.es/noticia/19927/vivienda-generaciones-jovenes": "ok",
+   "https://agendapublica.es/noticia/20407/somos-europeos-con-relacion-al-mercado-vivienda": "ok",
+   "https://www.elperiodico.com/es/opinion/20250131/drama-vpo-administracion-construccion-articulo-jose-maria-raya-113851081": "ok",
+   "https://www.elperiodico.com/es/opinion/20250629/todo-vale-para-tener-mas-viviendas-sociales-articulo-jose-maria-raya-119174062": "ok",
+   "https://www.elperiodico.com/es/opinion/20250713/15-anos-resaca-vivienda-construccion-articulo-jose-maria-raya-119617245": "ok",
+   "https://www.elperiodico.com/es/opinion/20250717/pequeno-gran-tenedor-encuentra-alternativas-articulo-jose-maria-raya-119768478": "ok",
+   "https://www.elperiodico.com/es/opinion/20251028/exactamente-compra-vivienda-especulativa-nuevo-articulo-jose-maria-raya-123106141": "ok",
+   "https://www.elperiodico.com/es/opinion/20251102/ciudadanos-versus-cientificos-vivienda-articulo-jose-maria-raya-123242115": "ok",
+   "https://www.elperiodico.com/es/opinion/20251217/viviendas-lujo-outliers-mercado-vivienda-articulo-jose-maria-raya-124856747": "ok"
+  },
+  "firma": "ul.list.numerada > li"
+ },
  "kubernetes-io-blog": {
   "enlaces": {
    "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/": "ok",
