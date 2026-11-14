@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-14T12:26:10+00:00",
- "llamadas_ia": 7,
+ "generado": "2026-11-14T17:02:28+00:00",
+ "llamadas_ia": 5,
  "sitios": [
   {
-   "actualizado": "2026-11-14T12:21:05+00:00",
+   "actualizado": "2026-11-14T16:57:50+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-14T12:21:20+00:00",
+   "actualizado": "2026-11-14T16:58:04+00:00",
    "con_texto_completo": 14,
    "detalle": "con IA",
    "entradas": 14,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:21:28+00:00",
+   "actualizado": "2026-11-14T16:58:12+00:00",
    "con_texto_completo": 10,
    "detalle": "con IA",
    "entradas": 10,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:21:38+00:00",
+   "actualizado": "2026-11-14T16:58:21+00:00",
    "con_texto_completo": 27,
    "detalle": "con IA",
    "entradas": 27,
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:21:47+00:00",
+   "actualizado": "2026-11-14T16:58:31+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 6,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:21:56+00:00",
+   "actualizado": "2026-11-14T16:58:40+00:00",
    "con_texto_completo": 19,
    "detalle": "con IA",
    "entradas": 19,
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:05+00:00",
+   "actualizado": "2026-11-14T16:58:49+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:15+00:00",
-   "con_texto_completo": 115,
+   "actualizado": "2026-11-14T16:58:59+00:00",
+   "con_texto_completo": 116,
    "detalle": "con IA",
-   "entradas": 115,
+   "entradas": 116,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,7 +99,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:25+00:00",
+   "actualizado": "2026-11-14T16:59:03+00:00",
    "con_texto_completo": 93,
    "detalle": "con IA",
    "entradas": 94,
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:30+00:00",
+   "actualizado": "2026-11-14T16:59:06+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:31+00:00",
+   "actualizado": "2026-11-14T16:59:08+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 236,
+   "entradas": 240,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:32+00:00",
+   "actualizado": "2026-11-14T16:59:09+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 235,
+   "entradas": 240,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:34+00:00",
+   "actualizado": "2026-11-14T16:59:11+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 236,
+   "entradas": 241,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:36+00:00",
+   "actualizado": "2026-11-14T16:59:13+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 236,
+   "entradas": 241,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:38+00:00",
+   "actualizado": "2026-11-14T16:59:15+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 23,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:42+00:00",
+   "actualizado": "2026-11-14T16:59:18+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 24,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:43+00:00",
+   "actualizado": "2026-11-14T16:59:20+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,7 +213,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:22:45+00:00",
+   "actualizado": "2026-11-14T16:59:21+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 29,
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:26:07+00:00",
+   "actualizado": "2026-11-14T17:02:28+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -253,7 +253,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-14T12:22:47+00:00",
+   "actualizado": "2026-11-14T16:59:24+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos",
    "entradas": 24,
    "estado": "error",
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-14T12:22:58+00:00",
+   "actualizado": "2026-11-14T16:59:35+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 16,
    "estado": "error",
@@ -278,7 +278,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-14T12:23:20+00:00",
+   "actualizado": "2026-11-14T16:59:57+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -290,10 +290,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:23:23+00:00",
-   "con_texto_completo": 241,
+   "actualizado": "2026-11-14T16:59:59+00:00",
+   "con_texto_completo": 247,
    "detalle": "con IA",
-   "entradas": 242,
+   "entradas": 248,
    "estado": "ok",
    "feed_propio": "",
    "id": "elconfidencial-com",
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:23:53+00:00",
+   "actualizado": "2026-11-14T17:00:16+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,10 +313,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-14T12:24:15+00:00",
-   "con_texto_completo": 88,
+   "actualizado": "2026-11-14T17:00:38+00:00",
+   "con_texto_completo": 89,
    "detalle": "con IA",
-   "entradas": 88,
+   "entradas": 89,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-g0mt08b29zovbvrf8",
@@ -325,7 +325,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:24:17+00:00",
+   "actualizado": "2026-11-14T17:00:40+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -336,7 +336,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:24:37+00:00",
+   "actualizado": "2026-11-14T17:01:00+00:00",
    "detalle": "URLError: <urlopen error timed out>",
    "entradas": 0,
    "estado": "error",
@@ -347,7 +347,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:24:57+00:00",
+   "actualizado": "2026-11-14T17:01:20+00:00",
    "con_texto_completo": 30,
    "detalle": "con IA",
    "entradas": 30,
@@ -359,7 +359,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:25:12+00:00",
+   "actualizado": "2026-11-14T17:01:23+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
    "entradas": 0,
    "estado": "error",
@@ -370,7 +370,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:25:38+00:00",
+   "actualizado": "2026-11-14T17:01:49+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -381,7 +381,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:25:38+00:00",
+   "actualizado": "2026-11-14T17:01:49+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
@@ -392,7 +392,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-14T12:25:46+00:00",
+   "actualizado": "2026-11-14T17:01:57+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -404,7 +404,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-14T12:25:58+00:00",
+   "actualizado": "2026-11-14T17:02:08+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 10,
@@ -414,6 +414,17 @@
    "nombre": "josepmariaraya.com/divulgacion",
    "url": "https://josepmariaraya.com/divulgacion/",
    "user_agent": "feedmaker"
+  },
+  {
+   "actualizado": "2026-11-14T17:02:17+00:00",
+   "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
+   "entradas": 0,
+   "estado": "error",
+   "feed_propio": "",
+   "id": "audio-canalsurmas-es-videos-category-35503-divagac",
+   "nombre": "audio.canalsurmas.es/videos/category/35503-divagaciones-y-busquedas-by-paco-robles",
+   "url": "https://audio.canalsurmas.es/videos/category/35503-divagaciones-y-busquedas-by-paco-robles",
+   "user_agent": "navegador"
   }
  ]
 }
