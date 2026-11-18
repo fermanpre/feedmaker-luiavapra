@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-17T14:48:06+00:00",
- "llamadas_ia": 9,
+ "generado": "2026-11-18T14:27:48+00:00",
+ "llamadas_ia": 11,
  "sitios": [
   {
-   "actualizado": "2026-11-17T14:43:13+00:00",
+   "actualizado": "2026-11-18T14:22:23+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,10 +15,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-17T14:43:26+00:00",
-   "con_texto_completo": 15,
+   "actualizado": "2026-11-18T14:22:44+00:00",
+   "con_texto_completo": 16,
    "detalle": "con IA",
-   "entradas": 15,
+   "entradas": 16,
    "estado": "ok",
    "feed_propio": "",
    "id": "martinfowler-com",
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:43:35+00:00",
+   "actualizado": "2026-11-18T14:22:53+00:00",
    "con_texto_completo": 11,
    "detalle": "con IA",
    "entradas": 11,
@@ -39,7 +39,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:43:45+00:00",
+   "actualizado": "2026-11-18T14:23:03+00:00",
    "con_texto_completo": 27,
    "detalle": "con IA",
    "entradas": 27,
@@ -51,10 +51,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:43:54+00:00",
-   "con_texto_completo": 6,
+   "actualizado": "2026-11-18T14:23:12+00:00",
+   "con_texto_completo": 8,
    "detalle": "con IA",
-   "entradas": 6,
+   "entradas": 8,
    "estado": "ok",
    "feed_propio": "",
    "id": "worldbank-org-en-news",
@@ -63,10 +63,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:03+00:00",
-   "con_texto_completo": 20,
+   "actualizado": "2026-11-18T14:23:23+00:00",
+   "con_texto_completo": 21,
    "detalle": "con IA",
-   "entradas": 20,
+   "entradas": 21,
    "estado": "ok",
    "feed_propio": "",
    "id": "ine-es",
@@ -75,7 +75,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:12+00:00",
+   "actualizado": "2026-11-18T14:23:35+00:00",
    "con_texto_completo": 7,
    "detalle": "con IA",
    "entradas": 7,
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:21+00:00",
-   "con_texto_completo": 136,
+   "actualizado": "2026-11-18T14:23:44+00:00",
+   "con_texto_completo": 143,
    "detalle": "con IA",
-   "entradas": 137,
+   "entradas": 144,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,10 +99,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:31+00:00",
-   "con_texto_completo": 106,
+   "actualizado": "2026-11-18T14:23:55+00:00",
+   "con_texto_completo": 112,
    "detalle": "con IA",
-   "entradas": 107,
+   "entradas": 113,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:39+00:00",
+   "actualizado": "2026-11-18T14:24:06+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,10 +122,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:41+00:00",
+   "actualizado": "2026-11-18T14:24:07+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 285,
+   "entradas": 300,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla",
@@ -135,10 +135,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:42+00:00",
+   "actualizado": "2026-11-18T14:24:08+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 285,
+   "entradas": 300,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-1",
@@ -148,10 +148,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:44+00:00",
+   "actualizado": "2026-11-18T14:24:11+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 286,
+   "entradas": 300,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-2",
@@ -161,10 +161,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:46+00:00",
+   "actualizado": "2026-11-18T14:24:13+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 286,
+   "entradas": 300,
    "estado": "ok",
    "feed_propio": "",
    "id": "abc-deportes-sevilla-pagina-3",
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:48+00:00",
+   "actualizado": "2026-11-18T14:24:15+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 23,
@@ -187,10 +187,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:51+00:00",
+   "actualizado": "2026-11-18T14:24:18+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 24,
+   "entradas": 25,
    "estado": "ok",
    "feed_propio": "",
    "id": "muchodeporte-baloncesto",
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:52+00:00",
+   "actualizado": "2026-11-18T14:24:20+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,10 +213,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:44:54+00:00",
+   "actualizado": "2026-11-18T14:24:21+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 32,
+   "entradas": 33,
    "estado": "ok",
    "feed_propio": "",
    "id": "diariodesevilla-tag-baloncesto",
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:48:05+00:00",
+   "actualizado": "2026-11-18T14:27:46+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -237,9 +237,9 @@
     "muchodeporte-baloncesto",
     "muchodeporte-caja87"
    ],
-   "con_texto_completo": 70,
+   "con_texto_completo": 73,
    "detalle": "combina 8 webs; filtro: caja 87, caja87, caja-87",
-   "entradas": 70,
+   "entradas": 73,
    "estado": "ok",
    "feed_propio": "",
    "filtro": [
@@ -253,7 +253,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-17T14:44:58+00:00",
+   "actualizado": "2026-11-18T14:24:24+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos",
    "entradas": 24,
    "estado": "error",
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-17T14:45:08+00:00",
+   "actualizado": "2026-11-18T14:24:35+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 21,
    "estado": "error",
@@ -278,10 +278,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-17T14:45:31+00:00",
-   "con_texto_completo": 14,
+   "actualizado": "2026-11-18T14:24:57+00:00",
+   "con_texto_completo": 15,
    "detalle": "con IA",
-   "entradas": 14,
+   "entradas": 15,
    "estado": "ok",
    "feed_propio": "",
    "id": "smashingmagazine-com-articles",
@@ -290,10 +290,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:45:34+00:00",
-   "con_texto_completo": 272,
+   "actualizado": "2026-11-18T14:25:01+00:00",
+   "con_texto_completo": 289,
    "detalle": "con IA",
-   "entradas": 273,
+   "entradas": 290,
    "estado": "ok",
    "feed_propio": "",
    "id": "elconfidencial-com",
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:45:55+00:00",
+   "actualizado": "2026-11-18T14:25:32+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,10 +313,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-17T14:46:17+00:00",
-   "con_texto_completo": 109,
+   "actualizado": "2026-11-18T14:25:54+00:00",
+   "con_texto_completo": 116,
    "detalle": "con IA",
-   "entradas": 110,
+   "entradas": 117,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-g0mt08b29zovbvrf8",
@@ -325,7 +325,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:46:19+00:00",
+   "actualizado": "2026-11-18T14:25:56+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -336,7 +336,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:46:39+00:00",
+   "actualizado": "2026-11-18T14:26:16+00:00",
    "detalle": "URLError: <urlopen error timed out>",
    "entradas": 0,
    "estado": "error",
@@ -347,7 +347,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:46:59+00:00",
+   "actualizado": "2026-11-18T14:26:36+00:00",
    "con_texto_completo": 34,
    "detalle": "con IA",
    "entradas": 34,
@@ -359,7 +359,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:47:02+00:00",
+   "actualizado": "2026-11-18T14:26:39+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
    "entradas": 0,
    "estado": "error",
@@ -370,7 +370,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:47:27+00:00",
+   "actualizado": "2026-11-18T14:27:07+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -381,7 +381,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:47:27+00:00",
+   "actualizado": "2026-11-18T14:27:07+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
@@ -392,7 +392,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:47:35+00:00",
+   "actualizado": "2026-11-18T14:27:15+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -404,7 +404,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-17T14:47:46+00:00",
+   "actualizado": "2026-11-18T14:27:26+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 10,
@@ -416,7 +416,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-17T14:47:55+00:00",
+   "actualizado": "2026-11-18T14:27:35+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
