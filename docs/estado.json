@@ -1,9 +1,9 @@
 {
- "generado": "2026-11-19T14:39:01+00:00",
+ "generado": "2026-11-20T14:17:22+00:00",
  "llamadas_ia": 9,
  "sitios": [
   {
-   "actualizado": "2026-11-19T14:33:55+00:00",
+   "actualizado": "2026-11-20T14:12:02+00:00",
    "con_texto_completo": 53,
    "detalle": "con IA",
    "entradas": 61,
@@ -15,7 +15,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-19T14:34:09+00:00",
+   "actualizado": "2026-11-20T14:12:16+00:00",
    "con_texto_completo": 16,
    "detalle": "con IA",
    "entradas": 16,
@@ -27,7 +27,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:34:17+00:00",
+   "actualizado": "2026-11-20T14:12:24+00:00",
    "con_texto_completo": 11,
    "detalle": "con IA",
    "entradas": 11,
@@ -39,10 +39,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:34:26+00:00",
-   "con_texto_completo": 28,
+   "actualizado": "2026-11-20T14:12:33+00:00",
+   "con_texto_completo": 29,
    "detalle": "con IA",
-   "entradas": 28,
+   "entradas": 29,
    "estado": "ok",
    "feed_propio": "",
    "id": "anthropic-com-news",
@@ -51,7 +51,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:34:36+00:00",
+   "actualizado": "2026-11-20T14:12:43+00:00",
    "con_texto_completo": 8,
    "detalle": "con IA",
    "entradas": 8,
@@ -63,7 +63,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:34:46+00:00",
+   "actualizado": "2026-11-20T14:12:53+00:00",
    "con_texto_completo": 21,
    "detalle": "con IA",
    "entradas": 21,
@@ -75,10 +75,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:34:54+00:00",
-   "con_texto_completo": 7,
+   "actualizado": "2026-11-20T14:13:02+00:00",
+   "con_texto_completo": 8,
    "detalle": "con IA",
-   "entradas": 7,
+   "entradas": 8,
    "estado": "ok",
    "feed_propio": "",
    "id": "stripe-com-blog",
@@ -87,10 +87,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:04+00:00",
-   "con_texto_completo": 150,
+   "actualizado": "2026-11-20T14:13:12+00:00",
+   "con_texto_completo": 157,
    "detalle": "con IA",
-   "entradas": 151,
+   "entradas": 158,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-j8rjlbcek9e8zppdm",
@@ -99,10 +99,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:14+00:00",
-   "con_texto_completo": 116,
+   "actualizado": "2026-11-20T14:13:22+00:00",
+   "con_texto_completo": 121,
    "detalle": "con IA",
-   "entradas": 117,
+   "entradas": 122,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-uroemjvtz4ce2cv75",
@@ -111,7 +111,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:21+00:00",
+   "actualizado": "2026-11-20T14:13:31+00:00",
    "detalle": "el feed de la web es más general que esta página y no se ha podido generar uno propio de la página: suscríbete a ese",
    "entradas": 0,
    "estado": "feed_propio",
@@ -122,7 +122,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:22+00:00",
+   "actualizado": "2026-11-20T14:13:32+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 300,
@@ -135,7 +135,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:24+00:00",
+   "actualizado": "2026-11-20T14:13:33+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 300,
@@ -148,7 +148,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:26+00:00",
+   "actualizado": "2026-11-20T14:13:35+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 300,
@@ -161,7 +161,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:28+00:00",
+   "actualizado": "2026-11-20T14:13:37+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 300,
@@ -174,7 +174,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:30+00:00",
+   "actualizado": "2026-11-20T14:13:39+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 23,
@@ -187,7 +187,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:33+00:00",
+   "actualizado": "2026-11-20T14:13:42+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 27,
@@ -200,7 +200,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:35+00:00",
+   "actualizado": "2026-11-20T14:13:43+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
    "entradas": 10,
@@ -213,10 +213,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:35:36+00:00",
+   "actualizado": "2026-11-20T14:13:45+00:00",
    "con_texto_completo": 0,
    "detalle": "con IA",
-   "entradas": 34,
+   "entradas": 36,
    "estado": "ok",
    "feed_propio": "",
    "id": "diariodesevilla-tag-baloncesto",
@@ -226,7 +226,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:38:59+00:00",
+   "actualizado": "2026-11-20T14:17:22+00:00",
    "combina": [
     "abc-deportes-sevilla",
     "abc-deportes-sevilla-pagina-1",
@@ -237,9 +237,9 @@
     "muchodeporte-baloncesto",
     "muchodeporte-caja87"
    ],
-   "con_texto_completo": 76,
+   "con_texto_completo": 73,
    "detalle": "combina 8 webs; filtro: caja 87, caja87, caja-87",
-   "entradas": 76,
+   "entradas": 73,
    "estado": "ok",
    "feed_propio": "",
    "filtro": [
@@ -253,11 +253,11 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-19T14:35:39+00:00",
-   "detalle": "el modelo no reconoce ningún listado de artículos",
-   "entradas": 24,
-   "estado": "error",
-   "feed_anterior": "2026-11-11T19:50:37+00:00",
+   "actualizado": "2026-11-20T14:13:48+00:00",
+   "con_texto_completo": 25,
+   "detalle": "con IA; listado por enlaces (las tarjetas no daban nada)",
+   "entradas": 29,
+   "estado": "ok",
    "feed_propio": "",
    "id": "realbetisbalompie-es-noticias-actualidad",
    "nombre": "www.realbetisbalompie.es/noticias/actualidad",
@@ -266,7 +266,7 @@
    "version_url": 3
   },
   {
-   "actualizado": "2026-11-19T14:35:49+00:00",
+   "actualizado": "2026-11-20T14:14:04+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 21,
    "estado": "error",
@@ -278,7 +278,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-19T14:36:11+00:00",
+   "actualizado": "2026-11-20T14:14:26+00:00",
    "con_texto_completo": 15,
    "detalle": "con IA",
    "entradas": 15,
@@ -290,7 +290,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:36:13+00:00",
+   "actualizado": "2026-11-20T14:14:29+00:00",
    "con_texto_completo": 299,
    "detalle": "con IA",
    "entradas": 300,
@@ -302,7 +302,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:36:41+00:00",
+   "actualizado": "2026-11-20T14:15:02+00:00",
    "detalle": "HTTP 403: la web rechaza la petición (suele ser un bloqueo a las conexiones automáticas desde servidores como los de GitHub)",
    "entradas": 0,
    "estado": "error",
@@ -313,10 +313,10 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-19T14:37:03+00:00",
-   "con_texto_completo": 123,
+   "actualizado": "2026-11-20T14:15:24+00:00",
+   "con_texto_completo": 130,
    "detalle": "con IA",
-   "entradas": 124,
+   "entradas": 131,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-g0mt08b29zovbvrf8",
@@ -325,7 +325,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:37:05+00:00",
+   "actualizado": "2026-11-20T14:15:26+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -336,7 +336,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:37:25+00:00",
+   "actualizado": "2026-11-20T14:15:46+00:00",
    "detalle": "URLError: <urlopen error timed out>",
    "entradas": 0,
    "estado": "error",
@@ -347,10 +347,10 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:37:45+00:00",
-   "con_texto_completo": 39,
+   "actualizado": "2026-11-20T14:16:06+00:00",
+   "con_texto_completo": 41,
    "detalle": "con IA",
-   "entradas": 39,
+   "entradas": 41,
    "estado": "ok",
    "feed_propio": "",
    "id": "share-google-fggrqslrumr5hmcl0",
@@ -359,7 +359,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:37:55+00:00",
+   "actualizado": "2026-11-20T14:16:12+00:00",
    "detalle": "el modelo no reconoce ningún listado de artículos (el respaldo por enlaces no encuentra fechas: no parecen artículos)",
    "entradas": 0,
    "estado": "error",
@@ -370,7 +370,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:38:19+00:00",
+   "actualizado": "2026-11-20T14:16:43+00:00",
    "detalle": "robots.txt lo prohíbe",
    "entradas": 0,
    "estado": "error",
@@ -381,7 +381,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:38:19+00:00",
+   "actualizado": "2026-11-20T14:16:43+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
@@ -392,7 +392,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:38:27+00:00",
+   "actualizado": "2026-11-20T14:16:51+00:00",
    "con_texto_completo": 13,
    "detalle": "con IA",
    "entradas": 13,
@@ -404,7 +404,7 @@
    "user_agent": "navegador"
   },
   {
-   "actualizado": "2026-11-19T14:38:39+00:00",
+   "actualizado": "2026-11-20T14:17:02+00:00",
    "con_texto_completo": 6,
    "detalle": "con IA",
    "entradas": 10,
@@ -416,7 +416,7 @@
    "user_agent": "feedmaker"
   },
   {
-   "actualizado": "2026-11-19T14:38:48+00:00",
+   "actualizado": "2026-11-20T14:17:11+00:00",
    "detalle": "sin listado de artículos reconocible (¿página con JavaScript?)",
    "entradas": 0,
    "estado": "error",
